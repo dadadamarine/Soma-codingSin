@@ -24,9 +24,12 @@ export default class main extends Component {
               <div className={style.menu}>내 강의실</div>
           </div>
         </div>
-        <div className={style.banner1}>
-        </div>
-        <div className={style.banner2}>
+        <div className={style.bannerWrapper}>
+          <div className={style.banner1}>
+          </div>
+          <div className={style.margin}></div>
+          <div className={style.banner2}>
+          </div>
         </div>
       </div>
     );
