@@ -1,0 +1,45 @@
+.notFoundWrapper{
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    position:relative;
+    z-index: 1;
+}
+.notFoundWrapper:after{
+    z-index: -1;
+    background-repeat:no-repeat;
+    background-image: url("/resources/img/main.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    content:"";
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter:alpha(opacity=30);
+}
+
+.notFound{
+    text-align: center;
+    align-self: center !important;
+}
+
+.textBefore{
+    display: block;
+    font-size: 50px;
+    margin: 40px;
+    color:black;
+    transition-duration: 2s;
+}
+
+.textAfter{
+    display: block;
+    font-size: 80px;
+    margin: 40px;
+    color:red;
+    transition-duration: 2s;
+}

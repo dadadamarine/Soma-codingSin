@@ -1,0 +1,58 @@
+{
+  "name": "codingsin",
+  "version": "1.0.0",
+  "description": "coding edu",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "node_modules/.bin/webpack-dev-server --progress",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --progress",
+    "clean": "rm -rf build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snutiise/codingsin.git"
+  },
+  "author": "snutiise",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snutiise/codingsin/issues"
+  },
+  "homepage": "https://github.com/snutiise/codingsin#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "jquery": "^3.2.1",
+    "mongodb": "^3.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-addons-update": "^15.6.2",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.77.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-loader": "^2.0.9",
+    "react-transform-hmr": "^1.0.4",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}

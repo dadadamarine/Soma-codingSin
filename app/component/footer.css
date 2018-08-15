@@ -1,0 +1,22 @@
+.footerWrapper{
+    position:absolute;
+    bottom:0;
+    width:100%; 
+    background:#ccc;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    height:60px;  
+    width:70%;
+    margin-top:20px;
+}
+
+.footer p{
+    display: block !important;
+    height: 20px;
+}
