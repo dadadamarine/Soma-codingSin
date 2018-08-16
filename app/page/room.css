@@ -20,15 +20,45 @@
     margin: 15px; 
     border: 1px solid black;
 }
-
-.start{
-    width: 150px;
-    padding: 5px;
-    margin: 10px;
-
-}
 .sideView{
     margin: 15px; 
     width: 20%;
     border: 1px solid black;
+}
+
+.settingView{
+    display: none;
+    margin: 0 auto;
+}
+.camView{
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    background: #e2e2e2e2;
+}
+
+.cam, .setting{
+    padding: 10px;
+    cursor: pointer;
+}
+.start{
+    padding: 10px;
+    cursor: pointer;
+    margin-left: auto;
+
+    background: #9b9a9ade;
+}
+.cam:hover, .setting:hover{
+    background: white;
+    transition-duration: 2s;
+}
+.viewContainer{
+    width: 100%;
+    height: 100%;
 }

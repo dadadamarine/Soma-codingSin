@@ -11,6 +11,9 @@ export default class room extends Component {
     this.state = {
         endpoint: "https://homecode.xyz" 
     }
+
+    this.camClick = this.camClick.bind(this);
+    this.settingClick = this.settingClick.bind(this);
   }
   componentDidMount(){
     console.log('Loaded webrtc');
@@ -403,6 +406,15 @@ export default class room extends Component {
   }
   componentWillUnmount() {
   }
+
+  camClick(){
+    $("."+style.settingView).css("display","none");
+    $("."+style.camView).css("display","block");
+  }
+  settingClick(){
+    $("."+style.settingView).css("display","block");
+    $("."+style.camView).css("display","none");
+  }
   
 
   render() {
@@ -412,7 +424,17 @@ export default class room extends Component {
                 <video className={style.roomMain} autoPlay controls poster={img} src="#" id="remote-screen"></video>
             </div>
             <div className={style.sideView}>
-            <button className={style.start} id="btn-screen-share">과외 준비</button>
+                <div className={style.nav}>
+                    <div className={style.cam} onClick={this.camClick}>CAM화면</div>
+                    <div className={style.setting} onClick={this.settingClick}>설정</div>
+                    <div className={style.start} id="btn-screen-share">과외 준비</div>
+                </div>
+                <div className={style.viewContainer}>
+                    <div className={style.camView}>
+                    </div>
+                    <div className={style.settingView}>
+                    </div>
+                </div>
             </div>
         </div>
     );
