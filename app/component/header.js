@@ -9,6 +9,7 @@ export default class header extends Component {
         super(props);
         this.state = {isLogin:cookie.getCookie('user')};
         this.handleLogout = this.handleLogout.bind(this);
+        this.goMain = this.goMain.bind(this);
     }
     handleLogout(event) {
         service.logout().then(function (res) {
@@ -21,11 +22,14 @@ export default class header extends Component {
         });
         event.preventDefault();
     }
+    goMain(){
+        location.href="/";
+    }
     render() {
         return (
             <div className={style.headerWrapper}>
                 <div className={style.header}>
-                    <div className={style.logo}>
+                    <div className={style.logo} onClick={this.goMain}>
                     </div>
                     <div className={style.headerMenuBar}>
                         <div className={style.headerMenu}>로그인</div>

@@ -10,13 +10,13 @@ export default class main extends Component {
   componentDidMount(){
   }
   componentWillUnmount() {
-}
+  }
   render() {
     return (
       <div>
         <div className={style.navWrapper}>
           <div className={style.nav}>
-              <div className={style.menu}>수강신청</div>
+              <div className={style.menu} onClick={this.test}>수강신청</div>
               <div className={style.menu}>코딩의 신</div>
               <div className={style.menu}>강사 소개</div>
               <div className={style.menu}>콘텐츠</div>

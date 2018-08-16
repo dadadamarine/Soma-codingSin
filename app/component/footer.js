@@ -12,7 +12,7 @@ export default class header extends Component {
             <div className={style.footerWrapper}>
                 <div className={style.footer}>
                     <p>Software Maestro 9th Team Project</p>
-                    <p>정민석 김동현 전승훈22</p>
+                    <p>정민석 김동현 전승훈</p>
                 </div>
             </div>
         );
