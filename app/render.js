@@ -22,6 +22,7 @@ render(<Router>
             <Route path="/room" component={Room} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SingUp} />
+            <Route path="/active/:code" component={Active} />
             <Route component={NoMatch} />
         </Switch>
         <Footer/>
