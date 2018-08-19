@@ -22,7 +22,8 @@ render(<Router>
             <Route path="/room" component={Room} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SingUp} />
-            <Route component={NoMatch} />
+            <Route path="/active/:code" component={Active} />
+            <Route missing component={NoMatch} />
         </Switch>
         <Footer/>
     </div>
