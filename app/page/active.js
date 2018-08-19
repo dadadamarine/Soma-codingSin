@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as service from '../request/active';
+import style from './login.css';
 
 export default class active extends Component {
     constructor(props) {
@@ -8,9 +9,10 @@ export default class active extends Component {
     }
     componentDidMount(){
         service.active(this.state.code).then(function (res) {
-            
         }).catch(function (error) {
             alert('error massage : '+error);
         });
+    }
+    render() {
     }
 }
