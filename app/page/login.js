@@ -8,11 +8,23 @@ import * as cookie from '../util/cookie';
 export default class login extends Component {
     constructor(props) {
         super(props);
-        this.state = {id:'', pw:'', isLogin:cookie.getCookie('user')};
+        this.state = {id:'', pw:'', isLogin:cookie.getCookie('user'), status:cookie.getCookie('status')};
         this.inputID = this.inputID.bind(this);
         this.inputPW = this.inputPW.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.Signup = this.Signup.bind(this);
+    }
+    componentDidMount(){
+        if(this.state.status=="active_ok"){
+            cookie.setCookie("status","null");
+            alert("사용자 인증이 완료되었습니다.");
+        } else if(this.state.status=="active_already"){
+            cookie.setCookie("status","null");
+            alert("이미 인증이 완료된 사용자입니다.");
+        } else if(this.state.status=="active_none"){
+            cookie.setCookie("status","null");
+            alert("잘못된 인증 코드입니다.");
+        }
     }
     inputID(event) {
         this.setState({ id: event.target.value });

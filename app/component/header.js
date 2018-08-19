@@ -7,21 +7,9 @@ import * as cookie from '../util/cookie';
 export default class header extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLogin:cookie.getCookie('user'), status:cookie.getCookie('status')};
+        this.state = {isLogin:cookie.getCookie('user')};
         this.handleLogout = this.handleLogout.bind(this);
         this.goMain = this.goMain.bind(this);
-    }
-    componentDidMount(){
-        if(status=="active_ok"){
-            cookie.setCookie("status","null");
-            alert("사용자 인증이 완료되었습니다.");
-        } else if(status=="active_already"){
-            cookie.setCookie("status","null");
-            alert("이미 인증이 완료된 사용자입니다.");
-        } else if(status=="active_none"){
-            cookie.setCookie("status","null");
-            alert("잘못된 인증 코드입니다.");
-        }
     }
     handleLogout(event) {
         service.logout().then(function (res) {
