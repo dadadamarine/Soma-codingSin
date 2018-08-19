@@ -76,9 +76,8 @@ router.get('/active/*', function(req, res){
         else {
             const db = client.db(dbName);
             db.collection(dbCollection).update({active_code:active_code}, {$set:{active:"1"}}, function(err, doc){
-                console.log(doc);
                 if(err) console.log(err);
-                if(doc.result.nMatched==1)
+                if(doc.result.ok==1)
                     if(doc.result.nModified==1) 
                         res.cookie("status", "active_ok");
                     else 
