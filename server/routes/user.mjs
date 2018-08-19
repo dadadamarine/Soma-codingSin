@@ -70,6 +70,7 @@ router.post('/signup', function(req, res){
 
 router.get('/active/*', function(req, res){
     const active_code = req.url.split('active/')[1];
+    console.log(active_code);
     MongoClient.connect(dbHost, function(error, client) {
         if(error) console.log(error);
         else {
