@@ -12,7 +12,7 @@ const dbName = process.env.DB_USER;
 const dbCollection = process.env.DB_COLLECTION_USER;
 const mailID=process.env.MAIL_ID;
 const mailPW=process.env.MAIL_PW;
-const smtpTransport = nodemailer.createTransport("SMTP", {  
+const smtpTransport = nodemailer.createTransport({  
     service: 'Gmail',
     auth: {
         user: mailID,
