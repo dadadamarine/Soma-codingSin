@@ -33,7 +33,6 @@ export default class signup extends Component {
         this.setState({ phone: event.target.value });
     }
     inputType(event, { value }){
-        alert(value);
         this.setState({ type: value });
     }
     handleSubmit(event) {
