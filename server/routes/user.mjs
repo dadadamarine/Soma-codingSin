@@ -70,22 +70,20 @@ router.post('/signup', function(req, res){
 
 router.get('/active/*', function(req, res){
     const active_code = req.url.split('active/')[1];
-    console.log(active_code);
+
     MongoClient.connect(dbHost, function(error, client) {
         if(error) console.log(error);
         else {
             const db = client.db(dbName);
             db.collection(dbCollection).update({active_code:active_code}, {$set:{active:"1"}}, function(err, doc){
                 if(err) console.log(err);
-                if(doc.result.nModified==1) 
-                {
-                    res.location="/login";
-                    res.send('<script type="text/javascript">alert("인증이 완료되었습니다.");</script>');
-                }
-                else {
-                    res.location="/login";
-                    res.send('<script type="text/javascript">alert("인증 코드가 잘못되었습니다.");</script>');
-                }
+                if(doc.result.nMatched==1)
+                    if(doc.result.nModified==1) 
+                        res.cookie("status", "active_ok");
+                    else 
+                        res.cookie("status", "active_already");
+                else res.cookie("status", "active_none");
+                res.redirect('/login');
                 client.close();
             });
         }
