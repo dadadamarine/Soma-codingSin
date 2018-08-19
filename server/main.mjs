@@ -7,6 +7,7 @@ import path from 'path';
 import dotenv from 'dotenv'
 
 dotenv.config();
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 let port = 80;
 app.use(cookieParser(process.COOKIE_KEY));
