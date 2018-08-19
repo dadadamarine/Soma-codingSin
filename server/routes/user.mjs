@@ -74,8 +74,7 @@ router.post('/signup', function(req, res){
                             from: mailID,
                             to: u_email,
                             subject: '사용자 확인 메일 - 코딩의 신',
-                            text:'아래의 링크를 클릭해주세요.',
-                            html: '<br><br><a href="https://codingsin.com/active/'+code+'">사용자 확인</a>'
+                            html: '아래의 링크를 클릭해주세요.<br><br><a href="https://codingsin.com/active/'+code+'">사용자 확인</a>'
                         };
                         smtpTransport.sendMail(mailOptions, function(error, response){
                             if (error)
