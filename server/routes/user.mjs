@@ -68,5 +68,26 @@ router.post('/signup', function(req, res){
     });
 });
 
-
+router.get('/active/*', function(req, res){
+    const active_code = req.params[0].split('active/')[1];
+    MongoClient.connect(dbHost, function(error, client) {
+        if(error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).update({active_code:active_code}, {$set:{active:"1"}}, function(err, doc){
+                if(err) console.log(err);
+                if(doc.result.nModified==1) 
+                {
+                    res.location="/login";
+                    res.send('<script type="text/javascript">alert("인증이 완료되었습니다.");</script>');
+                }
+                else {
+                    res.location="/login";
+                    res.send('<script type="text/javascript">alert("인증 코드가 잘못되었습니다.");</script>');
+                }
+                client.close();
+            });
+        }
+    });
+});
 export default router;
