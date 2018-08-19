@@ -9,6 +9,9 @@ export default class active extends Component {
     }
     componentDidMount(){
         service.active(this.state.code).then(function (res) {
+            if(String(res.data)=="ok"){
+                location.href="/login";
+            }
         }).catch(function (error) {
             alert('error massage : '+error);
         });

@@ -83,7 +83,7 @@ router.post('/active', function(req, res){
                     else 
                         res.cookie("status", "active_already");
                 else res.cookie("status", "active_none");
-                res.redirect('/login');
+                res.send("ok");
                 client.close();
             });
         }
