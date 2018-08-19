@@ -1,7 +1,9 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import CryptoJS from 'crypto-js';
+import dotenv from 'dotenv'
 
+dotenv.config();
 const router = express.Router();
 const MongoClient = mongodb.MongoClient;
 const dbHost = process.env.DB_HOST;
