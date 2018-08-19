@@ -21,7 +21,7 @@ export default class main extends Component {
               <div className={style.menu}>강사 소개</div>
               <div className={style.menu}>콘텐츠</div>
               <div className={style.menu}>커뮤니티</div>
-              <div className={style.menu}>내 강의실</div>
+              <div className={style.menu}>내 강의실222</div>
           </div>
         </div>
         <div className={style.bannerWrapper}>
