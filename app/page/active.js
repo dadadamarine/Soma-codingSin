@@ -14,5 +14,8 @@ export default class active extends Component {
         });
     }
     render() {
+        return (
+            <div></div>
+        );
     }
 }
