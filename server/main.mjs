@@ -10,10 +10,10 @@ dotenv.config();
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 let port = 80;
-app.use(cookieParser(process.COOKIE_KEY));
+app.use(cookieParser(process.env.COOKIE_KEY));
 app.use(session({
     key: 'sid',
-    secret: process.SESSION_KEY,
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true
 }));

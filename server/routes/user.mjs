@@ -4,8 +4,8 @@ import CryptoJS from 'crypto-js';
 
 const router = express.Router();
 const MongoClient = mongodb.MongoClient;
-const dbHost = process.DB_HOST;
-const dbName = process.DB_USER;
+const dbHost = process.env.DB_HOST;
+const dbName = process.env.DB_USER;
 
 router.post('/login', function(req, res){
     const u_id = String(req.body.id);
