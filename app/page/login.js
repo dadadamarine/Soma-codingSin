@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import * as service from '../request/login';
 import { Segment, Input, Button, Divider } from 'semantic-ui-react';
 import style from './login.css';
@@ -26,7 +25,7 @@ export default class login extends Component {
         const cursor =this;
         service.login(this.state.id, this.state.pw).then(function (res) {
             if(String(res.data)=="ok"){
-                cursor.props.history.push('/');
+                location.href="/";
             }
             else if(String(res.data)=="active") alert("메일에서 계정 활성화 링크를 눌러주세요!");
             else alert("계정 정보가 잘못되었습니다.")
@@ -36,7 +35,7 @@ export default class login extends Component {
         event.preventDefault();
     }
     Signup(event) {
-        this.props.history.push('/signup');
+        location.href="/signup";
     }
     render() {
         return (
