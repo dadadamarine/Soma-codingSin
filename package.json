@@ -30,6 +30,7 @@
     "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "mongodb": "^3.0.1",
+    "nodemailer": "^4.6.8",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-addons-update": "^15.6.2",
