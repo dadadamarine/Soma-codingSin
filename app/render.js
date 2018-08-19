@@ -12,6 +12,7 @@ import Footer from './component/footer'
 import Room from './page/room'
 import Login from './page/login'
 import SingUp from './page/signup'
+import Active from './page/active'
 
 render(<Router>
     <div>
@@ -21,6 +22,7 @@ render(<Router>
             <Route path="/room" component={Room} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SingUp} />
+            <Route path="/active/:code" component={Active} />
             <Route component={NoMatch} />
         </Switch>
         <Footer/>
