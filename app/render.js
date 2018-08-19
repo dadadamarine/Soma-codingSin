@@ -10,6 +10,8 @@ import NoMatch from './error/nomatch';
 import Header from './component/header'
 import Footer from './component/footer'
 import Room from './page/room'
+import Login from './page/login'
+import SingUp from './page/signup'
 
 render(<Router>
     <div>
@@ -17,6 +19,8 @@ render(<Router>
         <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/room" component={Room} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SingUp} />
             <Route component={NoMatch} />
         </Switch>
         <Footer/>

@@ -39,3 +39,7 @@
     padding-left: 5px;
     border-left: 1px solid rgb(187, 187, 187);
 }
+
+.headerMenu a{
+    color: black;
+}
