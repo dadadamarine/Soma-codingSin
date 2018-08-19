@@ -32,8 +32,9 @@ export default class signup extends Component {
     inputPhone(event){
         this.setState({ phone: event.target.value });
     }
-    inputType(event){
-        this.setState({ type: event.target.value });
+    inputType(event, { value }){
+        alert(value);
+        this.setState({ type: value });
     }
     handleSubmit(event) {
         const curosr =this;
@@ -54,13 +55,13 @@ export default class signup extends Component {
                 <div className={style.singupBox}>
                     <Segment padded>
                         <Input type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
-                        <br />
+                        <br /><br />
                         <Input type="password" placeholder='비밀번호' value={this.state.pw} onChange={this.inputPW} />
-                        <br />
+                        <br /><br />
                         <Input type="text" placeholder='이름' value={this.state.name} onChange={this.inputName} />
-                        <br />
+                        <br /><br />
                         <Input type="text" placeholder='이메일' value={this.state.email} onChange={this.inputEmail} />
-                        <br />
+                        <br /><br />
                         <Input type="text" placeholder='전화번호' value={this.state.phone} onChange={this.inputPhone} />
                         <br /><br />
                         <Dropdown placeholder='타입' search selection options={this.state.typeOptions} onChange={this.inputType} />
