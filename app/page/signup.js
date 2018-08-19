@@ -37,7 +37,7 @@ export default class signup extends Component {
     }
     handleSubmit(event) {
         const curosr =this;
-        service.signup(this.state.id, this.state.pw, this.state.name, this.state.email, this.state.phone, this.type.type).then(function (res) {
+        service.signup(this.state.id, this.state.pw, this.state.name, this.state.email, this.state.phone, this.state.type).then(function (res) {
             if(String(res.data)=="ok"){
                 alert("회원가입에 성공했습니다!");
                 curosr.props.history.push('/');
