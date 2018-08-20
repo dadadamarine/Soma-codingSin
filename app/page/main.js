@@ -14,6 +14,7 @@ export default class main extends Component {
   render() {
     return (
       <div>
+
         <div className={style.navWrapper}>
           <div className={style.nav}>
               <div className={style.menu} onClick={this.test}>수강신청</div>
@@ -21,16 +22,56 @@ export default class main extends Component {
               <div className={style.menu}>강사 소개</div>
               <div className={style.menu}>콘텐츠</div>
               <div className={style.menu}>커뮤니티</div>
-              <div className={style.menu}>내 강의실222</div>
+              <div className={style.menu}>내 강의실</div>
           </div>
+
         </div>
-        <div className={style.bannerWrapper}>
-          <div className={style.banner1}>
+
+
+
+        <div className={style.contentWrapper}>
+          <div>
+            <div className={style.bannerWrapper}>
+              <div className={style.banner1}></div>
+            </div>
+            <div className={style.margin}></div>
+            <div className={style.bannerWrapper}>
+              <div className={style.banner2}></div>
+            </div>
+            <div className={style.margin}></div>
           </div>
-          <div className={style.margin}></div>
-          <div className={style.banner2}>
+
+          <div className={style.section1}>
+            <h2 className={style.lectureString}> 
+              <span>
+                <strong>여러분의 꿈과 목표를 향해,</strong>
+                 오늘도 최선을 다하는 이투스 선생님이 되겠습니다.
+             </span>
+            </h2>
+
+            <ul className={style.lectureList}>
+              <li className={style.lecture1} ></li>
+              <li className={style.lecture2} ></li>
+              <li className={style.lecture3} ></li>
+              <li className={style.lecture1} ></li>
+              <li className={style.lecture2} ></li>
+              <li className={style.lecture3} ></li>
+              <li className={style.lecture1} ></li>
+              <li className={style.lecture2} ></li>
+              <li className={style.lecture3} ></li>
+              <li className={style.lecture1} ></li>
+          
+            </ul>
+          
+            
           </div>
+
         </div>
+
+
+
+
+
       </div>
     );
   }
