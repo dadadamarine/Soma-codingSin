@@ -40,7 +40,7 @@
 }
 
 .section1{
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .bannerWrapper{
@@ -72,6 +72,8 @@
 }
 
 .lectureList{
+    width:100%;
+    height:500px;
     list-style: none;
 }
 
@@ -107,8 +109,32 @@
 .reviewBanner{
     margin: auto;
     width: 100%;
-    height:auto;
+    height:500px;
     background: url("../resources/img/main_body_fourth.png") no-repeat;
     background-size: cover;
 }
+
+.teacherList{
+    margin: auto;
+    width: 100%;
+    height:300px;
+    background: url("../resources/img/main_body_fifth.png") no-repeat;
+    background-size: cover;
+}
+
+.footer{
+    margin:auto;
+
+    margin-top:100px;
+    width:1080px;
+}
+
+.footerImage{
+    margin: auto;
+    width: 100%;
+    height:200px;
+    background: url("../resources/img/main_body_sixth.png") no-repeat;
+    background-size: cover;
+}
+
 

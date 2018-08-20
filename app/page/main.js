@@ -27,9 +27,10 @@ export default class main extends Component {
 
         </div>
 
-
-
         <div className={style.contentWrapper}>
+
+
+
           <div>
             <div className={style.bannerWrapper}>
               <div className={style.banner1}></div>
@@ -40,6 +41,8 @@ export default class main extends Component {
             </div>
             <div className={style.margin}></div>
           </div>
+
+
 
           <div className={style.section1}>
             <h2 className={style.lectureString}> 
@@ -60,17 +63,37 @@ export default class main extends Component {
               <li className={style.lecture2} ></li>
               <li className={style.lecture3} ></li>
               <li className={style.lecture1} ></li>
-          
             </ul>
-          
-            
+          </div>
+
+
+
+
+          <div className={style.section1}>
+            <h2 className={style.lectureString}> 
+                <span>
+                  <strong>100% 솔직후기</strong>
+              </span>
+            </h2>
+            <div className={style.reviewBanner}></div>
           </div>
 
         </div>
 
 
+        <div className={style.section1}>
+         <h2 className={style.lectureString}> 
+                <span>
+                  <strong>최고의 강사들</strong>이
+                  야나두를 함께 만들고 있습니다.
+              </span>
+          </h2>
+          <div className={style.teacherList}></div>
+        </div>
 
-
+        <div className={style.footer}>
+          <div className={style.footerImage}></div>
+        </div>
 
       </div>
     );
