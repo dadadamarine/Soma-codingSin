@@ -1,14 +1,3 @@
-.navWrapper{
-    width:100%;
-}
-.nav{
-    display: flex;
-    width:70%;
-    height: 40px;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: center;
-}
 .headerMenu{
     cursor: pointer;
     margin-top: auto;
@@ -16,26 +5,8 @@
     padding-left: 5px;
     border-left: 1px solid rgb(187, 187, 187);
 }
-
-.menu:first-child{
-
-    border-left: none;
-}
-
-.menu:hover{
-    padding-bottom: 5px;
-    transition-duration: 1s;
-}
-.menu{
-    cursor: pointer;
-    margin-top: auto;
-    margin-left: 15px;
-    padding-left: 15px;
-    border-left: 1px solid rgb(187, 187, 187);
-    font-size: 25px;
-}
 .bannerWrapper{
-    margin-top: 15px;
+    margin-top: 50px;
     width:100%;
 }
 .banner1{
