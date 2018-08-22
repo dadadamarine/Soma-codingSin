@@ -10,7 +10,7 @@
     text-align: center;
     font-weight: 600;
     height:15px;
-    width:75%;
+    width:1000px;
     background: #ffffffb0 none !important;
 }
 .headerSec {
@@ -18,8 +18,8 @@
     margin: 0 auto;
     text-align: center;
     font-weight: 600;
-    height:100px;
-    width:75%;
+    height:125px;
+    width:1000px;
     background: #ffffffb0 none !important;
 }
 
@@ -28,7 +28,8 @@
     width:250px;
     height: 125px;
     margin: auto;
-    background: url("../resources/img/logo.png") no-repeat;
+    padding: auto;
+    background: url("../resources/img/logo.png") no-repeat center;
 }
 
 .logo1{

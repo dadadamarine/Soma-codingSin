@@ -17,12 +17,16 @@ export default class main extends Component {
 
         <div className={style.navWrapper}>
           <div className={style.nav}>
+              <div className={style.menuIcon}></div>
+              <div className={style.menu}>수강 안내</div>
               <div className={style.menu} onClick={this.test}>수강신청</div>
-              <div className={style.menu}>코딩의 신</div>
               <div className={style.menu}>강사 소개</div>
-              <div className={style.menu}>콘텐츠</div>
+              <div className={style.menu}>콘텐츠 창고</div>
               <div className={style.menu}>커뮤니티</div>
-              <div className={style.menu}>내 강의실</div>
+              <div className={style.menu}>레벨테스트</div>
+              <div className={style.menuRoom}>
+                <a>내 강의실</a>
+              </div>
           </div>
 
         </div>
