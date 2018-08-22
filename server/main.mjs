@@ -4,11 +4,16 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import http1 from 'http';
+import socket from 'socket.io';
+import room from './routes/room';
 
 dotenv.config();
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
+const http = http1.Server(app);
+const io = socket.listen(http);
 let port = 80;
 app.use(cookieParser(process.env.COOKIE_KEY));
 app.use(session({
@@ -18,12 +23,16 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 app.use('/', express.static(__dirname + '/../build'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
 import user from './routes/user';
 app.use('/reqUser', user);
+
+import lecture from './routes/lecture';
+app.use('/reqLecture', lecture);
 
 let indexPage="";
 fs.readFile(path.resolve(__dirname,'../build/index.html'), 'utf8', function(err, data){
@@ -41,6 +50,6 @@ app.get("*", function(req, res, next){
     else res.end(indexPage);
 });
 
-const server = app.listen(port, () => {
+const server = http.listen(port, () => {
     console.log('Server listening on port', port);
 });

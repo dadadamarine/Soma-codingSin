@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function lectureRegister(u_title, u_description, u_schedule, u_price) {
-    return axios.post('/lecture/register', {
+    return axios.post('/reqLecture/register', {
         title:u_title,
         description:u_description,
         schedule:u_schedule,
@@ -10,9 +10,9 @@ export function lectureRegister(u_title, u_description, u_schedule, u_price) {
 }
 
 export function lectureList() {
-    return axios.post('/lecture/list');
+    return axios.post('/reqLecture/list');
 }
 
 export function getType() {
-    return axios.post('/lecture/type');
+    return axios.post('/reqLecture/type');
 }
