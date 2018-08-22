@@ -55,3 +55,4 @@ router.post('/register', function (req, res) {
         });
     }
 });
+export default router;
