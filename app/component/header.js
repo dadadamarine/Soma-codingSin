@@ -28,9 +28,8 @@ export default class header extends Component {
     render() {
         return (
             <div className={style.headerWrapper}>
-                <div className={style.header}>
-                    <div className={style.logo} onClick={this.goMain}>
-                    </div>
+                <div className={style.headerFst}>
+                  <a className={style.logo1} ></a>
                     <div className={style.headerMenuBar}>
                         <div className={style.headerMenu} onClick={this.goLogin}> 
                             { this.state.isLogin ? <Link to="#" onClick={this.handleLogout}>로그아웃</Link> : <Link to="/login">로그인</Link> }
@@ -39,6 +38,9 @@ export default class header extends Component {
                         <div className={style.headerMenu}>아이디·비밀번호 찾기</div>
                         <div className={style.headerMenu}>마이페이지</div>
                     </div>
+                </div>
+                <div className={style.headerSec}>
+                    <a className={style.logo} onClick={this.goMain}></a>
                 </div>
             </div>
         );

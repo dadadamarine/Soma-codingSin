@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
 .navWrapper{
     width:100%;
     border-bottom: 1px solid rgb(187, 187, 187);
@@ -24,6 +26,8 @@
 }
 
 .menu{
+
+
     cursor: pointer;
     margin-top: auto;
     margin-bottom: auto;
@@ -32,15 +36,26 @@
     border-left: 1px solid rgb(187, 187, 187);
     font-size: 25px;
     text-align: center;
+    font-family: 'Nanum Gothic Coding', serif;
+
+
 }
 
-.contentWrapper{
+.contentWrapper1{
+    max-width: 1919px;
+    width: 100%;
     margin:auto;
-    width:1080px;
+}
+
+.contentWrapper2{
+    width: 75%;
+   margin : auto;
 }
 
 .section1{
-    margin-top: 100px;
+    margin-top: 40px;
+    width: 100%;
+    height:100%;
 }
 
 .bannerWrapper{
@@ -53,7 +68,7 @@
 .banner1{
     margin: 0 auto;
     width:100%;
-    height: 85px;
+    height: 110px;
     background: url("../resources/img/banner1.png") no-repeat;
     background-size: cover;
 }
@@ -103,13 +118,16 @@
 }
 
 .margin{
-    margin-top: 10px;
+    margin-top: 50px;
+}
+.margin2{
+    margin-top: 200px;
 }
 
 .reviewBanner{
     margin: auto;
     width: 100%;
-    height:500px;
+    height: 550px;
     background: url("../resources/img/main_body_fourth.png") no-repeat;
     background-size: cover;
 }
@@ -134,7 +152,7 @@
     width: 100%;
     height:200px;
     background: url("../resources/img/main_body_sixth.png") no-repeat;
-    background-size: cover;
+    background-size: cover; 
 }
 
 

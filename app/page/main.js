@@ -27,28 +27,29 @@ export default class main extends Component {
 
         </div>
 
-        <div className={style.contentWrapper}>
+        <div className={style.contentWrapper1}>
 
 
 
-          <div>
             <div className={style.bannerWrapper}>
               <div className={style.banner1}></div>
             </div>
+          
             <div className={style.margin}></div>
-            <div className={style.bannerWrapper}>
-              <div className={style.banner2}></div>
-            </div>
-            <div className={style.margin}></div>
-          </div>
 
+            <div className={style.contentWrapper2}>
+              <div className={style.bannerWrapper}>
+                <div className={style.banner2}></div>
+              </div>
+            
 
+            <div className={style.margin2}></div>
 
           <div className={style.section1}>
             <h2 className={style.lectureString}> 
               <span>
                 <strong>여러분의 꿈과 목표를 향해,</strong>
-                 오늘도 최선을 다하는 이투스 선생님이 되겠습니다.
+                 오늘도 최선을 다하는 코딩의신 선생님이 되겠습니다.
              </span>
             </h2>
 
@@ -65,8 +66,8 @@ export default class main extends Component {
               <li className={style.lecture1} ></li>
             </ul>
           </div>
-
-
+          
+          <div className={style.margin2}></div>
 
 
           <div className={style.section1}>
@@ -79,13 +80,13 @@ export default class main extends Component {
           </div>
 
         </div>
-
-
+        </div>
+        <div className={style.margin2}></div>
         <div className={style.section1}>
          <h2 className={style.lectureString}> 
                 <span>
                   <strong>최고의 강사들</strong>이
-                  야나두를 함께 만들고 있습니다.
+                  코딩의신을 함께 만들고 있습니다.
               </span>
           </h2>
           <div className={style.teacherList}></div>
