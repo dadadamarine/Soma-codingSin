@@ -27,6 +27,7 @@
 
 
 .menuIcon{
+    cursor: pointer;
     width:44px;
     height: 46px;
     margin-right: 14px;
@@ -49,6 +50,7 @@
     
 }
 .menuRoom a{
+    cursor: pointer;
     display: block;
     margin-top:2px;
     width: 128px;
@@ -94,12 +96,13 @@
 
 .banner2{
     width:100%;
-    height:250px;
+    height:380px;
     background: url("../resources/img/main_banner2.png") no-repeat;
-    background-size :cover;
+    background-size:cover;
 }
 
 .lectureString{
+    font-family: 'noto_sans', sans-serif;
     font-size:24px;
     text-align: center;
 }
@@ -172,5 +175,4 @@
     background: url("../resources/img/main_body_sixth.png") no-repeat;
     background-size: cover; 
 }
-
 

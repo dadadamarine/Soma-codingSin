@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import style from './main.css';
+import { Fade } from 'react-slideshow-image';
+//npm install react-slideshow-image
 
 export default class main extends Component {
   constructor(props) {
@@ -11,20 +13,24 @@ export default class main extends Component {
   }
   componentWillUnmount() {
   }
+
+  
   render() {
+  
+
     return (
       <div>
 
         <div className={style.navWrapper}>
           <div className={style.nav}>
-              <div className={style.menuIcon}></div>
-              <div className={style.menu}>수강 안내</div>
+              <div className={style.menuIcon}  onClick={this.test}></div>
+              <div className={style.menu} onClick={this.test}>수강 안내</div>
               <div className={style.menu} onClick={this.test}>수강신청</div>
-              <div className={style.menu}>강사 소개</div>
-              <div className={style.menu}>콘텐츠 창고</div>
-              <div className={style.menu}>커뮤니티</div>
-              <div className={style.menu}>레벨테스트</div>
-              <div className={style.menuRoom}>
+              <div className={style.menu} onClick={this.test}>강사 소개</div>
+              <div className={style.menu} onClick={this.test}>콘텐츠 창고</div>
+              <div className={style.menu} onClick={this.test}>커뮤니티</div>
+              <div className={style.menu} onClick={this.test}>레벨테스트 </div>
+              <div className={style.menuRoom}  onClick={this.test}>
                 <a>내 강의실</a>
               </div>
           </div>
@@ -41,12 +47,12 @@ export default class main extends Component {
           
             <div className={style.margin}></div>
 
-            <div className={style.contentWrapper2}>
+            
               <div className={style.bannerWrapper}>
                 <div className={style.banner2}></div>
-              </div>
+        </div>
             
-
+          <div className={style.contentWrapper2}>
             <div className={style.margin2}></div>
 
           <div className={style.section1}>
@@ -75,11 +81,14 @@ export default class main extends Component {
 
 
           <div className={style.section1}>
-            <h2 className={style.lectureString}> 
-                <span>
-                  <strong>100% 솔직후기</strong>
-              </span>
-            </h2>
+            <div className={style.lectureString}> 
+                <p>
+                  이미 수많은 학생들이 1등 홈코드와 함께
+                </p>
+                <p>
+                  <strong>진짜 코딩</strong>을 배우고 있습니다.
+                </p>
+            </div>
             <div className={style.reviewBanner}></div>
           </div>
 
@@ -87,17 +96,13 @@ export default class main extends Component {
         </div>
         <div className={style.margin2}></div>
         <div className={style.section1}>
-         <h2 className={style.lectureString}> 
+         <div className={style.lectureString}> 
                 <span>
                   <strong>최고의 강사들</strong>이
                   코딩의신을 함께 만들고 있습니다.
               </span>
-          </h2>
+          </div>
           <div className={style.teacherList}></div>
-        </div>
-
-        <div className={style.footer}>
-          <div className={style.footerImage}></div>
         </div>
 
       </div>

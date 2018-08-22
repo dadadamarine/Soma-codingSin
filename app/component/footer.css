@@ -1,3 +1,46 @@
+.footerNav{
+    width:100%;
+    display: flex;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #ebebeb;
+    background-color: #f3f3f3;
+}
+
+.contentWrap{
+    width:1000px;
+    margin:0 auto;
+}
+
+.siteInfo{
+}
+
+ul{
+    margin:auto;
+    list-style:none;
+
+}
+li{
+    float:left;
+    margin: auto;
+    padding: 25px 0 23px;
+}
+.footerNav .siteInfo ul li a{
+    line-height: 1;
+    font-size: 14px;
+    font-family: 'Spoqa Han Sans';
+    color: #1e1e1e;
+}
+
+.footerNav .siteInfo ul li+li a{
+    margin-left:17px;
+    padding-left:17px;
+    border-left:1px solid #dadada;
+}
+
+
+
+
+
 .footerWrapper{
     bottom:0;
     width:100%; 
@@ -10,12 +53,12 @@
     margin: 0 auto;
     text-align: center;
     font-weight: 600;
-    height:60px;  
+    height:80px;  
     width:70%;
-    margin-top:20px;
 }
 
 .footer p{
+    margin-top:10px;
     display: block !important;
     height: 20px;
 }

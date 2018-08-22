@@ -29,7 +29,7 @@ export default class header extends Component {
         return (
             <div className={style.headerWrapper}>
                 <div className={style.headerFst}>
-                  <a className={style.logo1} ></a>
+                  <a className={style.logo1} onClick={this.goMain}></a>
                     <div className={style.headerMenuBar}>
                         <div className={style.headerMenu} onClick={this.goLogin}> 
                             { this.state.isLogin ? <Link to="#" onClick={this.handleLogout}>로그아웃</Link> : <Link to="/login">로그인</Link> }
