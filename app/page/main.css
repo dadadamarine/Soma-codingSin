@@ -22,6 +22,10 @@
     border-left: none;
 }
 
+.menu:hover{
+    padding-bottom: 5px;
+    transition-duration: 1s;
+}
 .menu{
     cursor: pointer;
     margin-top: auto;

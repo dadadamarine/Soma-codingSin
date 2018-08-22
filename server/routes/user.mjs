@@ -33,7 +33,11 @@ router.post('/login', function(req, res){
                 if(doc[0]){
                     if(Number(doc[0].active)==0) res.send("active");
                     else {
-                        req.session.user_id=doc[0].name;
+                        req.session.type=doc[0].type;
+                        req.session.id=doc[0].id;
+                        req.session.name=doc[0].name;
+                        req.session.email=doc[0].email;
+                        req.session.phone=doc[0].phone;
                         res.cookie("user", doc[0].name);
                         res.send("ok");
                     }
@@ -64,11 +68,11 @@ router.post('/signup', function(req, res){
         if(error) console.log(error);
         else {
             const db = client.db(dbName);
-            db.collection(dbCollection).find({$or:[{id:u_id},{name:u_name}]}).count(function(err, doc){
+            db.collection(dbCollection).find({$or:[{id:u_id},{email:u_email}]}).count(function(err, doc){
                 if(err) console.log(err);
                 if(Number(doc)==0){
                     let code = String(CryptoJS.SHA256(String(Date.now())));
-                    db.collection(dbCollection).insert({id:u_id,pw:u_pw,name:u_name,email:u_email,u_phone,u_type,active:0,active_code:code}, function(err, doc){
+                    db.collection(dbCollection).insert({id:u_id,pw:u_pw,name:u_name,email:u_email,phone:u_phone,type:u_type,active:0,active_code:code}, function(err, doc){
                         if(err) console.log(err);
                         let mailOptions = {  
                             from: mailID,

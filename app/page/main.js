@@ -16,9 +16,9 @@ export default class main extends Component {
       <div>
         <div className={style.navWrapper}>
           <div className={style.nav}>
-              <div className={style.menu} onClick={this.test}>수강신청</div>
+              <div className={style.menu} onClick={this.test}>과외신청</div>
               <div className={style.menu}>코딩의 신</div>
-              <div className={style.menu}>강사 소개</div>
+              <div className={style.menu}>강사소개</div>
               <div className={style.menu}>콘텐츠</div>
               <div className={style.menu}>커뮤니티</div>
               <div className={style.menu}>내 강의실</div>
