@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import style from './sub_header.css';
 
 export default class sub_header extends Component {
@@ -9,7 +10,7 @@ export default class sub_header extends Component {
         return (
         <div className={style.navWrapper}>
             <div className={style.nav}>
-                <div className={style.menu} onClick={this.test}>과외신청</div>
+                <div className={style.menu}><Link to="/lecture">과외신청</Link></div>
                 <div className={style.menu}>코딩의 신</div>
                 <div className={style.menu}>강사소개</div>
                 <div className={style.menu}>콘텐츠</div>

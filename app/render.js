@@ -7,12 +7,13 @@ import './render.css';
 // import SignUp from './user/signup';
 import Main from './page/main';
 import NoMatch from './error/nomatch';
-import Header from './component/header'
-import Footer from './component/footer'
-import Room from './page/room'
-import Login from './page/login'
-import SingUp from './page/signup'
-import Active from './page/active'
+import Header from './component/header';
+import Footer from './component/footer';
+import Room from './page/room';
+import Login from './page/login';
+import SingUp from './page/signup';
+import Active from './page/active';
+import Lecture from './page/lecture';
 
 render(<Router>
     <div>
@@ -23,6 +24,7 @@ render(<Router>
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SingUp} />
             <Route path="/active/:code" component={Active} />
+            <Route path="/lecture" component={Lecture} />
             <Route missing component={NoMatch} />
         </Switch>
         <Footer/>
