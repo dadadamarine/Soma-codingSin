@@ -10,7 +10,7 @@ export default class lecture extends Component {
         super(props);
         this.state = {isLogin:cookie.getCookie('user')};
 
-        service.type().then(function (res) {
+        service.getType().then(function (res) {
             console.log(res);
         }).catch(function (error) {
             alert('error massage : '+error);
