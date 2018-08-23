@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import * as service from '../request/login';
+import * as service from '../request/lecture';
 import { Segment, Input, Button, Divider } from 'semantic-ui-react';
 import style from './lecture.css';
 import * as cookie from '../util/cookie';
