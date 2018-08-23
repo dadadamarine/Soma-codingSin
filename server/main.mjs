@@ -92,7 +92,7 @@ io.on('connection', function (socket) {
             rooms[roomId] = {};
             rooms[roomId][socket.id] = userId;
         }
-        thisRoom = rooms[roomId];
+        var thisRoom = rooms[roomId];
         console.log('thisRoom', thisRoom);
 
         // 유저 정보 추가
