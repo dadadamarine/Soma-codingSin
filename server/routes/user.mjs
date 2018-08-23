@@ -33,11 +33,11 @@ router.post('/login', function(req, res){
                 if(doc[0]){
                     if(Number(doc[0].active)==0) res.send("active");
                     else {
-                        req.session.type=doc[0].type;
-                        req.session.id=doc[0].id;
-                        req.session.name=doc[0].name;
-                        req.session.email=doc[0].email;
-                        req.session.phone=doc[0].phone;
+                        req.session.user_type=doc[0].type;
+                        req.session.user_id=doc[0].id;
+                        req.session.user_name=doc[0].name;
+                        req.session.user_email=doc[0].email;
+                        req.session.user_phone=doc[0].phone;
                         res.cookie("user", doc[0].name);
                         res.send("ok");
                     }

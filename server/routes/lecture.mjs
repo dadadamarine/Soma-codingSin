@@ -10,7 +10,7 @@ const dbName = process.env.DB_USER;
 const dbCollection = process.env.DB_COLLECTION_LECTURE;
 
 router.post('/type', function(req, res){
-    res.send(req.session.type);
+    res.send(req.session.user_type);
 });
 
 router.post('/list', function(req, res){
@@ -28,12 +28,12 @@ router.post('/list', function(req, res){
 });
 
 router.post('/register', function (req, res) {
-    if(req.session.type!="강사") res.send("fail");
+    if(req.session.user_type!="강사") res.send("fail");
     else{
-        const id=req.session.id;
-        const name=req.session.name;
-        const email=req.session.email;
-        const phone=req.session.phone;
+        const id=req.session.user_id;
+        const name=req.session.user_name;
+        const email=req.session.user_email;
+        const phone=req.session.user_phone;
         const title = String(req.body.title);
         const description = String(req.body.description);
         const schedule = String(req.body.schedule);
