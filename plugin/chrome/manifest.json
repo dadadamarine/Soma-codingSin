@@ -1,0 +1,35 @@
+{
+  "name": "WebRTC for codingsin.com",
+  "description": "ScreenShare extension for WebRTC codingsin",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "minimum_chrome_version": "34",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "desktopCapture",
+    "<all_urls>",
+    "*://localhost:*/*",
+    "*://codingsin.com:*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "js": [ "content.js" ],
+    "matches": [
+      "*://codingsin.com:*/*",
+      "*://localhost:*/*"
+    ]
+  }],
+  "web_accessible_resources": [
+    "*.png"
+  ],
+  "externally_connectable": {
+	  "matches": [
+      "*://codingsin.com:*/*",
+      "*://localhost:*/*"
+  	]
+	}
+}
