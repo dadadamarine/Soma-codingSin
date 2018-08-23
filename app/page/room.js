@@ -9,7 +9,7 @@ export default class room extends Component {
   constructor(props) {
     super();
     this.state = {
-        endpoint: "https://homecode.xyz" 
+        endpoint: "https://codingsin.com" 
     }
 
     this.camClick = this.camClick.bind(this);
@@ -257,7 +257,7 @@ export default class room extends Component {
      */
     function initialize() {
       setRoomToken();
-      roomId = location.href.replace("https://homecode.xyz/room.html", '');
+      roomId = location.href.replace("https://codingsin.com/room", '');
   
       $('#start').click(function() {
         getUserMedia();
