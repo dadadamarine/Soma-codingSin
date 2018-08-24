@@ -43,7 +43,7 @@ export default class lectureReg extends Component {
             <div className={style.wrapper}>
                 <div className={style.lectureBox}>
                     <Segment padded>
-                        <Input type="text" placeholder='강의제목' value={this.state.title} onChange={this.inputID} />
+                        <Input type="text" placeholder='강의제목' value={this.state.title} onChange={this.inputTITLE} />
                         <br /><br />
                         <textarea className={style.despBox} placeholder='강의설명' value={this.state.description} onChange={this.inputDESCRIPTION} />
                         <br /><br />
