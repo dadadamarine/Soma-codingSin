@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as service from '../request/lecture';
-import { Segment, Input, Button, Divider, Dropdown } from 'semantic-ui-react';
+import { Segment, Input, Button, Divider } from 'semantic-ui-react';
 import style from './lectureReg.css';
 
 export default class lectureReg extends Component {
@@ -12,6 +12,7 @@ export default class lectureReg extends Component {
         this.inputDESCRIPTION = this.inputDESCRIPTION.bind(this);
         this.inputSCHEDULE = this.inputSCHEDULE.bind(this);
         this.inputPRICE = this.inputPRICE.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     inputTITLE(event) {
         this.setState({ title: event.target.value });
