@@ -40,6 +40,9 @@
     height: 100%;
     margin: 0 auto;
 }
+.lectureWrapper a{
+    color: black;
+ }
 .lectureBox{
     width: 300px;
     height: 300px;

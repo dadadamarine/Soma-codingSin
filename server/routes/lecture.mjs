@@ -28,6 +28,36 @@ router.post('/list', function(req, res){
     });
 });
 
+router.post('/myList', function(req, res){
+    const id=req.session.user_id;
+    if(req.session.user_type=="강사"){
+        MongoClient.connect(dbHost, function(error, client) {
+            if(error) console.log(error);
+            else {
+                const db = client.db(dbName);
+                db.collection(dbCollection).find({id:id}).toArray(function(err, doc){
+                    if(err) console.log(err);
+                    res.send(doc);
+                });
+                client.close();
+            }
+        });
+    }
+    else{
+        MongoClient.connect(dbHost, function(error, client) {
+            if(error) console.log(error);
+            else {
+                const db = client.db(dbName);
+                db.collection(dbCollection).find({match:id}).toArray(function(err, doc){
+                    if(err) console.log(err);
+                    res.send(doc);
+                });
+                client.close();
+            }
+        });
+    }
+});
+
 router.post('/lecture', function(req, res){
     const id=String(req.body._id);
     MongoClient.connect(dbHost, function(error, client) {

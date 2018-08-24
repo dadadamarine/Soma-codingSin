@@ -12,6 +12,9 @@ export function lectureRegister(u_title, u_description, u_schedule, u_price) {
 export function lectureList() {
     return axios.post('/reqLecture/list');
 }
+export function myLectureList() {
+    return axios.post('/reqLecture/myList');
+}
 
 export function lecture(id) {
     return axios.post('/reqLecture/lecture', {
