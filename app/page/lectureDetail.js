@@ -43,7 +43,7 @@ export default class lectureDtail extends Component {
                 <div className={style.lectureWrapper}>
                     <div className={style.title}>강사</div>
                     <div className={style.profile}>
-                        <img src="../resources/img/default.png" />
+                        <img src="../resources/img/profile.png" />
                         <div className={style.profileTextWrapper}>
                             <div className={style.profileText}>전승훈</div>
                             <div className={style.profileText}>ss9305@hanmail.net</div>
