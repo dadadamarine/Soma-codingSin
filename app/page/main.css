@@ -27,7 +27,6 @@
 
 
 .menuIcon{
-    cursor: pointer;
     width:44px;
     height: 46px;
     margin-right: 14px;
@@ -50,7 +49,6 @@
     
 }
 .menuRoom a{
-    cursor: pointer;
     display: block;
     margin-top:2px;
     width: 128px;
