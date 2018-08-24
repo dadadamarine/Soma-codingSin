@@ -24,15 +24,15 @@ export default class main extends Component {
           <Carousel className={style.rb} showThumbs={false} autoPlay={true}>
                 <div>
                     <img src={require('../resources/img/rb1.png')} />
-                    <p className="legend">Legend 1</p>
+                    <p className="legend">코딩교육, 코딩의 신이 함께합니다.</p>
                 </div>
                 <div>
                     <img src={require('../resources/img/rb2.png')} />
-                    <p className="legend">Legend 2</p>
+                    <p className="legend">코딩교육, 더 이상 미룰순 없습니다.</p>
                 </div>
                 <div>
                     <img src={require('../resources/img/rb3.png')} />
-                    <p className="legend">Legend 3</p>
+                    <p className="legend">코딩의 신, 지금 바로 만나보세요!</p>
                 </div>
             </Carousel>
             <br/><br/><br/>
