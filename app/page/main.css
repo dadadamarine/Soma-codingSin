@@ -16,13 +16,15 @@
     background: url("../resources/img/banner1.png") no-repeat;
     background-size: cover;
 }
-
-.banner2{
-    margin: 0 auto;
+.bannerWrapper2{
+    width: 100%;
+    text-align: center;
+}
+.banner{
     width:70%;
-    height: 300px;
-    background: url("../resources/img/banner2.png") no-repeat;
-    background-size: cover;
+    height: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .margin{

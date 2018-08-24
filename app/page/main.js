@@ -18,8 +18,7 @@ export default class main extends Component {
       <div>
         <Header />
         <div className={style.bannerWrapper}>
-          <div className={style.banner1}>
-          </div>
+          <div className={style.banner1}></div>
           <div className={style.margin}></div>
           <Carousel className={style.rb} showThumbs={false} autoPlay={true}>
                 <div>
@@ -35,6 +34,12 @@ export default class main extends Component {
                     <p className="legend">코딩의 신, 지금 바로 만나보세요!</p>
                 </div>
             </Carousel>
+            <div className={style.bannerWrapper2}>
+            <img className={style.banner} src={require('../resources/img/banner2.png')} />
+            <div className={style.margin}></div>
+            <img className={style.banner} src={require('../resources/img/banner3.png')} />
+            <div className={style.margin}></div>
+            </div>
             <br/><br/><br/>
         </div>
       </div>
