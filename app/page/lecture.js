@@ -17,6 +17,11 @@ export default class lecture extends Component {
         });
     }
     componentDidMount(){
+        service.lectureList().then(function (res) {
+            console.log(res.data);
+        }).catch(function (error) {
+            alert('error massage : '+error);
+        });
     }
     render() {
         return (
