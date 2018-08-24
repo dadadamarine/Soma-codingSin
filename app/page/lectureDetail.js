@@ -8,14 +8,14 @@ import * as cookie from '../util/cookie';
 export default class lectureDtail extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLogin:cookie.getCookie('user'),id:location.href.split("lecture/")[1], type:'', lecture:[]};
+        this.state = {isLogin:cookie.getCookie('user'),id:location.href.split("lecture/")[1].toString(), type:'', lecture:[]};
         const curosr = this;
         service.getType().then(function (res) {
             curosr.setState({ type: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
         });
-        service.lecture({id:this.state.id}).then(function (res) {
+        service.lecture(this.state.id).then(function (res) {
             curosr.setState({ lecture: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
