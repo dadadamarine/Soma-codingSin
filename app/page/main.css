@@ -28,3 +28,8 @@
 .margin{
     margin-top: 10px;
 }
+
+.rb{
+    margin: 0 auto !important;
+    width: 70%;
+}
