@@ -8,6 +8,7 @@ const MongoClient = mongodb.MongoClient;
 const dbHost = process.env.DB_HOST;
 const dbName = process.env.DB_USER;
 const dbCollection = process.env.DB_COLLECTION_LECTURE;
+const objectId = mongodb.ObjectID;
 
 router.post('/type', function(req, res){
     res.send(req.session.user_type);
@@ -23,6 +24,40 @@ router.post('/list', function(req, res){
                 res.send(doc);
             });
             client.close();
+        }
+    });
+});
+
+router.post('/lecture', function(req, res){
+    const id=String(req.body._id);
+    MongoClient.connect(dbHost, function(error, client) {
+        if(error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).find({_id:objectId(id)}).toArray(function(err, doc){
+                if(err) console.log(err);
+                res.send(doc);
+            });
+            client.close();
+        }
+    });
+});
+
+router.post('/lectureRequest', function(req, res){
+    const id=String(req.body._id);
+    const user=req.session.user_id;
+    MongoClient.connect(dbHost, function(error, client) {
+        if(error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).update({_id:objectId(id)}, {$set:{match:user}}, function(err, doc){
+                if(err) console.log(err);
+                if(doc.result.n==1)
+                    if(doc.result.nModified==1) 
+                        res.send("ok");
+                else res.send("fail");
+                client.close();
+            });
         }
     });
 });

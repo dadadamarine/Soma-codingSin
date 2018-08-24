@@ -13,6 +13,7 @@ import SingUp from './page/signup';
 import Active from './page/active';
 import Lecture from './page/lecture';
 import LectureReg from './page/lectureReg';
+import LectureDetail from './page/lectureDetail';
 
 render(<Router>
     <div>
@@ -23,8 +24,9 @@ render(<Router>
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SingUp} />
             <Route path="/active/:code" component={Active} />
-            <Route path="/lecture" component={Lecture} />
+            <Route exact path="/lecture" component={Lecture} />
             <Route path="/lectureReg" component={LectureReg} />
+            <Route path="/lecture/:id" component={LectureDetail} />
             <Route missing component={NoMatch} />
         </Switch>
         <Footer/>
