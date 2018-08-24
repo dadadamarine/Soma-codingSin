@@ -1,0 +1,48 @@
+.wrapper{
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    position:relative;
+    z-index: 1;
+}
+.wrapper:after{
+    z-index: -1;
+    background-repeat:no-repeat;
+    background-image: url("../resources/img/main.png");
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    content:"";
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter:alpha(opacity=30);
+}
+
+.lectureBox{
+    max-width:500px;
+    text-align: center;
+    align-self: center !important;
+}
+
+.lectureBox input{
+    width:450px;
+}
+
+.despBox{
+    width: 450px;
+    height: 200px;
+    border: 1px solid rgba(34,36,38,.15);
+    padding: .67857143em 1em;
+    border-radius: .28571429rem;
+    color:rgba(0,0,0,.87);
+    resize: none;
+}
+
+.despBox::placeholder {
+    color: rgba(191,191,191,.87);
+  }

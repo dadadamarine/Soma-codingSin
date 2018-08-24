@@ -20,6 +20,7 @@
     transition-duration: 1s;
 }
 .menu{
+    transition-duration: 1s;
     cursor: pointer;
     margin-top: auto;
     margin-left: 15px;

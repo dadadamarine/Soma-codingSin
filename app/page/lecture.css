@@ -1,0 +1,30 @@
+.register{
+    margin: 0px;
+    position: fixed;
+    left: 90%;
+    top: 80%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.textWrapper:hover{
+    background: green;
+    font-size: 20px;
+    transition-duration: 1s;
+}
+
+.textWrapper{
+    transition-duration: 1s;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 15px;
+    position: relative;
+    background: #3d4045 !important;
+    text-align: center;
+    display:table-cell; text-align:center; vertical-align:middle;
+}
+
+.textWrapper a{
+    color: white !important;
+}

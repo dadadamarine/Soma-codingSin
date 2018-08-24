@@ -69,12 +69,9 @@ app.get('/rooms', function (req, res) {
     res.send(rooms);
 });
 
-/**
-* SOCKET
-*/
-var rooms = {};
-var roomId = null;
-var socketIds = {};
+let rooms = {};
+let roomId = null;
+let socketIds = {};
 io.on('connection', function (socket) {
     // 룸접속
     socket.on('joinRoom', function (roomName, userId) {
@@ -92,7 +89,7 @@ io.on('connection', function (socket) {
             rooms[roomId] = {};
             rooms[roomId][socket.id] = userId;
         }
-        var thisRoom = rooms[roomId];
+        let thisRoom = rooms[roomId];
         console.log('thisRoom', thisRoom);
 
         // 유저 정보 추가
@@ -110,7 +107,7 @@ io.on('connection', function (socket) {
             socket.broadcast.to(data.roomId).emit('message', data);
         } else {
             // for target user
-            var targetSocketId = socketIds[data.to];
+            let targetSocketId = socketIds[data.to];
             if (targetSocketId) {
                 io.to(targetSocketId).emit('message', data);
             }
@@ -119,7 +116,7 @@ io.on('connection', function (socket) {
     // socket disconnect
     socket.on('disconnect', function () {
         console.log('a user disconnected', socket.id);
-        var roomId = findRoomBySocketId(socket.id);
+        let roomId = findRoomBySocketId(socket.id);
         if (roomId) {
             socket.broadcast.to(roomId).emit('leaveRoom', rooms[roomId][socket.id]); // 자신 제외 룸안의 유저ID 전달
             delete rooms[roomId][socket.id]; // 해당 유저 제거
