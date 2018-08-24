@@ -43,7 +43,7 @@ router.post('/register', function (req, res) {
             if (error) console.log(error);
             else {
                 const db = client.db(dbName);
-                db.collection(dbCollection).insert({ date: Date.now(), id:id, name: name, email: email, title: title, description: description, schedule:schedule, price:price, match:null, room:null}, function (err, doc) {
+                db.collection(dbCollection).insert({ date: Date.now(), id:id, name: name, email: email, title: title, description: description, schedule:schedule, price:price, match:null}, function (err, doc) {
                     if (err) {
                         console.log(err);
                         res.send("fail");
