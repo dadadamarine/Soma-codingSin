@@ -28,3 +28,59 @@
 .textWrapper a{
     color: white !important;
 }
+
+.wrapper{
+    height: -webkit-fill-available;
+}
+.lectureWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.lectureBox{
+    width: 300px;
+    height: 300px;
+    margin: 16px;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px #999;
+    position: relative;
+}
+
+.lectureBox img{
+    width: 298px;
+    height: 150px;
+    border-radius: 5px;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+}
+
+.lectureTitle{
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 600!important;
+    color: #353535;
+}
+.lectureName{
+    position: absolute;
+    top: 230px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
+.lectureSchedule{
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
+.lecturePrice{
+    position: absolute;
+    top: 270px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
