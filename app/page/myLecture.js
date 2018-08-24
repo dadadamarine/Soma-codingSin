@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import * as service from '../request/lecture';
 import { Segment, Input, Button, Divider } from 'semantic-ui-react';
-import style from './lecture';
+import style from './lecture.css';
 import * as cookie from '../util/cookie';
 
 export default class myLecture extends Component {

@@ -40,23 +40,26 @@
 .nav{
     display: flex;
     flex-direction: row;
-    background: #e2e2e2e2;
+    background: #3d4045;
+    color:white;
 }
 
 .cam, .setting{
     padding: 10px;
     cursor: pointer;
+    transition-duration: 1s;
 }
 .start{
     padding: 10px;
     cursor: pointer;
     margin-left: auto;
-
-    background: #9b9a9ade;
+    color:white;
+    background: #3d4045;
 }
 .cam:hover, .setting:hover{
     background: white;
-    transition-duration: 2s;
+    font-size: 15px;
+    transition-duration: 1s;
 }
 .viewContainer{
     width: 100%;
