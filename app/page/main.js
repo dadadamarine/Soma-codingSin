@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Carousel } from 'react-responsive-carousel';
 import style from './main.css';
-import { Fade } from 'react-slideshow-image';
-//npm install react-slideshow-image
+import Header from '../component/sub_header';
 
 export default class main extends Component {
   constructor(props) {
@@ -20,26 +20,8 @@ export default class main extends Component {
 
     return (
       <div>
-
-        <div className={style.navWrapper}>
-          <div className={style.nav}>
-              <div className={style.menuIcon}  onClick={this.test}></div>
-              <div className={style.menu} onClick={this.test}>수강 안내</div>
-              <div className={style.menu} onClick={this.test}>수강신청</div>
-              <div className={style.menu} onClick={this.test}>강사 소개</div>
-              <div className={style.menu} onClick={this.test}>콘텐츠 창고</div>
-              <div className={style.menu} onClick={this.test}>커뮤니티</div>
-              <div className={style.menu} onClick={this.test}>레벨테스트 </div>
-              <div className={style.menuRoom}  onClick={this.test}>
-                <a>내 강의실</a>
-              </div>
-          </div>
-
-        </div>
-
+        <Header />
         <div className={style.contentWrapper1}>
-
-
 
             <div className={style.bannerWrapper}>
               <div className={style.banner1}></div>
@@ -47,10 +29,21 @@ export default class main extends Component {
           
             <div className={style.margin}></div>
 
+            <Carousel className={style.rb} showThumbs={false} autoPlay={true}>
+                <div>
+                    <img src={require('../resources/img/rb1.png')} />
+                    <p className="legend">코딩교육, 코딩의 신이 함께합니다.</p>
+                </div>
+                <div>
+                    <img src={require('../resources/img/rb2.png')} />
+                    <p className="legend">코딩교육, 더 이상 미룰순 없습니다.</p>
+                </div>
+                <div>
+                    <img src={require('../resources/img/rb3.png')} />
+                    <p className="legend">코딩의 신, 지금 바로 만나보세요!</p>
+                </div>
+            </Carousel>
             
-              <div className={style.bannerWrapper}>
-                <div className={style.banner2}></div>
-        </div>
             
           <div className={style.contentWrapper2}>
             <div className={style.margin2}></div>
@@ -79,7 +72,14 @@ export default class main extends Component {
           
           <div className={style.margin2}></div>
 
-
+            <div className={style.bannerWrapper2}>
+            <img className={style.banner} src={require('../resources/img/banner2.png')} />
+            <div className={style.margin}></div>
+            <img className={style.banner} src={require('../resources/img/banner3.png')} />
+            <div className={style.margin}></div>
+            </div>
+            <br/><br/><br/>
+            
           <div className={style.section1}>
             <div className={style.lectureString}> 
                 <p>

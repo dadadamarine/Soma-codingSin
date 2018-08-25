@@ -11,8 +11,6 @@
     margin:0 auto;
 }
 
-.siteInfo{
-}
 
 ul{
     margin:auto;
@@ -44,12 +42,12 @@ li{
 .footerWrapper{
     bottom:0;
     width:100%; 
-    background:#ccc;
+    background:#3d4045;
 }
 .footer{
     display: flex;
     flex-direction: column;
-    color: black;
+    color: white;
     margin: 0 auto;
     text-align: center;
     font-weight: 600;

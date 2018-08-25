@@ -1,4 +1,3 @@
-
 .wrapper{
     justify-content: center;
     display: flex;
@@ -24,13 +23,26 @@
     filter:alpha(opacity=30);
 }
 
-.loginBox{
+.lectureBox{
     max-width:500px;
     text-align: center;
     align-self: center !important;
 }
 
-.loginBox input{
+.lectureBox input{
     width:450px;
-    margin-top: 15px !important;
 }
+
+.despBox{
+    width: 450px;
+    height: 200px;
+    border: 1px solid rgba(34,36,38,.15);
+    padding: .67857143em 1em;
+    border-radius: .28571429rem;
+    color:rgba(0,0,0,.87);
+    resize: none;
+}
+
+.despBox::placeholder {
+    color: rgba(191,191,191,.87);
+  }
