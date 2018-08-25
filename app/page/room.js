@@ -70,7 +70,7 @@ export default class room extends Component {
     // by default, socket.io server is assumed to be deployed on your own URL
     // comment-out below line if you do not have your own socket.io server
     //connection.socketURL = 'http://localhost:8888/'//'https://rtcmulticonnection.herokuapp.com:443/';
-    connection.socketURL ='https://www.codingsin.com:443/';
+    connection.socketURL ='https://52.78.116.75:9001/';
     connection.session = {
         audio: true,
         video: true
