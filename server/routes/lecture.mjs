@@ -43,7 +43,7 @@ router.post('/myList', function(req, res){
             }
         });
     }
-    else{
+    else if(req.session.user_type=="학생"){
         MongoClient.connect(dbHost, function(error, client) {
             if(error) console.log(error);
             else {
@@ -56,6 +56,7 @@ router.post('/myList', function(req, res){
             }
         });
     }
+    else res.send("none");
 });
 
 router.post('/lecture', function(req, res){
