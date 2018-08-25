@@ -15,28 +15,14 @@ export default class myLecture extends Component {
         }).catch(function (error) {
             alert('error massage : '+error);
         });
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
-    }
-    handleSubmit(event) {
-        const curosr =this;
-        service.lectureRequest(this.state.id).then(function (res) {
-            if(String(res.data)=="ok"){
-                alert("과외신청에 성공했습니다!");
-                curosr.props.history.push('/');
-            }
-            else alert("과외신청에 실패했습니다!");
-        }).catch(function (error) {
-            alert('error massage : '+error);
-        });
-        event.preventDefault();
     }
     render() {
         return (
             <div className={style.wrapper}>
                 <div className={style.lectureWrapper}>
-                {this.state.list.map((lecture, i) => {
+                {list!="none"?this.state.list.map((lecture, i) => {
                     let url = "/room#"+lecture._id;
                         return (<Link to={url}><div className={style.lectureBox} key={i}>
                                     <img src="../resources/img/main.png"/>
@@ -45,7 +31,7 @@ export default class myLecture extends Component {
                                     <div className={style.lectureSchedule}>{lecture.schedule}</div>
                                     <div className={style.lecturePrice}>{lecture.price}</div>
                                  </div></Link>);
-                })}
+                }):null}
                 </div>
             </div>
         );
