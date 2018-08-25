@@ -11,6 +11,7 @@ export default class myLecture extends Component {
         this.state = {isLogin:cookie.getCookie('user'), list:null};
         const curosr = this;
         service.myLectureList().then(function (res) {
+            console.log(res.data);
             curosr.setState({ list: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
