@@ -8,7 +8,7 @@ import * as cookie from '../util/cookie';
 export default class myLecture extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLogin:cookie.getCookie('user'), list:[]};
+        this.state = {isLogin:cookie.getCookie('user'), list:null};
         const curosr = this;
         service.myLectureList().then(function (res) {
             curosr.setState({ list: res.data });
