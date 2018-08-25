@@ -30,31 +30,34 @@ router.post('/list', function(req, res){
 
 router.post('/myList', function(req, res){
     const id=req.session.user_id;
-    if(req.session.user_type=="강사"){
-        MongoClient.connect(dbHost, function(error, client) {
-            if(error) console.log(error);
-            else {
-                const db = client.db(dbName);
-                db.collection(dbCollection).find({id:id}).toArray(function(err, doc){
-                    if(err) console.log(err);
-                    res.send(doc);
-                });
-                client.close();
-            }
-        });
-    }
-    else if(req.session.user_type=="학생"){
-        MongoClient.connect(dbHost, function(error, client) {
-            if(error) console.log(error);
-            else {
-                const db = client.db(dbName);
-                db.collection(dbCollection).find({match:id}).toArray(function(err, doc){
-                    if(err) console.log(err);
-                    res.send(doc);
-                });
-                client.close();
-            }
-        });
+    const type = req.session.user_type;
+    if ( typeof type !== 'undefined' && type ){
+        if(type=="강사"){
+            MongoClient.connect(dbHost, function(error, client) {
+                if(error) console.log(error);
+                else {
+                    const db = client.db(dbName);
+                    db.collection(dbCollection).find({id:id}).toArray(function(err, doc){
+                        if(err) console.log(err);
+                        res.send(doc);
+                    });
+                    client.close();
+                }
+            });
+        }
+        else if(type=="학생"){
+            MongoClient.connect(dbHost, function(error, client) {
+                if(error) console.log(error);
+                else {
+                    const db = client.db(dbName);
+                    db.collection(dbCollection).find({match:id}).toArray(function(err, doc){
+                        if(err) console.log(err);
+                        res.send(doc);
+                    });
+                    client.close();
+                }
+            });
+        }
     }
     else res.send("none");
 });
