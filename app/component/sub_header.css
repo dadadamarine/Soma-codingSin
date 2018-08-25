@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+.navWrapper{
+    width:100%;
+    height:46px;
+    border-bottom: 1px solid  #eee;
+}
+.nav{
+    font-family: "Malgun Gothic","Hiragino Sans GB","Microsoft Yahei","Apple Gothic","Apple SD Gothic Neo",Sans-serif;
+    letter-spacing: -1px;
+    font-size: 15px;
+    color:#333;
+    display: flex;
+    width:1000px;
+    height: 46px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.menuIcon{
+    cursor: pointer;
+    width:44px;
+    height: 46px;
+    margin-right: 14px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    margin-left: 0px;
+    background : url("../resources/img/menu_icon.png") no-repeat center 50%;
+}
+
+.menu{
+    cursor: pointer;
+    margin:auto;
+    text-align: center;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+
+.menu:hover{
+    padding-bottom: 5px;
+    transition-duration: 1s;
+}
+
+.menuRoom{
+    width:128px;
+    margin-right:0px;
+    height: 46px;
+    padding: 0;
+    
+}
+.menuRoom a{
+    cursor: pointer;
+    display: block;
+    margin-top:2px;
+    width: 128px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #e5b604;
+    background: #ffcb05;
+}
+

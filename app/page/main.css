@@ -1,15 +1,8 @@
-.navWrapper{
-    width:100%;
-}
-.nav{
-    display: flex;
-    width:70%;
-    height: 40px;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: center;
-}
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+
 .headerMenu{
+    
     cursor: pointer;
     margin-top: auto;
     margin-left: 5px;
@@ -17,39 +10,136 @@
     border-left: 1px solid rgb(187, 187, 187);
 }
 
-.menu:first-child{
 
-    border-left: none;
+.contentWrapper1{
+    max-width: 1919px;
+    width: 100%;
+    margin:auto;
 }
 
-.menu{
-    cursor: pointer;
-    margin-top: auto;
-    margin-left: 15px;
-    padding-left: 15px;
-    border-left: 1px solid rgb(187, 187, 187);
-    font-size: 25px;
+.contentWrapper2{
+    width: 1000px;
+    margin : auto;
 }
+
+.section1{
+    margin-top: 40px;
+    width: 100%;
+    height:100%;
+}
+
 .bannerWrapper{
-    margin-top: 15px;
+    margin-left:auto;
+    margin-right:auto;
     width:100%;
+    height:100%;
 }
 .banner1{
     margin: 0 auto;
-    width:70%;
-    height: 100px;
-    background: url("../resources/img/banner1.png") no-repeat;
+    width:100%;
+    height: 110px;
+    background: url("../resources/img/main_banner1.png") no-repeat;
     background-size: cover;
 }
 
 .banner2{
-    margin: 0 auto;
-    width:70%;
-    height: 300px;
-    background: url("../resources/img/banner2.png") no-repeat;
+    width:100%;
+    height:380px;
+    background: url("../resources/img/main_banner2.png") no-repeat;
+    background-size:cover;
+}
+
+.lectureString{
+    font-family: 'noto_sans', sans-serif;
+    font-size:24px;
+    text-align: center;
+}
+
+.lectureList{
+    width:100%;
+    height:500px;
+    list-style: none;
+}
+
+.lecture1{
+    float: left;
+    margin : 0 0 11px 12px;
+    width: 170px;
+    height: 207px;
+    background: url("../resources/img/lecture1.png") no-repeat;
     background-size: cover;
+}
+
+.lecture2{
+    float: left;
+    margin : 0 0 11px 12px;
+    width: 170px;
+    height: 207px;
+    background: url("../resources/img/lecture2.png") no-repeat;
+    background-size: cover;
+}
+
+.lecture3{
+    float: left;
+    margin : 0 0 11px 12px;
+    width: 170px;
+    height: 207px;
+    background: url("../resources/img/lecture3.png") no-repeat;
+    background-size: cover;
+}
+
+.bannerWrapper2{
+    width: 100%;
+    text-align: center;
+}
+
+.banner{
+    width:70%;
+    height: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .margin{
     margin-top: 10px;
+}
+.margin2{
+    margin-top: 100px;
+}
+
+.reviewBanner{
+    margin: auto;
+    width: 100%;
+    height: 550px;
+    background: url("../resources/img/main_body_fourth.png") no-repeat;
+    background-size: cover;
+}
+
+.teacherList{
+    margin: auto;
+    width: 100%;
+    height:300px;
+    background: url("../resources/img/main_body_fifth.png") no-repeat;
+    background-size: cover;
+}
+
+.footer{
+    margin:auto;
+
+    margin-top:100px;
+    width:1080px;
+}
+
+.footerImage{
+    margin: auto;
+    width: 100%;
+    height:200px;
+    background: url("../resources/img/main_body_sixth.png") no-repeat;
+    background-size: cover; 
+}
+
+
+.rb{
+    margin: 0 auto !important;
+    width: 70%;
 }

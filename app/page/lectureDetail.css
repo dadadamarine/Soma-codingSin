@@ -1,0 +1,44 @@
+.wrapper{
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+.title{
+    font-size: 40px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+    margin-bottom: 15px;
+}
+
+.lectureWrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 100%;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.lectureWrapper img {
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(34,36,38,.15);
+}
+.profile{
+    display:flex;
+    flex-direction: row;
+}
+.profileTextWrapper{
+    margin-left: 30px;
+    display:flex;
+    flex-direction: column;
+}
+.profileText{
+    font-size:20px;
+    padding: 10px;
+}
+.lectureText{
+    font-size:25px;
+    padding: 10px;
+    line-height: 2;
+}

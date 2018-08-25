@@ -7,6 +7,7 @@ module.exports = {
     entry: './render.js',
     output: {
         path: __dirname + '/build',
+        publicPath: '/',
         filename: '[name]-[hash].js'
     },
     module: {

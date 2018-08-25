@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as service from '../request/active';
+import style from './login.css';
 
 export default class active extends Component {
     constructor(props) {
@@ -8,9 +9,16 @@ export default class active extends Component {
     }
     componentDidMount(){
         service.active(this.state.code).then(function (res) {
-            
+            if(String(res.data)=="ok"){
+                location.href="/login";
+            }
         }).catch(function (error) {
             alert('error massage : '+error);
         });
+    }
+    render() {
+        return (
+            <div></div>
+        );
     }
 }
