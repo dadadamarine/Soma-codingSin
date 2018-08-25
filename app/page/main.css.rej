@@ -1,0 +1,9 @@
+diff a/app/page/main.css b/app/page/main.css	(rejected hunks)
+@@ -17,7 +17,6 @@
+ -    margin: 0 auto;
+ -}
+  .headerMenu{
+--    
+      cursor: pointer;
+      margin-top: auto;
+      margin-left: 5px;
