@@ -18,7 +18,7 @@ export default class sub_header extends Component {
                 <div className={style.menu}>콘텐츠 창고</div>
                 <div className={style.menu}>커뮤니티</div>
                 <div className={style.menu}>레벨테스트</div>
-                <div className={style.menuRoom}><Link to="/myLecture"><a>내 강의실</a></Link></div>
+                <div className={style.menuRoom}><Link to="/myLecture">내 강의실</Link></div>
               </div>
             </div>
 
