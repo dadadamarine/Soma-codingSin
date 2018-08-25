@@ -9,11 +9,7 @@ export default class room extends Component {
   constructor(props) {
     super();
     this.state = {
-<<<<<<< HEAD
-        endpoint: "https://www.codingsin.com" 
-=======
         endpoint: "https://codingsin.com" 
->>>>>>> origin/master
     }
 
     this.camClick = this.camClick.bind(this);
