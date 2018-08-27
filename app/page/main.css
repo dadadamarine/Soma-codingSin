@@ -1,6 +1,3 @@
-@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-
-
 .headerMenu{
     
     cursor: pointer;
@@ -56,6 +53,8 @@
 }
 
 .lectureList{
+    cursor: pointer;
+    padding: 0;
     width:100%;
     height:500px;
     list-style: none;
@@ -63,27 +62,27 @@
 
 .lecture1{
     float: left;
-    margin : 0 0 11px 12px;
-    width: 170px;
-    height: 207px;
+    margin : 0 8px;
+    width: 150px;
+    height: 182px;
     background: url("../resources/img/lecture1.png") no-repeat;
     background-size: cover;
 }
 
 .lecture2{
     float: left;
-    margin : 0 0 11px 12px;
-    width: 170px;
-    height: 207px;
+    margin : 0 8px;
+    width: 150px;
+    height: 182px;
     background: url("../resources/img/lecture2.png") no-repeat;
     background-size: cover;
 }
 
 .lecture3{
     float: left;
-    margin : 0 0 11px 12px;
-    width: 170px;
-    height: 207px;
+    margin : 0 8px;
+    width: 150px;
+    height: 182px;
     background: url("../resources/img/lecture3.png") no-repeat;
     background-size: cover;
 }
@@ -141,5 +140,5 @@
 
 .rb{
     margin: 0 auto !important;
-    width: 70%;
+    width: 1000px;
 }

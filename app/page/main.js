@@ -67,6 +67,8 @@ export default class main extends Component {
               <li className={style.lecture2} ></li>
               <li className={style.lecture3} ></li>
               <li className={style.lecture1} ></li>
+              <li className={style.lecture2} ></li>
+              <li className={style.lecture3} ></li>
             </ul>
           </div>
           

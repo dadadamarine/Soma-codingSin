@@ -8,10 +8,10 @@ import * as cookie from '../util/cookie';
 export default class myLecture extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLogin:cookie.getCookie('user'), list:null};
+        this.state = {isLogin:cookie.getCookie('user'), list:[]};
         const curosr = this;
         service.myLectureList().then(function (res) {
-            curosr.setState({ list: res.data });
+            if(res.data!="none") curosr.setState({ list: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
         });
@@ -22,7 +22,7 @@ export default class myLecture extends Component {
         return (
             <div className={style.wrapper}>
                 <div className={style.lectureWrapper}>
-                {list!="none"?this.state.list.map((lecture, i) => {
+                {this.state.list!=[]?this.state.list.map((lecture, i) => {
                     let url = "/room#"+lecture._id;
                         return (<Link to={url}><div className={style.lectureBox} key={i}>
                                     <img src="../resources/img/main.png"/>
