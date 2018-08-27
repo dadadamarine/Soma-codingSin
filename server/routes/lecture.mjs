@@ -60,7 +60,10 @@ router.post('/myList', function(req, res){
             });
         }
     }
-    else res.send("none");
+    else {
+        console.log("test");
+        res.send("none");
+    }
 });
 
 router.post('/lecture', function(req, res){
