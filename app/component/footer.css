@@ -12,12 +12,12 @@
 }
 
 
-.siteInfo ul{
+ul{
     margin:auto;
     list-style:none;
 
 }
-.siteInfo li{
+li{
     float:left;
     margin: auto;
     padding: 25px 0 23px;
