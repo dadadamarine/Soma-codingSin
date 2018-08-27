@@ -13,9 +13,7 @@ export default class myLecture extends Component {
     }
     componentDidMount(){
         service.myLectureList().then(function (res) {
-            console.log(res.data);
             if(res.data!="none") curosr.setState({ list: res.data });
-            else console.log("test>>>"+res.data);
         }).catch(function (error) {
             alert('error massage : '+error);
         });
@@ -24,7 +22,7 @@ export default class myLecture extends Component {
         return (
             <div className={style.wrapper}>
                 <div className={style.lectureWrapper}>
-                {list!=[]?this.state.list.map((lecture, i) => {
+                {this.state.list!=[]?this.state.list.map((lecture, i) => {
                     let url = "/room#"+lecture._id;
                         return (<Link to={url}><div className={style.lectureBox} key={i}>
                                     <img src="../resources/img/main.png"/>
