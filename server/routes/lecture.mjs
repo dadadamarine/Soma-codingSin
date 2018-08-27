@@ -31,7 +31,7 @@ router.post('/list', function(req, res){
 router.post('/myList', function(req, res){
     const id=req.session.user_id;
     const type = req.session.user_type;
-    Util.log(type);
+    console.log(type);
     if ( typeof type !== 'undefined' && type ){
         if(type=="강사"){
             MongoClient.connect(dbHost, function(error, client) {
