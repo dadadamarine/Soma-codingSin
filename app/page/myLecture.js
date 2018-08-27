@@ -10,14 +10,15 @@ export default class myLecture extends Component {
         super(props);
         this.state = {isLogin:cookie.getCookie('user'), list:[]};
         const curosr = this;
+    }
+    componentDidMount(){
         service.myLectureList().then(function (res) {
             console.log(res.data);
             if(res.data!="none") curosr.setState({ list: res.data });
+            else console.log("test>>>"+res.data);
         }).catch(function (error) {
             alert('error massage : '+error);
         });
-    }
-    componentDidMount(){
     }
     render() {
         return (
