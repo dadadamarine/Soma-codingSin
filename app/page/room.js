@@ -419,6 +419,15 @@ export default class room extends Component {
 
   render() {
     return (
+      <div>
+        <div className={style.header}>
+          <div className={style.headerGrid}>
+            <div className={style.logo}></div>
+          </div>
+          <div className={style.headerGrid}>
+            <image className={style.onAir}></image>
+          </div>
+        </div>
         <div className={style.mainWrapper}>
             <div className={style.roomWrapper} id="screen-wrap">
                 <video className={style.roomMain} autoPlay controls poster={img} src="#" id="remote-screen"></video>
@@ -437,6 +446,7 @@ export default class room extends Component {
                 </div>
             </div>
         </div>
+      </div>
     );
   }
 }

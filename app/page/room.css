@@ -1,3 +1,40 @@
+.header{
+    height: 50px;
+    border-bottom: 1px solid #e6e5e7;
+    box-shadow: 1px 1px 5px  #888888;
+}
+.headerGrid{
+    height: 50px;
+    float:left;
+}
+
+.logo{
+    width: 100px;
+    height: 50px;
+    background:url("../resources/img/logo.png") no-repeat;
+    background-size:contain;
+    margin-left:80px;
+}
+.onAir{
+    width:100px;
+    height:50px;
+    margin:10px 0 0 20px;
+    display:inline-block;
+    background:url("../resources/img/onAir.png") no-repeat;
+    background-size:contain;
+    align-content: center;
+    text-align: center;
+}
+
+.offAir{
+    width:100px;
+    height:50px;
+    margin:auto 20px;
+    display:float;
+    background:url("../resources/img/offAir.png");
+    background-size:contain;
+}
+
 .mainWrapper{
     display: flex;
     flex-direction: row;
