@@ -211,15 +211,14 @@ export default class room extends Component {
             </div>
             <div className={style.sideView}>
                 <div className={style.nav}>
-                    <div className={style.cam} id="cam-screen" onClick={this.camClick}>과외 준비</div>
+                    <div className={style.cam} id="cam-screen" onClick={this.camClick}>CAM화면</div>
+                    <video autoPlay controls poster={img} src="" id="cam"></video>
 
                     <div className={style.setting} onClick={this.settingClick}>설정</div>
-                    <div className={style.start} id="btn-screen-share">화면 공유</div>
+                    <div className={style.start} id="btn-screen-share">과외 준비</div>
                 </div>
                 <div className={style.viewContainer}>
                     <div className={style.camView}>
-                    <video autoPlay controls poster={img} src="" id="cam" width="100%" ></video>
-
                     </div>
                     <div className={style.settingView}>
                     </div>
