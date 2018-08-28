@@ -28,20 +28,21 @@
 }
 
 .header div.onAir{
-    width:100px;
-    height:35px;
+    width:80px;
+    height:25px;
     margin:0 auto;
-    border:2px solid #969496;
-    border-radius: 20px;
-    margin:10px 0 0 20px;
+    padding: 0 0 0 2px;
+    border:1px solid #969496;
+    border-radius: 15px;
+    margin:15px 0 0 20px;
     float: left;
 }
 
 .ico_redDot{
-    width: 15px; 
-    height: 15px; 
+    width: 10px; 
+    height: 10px; 
     opacity: 0.973043; 
-    margin: 7px 5px 0px 10px;
+    margin: 6px -10px 0px 15px;
     float: left;
     background:#f33;
     border-radius:100%;
@@ -50,50 +51,56 @@
 .header .middleText{
     display: inline-block;
     cursor: pointer;
+    font-size: 10px;
 }
 
 .header div.offAir{
     width:80px;
-    height:20px;
+    height:25px;
     margin:10px 0 0 20px;
 }
 
 
 .header div.exit{
-    width:120px;
-    height:35px;
-    margin:10px 0 0 20px;
-    border:2px solid #969496;
-    border-radius: 20px;
+    width:100px;
+    padding:3px 0 7px 0; 
+    margin:0 auto;
+    border:1px solid #969496;
+    border-radius: 15px;
+    margin:10px 20px 0 5px;
+    vertical-align:middle;
+    box-shadow: 0.5px 0.5px 1px gray;
     float:right;
 }
 .header div .icon_exit{
-    width: 25px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    margin: 5px -15px 0px 25px;
+    float:left;
     background:url("../resources/img/room/icon_exit.png") no-repeat;
     background-size:contain;
-    margin: 5px 0px 0px 15px;
-    float:left;
 }
 
 .header div.survey{
-    width:120px;
-    height:35px;
-    margin:10px 0 0 20px;
-    border:2px solid #969496;
-    border-radius: 20px;
-    
-    float: right;
+    width:100px;
+    padding:3px 0 7px 0; 
+    margin:0 auto;
+    border:1px solid #969496;
+    border-radius: 15px;
+    margin:10px 20px 0 5px;
+    vertical-align:middle;
+    box-shadow: 0.5px 0.5px 1px gray;
+    float:right;
 
 }
 
 .header div .icon_survey{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    margin: 5px -12px 0px 20px;
+    float:left;
     background:url("../resources/img/room/icon_survey.png") no-repeat;
     background-size:contain;
-    margin: 5px 0px 0px 15px;
-    float:left;
 }
 
 
