@@ -419,21 +419,37 @@ export default class room extends Component {
 
   render() {
     return (
-      <div>
-        <div className={style.header}>
-          <div className={style.headerGrid}>
-            <div className={style.logo}></div>
+      <div className={style.container}>
+          <div className={style.header}>
+              <div className={style.logo}></div>
+              <div className={style.onAir}>
+                <span className={style.ico_redDot}></span>
+                <p className={style.middleText}>On Air</p>
+              </div>
+              <div className={style.exit}>
+                <span className={style.icon_exit}></span>
+                <p className={style.middleText}>나가기</p>
+              </div>
+              <div className={style.survey}>
+                <span className={style.icon_survey}></span>
+                <p className={style.middleText}>강의리뷰</p>
+              </div>
+              <div className={style.survey}>
+                <span className={style.icon_survey}></span>
+                <p className={style.middleText} id="btn-screen-share">과외시작</p>
+              </div>
+
+              
           </div>
-          <div className={style.headerGrid}>
-            <image className={style.onAir}></image>
-          </div>
-        </div>
         <div className={style.mainWrapper}>
             <div className={style.roomWrapper} id="screen-wrap">
                 <video className={style.roomMain} autoPlay controls poster={img} src="#" id="remote-screen"></video>
             </div>
+
+
             <div className={style.sideView}>
-                <div className={style.nav}>
+              <div className={style.sideTop}>
+                <div className={style.nav}> 
                     <div className={style.cam} onClick={this.camClick}>CAM화면</div>
                     <div className={style.setting} onClick={this.settingClick}>설정</div>
                     <div className={style.start} id="btn-screen-share">과외 준비</div>
@@ -444,6 +460,23 @@ export default class room extends Component {
                     <div className={style.settingView}>
                     </div>
                 </div>
+              </div>
+
+              <div className={style.sideBottom}>
+                <div className={style.nav}> 
+                    <div className={style.cam} onClick={this.camClick}>내 화면</div>
+                    <div className={style.setting} onClick={this.settingClick}>설정</div>
+                    <div className={style.start} id="btn-screen-share">과외 준비</div>
+                </div>
+                <div className={style.viewContainer}>
+                    <div className={style.camView}>
+                    </div>
+                    <div className={style.settingView}>
+                    </div>
+                </div>
+              </div>
+
+
             </div>
         </div>
       </div>

@@ -23,7 +23,6 @@ render(<Router>
             <Header/>
                 <Switch>
                     <Route exact path="/" component={Main} />
-                    <Route path="/room" component={Room} />
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={SingUp} />
                     <Route path="/active/:code" component={Active} />
