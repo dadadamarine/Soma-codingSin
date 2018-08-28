@@ -4,6 +4,7 @@
     height:100%;
     margin:0;
     padding:0;
+    overflow: hidden;
 }
 
 .header{
@@ -106,7 +107,7 @@
 
 
 .mainWrapper{
-    height: 90%;
+    height: 93%;
     margin:2px 0px;
     width:100%;
 }
