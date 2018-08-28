@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
 .navWrapper{
     width:100%;
@@ -10,7 +11,7 @@
     font-size: 15px;
     color:#333;
     display: flex;
-    width:1000px;   
+    width:1000px;
     height: 46px;
     text-align: center;
     margin: 0 auto;

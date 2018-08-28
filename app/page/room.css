@@ -4,6 +4,7 @@
     height:100%;
     margin:0;
     padding:0;
+    overflow: hidden;
 }
 
 .header{
@@ -31,7 +32,7 @@
     width:80px;
     height:25px;
     margin:0 auto;
-    padding: 0 0 0 2px;
+    padding: 1px 2px 0 1px;
     border:1px solid #969496;
     border-radius: 15px;
     margin:15px 0 0 20px;
@@ -42,7 +43,7 @@
     width: 10px; 
     height: 10px; 
     opacity: 0.973043; 
-    margin: 6px -10px 0px 15px;
+    margin: 7px -10px 0px 15px;
     float: left;
     background:#f33;
     border-radius:100%;
@@ -51,7 +52,7 @@
 .header .middleText{
     display: inline-block;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .header div.offAir{
@@ -106,7 +107,7 @@
 
 
 .mainWrapper{
-    height: 90%;
+    height: 93%;
     margin:2px 0px;
     width:100%;
 }
@@ -128,6 +129,7 @@
     width: 25%;
     height:100%;
     border: 1px solid #969496;
+    border-bottom: none;    
     background-color : #faf9fa;
 }
 
@@ -234,4 +236,9 @@
     box-shadow: 3px 3px 25px gray;
     cursor: pointer;    
 
+}
+
+.camScreen{
+    width:100%;
+    margin-top:10px;
 }
