@@ -32,7 +32,7 @@
     width:80px;
     height:25px;
     margin:0 auto;
-    padding: 0 0 0 2px;
+    padding: 0;
     border:1px solid #969496;
     border-radius: 15px;
     margin:15px 0 0 20px;
@@ -43,7 +43,7 @@
     width: 10px; 
     height: 10px; 
     opacity: 0.973043; 
-    margin: 6px -10px 0px 15px;
+    margin: 7px -10px 0px 15px;
     float: left;
     background:#f33;
     border-radius:100%;
