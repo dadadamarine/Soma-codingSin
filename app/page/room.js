@@ -217,7 +217,7 @@ export default class room extends Component {
                 </div>
                 <div className={style.viewContainer}>
                     <div className={style.camView}>
-                    <video autoPlay controls poster={img} src="" id="cam"></video>
+                    <video autoPlay controls poster={img} src="" id="cam" width = "100%"></video>
                     </div>
                     <div className={style.settingView}>
                     </div>
