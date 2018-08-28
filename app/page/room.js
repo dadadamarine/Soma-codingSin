@@ -450,12 +450,14 @@ export default class room extends Component {
             <div className={style.sideView}>
               <div className={style.sideTop}>
                 <div className={style.nav}> 
-                    <div className={style.cam} onClick={this.camClick}>CAM화면</div>
-                    <div className={style.setting} onClick={this.settingClick}>설정</div>
-                    <div className={style.start} id="btn-screen-share">과외 준비</div>
+                    <div className={style.sideButton} onClick={this.camClick}>수업 진도</div>
+                    <div className={style.sideButton} onClick={this.settingClick}>문제 보기</div>
                 </div>
                 <div className={style.viewContainer}>
-                    <div className={style.camView}>
+                    <div className={style.topView}>
+                      <div className={style.problem}>
+                       <img className={style.exam_problem} src={require('../resources/img/room/exam_problem.png')}/>
+                      </div>
                     </div>
                     <div className={style.settingView}>
                     </div>
@@ -468,16 +470,18 @@ export default class room extends Component {
                     <div className={style.sideButton} onClick={this.settingClick}><span>설정</span></div>
                 </div>
                 <div className={style.viewContainer}>
-                    <div className={style.camView}>
+                    <div className={style.bottomView}>
                     </div>
                     <div className={style.settingView}>
                     </div>
                 </div>
+                
               </div>
 
 
             </div>
         </div>
+          <img className={style.chat} src={require('../resources/img/room/icon_chat.png')}/>
       </div>
     );
   }
