@@ -151,10 +151,25 @@
     color:white;
 }
 
+.sideView .sideButton{
+    width:50%;
+    height:40px;
+    cursor: pointer;
+    transition-duration: 1s;
+    margin:auto;
+    text-align: center;
+    line-height: 2.7;
+}
+.sideView .sideButton:first-child {
+    border-right:2px solid white; 
+}
+
+
 .cam, .setting{
     padding: 10px;
     cursor: pointer;
     transition-duration: 1s;
+    margin:auto;
 }
 .start{
     padding: 10px;

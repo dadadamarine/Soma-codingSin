@@ -464,9 +464,8 @@ export default class room extends Component {
 
               <div className={style.sideBottom}>
                 <div className={style.nav}> 
-                    <div className={style.cam} onClick={this.camClick}>내 화면</div>
-                    <div className={style.setting} onClick={this.settingClick}>설정</div>
-                    <div className={style.start} id="btn-screen-share">과외 준비</div>
+                    <div className={style.sideButton}>내 화면</div>
+                    <div className={style.sideButton} onClick={this.settingClick}><span>설정</span></div>
                 </div>
                 <div className={style.viewContainer}>
                     <div className={style.camView}>
