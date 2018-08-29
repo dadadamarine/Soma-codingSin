@@ -19,7 +19,7 @@ export default class room extends Component {
     var v_count =0;
     var s_count =0;
 
-    document.getElementById('cam-screen').onclick = function() {
+    document.getElementById('cam').onclick = function() {
       //this.disabled = true;
       disableInputButtons();
       var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
