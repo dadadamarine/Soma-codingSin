@@ -19,7 +19,7 @@ export default class room extends Component {
     var v_count =0;
     var s_count =0;
 
-    document.getElementById('cam-screen').onclick = function() {
+    document.getElementById('cam').onclick = function() {
       //this.disabled = true;
       disableInputButtons();
       var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
@@ -205,25 +205,71 @@ export default class room extends Component {
 
   render() {
     return (
+      <div className={style.container}>
+          <div className={style.header}>
+              <div className={style.logo}></div>
+              <div className={style.onAir}>
+                <span className={style.ico_redDot}></span>
+                <p className={style.middleText}>On Air</p>
+              </div>
+              <div className={style.exit}>
+                <span className={style.icon_exit}></span>
+                <p className={style.middleText}>나가기</p>
+              </div>
+              <div className={style.survey}>
+                <span className={style.icon_survey}></span>
+                <p className={style.middleText}>강의리뷰</p>
+              </div>
+              <div className={style.survey}>
+                <span className={style.icon_survey}></span>
+                <p className={style.middleText} id="btn-screen-share">과외시작</p>
+              </div>
+
+              
+          </div>
         <div className={style.mainWrapper}>
             <div className={style.roomWrapper} id="screen-wrap">
                 <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
             </div>
+
+
             <div className={style.sideView}>
-                <div className={style.nav}>
-                    <div className={style.cam} id="cam-screen" onClick={this.camClick}>과외 준비</div>
-                    <div className={style.setting} onClick={this.settingClick}>설정</div>
-                    <div className={style.start} id="btn-screen-share">화면 공유</div>
+              <div className={style.sideTop}>
+                <div className={style.nav}> 
+                    <div className={style.sideButton} onClick={this.camClick}>수업 진도</div>
+                    <div className={style.sideButton} onClick={this.settingClick}>문제 보기</div>
                 </div>
                 <div className={style.viewContainer}>
-                    <div className={style.camView}>
-                    <video autoPlay controls poster={img} src="" id="cam" width = "100%"></video>
+                    <div className={style.topView}>
+                      <div className={style.problem}>
+                       <img className={style.exam_problem} src={require('../resources/img/room/exam_problem.png')}/>
+                      </div>
                     </div>
                     <div className={style.settingView}>
                     </div>
                 </div>
+              </div>
+
+              <div className={style.sideBottom}>
+                <div className={style.nav}> 
+                    <div className={style.sideButton} >내 화면</div>
+                    <div className={style.sideButton} onClick={this.settingClick}><span>설정</span></div>
+                </div>
+                <div className={style.viewContainer}>
+                    <div className={style.bottomView}>
+                     <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam" width = "100%"></video>
+                    </div>
+                    <div className={style.settingView}>
+                    </div>
+                </div>
+                
+              </div>
+
+
             </div>
         </div>
+          <img className={style.chat} src={require('../resources/img/room/icon_chat.png')}/>
+      </div>
     );
   }
 }
