@@ -19,7 +19,6 @@ import MyLecture from './page/myLecture';
 render(<Router>
     <div>    
         <Switch>
-            <Route path="/room" component={Room} />
             <Header/>
                 <Switch>
                     <Route exact path="/" component={Main} />
@@ -29,6 +28,7 @@ render(<Router>
                     <Route exact path="/lecture" component={Lecture} />
                     <Route path="/lectureReg" component={LectureReg} />
                     <Route path="/lecture/:id" component={LectureDetail} />
+                    <Route path="/room" component={Room} />
                     <Route path="/myLecture" component={MyLecture} />
                     <Route missing component={NoMatch} />
                 </Switch>
