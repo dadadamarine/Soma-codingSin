@@ -46,11 +46,7 @@ app.get("*", function(req, res, next){
         res.clearCookie('sid');
         res.clearCookie('user');
     }
-    const firstPath = req.params[0].split('/')[1];
-    if(firstPath=="posts"){
-        res.end(indexPage.replace(/main-/gi,"/main-"));
-    }
-    else res.end(indexPage);
+    res.end(indexPage);
 });
 
 const server = http.listen(port, () => {

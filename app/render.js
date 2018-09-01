@@ -18,22 +18,20 @@ import MyLecture from './page/myLecture';
 
 render(<Router>
     <div>    
+        {location.pathname.startsWith("/room")?null:<Header/>}
         <Switch>
-            <Header/>
-                <Switch>
-                    <Route exact path="/" component={Main} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/signup" component={SingUp} />
-                    <Route path="/active/:code" component={Active} />
-                    <Route exact path="/lecture" component={Lecture} />
-                    <Route path="/lectureReg" component={LectureReg} />
-                    <Route path="/lecture/:id" component={LectureDetail} />
-                    <Route path="/room" component={Room} />
-                    <Route path="/myLecture" component={MyLecture} />
-                    <Route missing component={NoMatch} />
-                </Switch>
-            <Footer/>
+            <Route exact path="/" component={Main} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SingUp} />
+            <Route path="/active/:code" component={Active} />
+            <Route exact path="/lecture" component={Lecture} />
+            <Route path="/lectureReg" component={LectureReg} />
+            <Route path="/lecture/:id" component={LectureDetail} />
+            <Route path="/room" component={Room} />
+            <Route path="/myLecture" component={MyLecture} />
+            <Route missing component={NoMatch} />
         </Switch>
+        {location.pathname.startsWith("/room")?null:<Footer/>}
     </div>
 </Router>
     , document.getElementById('root'));
