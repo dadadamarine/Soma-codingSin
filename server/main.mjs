@@ -35,6 +35,9 @@ let indexPage="";
 fs.readFile(path.resolve(__dirname,'../build/index.html'), 'utf8', function(err, data){
     indexPage=data;
 });
+app.get('/getScreenId.html', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/script/'+req.url.split('/')[1]));
+});
 app.get('/*.js', (req,res) =>{
     res.sendFile(path.join(__dirname+'/script/'+req.url.split('/')[1]));
 });

@@ -151,7 +151,7 @@
 
             loadCallback();
         };
-        iframe.src = 'https://codingsin.com/script/getScreenId.html';
+        iframe.src = 'https://codingsin.com/getScreenId.html';
         iframe.style.display = 'none';
         (document.body || document.documentElement).appendChild(iframe);
     }
