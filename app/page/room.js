@@ -19,14 +19,23 @@ export default class room extends Component {
     var v_count =0;
     var s_count =0;
 
-    document.getElementById('cam').onclick = function() {
+    document.getElementById('btn-setting').onclick = function() {
       //this.disabled = true;
-      disableInputButtons();
-      var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
-      connection.openOrJoin(predefinedRoomId);
+     // disableInputButtons();
+     // var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
+     // connection.openOrJoin(predefinedRoomId);
+     connection.removeStream({screen: true });
+     connection.addStream({
+	screen:true,
+	oneway:true
+	});
     };
 
     document.getElementById('btn-screen-share').onclick = function() {
+      disableInputButtons();
+      var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
+      connection.openOrJoin(predefinedRoomId);
+	//connection.openOrJoin('xyzxyz');
         connection.addStream({
         screen: true,
         oneway: true
@@ -78,6 +87,22 @@ export default class room extends Component {
     connection.sdpConstraints.mandatory = {
         OfferToReceiveAudio: true,
         OfferToReceiveVideo: true
+    };
+    connection.bandwidth = {
+        audio: 100,  // 50 kbps
+        video: 1000, // 256 kbps
+        screen: 3000 // 300 kbps
+    };
+
+    connection.mediaConstraints = {
+        audio: true,
+        video: {
+            mandatory: {
+                minFrameRate: 30,
+                maxFrameRate: 60
+            },
+            optional: []
+        }
     };
 
     connection.onstream = function(event) {
@@ -253,11 +278,11 @@ export default class room extends Component {
               <div className={style.sideBottom}>
                 <div className={style.nav}> 
                     <div className={style.sideButton} >내 화면</div>
-                    <div className={style.sideButton} onClick={this.settingClick}><span>설정</span></div>
+                    <div className={style.sideButton} onClick={this.settingClick} id="btn-setting"><span>설정</span></div>
                 </div>
                 <div className={style.viewContainer}>
                     <div className={style.bottomView}>
-                     <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam" width = "100%"></video>
+                     <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam"></video>
                     </div>
                     <div className={style.settingView}>
                     </div>
