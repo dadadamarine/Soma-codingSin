@@ -63,20 +63,21 @@
                 }, 2000);
             };
             image.onerror = function() {
-                callback('not-installed');
+                // callback('not-installed');
+                callback('installed-enabled');
             };
         }
     };
     window.addEventListener('message', function(event) {
         if (!event.data || !(typeof event.data == 'string' || event.data.sourceId || event.data.captureSourceId || event.data.captureCustomSourceId || event.data.getChromeExtensionStatus || event.data.captureSourceIdWithAudio)) return;
-        // if (event.data.getChromeExtensionStatus) {
-        //     DetectRTC.screen.getChromeExtensionStatus(function(status) {
-        //         window.parent.postMessage({
-        //             chromeExtensionStatus: status
-        //         }, '*');
-        //     });
-        //     return;
-        // }
+        if (event.data.getChromeExtensionStatus) {
+            DetectRTC.screen.getChromeExtensionStatus(function(status) {
+                window.parent.postMessage({
+                    chromeExtensionStatus: status
+                }, '*');
+            });
+            return;
+        }
         if(event.data.captureCustomSourceId) {
             captureSourceId(null, event.data.captureCustomSourceId);
         }
