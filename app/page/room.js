@@ -69,7 +69,7 @@ export default class room extends Component {
 
     // by default, socket.io server is assumed to be deployed on your own URL
     // comment-out below line if you do not have your own socket.io server
-    connection.socketURL ='https://codingsin.com:9001/';
+    connection.socketURL ='https://www.codingsin.com:9001/';
 
     connection.session = {
         audio: true,
