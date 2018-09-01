@@ -35,6 +35,9 @@ let indexPage="";
 fs.readFile(path.resolve(__dirname,'../build/index.html'), 'utf8', function(err, data){
     indexPage=data;
 });
+app.get('/script/RTCMultiConnection.min.js', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/script/RTCMultiConnection.min.js'));
+});
 app.get("*", function(req, res, next){
     if(req.session.user_id==null) {
         res.clearCookie('sid');
