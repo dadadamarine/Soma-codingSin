@@ -15,12 +15,8 @@ export default class myLecture extends Component {
         }).catch(function (error) {
             alert('error massage : '+error);
         });
-        this.room = this.room.bind(this);
     }
     componentDidMount(){
-    }
-    room(url){
-        location.href=url;
     }
     render() {
         return (
@@ -28,7 +24,7 @@ export default class myLecture extends Component {
                 <div className={style.lectureWrapper}>
                 {this.state.list!=[]?this.state.list.map((lecture, i) => {
                     let url = "/room#"+lecture._id;
-                        return (<div className={style.lectureBox} key={i} onClick={this.room(url)}>
+                        return (<div className={style.lectureBox} key={i} onClick={location.href=url}>
                                     <img src="../resources/img/main.png"/>
                                     <div className={style.lectureTitle}>{lecture.title}</div>
                                     <div className={style.lectureName}>{lecture.name}</div>
