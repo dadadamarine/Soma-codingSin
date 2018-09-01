@@ -53,10 +53,6 @@ app.get("*", function(req, res, next){
     else res.end(indexPage);
 });
 
-app.get('/rooms', function (req, res) {
-    res.send(rooms);
-});
-
 const server = http.listen(port, () => {
     console.log('Server listening on port', port);
 });
