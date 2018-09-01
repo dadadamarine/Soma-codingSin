@@ -28,7 +28,6 @@ export default class room extends Component {
     };
 
     document.getElementById('btn-screen-share').onclick = function() {
-      disableInputButtons();
       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
       else{
         var hashString = location.hash.replace('#', '');
