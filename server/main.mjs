@@ -36,7 +36,6 @@ fs.readFile(path.resolve(__dirname,'../build/index.html'), 'utf8', function(err,
     indexPage=data;
 });
 app.get('/*.js', (req,res) =>{
-    console.log(req.url.split('/')[1]);
     res.sendFile(path.join(__dirname+'/script/'+req.url.split('/')[1]));
 });
 app.get("*", function(req, res, next){
