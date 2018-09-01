@@ -15,8 +15,12 @@ export default class myLecture extends Component {
         }).catch(function (error) {
             alert('error massage : '+error);
         });
+        this.room = this.room.bind(this);
     }
     componentDidMount(){
+    }
+    room(url){
+        location.href=url;
     }
     render() {
         return (
@@ -24,13 +28,13 @@ export default class myLecture extends Component {
                 <div className={style.lectureWrapper}>
                 {this.state.list!=[]?this.state.list.map((lecture, i) => {
                     let url = "/room#"+lecture._id;
-                        return (<Link to={url}><div className={style.lectureBox} key={i}>
+                        return (<div className={style.lectureBox} key={i} onClick={this.room(url)}>
                                     <img src="../resources/img/main.png"/>
                                     <div className={style.lectureTitle}>{lecture.title}</div>
                                     <div className={style.lectureName}>{lecture.name}</div>
                                     <div className={style.lectureSchedule}>{lecture.schedule}</div>
                                     <div className={style.lecturePrice}>{lecture.price}</div>
-                                 </div></Link>);
+                                 </div>);
                 }):null}
                 </div>
             </div>
