@@ -20,10 +20,6 @@ export default class room extends Component {
     var s_count =0;
 
     document.getElementById('btn-setting').onclick = function() {
-      //this.disabled = true;
-     // disableInputButtons();
-     // var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
-     // connection.openOrJoin(predefinedRoomId);
      connection.removeStream({screen: true });
      connection.addStream({
 	screen:true,
@@ -33,25 +29,17 @@ export default class room extends Component {
 
     document.getElementById('btn-screen-share').onclick = function() {
       disableInputButtons();
-      var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
-      connection.openOrJoin(predefinedRoomId);
-	//connection.openOrJoin('xyzxyz');
-        connection.addStream({
-        screen: true,
-        oneway: true
-        });
-
-
-        //connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
-        //    if(!isRoomExists) {
-        //        showRoomURL(roomid);
-        //    }
-        //});
+      if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
+      else{
+        var hashString = location.hash.replace('#', '');
+        connection.openOrJoin(hashString);
+            connection.addStream({
+            screen: true,
+            oneway: true
+            });
+        }
     };
-    
-    // ......................................................
-    // ..................RTCMultiConnection Code.............
-    // ......................................................
+
     var connection = new RTCMultiConnection();
     connection.iceServers = [];
     connection.iceServers.push({
@@ -63,8 +51,6 @@ export default class room extends Component {
         username: 'codingsin'
     });
 
-    // Using getScreenId.js to capture screen from any domain
-    // You do NOT need to deploy Chrome Extension YOUR-Self!!
     connection.getScreenConstraints = function(callback) {
         getScreenConstraints(function(error, screen_constraints) {
             if (!error) {
@@ -76,8 +62,6 @@ export default class room extends Component {
         });
     };
 
-    // by default, socket.io server is assumed to be deployed on your own URL
-    // comment-out below line if you do not have your own socket.io server
     connection.socketURL ='https://www.codingsin.com:9001/';
 
     connection.session = {
@@ -151,69 +135,6 @@ export default class room extends Component {
             mediaElement.parentNode.removeChild(mediaElement);
         }
     };
-    function disableInputButtons() {
-        //document.getElementById('open-or-join-room').disabled = true;
-        //
-        //document.getElementById('share-screen').disabled = false;
-    }
-    // ......................................................
-    // ......................Handling Room-ID................
-    // ......................................................
-    function showRoomURL(roomid) {
-        var roomHashURL = '#' + roomid;
-        var roomQueryStringURL = '?roomid=' + roomid;
-        var html = '<h2>Unique URL for your room:</h2><br>';
-        html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
-        html += '<br>';
-        html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
-        var roomURLsDiv = document.getElementById('room-urls');
-        roomURLsDiv.innerHTML = html;
-        roomURLsDiv.style.display = 'block';
-    }
-    (function() {
-        var params = {},
-            r = /([^&=]+)=?([^&]*)/g;
-        function d(s) {
-            return decodeURIComponent(s.replace(/\+/g, ' '));
-        }
-        var match, search = window.location.search;
-        while (match = r.exec(search.substring(1)))
-            params[d(match[1])] = d(match[2]);
-        window.params = params;
-    })();
-    var roomid = '';
-    if (localStorage.getItem(connection.socketMessageEvent)) {
-        roomid = localStorage.getItem(connection.socketMessageEvent);
-    } else {
-        roomid = connection.token();
-    }
-    //document.getElementById('room-id').value = roomid;
-    /*document.getElementById('room-id').onkeyup = function() {
-        localStorage.setItem(connection.socketMessageEvent, this.value);
-    };*/
-    var hashString = location.hash.replace('#', '');
-    if(hashString.length && hashString.indexOf('comment-') == 0) {
-      hashString = '';
-    }
-    var roomid = params.roomid;
-    if(!roomid && hashString.length) {
-        roomid = hashString;
-    }
-    if(roomid && roomid.length) {
-        document.getElementById('room-id').value = roomid;
-        localStorage.setItem(connection.socketMessageEvent, roomid);
-        // auto-join-room
-        (function reCheckRoomPresence() {
-            connection.checkPresence(roomid, function(isRoomExists) {
-                if(isRoomExists) {
-                    connection.join(roomid);
-                    return;
-                }
-                setTimeout(reCheckRoomPresence, 5000);
-            });
-        })();
-        //disableInputButtons();
-    }
   }
   componentWillUnmount() {
   }
@@ -232,7 +153,7 @@ export default class room extends Component {
     return (
       <div className={style.container}>
           <div className={style.header}>
-              <div className={style.logo}></div>
+              <a href="/"><div className={style.logo}></div></a>
               <div className={style.onAir}>
                 <span className={style.ico_redDot}></span>
                 <p className={style.middleText}>On Air</p>
