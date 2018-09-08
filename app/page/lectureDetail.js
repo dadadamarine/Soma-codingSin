@@ -4,7 +4,6 @@ import * as service from '../request/lecture';
 import { Segment, Input, Button, Divider } from 'semantic-ui-react';
 import style from './lectureDetail.css';
 import * as cookie from '../util/cookie';
-import * as string from '../util/string';
 
 export default class lectureDtail extends Component {
     constructor(props) {
@@ -53,7 +52,7 @@ export default class lectureDtail extends Component {
                     </div>
                     <br/><br/><br/><br/>
                     <div className={style.title}>{this.state.lecture.title}</div>
-                    <div className={style.lectureText}>{string.LinefeedToBr(String(this.state.lecture.description))}</div>
+                    <div className={style.lectureText}>{this.state.lecture.description.split('\n').map( line => {return (<span>{line}<br/></span>)})}</div>
                     <br/><br/>
                     <div className={style.title}>강의시간</div>
                     <div className={style.lectureText}>{this.state.lecture.schedule}</div>
