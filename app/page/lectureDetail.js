@@ -53,10 +53,10 @@ export default class lectureDtail extends Component {
                     </div>
                     <br/><br/><br/><br/>
                     <div className={style.title}>{this.state.lecture.title}</div>
-                    <div className={style.lectureText}>{this.state.lecture.description}</div>
+                    <div className={style.lectureText}>{string.LinefeedToBr(String(this.state.lecture.description))}</div>
                     <br/><br/>
                     <div className={style.title}>강의시간</div>
-                    <div className={style.lectureText}>{string.LinefeedToBr(this.state.lecture.schedule)}</div>
+                    <div className={style.lectureText}>{this.state.lecture.schedule}</div>
                     <br/><br/>
                     <div className={style.title}>가격</div>
                     <div className={style.lectureText}>{this.state.lecture.price}</div>
