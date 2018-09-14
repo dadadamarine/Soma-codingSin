@@ -193,7 +193,28 @@ export default class room extends Component {
                 <div className={style.viewContainer}>
                       <div className={style.progress}>1
                       </div>
-                      <div className={style.problem}>2
+                      <div className={style.problem}>
+                      <div className={style.problemTitle}>scope_issue</div>
+                      <div className={style.problemContent}>
+                      <pre>{`
+<html>
+<body>
+  <div id="div0">Click me! DIV 0</div>
+  <div id="div1">Click me! DIV 1</div>
+  <div id="div2">Click me! DIV 2</div>
+  <script>
+      var i, len = 3;
+      for (i = 0; i < len; i++) {
+          document.getElementById("div" + i)
+          .addEventListener("click",function(){ 
+              alert("You clicked div #" + i);
+          }, false); 
+      }
+  </script>
+</body>
+</html>
+                      `}</pre>
+                      </div>
                       </div>
                 </div>
               </div>
