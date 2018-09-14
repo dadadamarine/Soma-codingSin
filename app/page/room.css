@@ -39,6 +39,17 @@
     float: left;
 }
 
+.ico_grayDot{
+    width: 10px; 
+    height: 10px; 
+    opacity: 0.973043; 
+    margin: 7px -10px 0px 15px;
+    float: left;
+    background:gray;
+    border-radius:100%;
+
+}
+
 .ico_redDot{
     width: 10px; 
     height: 10px; 
@@ -135,46 +146,30 @@
 
 .sideTop{
     width:100%;
-    height:50%;
+    height:70%;
     border: 1px solid #969496;
     background-color:#faf9fa;
 }
 
 .sideBottom{
     width:100%;
-    height:50%;
+    height:30%;
     border: 1px solid #969496;
 }
 
-.settingView{
+.progress{
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 0;
+    box-shadow: 0;
     display: none;
-    margin: 0 auto;
 }
-.topView{
-    width: 100%;
-    height: 100%;
-    margin: -10px auto 0 auto;
-}
-.bottomView{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.problem .problemText span{
-    padding-left:15px;
-    line-height:4rem;
-    font-size:20px;
-    font-weight: bold;
-    color:#3d4045;
-}
-
-.exam_problem{
-    width:95%;
-    display: block;
-    margin:30px auto;
-    
-    padding-top: 5px;
+.problem{
+    height:100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    display: none;
 }
 
 .nav{
@@ -184,7 +179,7 @@
     color:#454545;
 }
 
-.sideView .sideButton{
+.sideButton1, .sideButton2{
     width:50%;
     height:40px;
     cursor: pointer;
@@ -193,15 +188,12 @@
     text-align: center;
     line-height: 2.7;
 }
-.sideView .sideBottom .sideButton:last-child {
-    border-right:2px solid #eaeaea; 
-    border-bottom: 2px solid #eaeaea;
-    box-shadow: 0.5px -0.5px 5px  #888888 inset;
-}
 
-.sideView .sideTop .sideButton:first-child {
-    border-bottom: 2px solid #eaeaea;
+.isselected{
+
+    border-bottom: 1px solid #eaeaea;
     box-shadow: -0.5px -0.5px 5px  #888888 inset;
+    display: block;
 }
 
 .cam, .setting{
@@ -240,5 +232,4 @@
 
 .camScreen{
     width:100%;
-    margin-top:10px;
 }
