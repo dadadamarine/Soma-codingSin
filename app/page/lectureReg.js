@@ -14,18 +14,13 @@ export default class lectureReg extends Component {
         startValue: null,
         endValue: null,
         startOpen: false,
-        endOpen: false,};
+        endOpen: false};
      
         this.inputTITLE = this.inputTITLE.bind(this);
         this.inputDESCRIPTION = this.inputDESCRIPTION.bind(this);
         this.inputSCHEDULE = this.inputSCHEDULE.bind(this);
         this.inputPRICE = this.inputPRICE.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.onStartOpenChange = this.onStartOpenChange.bind(this);
-        this.onEndOpenChange = this.onEndOpenChange.bind(this);
-        this.onStartChange = this.onStartChange(this);
-        this.onEndChange = this.onEndChange(this);
-        this.disabledStartDate = this.disabledStartDate.bind(this);
     }
     inputTITLE(event) {
         this.setState({ title: event.target.value });
@@ -40,37 +35,47 @@ export default class lectureReg extends Component {
         this.setState({ price: event.target.value });
     }
     onStartOpenChange(event){
-        this.setState({
-            startOpen: event.target.open
-        });
+        // this.setState({
+        //     startOpen: event.target.open
+        // });
+        console.log(event);
     }
-    onEndOpenChange(event){
+    onStartOpenChange = (startOpen) => {
         this.setState({
-            endOpen : event.target.open
+          startOpen,
         });
-    }
-    onStartChange(event){
+      }
+    
+      onEndOpenChange = (endOpen) => {
         this.setState({
-            startValue: event.target.showValue,
-            startOpen: false,
-            endOpen: true,
+          endOpen,
         });
-    }
-    onEndChange(event){
+      }
+    
+      onStartChange = (value) => {
         this.setState({
-            endValue: event.target.showValue,
+          startValue: value[0],
+          startOpen: false,
+          endOpen: true,
         });
-    }
-    disabledStartDate(event){
-        if (!event.target.showValue) {
-            return false;
+      }
+    
+      onEndChange = (value) => {
+        this.setState({
+          endValue: value[1],
+        });
+      }
+    
+      disabledStartDate = (endValue) => {
+        if (!endValue) {
+          return false;
         }
         const startValue = this.state.startValue;
         if (!startValue) {
-            return false;
+          return false;
         }
-        return event.target.showValue.diff(startValue, 'days') < 0;
-    }
+        return endValue.diff(startValue, 'days') < 0;
+      }
 
     handleSubmit(event) {
         const curosr =this;
@@ -86,7 +91,7 @@ export default class lectureReg extends Component {
         event.preventDefault();
     }
     render() {
-        const state = this.state;
+
         return (
             <div className={style.wrapper}>
                 <div className={style.lectureBox}>
@@ -95,23 +100,21 @@ export default class lectureReg extends Component {
                         <br /><br />
                         <textarea className={style.despBox} placeholder='강의설명' value={this.state.description} onChange={this.inputDESCRIPTION} />
                         <br /><br />
-                        <div style={{ width: 240, margin: 20 }}>
-                        시작일：
-                        <Picker
+                        <div>
+                        시작일：<Picker
                             onOpenChange={this.onStartOpenChange}
                             type="start"
-                            showValue={state.startValue}
+                            showValue={this.state.startValue}
                             open={this.state.startOpen}
-                            value={[state.startValue, state.endValue]}
-                            onChange={this.onStartChange}/>
-                        종료일：
-                        <Picker
+                            value={[this.state.startValue, this.state.endValue]}
+                            onChange={this.onStartChange}/><br />
+                        종료일： <Picker
                             onOpenChange={this.onEndOpenChange}
                             open={this.state.endOpen}
                             type="end"
-                            showValue={state.endValue}
+                            showValue={this.state.endValue}
                             disabledDate={this.disabledStartDate}
-                            value={[state.startValue, state.endValue]}
+                            value={[this.state.startValue, this.state.endValue]}
                             onChange={this.onEndChange}
                         />
                         </div>

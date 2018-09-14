@@ -11,11 +11,10 @@ import enUS from 'rc-calendar/lib/locale/en_US';
 import moment from 'moment';
 import 'moment/locale/ko';
 import 'moment/locale/en-gb';
-
 const format = 'YYYY-MM-DD';
 
 const fullFormat = 'YYYY-MM-DD dddd';
-const ko = true;
+const ko = location.search.indexOf('ko') !== -1;
 
 const now = moment();
 if (ko) {
@@ -24,7 +23,7 @@ if (ko) {
   now.locale('en-gb').utcOffset(0);
 }
 
-class Picker extends React.Component {
+export default class Picker extends React.Component {
   state = {
     hoverValue: [],
   };
@@ -61,7 +60,7 @@ class Picker extends React.Component {
               <span>
                 <input
                   placeholder="강의 기간"
-                  style={{ width: 200 }}
+                  style={{ width: 250 }}
                   readOnly
                   value={showValue && showValue.format(fullFormat) || ''}
                 />
