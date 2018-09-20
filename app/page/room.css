@@ -184,9 +184,13 @@
     border-bottom: 1px solid black;  
 }
 .problemContent{
-    height:100%;
-    padding: 10px;
     word-break:normal;
+}
+.problemContent pre{
+    margin: 0px;
+}
+.problemContent pre code{
+    height: -webkit-fill-available;
 }
 
 .nav{
