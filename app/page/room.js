@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import socketIOClient from 'socket.io-client'
 import style from './room.css';
-import img from '../resources/img/main.png'
+import img from '../resources/img/main.png';
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
+import Highlight from 'react-highlight';
+import Code from '../util/ide';
 
 export default class room extends Component {
   constructor(props) {
     super();
     this.state = {
-        endpoint: "https://codingsin.com" 
+        endpoint: "https://codingsin.com",
+        toggle:true
     }
 
     this.view1Click = this.view1Click.bind(this);
     this.view2Click = this.view2Click.bind(this);
+    this.screenChange = this.screenChange.bind(this);
   }
   componentDidMount(){
 //     var v_count =0;
@@ -152,8 +156,20 @@ export default class room extends Component {
     $("."+style.sideButton1).removeClass(style.isselected);
     $("."+style.sideButton2).addClass(style.isselected);
   }
+  screenChange(event){
+    if(this.state.toggle){
+      this.setState({toggle:false});
+      $("."+style.toggleText).text("WebIDE");
+      $("."+style.roomMain).css("display","none");
+      $("."+style.webIde).css("display","block");
+    }else{
+      this.setState({toggle:true});
+      $("."+style.toggleText).text("원격화면");
+      $("."+style.roomMain).css("display","block");
+      $("."+style.webIde).css("display","none");
+    }
+  }
   
-
   render() {
     return (
       <div className={style.container}>
@@ -167,9 +183,9 @@ export default class room extends Component {
                 <span className={style.icon_exit}></span>
                 <p className={style.middleText}>나가기</p>
               </div>
-              <div className={style.survey}>
+              <div className={style.ide} onClick={this.screenChange}>
                 <span className={style.icon_survey}></span>
-                <p className={style.middleText}>강의리뷰</p>
+                <p className={style.toggleText}>원격화면</p>
               </div>
               <div className={style.survey}>
                 <span className={style.icon_survey}></span>
@@ -181,6 +197,7 @@ export default class room extends Component {
         <div className={style.mainWrapper}>
             <div className={style.roomWrapper} id="screen-wrap">
                 <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
+                <div className={style.webIde}><Code /></div>
             </div>
 
 
@@ -191,29 +208,35 @@ export default class room extends Component {
                     <div className={style.sideButton2} onClick={this.view2Click}>문제 보기</div>
                 </div>
                 <div className={style.viewContainer}>
-                      <div className={style.progress}>1
+                      <div className={style.progress}>
                       </div>
                       <div className={style.problem}>
                       <div className={style.problemTitle}>scope_issue</div>
                       <div className={style.problemContent}>
-                      <pre>{`
+                      <Highlight language="javascript">{`
 <html>
 <body>
-  <div id="div0">Click me! DIV 0</div>
-  <div id="div1">Click me! DIV 1</div>
-  <div id="div2">Click me! DIV 2</div>
-  <script>
-      var i, len = 3;
-      for (i = 0; i < len; i++) {
-          document.getElementById("div" + i)
-          .addEventListener("click",function(){ 
-              alert("You clicked div #" + i);
-          }, false); 
-      }
-  </script>
+<div id="divScope0">Click me! DIV 0</div>
+<div id="divScope1">Click me! DIV 1</div>
+<div id="divScope2">Click me! DIV 2</div>
+<script>
+function setDivClick(index) {
+    document.getElementById("divScope" + index).addEventListener(
+        "click",
+        function () {
+            alert("You clicked div #" + index);
+        },
+        false
+    );
+}
+var i, len = 3;
+for (i = 0; i < len; i++) {
+    setDivClick(i);
+}
+</script>
 </body>
-</html>
-                      `}</pre>
+</html>`}
+                      </Highlight>
                       </div>
                       </div>
                 </div>
@@ -230,7 +253,6 @@ export default class room extends Component {
 
             </div>
         </div>
-          <img className={style.chat} src={require('../resources/img/room/icon_chat.png')}/>
       </div>
     );
   }
