@@ -31,17 +31,19 @@ export default class room extends Component {
 // 	});
 //     };
 
-//     document.getElementById('btn-screen-share').onclick = function() {
-//       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
-//       else{
-//         var hashString = location.hash.replace('#', '');
-//         connection.openOrJoin(hashString);
-//             connection.addStream({
-//             screen: true,
-//             oneway: true
-//             });
-//         }
-//     };
+    document.getElementById('btn-screen-share').onclick = function() {
+      if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
+      else{
+        $("."+style.onAir+" span").removeClass(style.ico_grayDot);
+        $("."+style.onAir+" span").addClass(style.ico_redDot);
+        var hashString = location.hash.replace('#', '');
+        connection.openOrJoin(hashString);
+            connection.addStream({
+            screen: true,
+            oneway: true
+            });
+        }
+    };
 
 //     var connection = new RTCMultiConnection();
 //     connection.iceServers = [];
@@ -176,8 +178,8 @@ export default class room extends Component {
           <div className={style.header}>
               <a href="/"><div className={style.logo}></div></a>
               <div className={style.onAir}>
-                <span className={style.ico_redDot}></span>
-                <p className={style.middleText}>On Air</p>
+                <span className={style.ico_grayDot}></span>
+                <p>On Air</p>
               </div>
               <div className={style.exit}>
                 <span className={style.icon_exit}></span>

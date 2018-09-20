@@ -39,6 +39,12 @@
     float: left;
 }
 
+.onAir p {
+    display: inline-block;
+    font-size: 11px;
+    cursor: default;
+}
+
 .ico_grayDot{
     width: 10px; 
     height: 10px; 
@@ -142,15 +148,14 @@
 }
 .webIde{
     display: none;
+    margin: 5px;
 }
 .sideView{
     float:left;
     margin: 0; 
     width: 25%;
     height:100%;
-    border: 1px solid #969496;
     border-bottom: none;    
-    background-color : #faf9fa;
 }
 
 .sideTop{
@@ -163,7 +168,6 @@
 .sideBottom{
     width:100%;
     height:30%;
-    border: 1px solid #969496;
 }
 
 .progress, .problem{
@@ -215,6 +219,7 @@
     cursor: pointer;
     transition-duration: 1s;
     margin:auto;
+    
 }
 .start{
     padding: 10px;
@@ -235,4 +240,5 @@
 
 .camScreen{
     width:100%;
+    border-left: 1px solid #969496;
 }

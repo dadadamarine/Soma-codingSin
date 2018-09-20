@@ -9,9 +9,9 @@ require('codemirror/mode/xml/xml');
 require('codemirror/mode/clike/clike');
 
 var defaults = {
-	// markdown: '# 코딩의 신에 오신걸 환영합니다.  \n',
-    javascript: '# 코딩의 신에 오신걸 환영합니다. \n;',
-    clike: '# 코딩의 신에 오신걸 환영합니다. \n;'
+	// markdown: '# 코딩의 신에 오신걸 환영합니다. \n',
+    javascript: '# 코딩의 신에 오신걸 환영합니다. \n',
+    clike: '# 코딩의 신에 오신걸 환영합니다. \n'
 };
 
 var Ide = createReactClass({
