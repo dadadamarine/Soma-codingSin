@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Codemirror = require('react-codemirror');
 const createReactClass = require('create-react-class');
+var style= require('./ide.css');
 
 require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/xml/xml');
@@ -46,7 +47,8 @@ var Ide = createReactClass({
 			mode: this.state.mode
 		};
 		return (
-			<div>
+			<div className={style.flexRow}>
+				<div className={style.flexColumn}>
 				<Codemirror ref="editor" value={this.state.code} onChange={this.updateCode} options={options} autoFocus={true} />
 				<div style={{ marginTop: 10 }}>
 					<select onChange={this.changeMode} value={this.state.mode}>
@@ -55,6 +57,19 @@ var Ide = createReactClass({
                         <option value="clike">C</option>
 					</select>
 					{/* <button onClick={this.toggleReadOnly}>Toggle read-only mode (currently {this.state.readOnly ? 'on' : 'off'})</button> */}
+				</div>
+				</div>
+				<div className={style.margin} />
+				<div className={style.flexColumn}>
+				<Codemirror ref="editor" value={this.state.code} onChange={this.updateCode} options={options} autoFocus={true} />
+				<div style={{ marginTop: 10 }}>
+					<select onChange={this.changeMode} value={this.state.mode}>
+						{/* <option value="markdown">Markdown</option> */}
+						<option value="javascript">JavaScript</option>
+                        <option value="clike">C</option>
+					</select>
+					{/* <button onClick={this.toggleReadOnly}>Toggle read-only mode (currently {this.state.readOnly ? 'on' : 'off'})</button> */}
+				</div>
 				</div>
 			</div>
 		);
