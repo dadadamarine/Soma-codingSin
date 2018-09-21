@@ -153,7 +153,7 @@ export default class room extends Component {
     const curosr =this;
     service.contentsList(0).then(function (res) {
         curosr.setState({list:res.data});
-        console.log(res.data);
+        alert(res.data);
     }).catch(function (error) {
         alert('error massage : '+error);
     });
