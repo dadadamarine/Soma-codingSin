@@ -17,6 +17,7 @@ router.post('/list', function(req, res){
             const db = client.db(dbName);
             db.collection(dbCollection).find({type:u_type}).toArray(function(err, doc){
                 if(err) console.log(err);
+                console.log(doc);
                 res.send(doc);
             });
             client.close();
