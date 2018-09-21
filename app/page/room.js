@@ -23,13 +23,13 @@ export default class room extends Component {
     var v_count =0;
     var s_count =0;
 
-    document.getElementById('btn-setting').onclick = function() {
-     connection.removeStream({screen: true });
-     connection.addStream({
-	screen:true,
-	oneway:true
-	});
-    };
+    // document.getElementById('btn-setting').onclick = function() {
+    //  connection.removeStream({screen: true });
+    //  connection.addStream({
+	// screen:true,
+	// oneway:true
+	// });
+    // };
 
     document.getElementById('btn-screen-share').onclick = function() {
       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
