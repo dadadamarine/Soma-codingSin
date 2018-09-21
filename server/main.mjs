@@ -31,6 +31,9 @@ app.use('/reqUser', user);
 import lecture from './routes/lecture';
 app.use('/reqLecture', lecture);
 
+import admin from './routes/admin';
+app.use('/admin', admin);
+
 let indexPage="";
 fs.readFile(path.resolve(__dirname,'../build/index.html'), 'utf8', function(err, data){
     indexPage=data;

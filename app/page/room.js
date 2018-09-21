@@ -20,16 +20,16 @@ export default class room extends Component {
     this.screenChange = this.screenChange.bind(this);
   }
   componentDidMount(){
-//     var v_count =0;
-//     var s_count =0;
+    var v_count =0;
+    var s_count =0;
 
-//     document.getElementById('btn-setting').onclick = function() {
-//      connection.removeStream({screen: true });
-//      connection.addStream({
-// 	screen:true,
-// 	oneway:true
-// 	});
-//     };
+    document.getElementById('btn-setting').onclick = function() {
+     connection.removeStream({screen: true });
+     connection.addStream({
+	screen:true,
+	oneway:true
+	});
+    };
 
     document.getElementById('btn-screen-share').onclick = function() {
       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
@@ -45,101 +45,101 @@ export default class room extends Component {
         }
     };
 
-//     var connection = new RTCMultiConnection();
-//     connection.iceServers = [];
-//     connection.iceServers.push({
-//         urls: 'stun:stun1.l.google.com:19302'
-//     });
-//     connection.iceServers.push({
-//         urls: 'turn:13.125.113.70:3478',
-//         credential: 'soma123!',
-//         username: 'codingsin'
-//     });
+    var connection = new RTCMultiConnection();
+    connection.iceServers = [];
+    connection.iceServers.push({
+        urls: 'stun:stun1.l.google.com:19302'
+    });
+    connection.iceServers.push({
+        urls: 'turn:13.125.113.70:3478',
+        credential: 'soma123!',
+        username: 'codingsin'
+    });
 
-//     connection.getScreenConstraints = function(callback) {
-//         getScreenConstraints(function(error, screen_constraints) {
-//             if (!error) {
-//                 screen_constraints = connection.modifyScreenConstraints(screen_constraints);
-//                 callback(error, screen_constraints);
-//                 return;
-//             }
-//             throw error;
-//         });
-//     };
+    connection.getScreenConstraints = function(callback) {
+        getScreenConstraints(function(error, screen_constraints) {
+            if (!error) {
+                screen_constraints = connection.modifyScreenConstraints(screen_constraints);
+                callback(error, screen_constraints);
+                return;
+            }
+            throw error;
+        });
+    };
 
-//     connection.socketURL ='https://www.codingsin.com:9001/';
+    connection.socketURL ='https://www.codingsin.com:9001/';
 
-//     connection.session = {
-//         audio: true,
-//         video: true
-//     };
-//     connection.sdpConstraints.mandatory = {
-//         OfferToReceiveAudio: true,
-//         OfferToReceiveVideo: true
-//     };
-//     connection.bandwidth = {
-//         audio: 100,  // 50 kbps
-//         video: 1000, // 256 kbps
-//         screen: 3000 // 300 kbps
-//     };
+    connection.session = {
+        audio: true,
+        video: true
+    };
+    connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
+    };
+    connection.bandwidth = {
+        audio: 100,  // 50 kbps
+        video: 1000, // 256 kbps
+        screen: 3000 // 300 kbps
+    };
 
-//     connection.mediaConstraints = {
-//         audio: true,
-//         video: {
-//             mandatory: {
-//                 minFrameRate: 30,
-//                 maxFrameRate: 60
-//             },
-//             optional: []
-//         }
-//     };
+    connection.mediaConstraints = {
+        audio: true,
+        video: {
+            mandatory: {
+                minFrameRate: 30,
+                maxFrameRate: 60
+            },
+            optional: []
+        }
+    };
 
-//     connection.onstream = function(event) {
-//         console.log(event, URL.createObjectURL(event.stream))
-//         if(document.getElementById(event.streamid)) {
-//             var existing = document.getElementById(event.streamid);
-//             existing.parentNode.removeChild(existing);
-//         }
+    connection.onstream = function(event) {
+        console.log(event, URL.createObjectURL(event.stream))
+        if(document.getElementById(event.streamid)) {
+            var existing = document.getElementById(event.streamid);
+            existing.parentNode.removeChild(existing);
+        }
         
-//         var width = parseInt(connection.videosContainer.clientWidth / 2) - 20;
+        var width = parseInt(connection.videosContainer.clientWidth / 2) - 20;
         
-//         if(event.stream.isScreen === true) {
-//             width = connection.videosContainer.clientWidth - 20;
-//         }
+        if(event.stream.isScreen === true) {
+            width = connection.videosContainer.clientWidth - 20;
+        }
         
-//         var mediaElement = getMediaElement(event.mediaElement, {
-//             title: event.userid,
-//             buttons: ['full-screen'],
-//             width: width,
-//             showOnMouseEnter: false
-//         });
-//         if(event.type == 'remote'&& event.stream.isVideo==true && v_count==0 )
-//         {
-//             var video= document.getElementById('cam');
-//             video.setAttribute('src',URL.createObjectURL(event.stream));
-//             video.load();
-//             v_count=1;
-//         }
-//         if(event.type == 'remote' && event.stream.isScreen==true && s_count ==0 )
-//         {
+        var mediaElement = getMediaElement(event.mediaElement, {
+            title: event.userid,
+            buttons: ['full-screen'],
+            width: width,
+            showOnMouseEnter: false
+        });
+        if(event.type == 'remote'&& event.stream.isVideo==true && v_count==0 )
+        {
+            var video= document.getElementById('cam');
+            video.setAttribute('src',URL.createObjectURL(event.stream));
+            video.load();
+            v_count=1;
+        }
+        if(event.type == 'remote' && event.stream.isScreen==true && s_count ==0 )
+        {
 
-//             var video= document.getElementById('remote-screen');
-//             video.setAttribute('src',URL.createObjectURL(event.stream));
-//             video.load();
-//             s_count=1;
-//         }
+            var video= document.getElementById('remote-screen');
+            video.setAttribute('src',URL.createObjectURL(event.stream));
+            video.load();
+            s_count=1;
+        }
 
-//         setTimeout(function() {
-//             mediaElement.media.play();
-//         }, 5000);
-//         mediaElement.id = event.streamid;
-//     };
-//     connection.onstreamended = function(event) {
-//         var mediaElement = document.getElementById(event.streamid);
-//         if(mediaElement) {
-//             mediaElement.parentNode.removeChild(mediaElement);
-//         }
-//     };
+        setTimeout(function() {
+            mediaElement.media.play();
+        }, 5000);
+        mediaElement.id = event.streamid;
+    };
+    connection.onstreamended = function(event) {
+        var mediaElement = document.getElementById(event.streamid);
+        if(mediaElement) {
+            mediaElement.parentNode.removeChild(mediaElement);
+        }
+    };
 
     this.view1Click();
   }

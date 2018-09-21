@@ -15,6 +15,7 @@ import Lecture from './page/lecture';
 import LectureReg from './page/lectureReg';
 import LectureDetail from './page/lectureDetail';
 import MyLecture from './page/myLecture';
+import Admin from './page/admin';
 
 render(<Router>
     <div>    
@@ -29,6 +30,7 @@ render(<Router>
             <Route path="/lecture/:id" component={LectureDetail} />
             <Route path="/room" component={Room} />
             <Route path="/myLecture" component={MyLecture} />
+            <Route path="/admin" component={Admin} />
             <Route missing component={NoMatch} />
         </Switch>
         {location.pathname.startsWith("/room")?null:<Footer/>}
