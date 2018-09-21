@@ -147,14 +147,14 @@ export default class room extends Component {
   }
 
   view1Click(){
-    $("."+style.progress).css("display","block");
+    $("."+style.progress).css("display","flex");
     $("."+style.problem).css("display","none");
     $("."+style.sideButton1).addClass(style.isselected);
     $("."+style.sideButton2).removeClass(style.isselected);
   }
   view2Click(){
     $("."+style.progress).css("display","none");
-    $("."+style.problem).css("display","block");
+    $("."+style.problem).css("display","flex");
     $("."+style.sideButton1).removeClass(style.isselected);
     $("."+style.sideButton2).addClass(style.isselected);
   }
@@ -251,8 +251,6 @@ for (i = 0; i < len; i++) {
                     <div className={style.settingView}>
                     </div>
               </div>
-
-
             </div>
         </div>
       </div>

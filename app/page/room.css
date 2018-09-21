@@ -151,7 +151,7 @@
     margin: 5px;
 }
 .sideView{
-    float:left;
+    float: left;
     margin: 0; 
     width: 25%;
     height:100%;
@@ -159,6 +159,8 @@
 }
 
 .sideTop{
+    display: flex;
+    flex-direction: column;
     width:100%;
     height:70%;
     border: 1px solid #969496;
@@ -175,6 +177,8 @@
     border-bottom: 0;
     box-shadow: 0;
     display: none;
+    height: inherit;
+    flex-direction: column;
 }
 .problemTitle{
     font-size: 20px;
@@ -185,22 +189,24 @@
 }
 .problemContent{
     word-break:normal;
+    height: inherit;
+    padding-bottom: 40px;
 }
 .problemContent pre{
     margin: 0px;
+    height: inherit;
 }
 .problemContent pre code{
-    height: -webkit-fill-available;
+    height: inherit;
 }
 
 .nav{
-    display: flex;
-    flex-direction: row;
     background: #faf9fa;
     color:#454545;
 }
 
 .sideButton1, .sideButton2{
+    float: left;
     width:50%;
     height:40px;
     cursor: pointer;
@@ -238,6 +244,8 @@
     transition-duration: 1s;
 }
 .viewContainer{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 }
