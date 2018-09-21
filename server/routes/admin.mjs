@@ -49,3 +49,5 @@ function getNextSequence(name) {
         }
     });
  }
+
+ export default router;
