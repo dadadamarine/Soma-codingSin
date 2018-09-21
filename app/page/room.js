@@ -25,6 +25,14 @@ export default class room extends Component {
     this.screenChange = this.screenChange.bind(this);
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
+
+    const curosr =this;
+    service.contentsList(0).then(function (res) {
+        curosr.setState({list:res.data});
+        alert(res.data);
+    }).catch(function (error) {
+        alert('error massage : '+error);
+    });
   }
   componentDidMount(){
     var v_count =0;
@@ -149,14 +157,6 @@ export default class room extends Component {
     };
 
     this.view1Click();
-
-    const curosr =this;
-    service.contentsList(0).then(function (res) {
-        curosr.setState({list:res.data});
-        alert(res.data);
-    }).catch(function (error) {
-        alert('error massage : '+error);
-    });
   }
   componentWillUnmount() {
   }
