@@ -48,7 +48,7 @@ export default class admin extends Component {
                         <br /><br />
                         <Input type="text" placeholder='제목' value={this.state.title} onChange={this.inputTitle} />
                         <br /><br />
-                        <Input type="text" placeholder='내용' value={this.state.content} onChange={this.inputContent} />
+                        <textarea className={style.despBox} placeholder='내용' value={this.state.content} onChange={this.inputContent} />
                         <br /><br />
                         <Input type="text" placeholder='챕터' value={this.state.chapter} onChange={this.inputChapter} />
                         <br /><br />
