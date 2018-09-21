@@ -254,3 +254,13 @@
     height: 100%;
     border-left: 1px solid #969496;
 }
+
+.problemPrev{
+    float: left;
+    cursor: pointer;
+    display: none;
+}
+.problemNext{
+    float: right;
+    cursor: pointer;
+}

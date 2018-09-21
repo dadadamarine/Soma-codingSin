@@ -6,18 +6,25 @@ import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 import Highlight from 'react-highlight';
 import Code from '../util/ide';
+import * as service from '../request/room';
 
 export default class room extends Component {
   constructor(props) {
     super();
     this.state = {
         endpoint: "https://codingsin.com",
-        toggle:true
+        toggle:true,
+        cursor:0,
+        list:[{title:"test1",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>"},
+        {title:"test3",content:"asdqweqweqwe"}
+        ]
     }
 
     this.view1Click = this.view1Click.bind(this);
     this.view2Click = this.view2Click.bind(this);
     this.screenChange = this.screenChange.bind(this);
+    this.prev = this.prev.bind(this);
+    this.next = this.next.bind(this);
   }
   componentDidMount(){
     var v_count =0;
@@ -142,6 +149,14 @@ export default class room extends Component {
     };
 
     this.view1Click();
+
+    const curosr =this;
+    service.contentsList(0).then(function (res) {
+        curosr.setState({list:res.data});
+        console.log(res.data);
+    }).catch(function (error) {
+        alert('error massage : '+error);
+    });
   }
   componentWillUnmount() {
   }
@@ -170,6 +185,18 @@ export default class room extends Component {
       $("."+style.roomMain).css("display","block");
       $("."+style.webIde).css("display","none");
     }
+  }
+
+  prev(event){
+    $("."+style.problemNext).css("display","block");
+    this.setState({cursor:this.state.cursor-1});
+    if(this.state.cursor==1) $("."+style.problemPrev).css("display","none");
+  }
+
+  next(event){
+    $("."+style.problemPrev).css("display","block");
+    this.setState({cursor:this.state.cursor+1});
+    if(this.state.cursor==this.state.list.length-2) $("."+style.problemNext).css("display","none");
   }
   
   render() {
@@ -213,31 +240,9 @@ export default class room extends Component {
                       <div className={style.progress}>
                       </div>
                       <div className={style.problem}>
-                      <div className={style.problemTitle}>scope_issue</div>
+                      <div className={style.problemTitle}><div className={style.problemPrev} onClick={this.prev}>←</div>{this.state.list[this.state.cursor].title}<div className={style.problemNext} onClick={this.next}>→</div></div>
                       <div className={style.problemContent}>
-                      <Highlight language="javascript">{`
-<html>
-<body>
-<div id="divScope0">Click me! DIV 0</div>
-<div id="divScope1">Click me! DIV 1</div>
-<div id="divScope2">Click me! DIV 2</div>
-<script>
-function setDivClick(index) {
-    document.getElementById("divScope" + index).addEventListener(
-        "click",
-        function () {
-            alert("You clicked div #" + index);
-        },
-        false
-    );
-}
-var i, len = 3;
-for (i = 0; i < len; i++) {
-    setDivClick(i);
-}
-</script>
-</body>
-</html>`}
+                      <Highlight language="javascript">{this.state.list[this.state.cursor].content}
                       </Highlight>
                       </div>
                       </div>

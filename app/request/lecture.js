@@ -31,9 +31,3 @@ export function lectureRequest(id) {
         _id:id
     });
 }
-
-export function contentsList(type) {
-    return axios.post('/reqLecture/ContentsList', {
-        category:type
-    });
-}
