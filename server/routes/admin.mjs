@@ -24,10 +24,10 @@ router.post('/contentWrite', function(req, res){
                 { _id: u_type },
                 { $inc: { seq: 1 } }, 
                 { upsert:true, returnNewDocument: true },
-                function(err, res){
+                function(err, resp){
                     if(err) console.log(err);
                     else{
-                        db.collection(dbCollection).insert({type:u_type,title:u_title,no:res.value.seq,content:u_content,chapter:u_chapter}, function(err, doc){
+                        db.collection(dbCollection).insert({type:u_type,title:u_title,no:resp.value.seq,content:u_content,chapter:u_chapter}, function(err, doc){
                             if(err) console.log(err);
                             res.send("ok");
                         });
