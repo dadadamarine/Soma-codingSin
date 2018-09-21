@@ -20,11 +20,21 @@ router.post('/contentWrite', function(req, res){
         if(error) console.log(error);
         else {
             const db = client.db(dbName);
-            db.collection(dbCollection).insert({type:u_type,title:u_title,no:getNextSequence(u_type),content:u_content,chapter:u_chapter}, function(err, doc){
-                if(err) console.log(err);
-                res.send("ok");
-            });
-            client.close();
+            db.collection(dbCollectionCount).findOneAndUpdate(
+                { _id: u_type },
+                { $inc: { seq: 1 } }, 
+                { upsert:true, returnNewDocument: true },
+                function(err, res){
+                    if(err) console.log(err);
+                    else{
+                        db.collection(dbCollection).insert({type:u_type,title:u_title,no:res.value.seq,content:u_content,chapter:u_chapter}, function(err, doc){
+                            if(err) console.log(err);
+                            res.send("ok");
+                        });
+                        client.close();
+                    }
+                }      
+            );
         }
     });
 });
