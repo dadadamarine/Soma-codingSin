@@ -241,7 +241,7 @@ export default class room extends Component {
                       <div className={style.problem}>
                       <div className={style.problemTitle}><div className={style.problemPrev} onClick={this.prev}>←</div>{this.state.list[this.state.cursor].title}<div className={style.problemNext} onClick={this.next}>→</div></div>
                       <div className={style.problemContent}>
-                      <Highlight language="html">{this.state.list[this.state.cursor].content}
+                      <Highlight language="xml">{this.state.list[this.state.cursor].content}
                       </Highlight>
                       </div>
                       </div>
