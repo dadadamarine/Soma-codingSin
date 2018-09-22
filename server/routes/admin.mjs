@@ -27,7 +27,7 @@ router.post('/contentWrite', function(req, res){
                 function(err, resp){
                     if(err) console.log(err);
                     else{//레벨은 디폴트5로 학습후 문제풀기를 통한 조정 가능
-                        db.collection(dbCollection).insert({type:u_type,title:u_title,no:resp.value.seq,content:u_content,chapter:u_chapter, level:5}, function(err, doc){
+                        db.collection(dbCollection).insert({type:u_type,title:u_title,no:resp.value.seq,content:u_content,chapter:u_chapter, level:1000}, function(err, doc){
                             if(err) console.log(err);
                             res.send("ok");
                         });
