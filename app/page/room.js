@@ -27,7 +27,7 @@ export default class room extends Component {
     this.next = this.next.bind(this);
 
     const curosr =this;
-    service.contentsList(0).then(function (res) {
+    service.contentsList(0,1).then(function (res) {
         curosr.setState({list:res.data});
     }).catch(function (error) {
         alert('error massage : '+error);
