@@ -32,6 +32,7 @@ export default class admin extends Component {
         service.contentWrite(this.state.type, this.state.title, this.state.content, this.state.chapter).then(function (res) {
             if(String(res.data)=="ok"){
                 alert("문제작성 성공!");
+                
             }
             else alert("문제작성에 실패했습니다!");
         }).catch(function (error) {
