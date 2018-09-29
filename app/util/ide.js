@@ -3,6 +3,8 @@ var ReactDOM = require('react-dom');
 var Codemirror = require('react-codemirror');
 const createReactClass = require('create-react-class');
 var style= require('./ide.css');
+var io = require('socket.io-client');
+const socket = io.connect({ reconnect: true });
 
 require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/xml/xml');
@@ -16,60 +18,62 @@ var defaults = {
 };
 
 var Ide = createReactClass({
+	componentDidMount() {
+		if(location.hash!=null){
+			var cursor=this;
+			var hashString = location.hash.replace('#', '');
+			socket.emit('channelJoin', hashString);
+			socket.on('receive', function (data) {
+				cursor.setState({code_y:data});
+				console.log(data);
+			});
+		}
+	},
 	getInitialState () {
 		return {
-			code: defaults.javascript,
-			readOnly: false,
-			mode: 'javascript',
+			code_i: defaults.javascript,
+			mode_i: 'javascript'
 		};
 	},
 	updateCode (newCode) {
 		this.setState({
-			code: newCode
+			code_i: newCode
 		});
+		socket.emit('send', newCode);
 	},
 	changeMode (e) {
         var mode = e.target.value;
 		this.setState({
-			mode: mode,
-			code: defaults[mode]
+			mode_i: mode,
+			code_i: defaults[mode]
 		});
 	},
-	toggleReadOnly () {
-		this.setState({
-			readOnly: !this.state.readOnly
-		}, () => this.refs.editor.focus());
-	},
 	render () {
-		var options = {
+		var options_i = {
 			lineNumbers: true,
-			readOnly: this.state.readOnly,
-			mode: this.state.mode
+			readOnly: false,
+			mode: this.state.mode_i
+		};
+		var options_y = {
+			lineNumbers: true,
+			readOnly: true,
+			mode: this.state.mode_y
 		};
 		return (
 			<div className={style.flexRow}>
 				<div className={style.flexColumn}>
-				<Codemirror ref="editor" value={this.state.code} onChange={this.updateCode} options={options} autoFocus={true} />
+				<Codemirror ref="editor" value={this.state.code_i} onChange={this.updateCode} options={options_i} autoFocus={true} />
 				<div style={{ marginTop: 10 }}>
-					<select onChange={this.changeMode} value={this.state.mode}>
+					<select onChange={this.changeMode} value={this.state.mode_i}>
 						{/* <option value="markdown">Markdown</option> */}
 						<option value="javascript">JavaScript</option>
                         <option value="clike">C</option>
 					</select>
-					{/* <button onClick={this.toggleReadOnly}>Toggle read-only mode (currently {this.state.readOnly ? 'on' : 'off'})</button> */}
 				</div>
 				</div>
 				<div className={style.margin} />
 				<div className={style.flexColumn}>
-				<Codemirror ref="editor" value={this.state.code} onChange={this.updateCode} options={options} autoFocus={true} />
-				<div style={{ marginTop: 10 }}>
-					<select onChange={this.changeMode} value={this.state.mode}>
-						{/* <option value="markdown">Markdown</option> */}
-						<option value="javascript">JavaScript</option>
-                        <option value="clike">C</option>
-					</select>
-					{/* <button onClick={this.toggleReadOnly}>Toggle read-only mode (currently {this.state.readOnly ? 'on' : 'off'})</button> */}
-				</div>
+				<Codemirror ref="editor" value={this.state.code_y} options={options_y}/>
 				</div>
 			</div>
 		);
