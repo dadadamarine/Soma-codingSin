@@ -38,7 +38,7 @@ var Ide = createReactClass({
 		this.setState({
 			code_i: newCode
 		});
-		socket.emit('send', newCode);
+		socket.emit('send', {channel:"test", msg:newCode});
 	},
 	changeMode (e) {
         var mode = e.target.value;
