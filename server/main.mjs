@@ -65,7 +65,7 @@ io.on('connection', function (socket) {
     socket.on('send', function (data) {
         // io.to(data.channel).emit('receive', {chat:data.msg});
         console.log("log>"+data);
-        socket.broadcast.to(data.channel).emit('receive', data);
+        io.to(data.channel).emit('receive', data);
     });
 });
 
