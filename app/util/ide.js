@@ -19,15 +19,14 @@ var defaults = {
 
 var Ide = createReactClass({
 	componentDidMount() {
-		if(location.hash!=null){
-			var cursor=this;
-			var hashString = location.hash.replace('#', '');
-			socket.emit('channelJoin', hashString);
-			socket.on('receive', function (data) {
-				cursor.setState({code_y:data});
-				console.log(data);
-			});
-		}
+		console.log(this.props);
+		var cursor=this;
+		// var hashString = location.hash.replace('#', '');
+		socket.emit('channelJoin', "test");
+		socket.on('receive', function (data) {
+			cursor.setState({code_y:data});
+			console.log(data);
+		});
 	},
 	getInitialState () {
 		return {

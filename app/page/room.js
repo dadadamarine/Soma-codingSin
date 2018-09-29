@@ -13,6 +13,7 @@ export default class room extends Component {
     super();
     this.state = {
         endpoint: "https://codingsin.com",
+        room:"",
         toggle:true,
         cursor:0,
         list:[{title:"test1",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>"},
@@ -27,6 +28,9 @@ export default class room extends Component {
     this.next = this.next.bind(this);
 
     const curosr =this;
+    if(location.hash!=null) {
+        this.setState({room:location.hash.replace('#', '')});
+    }
     service.contentsList(0,1).then(function (res) {
         curosr.setState({list:res.data});
     }).catch(function (error) {
@@ -36,14 +40,13 @@ export default class room extends Component {
   componentDidMount(){
     var v_count =0;
     var s_count =0;
-    
+    var cursor = this;
     document.getElementById('btn-screen-share').onclick = function() {
       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
       else{
         $("."+style.onAir+" span").removeClass(style.ico_grayDot);
         $("."+style.onAir+" span").addClass(style.ico_redDot);
-        var hashString = location.hash.replace('#', '');
-        connection.openOrJoin(hashString);
+        connection.openOrJoin(cursor.state.room);
             connection.addStream({
             screen: true,
             oneway: true
@@ -217,7 +220,7 @@ export default class room extends Component {
         <div className={style.mainWrapper}>
             <div className={style.roomWrapper} id="screen-wrap">
                 <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
-                <div className={style.webIde}><Code /></div>
+                <div className={style.webIde}><Code room={this.state.room}/></div>
             </div>
 
 
