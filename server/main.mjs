@@ -59,12 +59,10 @@ app.get("*", function(req, res, next){
 
 io.on('connection', function (socket) {
     socket.on('channelJoin',function(channel){
-        console.log("log>"+channel);
         socket.join(channel);
     });
     socket.on('send', function (data) {
         // io.to(data.channel).emit('receive', {chat:data.msg});
-        console.log("log>"+data);
         socket.broadcast.to(data.channel).emit('receive', data.msg);
     });
 });
