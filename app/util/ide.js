@@ -90,10 +90,10 @@ const socket = io.connect({ reconnect: true });
 export default class room extends Component {
 	constructor(props) {
 		super();
-		this.state = {code_i:"",code_y:"", mode_i:"javascript",mode_y:"javascript", mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
+		this.state = {hash:location.hash.replace('#', ''), code_i:"",code_y:"", mode_i:"javascript",mode_y:"javascript", mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
 		var cursor=this;
-		// var hashString = location.hash.replace('#', '');
-		socket.emit('channelJoin', "test");
+
+		socket.emit('channelJoin', this.state.hash);
 		socket.on('receive', function (data) {
 			cursor.setState({code_y:data});
 		});
@@ -106,17 +106,18 @@ export default class room extends Component {
 	changeMode (e) {
 		let mode = e.target.value;
 		let intro = this.state.mode_intro[mode];
-		alert(intro);
 		this.setState({
 			mode_i: mode,
 			code_i: intro
 		});
 	}
 	render() {
+		const cursor = this;
 		return (
 			<div className={style.flexRow}>
 				<div className={style.flexColumn}>
 				<CodeMirror
+					className="auto-start"
 					value={this.state.code_i}
 					options={{
 						mode: `${this.state.mode_i}`,
@@ -124,7 +125,7 @@ export default class room extends Component {
 						lineNumbers: true
 					}}
 					onChange={(editor, data, value) => {
-						socket.emit('send', {channel:"test", msg:value});
+						socket.emit('send', {channel:cursor.state.hash, msg:value});
 					}}
 					editorDidMount={editor => { editor.setValue(this.state.mode_intro.javascript);}}
 					autoCursor={true}
