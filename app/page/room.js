@@ -16,9 +16,9 @@ export default class room extends Component {
         room:"",
         toggle:true,
         cursor:0,
-        list:[{title:"test1",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>"},
-        {title:"test3",content:"asdqweqweqwe"}
-        ]
+        list:[{title:"test1",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>", quiz:["1,0,2","3,4,16","5,8,12"]},
+        {title:"test3",content:"asdqweqweqwe", quiz:["0,0,2"]}],
+        answer:[]
     }
 
     this.view1Click = this.view1Click.bind(this);
@@ -26,16 +26,38 @@ export default class room extends Component {
     this.screenChange = this.screenChange.bind(this);
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
+    this.createQuiz = this.createQuiz.bind(this);
 
-    const curosr =this;
+    const cursor =this;
     if(location.hash!=null) {
         this.setState({room:location.hash.replace('#', '')});
     }
     service.contentsList(0,1).then(function (res) {
-        curosr.setState({list:res.data});
+        cursor.setState({list:res.data});
     }).catch(function (error) {
         alert('error massage : '+error);
     });
+
+    let answer_tmp = cursor.state.answer;
+    let list_tmp = cursor.state.list;
+    
+    for(let a=0;a<list_tmp.length;a++){
+        let answer_tmp2 = new Array();
+        let text = list_tmp[a].content.split('\n');
+        for(let i=0;i<list_tmp[a].quiz.length;i++){
+            let tmp = String(list_tmp[a].quiz[i]).split(",");
+            let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
+            answer_tmp2.push(str);
+            text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
+        }
+        let content="";
+        for(let i=0;i<text.length;i++){
+            content+=text[i]+'\n';
+        }
+        list_tmp[a].content=content;
+        answer_tmp.push(answer_tmp2);
+    }
+    cursor.setState({list:list_tmp, answer:answer_tmp});
   }
   componentDidMount(){
     var v_count =0;
@@ -151,8 +173,34 @@ export default class room extends Component {
     };
 
     this.view1Click();
+    this.createQuiz();
+    $("."+style.none).on("DOMSubtreeModified",function(){
+        cursor.createQuiz();
+    });
+
+    $("code").on("DOMSubtreeModified",function(){
+        $(".quiz").on("input", function(){
+            let str=cursor.state.answer[$(this).attr("cursor")];
+            if($(this).val()==str[$(this).attr("subcursor")]){
+                $(this).attr("readonly",true);
+                $(this).css("color","blue");
+                $(this).css("font-weight","bold");
+                $(this).css("font-size","15px");
+                $(this).css("text-align","center");
+                $(this).css("border","0px");
+            }
+        });
+    });
   }
   componentWillUnmount() {
+  }
+  createQuiz(){
+    let cursor=this;
+    let str= $("."+style.none).html();
+    let tmp= this.state.answer[this.state.cursor];
+    for(var i=0;i<tmp.length;i++)
+        str=str.replace("{quiz}","<input class='quiz' type='text' cursor='"+this.state.cursor+"' subcursor='"+i+"' data='"+tmp[i]+"'size='"+tmp[i].length+"'/>");
+    $("code").html(str);
   }
 
   view1Click(){
@@ -183,13 +231,13 @@ export default class room extends Component {
 
   prev(event){
     $("."+style.problemNext).css("display","block");
-    this.setState({cursor:this.state.cursor-1});
+    this.setState({flag:true, cursor:this.state.cursor-1});
     if(this.state.cursor==1) $("."+style.problemPrev).css("display","none");
   }
 
   next(event){
     $("."+style.problemPrev).css("display","block");
-    this.setState({cursor:this.state.cursor+1});
+    this.setState({flag:true, cursor:this.state.cursor+1});
     if(this.state.cursor==this.state.list.length-2) $("."+style.problemNext).css("display","none");
   }
   
@@ -236,8 +284,8 @@ export default class room extends Component {
                       <div className={style.problem}>
                       <div className={style.problemTitle}><div className={style.problemPrev} onClick={this.prev}>←</div>{this.state.list[this.state.cursor].title}<div className={style.problemNext} onClick={this.next}>→</div></div>
                       <div className={style.problemContent}>
-                      <Highlight className="html">{`${this.state.list[this.state.cursor].content}`}
-                      </Highlight>
+                      <Highlight className="html"></Highlight>
+                      <div className={style.none}> {`${this.state.list[this.state.cursor].content}`}</div>
                       </div>
                       </div>
                 </div>

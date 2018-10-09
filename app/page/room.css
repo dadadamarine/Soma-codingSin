@@ -264,3 +264,7 @@
     float: right;
     cursor: pointer;
 }
+
+.none{
+    display: none;
+}
