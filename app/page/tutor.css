@@ -1,0 +1,130 @@
+.wrapper{
+    margin:0;
+    padding:0;
+}
+
+.bannerWrapper{
+    width:100%;
+    height:700px;
+}
+.bannerWrapper .bannerTop{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:350px;
+/*     background:url("../resources/img/main20/main_20_banner.jpg") no-repeat;
+    background-size:cover;
+    background-position: center; */
+    background-color: orange;
+    position: relative;
+
+}
+
+.bannerWrapper .bannerTop .bannerPhrase{
+    position: absolute;
+    bottom:0;
+    right:0;
+    margin: 0 300px -130px 0;
+    writing-mode: vertical-lr;
+    font-size:4rem;
+    line-height: 7rem;
+    color:gray;
+    font-weight: 600;
+}
+.bannerWrapper .bannerTop .bannerPhrase span{
+    display: inline;
+    color:white;
+}
+.bannerWrapper .bannerBottom{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:50%;
+    position: relative;
+
+    box-shadow: 2px 5px 10px gray;
+}
+
+.bannerWrapper .bannerBottom .introducePhrase{
+    position: absolute;
+    margin: 200px 0px 0 200px;
+
+    font-weight: bold;
+}
+.bannerWrapper .bannerBottom .dotImage{
+    width:300px;
+    height:300px;
+
+    position: absolute;
+    bottom: 0;
+    margin: 0px 0px -50px 20px;
+
+    border-radius:300px;
+/*     background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:cover;
+    background-position: center; */
+    background-color:rgb(0.2, 0.2 , 0.2, 0.2);
+}
+
+
+
+.tutorListWrapper{
+    margin:20px auto;
+    padding:0;
+    width:1000px;
+    font-weight: bold;
+    font-size:1.5rem;
+}
+
+.tutorListWrapper .titleSection{
+    display: flex;
+    height:50px;
+}
+
+.tutorListWrapper .titleSection div{
+    margin:0 0 0 20px;
+    height:30px;
+}
+
+.tutorListWrapper .titleSection div a{
+    color:black;
+    padding:0 7px;
+    line-height:30px;
+}
+.tutorListWrapper .titleSection div.selected{
+    background-color:#333333;
+    border-radius: 5px;
+}
+.tutorListWrapper .titleSection div.selected a{
+    color:white;
+}
+
+.tutorListWrapper .tutorList{
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+.tutorListWrapper .tutorList .tutor{
+    width:150px;
+    height:170px;
+    margin:5px auto;
+    border:1px solid red;
+}
+
+
+.searchBarWrapper{
+    height:200px;
+    width:100%;
+    background-color: #dddddd;
+    text-align: center;
+
+}
+
+.searchBarWrapper .searchBar{
+    width: 350px;
+    height: 30px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+

@@ -1,3 +1,241 @@
+.bannerWrapper{
+    margin: 0;
+    padding: 0;
+}
+
+.bannerWrapper{
+    width:100%;
+    height:700px;
+/*   background:url("../resources/img/main20/main_20_banner.jpg") no-repeat;
+ */    
+    background-color:#cccccc;
+    background-size:cover;
+    background-position: center;
+    display: flex;
+}
+
+.bannerWrapper .left{
+    float:left;
+    width:50px;
+    height:100%;
+    margin-left:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerWrapper .right{
+    width:50px;
+    height:100%;
+    margin-right:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerWrapper .left .button{
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+    height:30px;
+    width:30px;
+}
+
+.bannerWrapper .right .button{
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+    height:30px;
+    width:30px;
+}
+
+
+.bannerWrapper .content{
+    float: left;
+    width:1000px;
+    height:80%;
+    margin:90px auto 60px;
+    border:1px solid red;
+}
+
+.bannerWrapper .content .topSection{
+    height:300px;
+    overflow: hidden;
+}
+
+.bannerWrapper .topSection .mainPhrase{
+    float:left;
+    width:29%;
+    height:100%;
+    font-size:5.5rem;
+    color:white;
+    font-weight: bold;
+    line-height: 7rem;
+    overflow: hidden;
+
+    border:1px solid yellow;
+}
+
+.bannerWrapper .topSection .bgSelectorList{
+    float:right;
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width:65%;
+    height:100%;
+    border:1px solid green;
+}
+
+.bgSelectorList .dotList{
+    list-style: none;
+}
+
+.bgSelectorList .dotList li{
+    float: left;
+    width:10px;
+    height:10px;
+    margin:10px;
+    background: url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+}
+
+.bgSelectorList .dotList li.selected{
+    box-shadow: 1px 1px 10px grey;
+    background-color: black;
+}
+
+.bgSelectorList .imgList{
+    list-style:none;
+    overflow: hidden;
+}
+
+.bgSelectorList .imgList .imgListItem {
+    float:left;
+    font-size:0.5rem;
+}
+
+.bgSelectorList .imgList .imgListItem .image{
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+    background-position: center;
+    background: black;
+    margin:10px 10px;
+    width:60px;
+    height:35px;
+}
+.bgSelectorList .imgList .imgListItem p {
+    margin-bottom: 0 auto -10px auto;
+    text-align: center;
+}
+
+.bannerWrapper .content .bottomSection{
+    height:200px;
+}
+
+.bottomSection .levelSelectorList{
+    margin:auto;
+    padding:auto;
+    display: flex;
+    flex-direction:row;
+}
+.bottomSection .levelSelectorList .listItem{
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+    width:230px;
+    height:230px;
+    margin:auto;
+    padding:auto;
+    color:white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bottomSection .levelSelectorList .listItem *{
+    margin-left:40px;
+    width:70%;
+}
+.bottomSection .levelSelectorList .listItem h3{
+    margin-top: 70px;
+}
+
+
+.lectureWrapper{
+    width:1000px;
+    height:400px;
+    margin:0 auto;
+    padding:0;
+}
+.lectureWrapper .titleSection{
+    margin-top:100px;
+    padding: 10px;
+    height:50px;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+}
+.lectureWrapper .titleSection div{
+    margin-left: 15px;
+    float:left;
+}
+.lectureWrapper .titleSection div.title{
+    font-size:1.8rem;
+}
+
+.lectureWrapper .titleSection div.gridButton{
+    float:right;
+}
+
+.lectureWrapper .lectureList{
+    width:100%;
+    display: flex;
+    
+}
+
+.lectureWrapper .lectureList .lectureBox{
+    /* 강의 박스 한개 */
+    position: relative;
+    margin: 25px;
+    width:200px;
+    height:200px;
+    background-color:white;
+    border-bottom:1px solid black;
+}
+
+.lectureWrapper .lectureList .lectureBox .lectureImage{
+    /* 강의 박스 한개 */
+    margin:0;
+    padding:0;
+    width:198px;
+    height:120px;
+    /* background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain; */
+    background-color:yellow;
+}
+
+
+.lectureWrapper .lectureList .lectureBox .lectureName{
+    margin:5px;
+    font-size: 1rem;
+    color: #353535;
+}
+
+.lectureWrapper .lectureList .lectureBox .lectureInfo{
+    margin:5px;
+    font-size:0.7rem;
+    color : #bbbbbb;
+}
+
+.plusButton{
+    margin:70px auto;
+    text-align: center;
+}
+.plusButton button{
+    width:30px;
+    height:30px;
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+}
+
+
 .register{
     margin: 0px;
     position: fixed;
@@ -7,83 +245,11 @@
     cursor: pointer;
 }
 
-.textWrapper:hover{
-    background: green;
-    font-size: 20px;
-    transition-duration: 1s;
-}
 
-.textWrapper{
-    transition-duration: 1s;
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    font-size: 15px;
-    position: relative;
-    background: #3d4045 !important;
-    text-align: center;
-    display:table-cell; text-align:center; vertical-align:middle;
-}
-
-.textWrapper a{
-    color: white !important;
-}
-
-.wrapper{
-    height: -webkit-fill-available;
-}
-.lectureWrapper{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 1000px;
-    height: 100%;
-    margin: 0 auto;
-}
-.lectureWrapper a{
-    color: black;
- }
-.lectureBox{
-    width: 300px;
-    height: 300px;
-    margin: 16px;
-    border: 1px solid rgba(34,36,38,.15);
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 2px #999;
-    position: relative;
-}
-
-.lectureBox img{
-    width: 298px;
-    height: 150px;
-    border-radius: 5px;
-    border-bottom: 1px solid rgba(34,36,38,.15);
-}
-
-.lectureTitle{
-    margin: 15px;
-    font-size: 20px;
-    font-weight: 600!important;
-    color: #353535;
-}
-.lectureName{
-    position: absolute;
-    top: 230px;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
-}
-.lectureSchedule{
-    position: absolute;
-    top: 250px;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
-}
-.lecturePrice{
-    position: absolute;
-    top: 270px;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
+.rowLine{
+    width:101%;
+    height:1px;
+    overflow: hidden;
+    margin:0 -5px 0 -5px;
+    background-color:white;
 }

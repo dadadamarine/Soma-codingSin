@@ -12,10 +12,14 @@ import Login from './page/login';
 import SingUp from './page/signup';
 import Active from './page/active';
 import Lecture from './page/lecture';
+import Tutor from './page/tutor';
+import Community from './page/community';
 import LectureReg from './page/lectureReg';
 import LectureDetail from './page/lectureDetail';
 import MyLecture from './page/myLecture';
 import Admin from './page/admin';
+        
+
 
 render(<Router>
     <div>    
@@ -26,6 +30,8 @@ render(<Router>
             <Route path="/signup" component={SingUp} />
             <Route path="/active/:code" component={Active} />
             <Route exact path="/lecture" component={Lecture} />
+            <Route exact path="/tutor" component={Tutor}/>
+            <Route exact path="/community" component={Community}/>
             <Route path="/lectureReg" component={LectureReg} />
             <Route path="/lecture/:id" component={LectureDetail} />
             <Route path="/room" component={Room} />
@@ -33,7 +39,7 @@ render(<Router>
             <Route path="/admin" component={Admin} />
             <Route missing component={NoMatch} />
         </Switch>
-        {location.pathname.startsWith("/room")?null:<Footer/>}
+        {location.pathname.startsWith("/room")?null:<Footer/>} 
     </div>
 </Router>
     , document.getElementById('root'));

@@ -2,70 +2,53 @@
     border-bottom: 1px solid rgb(187, 187, 187);
     width:100%;
 }
-
-
-.headerFst {
+.sizeWrapper{
+    width: 1000px;
+    height:50px;
+    margin:0 auto;
+    padding:0;
+    background-color: #ffffff;
     display: flex;
-    margin: 0 auto;
+    flex-direction: row;
+}
+/* 
+    헤더 왼편 
+*/
+.menuList {
+    flex-basis:3;
+    margin: 5 auto;
     text-align: center;
-    font-weight: 600;
-    height:15px;
-    width:1000px;
-    background: #ffffffb0 none !important;
+    width:700px;
 }
-.headerSec {
+.menuList .logo{
+    float:left;
+    margin: 10px auto 0 auto;
+    padding:auto;
+    width: 150px;
+    height: 30px;
+    background: url("../resources/img/header/logoNewOrange.png") no-repeat;
+    background-size : contain;
+
+    cursor: pointer;
+}
+.menuList .menuItem{
+    margin: 15px auto 0 auto;  
+    padding: 0 14px;  
+    float:left;
+    font-size:1rem;
+    cursor: pointer;
+}
+
+/* 헤더 오른편 */
+
+.subMenuList{
+    flex-basis:1;
     display: flex;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: 600;
-    height:125px;
-    width:1000px;
-    background: #ffffffb0 none !important;
+    flex-direction: row;
 }
 
-.logo{
+.subMenuList .menuItem{
+    margin :15px auto 0 auto;
+    padding: 0 14px;
     cursor: pointer;
-    width:250px;
-    height: 125px;
-    margin: auto;
-    padding: auto;
-    background: url("../resources/img/logo.png") no-repeat center;
 }
-
-.logo1{
-    cursor: pointer;
-    width:300px;
-    height: 125px;
-    margin-left: 0px;
-    background: url("../resources/img/logo1.png") no-repeat;
-}
-
-.headerMenuBar{
-    height: 20px;
-    margin-top: 10px;
-    margin-left: auto;
-    display: flex;
-}
-.headerMenu:first-child{
-
-    background:none;
-
-}
-.headerMenu{
-    font-family: "Malgun Gothic", "맑은 고딕", "Hiragino Sans GB", "Microsoft Yahei", 돋움, Dotum, 굴림, Gulim, "Apple Gothic", "Apple SD Gothic Neo", sans-serif;
-    color: #999;
-    font-size: 13px;
-    letter-spacing: -1px;
-    font-weight: normal;
-    display: block;
-    color: #999999;
-    cursor: pointer;
-    margin-top: auto;
-    margin-left: 5px;    
-    padding: 5px 10px 0 11px;
-    background: url("../resources/img/header_top_bar.gif") left 18px no-repeat;
-}
-
-.headerMenu a{
-    color: black;
-}   
