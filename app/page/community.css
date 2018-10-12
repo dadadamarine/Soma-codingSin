@@ -1,3 +1,4 @@
+
 .wrapper{
     margin:0;
     padding:0;
@@ -5,7 +6,7 @@
 
 .bannerWrapper{
     width:100%;
-    height:700px;
+    height:var(--section-height);
     /* background:url("../resources/img/main20/main_20_banner.jpg") no-repeat;
     background-size:cover;
     background-position: center;
@@ -94,4 +95,153 @@
     margin:0 18px 20px 18px;
     padding: 5px;
     list-style: none;
+}
+
+
+.sectionWrapper{
+    width:1000px;
+    height:800px;
+    margin:0 auto;
+    padding:0;
+    border:1px solid red;
+}
+
+.sectionWrapper .noticeWrapper{
+    margin-top:70px;    
+    height:300px;
+}
+.sectionWrapper .noticeWrapper .noticeTitle{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sectionWrapper .noticeWrapper .noticeTitle .title{
+    display: inline-block;
+    letter-spacing: -3px;
+    font-weight: bold;
+    color:gray;
+}
+
+.underline{    
+    margin:25px 0 0;
+    width:15px;
+    height:1px;
+    border-bottom:1px solid #aaaaaa;
+}
+
+.sectionWrapper .noticeWrapper .underline{
+    margin: 3px auto;
+    width:30px;
+}
+
+.sectionWrapper .noticeWrapper .contentSection{
+    width:100%;
+}
+
+.sectionWrapper .noticeWrapper .contentSection .newsIcon{
+    width:50px;
+    height:20px;
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+
+.sectionWrapper .noticeWrapper .contentSection .underline{
+    margin:25px 0 0;
+    width:15px;
+}
+
+.sectionWrapper .noticeWrapper .contentSection .date{
+    color:#aaaaaa;
+}
+
+
+.sectionWrapper .noticeWrapper .contentSection .more{
+    color:#aaaaaa;
+}
+
+.sectionUnderline{
+    margin:20px auto;
+    width:100%;
+    height:1px;
+    border-bottom:1px solid #aaaaaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+.newsWrapper .newsTitle{
+    padding-left:5px;
+    font-size:0.9rem;
+    color:#777777;
+}
+
+.newsWrapper .lectureList{
+    width:100%;
+    display: flex;
+}
+
+.newsWrapper .lectureList .verticalBar{
+    width:1px;
+    height:230px;
+    margin:25px 0;
+    background-color:gray;
+}
+
+.newsWrapper .lectureList .lectureBox{
+    /* 강의 박스 한개 */
+    position: relative;
+    margin: 25px;
+    width:200px;
+    height:230px;
+    background-color:white;
+    border-bottom:1px solid gray;
+}
+
+.newsWrapper .lectureList .lectureBox .lectureImage{
+    /* 강의 박스 한개 */
+    margin:0;
+    padding:0;
+    width:198px;
+    height:120px;
+    /* background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain; */
+    background-color:yellow;
+}
+
+
+.newsWrapper .lectureList .lectureBox .lectureTitle{
+    margin-top:5px;
+    font-size: 1rem;
+    color: #353535;
+}
+
+.newsWrapper .lectureList .lectureBox .lectureSubTitle{
+    margin-top:5px;
+    font-size: 0.8rem;
+    color: #353535;
+}
+
+.newsWrapper .lectureList .lectureBox .lectureInfo{
+    margin-top:5px;
+    font-size:0.7rem;
+    color : #bbbbbb;
+}
+
+.plusButton{
+    margin:30px auto;
+    text-align: center;
+}
+.plusButton button{
+    width:30px;
+    height:30px;
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
 }

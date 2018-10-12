@@ -1,3 +1,8 @@
+:root {
+    --section-height:700px;
+
+}
+
 .headerWrapper{
     border-bottom: 1px solid rgb(187, 187, 187);
     width:100%;

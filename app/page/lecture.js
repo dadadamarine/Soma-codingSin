@@ -113,7 +113,7 @@ export default class lecture extends Component {
                 <div className={style.lectureWrapper}>
                     <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
                         <div className={style.title}>
-                            <a href="">추천강의</a>
+                            <a href={""}>추천강의</a>
                             <img src="../resources/img/main20/blank.jpg" />
                         </div>
                         <div><a>최신순</a></div>
