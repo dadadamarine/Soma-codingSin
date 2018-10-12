@@ -17,7 +17,7 @@
      justify-content: center;
      align-items: center;
 }
-.bannerWrapper .boardTableWrapper{
+.boardTableWrapper{
     width:900px;
     margin:auto;
     
@@ -27,54 +27,54 @@
     align-items: center;
 }
 
-.bannerWrapper .boardTableWrapper .tableItem{
+.boardTableWrapper .tableItem{
     width:170px;
     height:170px;
     margin:2px;
     border-radius: 4px;
 }
-.bannerWrapper .boardTableWrapper .board{
+.boardTableWrapper .board{
     background-color:white;
     transition: z-index 0.3s, box-shadow 0.2s, transform 0.3s cubic-bezier(0.25, -0.06, 0.47, 1.1);
     z-index: 1;
 }
 
-.bannerWrapper .boardTableWrapper .board:hover{
+.boardTableWrapper .board:hover{
     transform: scale(1.2);
     box-shadow: 1px 1px 70px 10px gray;
     transition:  box-shadow 0.3s, transform 0.3s cubic-bezier(0.25, -0.06, 0.47, 1.1);
     z-index: 2;
 }
 
-.bannerWrapper .boardTableWrapper .empty{
+.boardTableWrapper .empty{
     background-color:rgba(0,0,0,0);
 }
 
-.bannerWrapper .boardTableWrapper .board.black{
+.boardTableWrapper .board.black{
     padding:30px 0px 0px 5px;
     background-color:rgba(0,0,0,0.4);    
     z-index: 0;
 }
-.bannerWrapper .boardTableWrapper .board.black:hover{
+.boardTableWrapper .board.black:hover{
     box-shadow: 1px 1px 10px 3px gray;
     transform: none;
     transition: box-shadow 0.3s;
 }
 
-.bannerWrapper .boardTableWrapper .board.black .postList a {
+.boardTableWrapper .board.black .postList a {
     text-decoration: none;
     color:white;
     font-size:0.8rem;
 }
-.bannerWrapper .boardTableWrapper .orange{
+.boardTableWrapper .orange{
     background-color:rgba(255, 123, 0, 0.352);
 }
-.bannerWrapper .boardTableWrapper .image{
+.boardTableWrapper .image{
     background:url("../resources/img/main20/blankIcon.png") no-repeat;
     background-size:cover;
 }
 
-.bannerWrapper .boardTableWrapper .tableItem.board .title{
+.boardTableWrapper .tableItem.board .title{
     height:40%;
     margin:20px 20px 0 20px;
     
@@ -84,13 +84,13 @@
     border-bottom:1.5px solid gray;
 } 
 
-.bannerWrapper .boardTableWrapper .tableItem.board .title p{
+.boardTableWrapper .tableItem.board .title p{
     font-size:1.3rem;
     font-weight:bold;
     margin: 0px 0px 5px 10px;
 }
 
-.bannerWrapper .boardTableWrapper .tableItem.board .postList{
+.boardTableWrapper .tableItem.board .postList{
     font-size:0.7rem;
     margin:0 18px 20px 18px;
     padding: 5px;
@@ -106,16 +106,14 @@
     border:1px solid red;
 }
 
-.sectionWrapper .noticeWrapper{
-    margin-top:70px;    
-    height:300px;
-}
-.sectionWrapper .noticeWrapper .noticeTitle{
+
+.sectionTitle{
+    margin-top:70px; 
     text-align: center;
     margin-bottom: 50px;
 }
 
-.sectionWrapper .noticeWrapper .noticeTitle .title{
+.sectionTitle .title{
     display: inline-block;
     letter-spacing: -3px;
     font-weight: bold;
@@ -129,16 +127,20 @@
     border-bottom:1px solid #aaaaaa;
 }
 
-.sectionWrapper .noticeWrapper .underline{
+.noticeWrapper{   
+    width:100%;
+}
+
+.sectionTitle .underline{
     margin: 3px auto;
     width:30px;
 }
 
-.sectionWrapper .noticeWrapper .contentSection{
+.noticeWrapper .contentSection{
     width:100%;
 }
 
-.sectionWrapper .noticeWrapper .contentSection .newsIcon{
+.noticeWrapper .contentSection .newsIcon{
     width:50px;
     height:20px;
     background:url("../resources/img/main20/blankIcon.png") no-repeat;
@@ -146,17 +148,17 @@
     background-position: center;
 }
 
-.sectionWrapper .noticeWrapper .contentSection .underline{
+.noticeWrapper .contentSection .underline{
     margin:25px 0 0;
     width:15px;
 }
 
-.sectionWrapper .noticeWrapper .contentSection .date{
+.noticeWrapper .contentSection .date{
     color:#aaaaaa;
 }
 
 
-.sectionWrapper .noticeWrapper .contentSection .more{
+.noticeWrapper .contentSection .more{
     color:#aaaaaa;
 }
 
@@ -166,14 +168,6 @@
     height:1px;
     border-bottom:1px solid #aaaaaa;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -244,4 +238,69 @@
     height:30px;
     background:url("../resources/img/main20/blankIcon.png") no-repeat;
     background-size:contain;
+}
+
+.reviewPhrase{
+    text-align: center;
+    font-size:2rem;
+    line-height: 3.5rem;  
+}
+
+.reviewBoxList{
+    margin:100px auto;
+    display:flex;
+}
+
+.reviewBoxList .boxItem{
+
+    height:300px;
+    flex-grow: 1;
+    margin:2px;
+    background-color: #cccccc;
+}
+
+.reviewBoxList .boxItem .boxItemTop{
+    height:200px;
+    background-color:black;
+    vertical-align: middle;
+}
+.reviewBoxList .boxItem .boxItemTop img{
+    width:100%;
+}
+.reviewBoxList .boxItem .boxItemBottom{
+    margin:20px;
+}
+
+.searchBar{
+    width:100%;
+    height:70px;
+    background-color:#f15a21;
+    box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.15);
+    text-align: center;
+
+    display:flex;
+    justify-content:center;
+}
+
+.searchBar input{
+    display: inline-block;
+    margin:0 -10px 0 80px;
+    padding:0;
+    height:100%;
+
+    font-size:4rem;
+    background-color:#f15a21;
+    border:none; /* 테두리 제거 */
+}
+.searchBar input:focus{
+    outline: none; /* 파란색 테두리 제거 */
+}
+.searchBar .searchIcon{
+    float:left;
+    margin:10px 0 0 10px; 
+    width: 50px;
+    height:50px;
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+    background-position: center;
 }

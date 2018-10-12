@@ -10,9 +10,46 @@ class community extends Component{
 
 
 
-
     render(){
+        
+        const searchBarKeyPressed = function(e){
+/*             const temp= e.target.value;
+            setTimeout(function(temp){
+                console.log(temp);
+                let charLength=0;
+                for(let i=0; i< temp.length; i++){ // 글자수 체크
+                    if(escape(temp.charAt(i)).length > 4){
+                        charLength +=2;
+                        
+                    }else{
+                        charLength+=1;
+                    }
+                }
+                document.querySelector("#searchBar").size = charLength+1;
+                console.log(charLength);
+            },10,temp); */
+
+            const temp= e.target.value;
+            let charLength=0;
+            for(let i=0; i< temp.length; i++){ // 글자수 체크
+                if(escape(temp.charAt(i)).length > 4){
+                    charLength +=2;
+                }else{
+                    charLength+=1;
+                }
+            }
+            if(charLength>16) charLength= 20;
+            else if(charLength > 13)  charLength+=3;
+            else if(charLength > 10) charLength+=2;
+            else{
+                charLength+=1;
+            }
+
+            e.target.size = charLength;
+        }
+
         return(
+        
             <div className={style.wrapper}>
                 <div className={style.bannerWrapper}>
                    <div className={style.boardTableWrapper}>
@@ -139,12 +176,13 @@ class community extends Component{
 
 
                 <div className={style.sectionWrapper}>
-                    <div className={style.noticeWrapper}> {/* 공지사항 섹션 시작 */}
-                        <div className={style.noticeTitle}>
-                            <div className={style.title}>공지사항</div>
-                            <div className={style.underline}></div>
-                        </div>                  
 
+                    <div className={style.sectionTitle}>
+                        <div className={style.title}>공지사항</div>
+                        <div className={style.underline}></div>
+                    </div>
+
+                    <div className={style.noticeWrapper}> {/* 공지사항 섹션 시작 */}        
                         <div className={style.contentSection}>
                             <div className={style.newsIcon}></div>
                             <h2>[공지사항] 10월 8일 코딩의 신 우수 교육기업 TOP50 선정</h2>
@@ -229,6 +267,91 @@ class community extends Component{
 
                 
                 </div>{/* 1st section Wrapper 끝 */}
+
+
+                <div className={style.sectionWrapper}>
+                    <div className={style.sectionTitle}>
+                        <div className={style.title}>콘텐츠 리뷰</div>
+                        <div className={style.underline}></div>
+                    </div> 
+                    <div className={style.reviewPhrase}>
+                        여러강의들을 경험해본 선배들이 스스로 제작한 컨텐츠와
+                        <br/>
+                        1:1실시간 과외를 받아본 솔직한 리뷰까지!
+                    </div>
+                    <div className={style.reviewBoxList}>
+                        <div className={style.boxItem}>
+                            <div className={style.boxItemTop}>
+                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
+                            </div>
+                            <div className={style.boxItemBottom}>
+                                <p>정보올림피아드 대비</p>
+                                <p>273 문제</p>
+                            </div>
+                        </div>
+                        <div className={style.boxItem}>
+                            <div className={style.boxItemTop}>
+                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
+                            </div>
+                            <div className={style.boxItemBottom}>
+                                <p>정보올림피아드 대비</p>
+                                <p>273 문제</p>
+                            </div>
+                        </div>
+                        <div className={style.boxItem}>
+                            <div className={style.boxItemTop}>
+                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
+                            </div>
+                            <div className={style.boxItemBottom}>
+                                <p>정보올림피아드 대비</p>
+                                <p>273 문제</p>
+                            </div>
+                        </div>
+                        <div className={style.boxItem}>
+                            <div className={style.boxItemTop}>
+                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
+                            </div>
+                            <div className={style.boxItemBottom}>
+                                <p>정보올림피아드 대비</p>
+                                <p>273 문제</p>
+                            </div>
+                        </div>
+                    </div> {/* 리뷰 박스 리스트 끝 */}
+
+                    <div className={style.plusButton}>
+                        <button onclick=""/>
+                    </div>
+                </div>{/* 2nd section Wrapper 끝 */}
+
+                <div className={style.sectionWrapper}>
+                    <div className={style.sectionTitle}>
+                        <div className={style.title}>묻고 답하기</div>
+                        <div className={style.underline}></div>
+                    </div> 
+
+
+                    <div className={style.searchBar}>
+                        <input id="searchBar" onInput={searchBarKeyPressed} type="text" size="0"/>
+                        <div className={style.searchIcon}></div>
+                    </div>
+
+
+
+                </div>{/* 3nd section Wrapper 끝 */}
+
+
+                <div className={style.sectionWrapper}>
+                    <div className={style.sectionTitle}>
+                        <div className={style.title}>자유 게시판</div>
+                        <div className={style.underline}></div>
+                    </div> 
+
+
+
+
+                </div>{/* 4nd section Wrapper 끝 */}
+
+
 
 
             </div>
