@@ -15,8 +15,27 @@ class community extends Component{
         return(
             <div className={style.wrapper}>
                 <div className={style.bannerWrapper}>
-                    <a className={a}> 12312312323</a>
-                   
+                   <div className={style.boardTableWrapper}>
+
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.empty].join(' ')}></div>
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.empty].join(' ')}></div>
+                    <div className={[style.tableItem, style.orange].join(' ')}></div>
+
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.empty].join(' ')}></div>
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    
+                    <div className={[style.tableItem, style.empty].join(' ')}></div>
+                    <div className={[style.tableItem, style.orange].join(' ')}></div>
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.board].join(' ')}></div>
+                    <div className={[style.tableItem, style.image].join(' ')}></div>
+                    
+                   </div>
                 </div>
 
 
