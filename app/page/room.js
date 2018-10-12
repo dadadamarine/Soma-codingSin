@@ -86,6 +86,7 @@ export default class room extends Component {
     };
 
     connection.socketURL ='https://www.codingsin.com:9001/';
+    // 주석은 추가가 안되나!?
     // 영상 교환을 위한 데이터 타입등 정하기
     // 코딩신 9001 포트에 소켓 서버에서  서로 알방법이 없는 두사람을 연결시켜줌
     // 소켓서버의 역할: 시그널링 서버 ( 서로를 연결 시켜줌 )
