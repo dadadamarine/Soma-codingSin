@@ -58,6 +58,20 @@ export default class room extends Component {
         answer_tmp.push(answer_tmp2);
     }
     cursor.setState({list:list_tmp, answer:answer_tmp});
+
+    chrome.runtime.sendMessage("jikodjmdnknlnjcfeconoiggckcoijji", { message: "isInstall" },
+        function (reply) {
+            if (reply) {
+                if (reply.install) {
+                    if (reply.install == "OK") {
+                        console.log("isInstall");
+                    }
+                }
+            }
+            else {
+                window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
+            }
+        });
   }
   componentDidMount(){
     var v_count =0;
