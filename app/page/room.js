@@ -194,17 +194,20 @@ export default class room extends Component {
     });
 
     $("code").on("DOMSubtreeModified",function(){
-        $(".quiz").on("input", function(){
-            let str=cursor.state.answer[$(this).attr("cursor")];
-            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
-                $(this).attr("readonly",true);
-                $(this).css("color","blue");
-                $(this).css("font-weight","bold");
-                $(this).css("font-size","15px");
-                $(this).css("text-align","center");
-                $(this).css("border","0px");
-            }
-        });
+        try{
+            $(".quiz").on("input", function(){
+                let str=cursor.state.answer[$(this).attr("cursor")];
+                if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
+                    $(this).attr("readonly",true);
+                    $(this).css("color","blue");
+                    $(this).css("font-weight","bold");
+                    $(this).css("font-size","15px");
+                    $(this).css("text-align","center");
+                    $(this).css("border","0px");
+                }
+            });
+        }catch(e) {
+        }
     });
   }
   componentWillUnmount() {
