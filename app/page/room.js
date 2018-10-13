@@ -82,6 +82,7 @@ export default class room extends Component {
     document.getElementById('btn-screen-share').onclick = function() {
       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
       else{
+        $("video").css("object-fit","fill");
         $("."+style.onAir+" span").removeClass(style.ico_grayDot);
         $("."+style.onAir+" span").addClass(style.ico_redDot);
         connection.openOrJoin(cursor.state.room);
