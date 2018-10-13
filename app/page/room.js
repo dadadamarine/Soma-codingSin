@@ -194,31 +194,31 @@ export default class room extends Component {
     });
 
     $("code").on("DOMSubtreeModified",function(){
-        try{
-            $(".quiz").on("input", function(){
-                let str=cursor.state.answer[$(this).attr("cursor")];
-                if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
-                    $(this).attr("readonly",true);
-                    $(this).css("color","blue");
-                    $(this).css("font-weight","bold");
-                    $(this).css("font-size","15px");
-                    $(this).css("text-align","center");
-                    $(this).css("border","0px");
-                }
-            });
-        }catch(e) {
-        }
+        $(".quiz").on("input", function(){
+            let str=cursor.state.answer[$(this).attr("cursor")];
+            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
+                $(this).attr("readonly",true);
+                $(this).css("color","blue");
+                $(this).css("font-weight","bold");
+                $(this).css("font-size","15px");
+                $(this).css("text-align","center");
+                $(this).css("border","0px");
+            }
+        });
     });
   }
   componentWillUnmount() {
   }
   createQuiz(){
+    try{
     let cursor=this;
     let str= $("."+style.none).html();
     let tmp= this.state.answer[this.state.cursor];
     for(var i=0;i<tmp.length;i++)
         str=str.replace("{quiz}","<input class='quiz' type='text' cursor='"+this.state.cursor+"' subcursor='"+i+"' data='"+tmp[i]+"'size='"+tmp[i].length+"'/>");
     $("code").html(str);
+    }catch(e) {
+    }
   }
 
   view1Click(){
