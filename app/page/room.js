@@ -16,8 +16,8 @@ export default class room extends Component {
         room:"",
         toggle:true,
         cursor:0,
-        list:[{title:"test1",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>", quiz:["1,0,2","3,4,16","5,8,12"]},
-        {title:"test3",content:"asdqweqweqwe", quiz:["0,0,2"]}],
+        list:[{title:"테스트 하하하",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>", quiz:["1,0,2","3,4,16","5,8,12"]},
+        {title:"테스트 투",content:"asdqweqweqwe", quiz:["0,0,2"]}],
         answer:[]
     }
 
@@ -32,7 +32,7 @@ export default class room extends Component {
     if(location.hash!=null) {
         this.setState({room:location.hash.replace('#', '')});
     }
-    service.contentsList(0,1).then(function (res) {
+    service.contentsList(0,0).then(function (res) {
         cursor.setState({list:res.data});
     }).catch(function (error) {
         alert('error massage : '+error);
