@@ -27,7 +27,7 @@ class tutor extends Component{
                             코딩의 신의 우수한 강사진을 소개합니다.
                         </div>
                     </div>{/* 배너 아래쪽 배치 끝 */}
-                </div> >{/* 배너 끝 */}
+                </div>{/* 배너 끝 */}
                     <div className={style.tutorListWrapper}>
                         <div className={style.titleSection}>
                             <div className={style.selected}><a>전체보기</a></div>
