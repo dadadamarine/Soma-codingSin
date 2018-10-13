@@ -164,6 +164,7 @@
     display: none;
     height: inherit;
     flex-direction: column;
+    height: 100%;
 }
 .problemTitle{
     font-size: 20px;
