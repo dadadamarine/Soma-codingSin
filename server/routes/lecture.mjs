@@ -136,15 +136,27 @@ router.post('/auth', function(req, res){
                 const db = client.db(dbName);
                 db.collection(dbCollection).find({_id:id}).toArray(function(err, doc){
                     if(err) console.log(err);
-                    if(doc==null || doc==[]) res.redirect('/error');
+                    if(doc==null || doc==[]) {
+                        console.log("null 해당 강의 존재하지않음.");
+                        res.redirect('/error');
+                    }
                     if(flag)
-                        if(doc[0].id!=user) res.redirect('/error');
-                    else if(doc[0].match!=user) res.redirect('/error');
+                        if(doc[0].id!=user) {
+                            console.log("해당 강의 강사가 아님.");
+                            res.redirect('/error');
+                        }
+                    else if(doc[0].match!=user) {
+                        console.log("해당 강의 학생이 아님.");
+                        res.redirect('/error');
+                    }
                     res.send("ok");
                 });
                 client.close();
             }
         });
-    }catch(e){res.redirect('/error');}
+    }catch(e){
+        console.log("error 해당 강의 존재하지않음.");
+        res.redirect('/error');
+    }
 });
 export default router;
