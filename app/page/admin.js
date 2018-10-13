@@ -33,7 +33,7 @@ export default class admin extends Component {
         elem.addEventListener('keydown', function(event) {
             if(flag){
                 flag=false;
-                let tmp =String(event.target.innerHTML).split("\n");
+                let tmp =String(event.target.value).split("\n");
                 let offset=0;
                 row=elem.value.substr(0, elem.selectionStart).split("\n").length-1;
                 for(let i=0;i<row;i++){
