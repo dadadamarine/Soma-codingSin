@@ -55,6 +55,7 @@ export default class room extends Component {
             answer_tmp.push(answer_tmp2);
         }
         cursor.setState({list:list_tmp, answer:answer_tmp});
+        cursor.createQuiz();
     }).catch(function (error) {
         alert('error massage : '+error);
     });
@@ -190,7 +191,6 @@ export default class room extends Component {
     };
 
     this.view1Click();
-    this.createQuiz();
     $("."+style.none).on("DOMSubtreeModified",function(){
         cursor.createQuiz();
     });
