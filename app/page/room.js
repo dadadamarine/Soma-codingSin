@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import socketIOClient from 'socket.io-client'
 import style from './room.css';
-import img from '../resources/img/main.png';
+import img from '../resources/img/logo.png';
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 import Highlight from 'react-highlight';
@@ -13,11 +13,12 @@ export default class room extends Component {
     super();
     this.state = {
         endpoint: "https://codingsin.com",
+        room:"",
         toggle:true,
         cursor:0,
-        list:[{title:"test1",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>"},
-        {title:"test3",content:"asdqweqweqwe"}
-        ]
+        list:[{title:"테스트 하하하",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>", quiz:["1,0,2","3,4,16","5,8,12"]},
+        {title:"테스트 투",content:"asdqweqweqwe", quiz:["0,0,2"]}],
+        answer:[]
     }
 
     this.view1Click = this.view1Click.bind(this);
@@ -25,33 +26,66 @@ export default class room extends Component {
     this.screenChange = this.screenChange.bind(this);
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
+    this.createQuiz = this.createQuiz.bind(this);
 
-    const curosr =this;
-    service.contentsList(0,1).then(function (res) {
-        curosr.setState({list:res.data});
+    const cursor =this;
+    if(location.hash!=null) {
+        this.setState({room:location.hash.replace('#', '')});
+    }
+    service.contentsList(0,0).then(function (res) {
+        cursor.setState({list:res.data});
+        let answer_tmp = cursor.state.answer;
+        let list_tmp = cursor.state.list;
+        
+        for(let a=0;a<list_tmp.length;a++){
+            let answer_tmp2 = new Array();
+            let text = list_tmp[a].content.split('\n');
+            for(let i=0;i<list_tmp[a].quiz.length;i++){
+                let tmp = String(list_tmp[a].quiz[i]).split(",");
+                let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
+                answer_tmp2.push(str);
+                text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
+            }
+            let content="";
+            for(let i=0;i<text.length;i++){
+                content+=text[i]+'\n';
+            }
+            list_tmp[a].content=content;
+            answer_tmp.push(answer_tmp2);
+        }
+        cursor.setState({list:list_tmp, answer:answer_tmp});
     }).catch(function (error) {
         alert('error massage : '+error);
     });
+    try{
+    chrome.runtime.sendMessage("jikodjmdnknlnjcfeconoiggckcoijji", { message: "isInstall" },
+        function (reply) {
+            if (reply) {
+                if (reply.install) {
+                    if (reply.install == "OK") {
+                        console.log("isInstall");
+                    }
+                }
+            }
+            else {
+                window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
+            }
+        });
+    }catch(e) {
+        window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
+    }
   }
   componentDidMount(){
     var v_count =0;
     var s_count =0;
-
-    // document.getElementById('btn-setting').onclick = function() {
-    //  connection.removeStream({screen: true });
-    //  connection.addStream({
-	// screen:true,
-	// oneway:true
-	// });
-    // };
-
+    var cursor = this;
     document.getElementById('btn-screen-share').onclick = function() {
       if(location.hash==null) alert("개설된 과외 정보가 없습니다!");
       else{
+        $("video").css("object-fit","fill");
         $("."+style.onAir+" span").removeClass(style.ico_grayDot);
         $("."+style.onAir+" span").addClass(style.ico_redDot);
-        var hashString = location.hash.replace('#', '');
-        connection.openOrJoin(hashString);
+        connection.openOrJoin(cursor.state.room);
             connection.addStream({
             screen: true,
             oneway: true
@@ -173,8 +207,42 @@ export default class room extends Component {
     };
 
     this.view1Click();
+    $("."+style.none).on("DOMSubtreeModified",function(){
+        cursor.createQuiz();
+    });
+
+    $("code").on("DOMSubtreeModified",function(){
+        $(".quiz").on("input", function(){
+            let str=cursor.state.answer[$(this).attr("cursor")];
+            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
+                $(this).attr("readonly",true);
+                $(this).css("color","blue");
+                $(this).css("font-weight","bold");
+                $(this).css("font-size","15px");
+                $(this).css("text-align","center");
+                $(this).css("border","0px");
+            }
+        });
+    });
+    $("."+style.sideView).height(window.innerHeight-50);
+    $(".cm-s-default").height(window.innerHeight-100);
+    $( window ).resize(function() {
+        $("."+style.sideView).height(window.innerHeight-50);
+        $(".cm-s-default").height(window.innerHeight-100);
+     });
   }
   componentWillUnmount() {
+  }
+  createQuiz(){
+    try{
+    let cursor=this;
+    let str= $("."+style.none).html();
+    let tmp= this.state.answer[this.state.cursor];
+    for(var i=0;i<tmp.length;i++)
+        str=str.replace("{quiz}","<input class='quiz' type='text' cursor='"+this.state.cursor+"' subcursor='"+i+"' data='"+tmp[i]+"'size='"+tmp[i].length+"'/>");
+    $("code").html(str);
+    }catch(e) {
+    }
   }
 
   view1Click(){
@@ -192,12 +260,14 @@ export default class room extends Component {
   screenChange(event){
     if(this.state.toggle){
       this.setState({toggle:false});
-      $("."+style.toggleText).text("WebIDE");
+      $("."+style.toggle+" span:first-child").removeClass(style.toggleSelect).addClass(style.toggleNotSelect);
+      $("."+style.toggle+" span:last-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
       $("."+style.roomMain).css("display","none");
       $("."+style.webIde).css("display","block");
     }else{
       this.setState({toggle:true});
-      $("."+style.toggleText).text("원격화면");
+      $("."+style.toggle+" span:first-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
+      $("."+style.toggle+" span:last-child").removeClass(style.toggleSelect).addClass(style.toggleNotSelect);
       $("."+style.roomMain).css("display","block");
       $("."+style.webIde).css("display","none");
     }
@@ -205,13 +275,13 @@ export default class room extends Component {
 
   prev(event){
     $("."+style.problemNext).css("display","block");
-    this.setState({cursor:this.state.cursor-1});
+    this.setState({flag:true, cursor:this.state.cursor-1});
     if(this.state.cursor==1) $("."+style.problemPrev).css("display","none");
   }
 
   next(event){
     $("."+style.problemPrev).css("display","block");
-    this.setState({cursor:this.state.cursor+1});
+    this.setState({flag:true, cursor:this.state.cursor+1});
     if(this.state.cursor==this.state.list.length-2) $("."+style.problemNext).css("display","none");
   }
   
@@ -224,54 +294,51 @@ export default class room extends Component {
                 <span className={style.ico_grayDot}></span>
                 <p>On Air</p>
               </div>
-              <div className={style.exit}>
-                <span className={style.icon_exit}></span>
-                <p className={style.middleText}>나가기</p>
-              </div>
-              <div className={style.ide} onClick={this.screenChange}>
-                <span className={style.icon_survey}></span>
-                <p className={style.toggleText}>원격화면</p>
-              </div>
               <div className={style.survey}>
                 <span className={style.icon_survey}></span>
                 <p className={style.middleText} id="btn-screen-share">과외시작</p>
               </div>
-
-              
           </div>
         <div className={style.mainWrapper}>
-            <div className={style.roomWrapper} id="screen-wrap">
-                <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
-                <div className={style.webIde}><Code /></div>
-            </div>
-
-
-            <div className={style.sideView}>
-              <div className={style.sideTop}>
-                <div className={style.nav}> 
-                    <div className={style.sideButton1} onClick={this.view1Click}>수업 진도</div>
-                    <div className={style.sideButton2} onClick={this.view2Click}>문제 보기</div>
-                </div>
+        <div className={style.sideView}>
+            <div className={style.sideBottom}>
                 <div className={style.viewContainer}>
+                    <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam"></video>
+                    </div>
+                    <div className={style.settingView}>
+                    </div>
+            </div>
+              <div className={style.sideTop}>
+                <div className={style.viewContainer2}>
                       <div className={style.progress}>
                       </div>
                       <div className={style.problem}>
                       <div className={style.problemTitle}><div className={style.problemPrev} onClick={this.prev}>←</div>{this.state.list[this.state.cursor].title}<div className={style.problemNext} onClick={this.next}>→</div></div>
                       <div className={style.problemContent}>
-                      <Highlight className="html">{`${this.state.list[this.state.cursor].content}`}
-                      </Highlight>
+                      <Highlight className="html"></Highlight>
+                      <div className={style.none}> {`${this.state.list[this.state.cursor].content}`}</div>
                       </div>
                       </div>
                 </div>
+                <div className={style.nav}> 
+                    <div className={style.sideButton1} onClick={this.view1Click}><img src={require("../resources/img/room/survey.png")} width="30" height="30"/><span>수업 진도</span></div>
+                    <div className={style.sideButton2} onClick={this.view2Click}><img src={require("../resources/img/room/question.png")} width="30" height="30"/><span>문제 보기</span></div>
+                </div>
+                <div className={style.bottomMenu}> 
+                <div className={style.exitWrapper}>
+                <div className={style.exit}>
+                </div>
+                </div>
+                <div className={style.toggle} onClick={this.screenChange}>
+                    <span className={style.toggleSelect}>screen</span>
+                    <span className={style.toggleNotSelect}>editor</span>
+                </div>
+                </div>
               </div>
-
-              <div className={style.sideBottom}>
-                <div className={style.viewContainer}>
-                     <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam"></video>
-                    </div>
-                    <div className={style.settingView}>
-                    </div>
-              </div>
+            </div>
+            <div className={style.roomWrapper} id="screen-wrap">
+                <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
+                <div className={style.webIde}><Code room={this.state.room}/></div>
             </div>
         </div>
       </div>

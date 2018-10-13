@@ -6,11 +6,13 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import http1 from 'http';
+import socket from 'socket.io';
 
 dotenv.config();
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 const http = http1.Server(app);
+const io = socket.listen(http);
 let port = 80;
 app.use(cookieParser(process.env.COOKIE_KEY));
 app.use(session({
@@ -53,6 +55,16 @@ app.get("*", function(req, res, next){
         res.clearCookie('user');
     }
     res.end(indexPage);
+});
+
+io.on('connection', function (socket) {
+    socket.on('channelJoin',function(channel){
+        socket.join(channel);
+    });
+    socket.on('send', function (data) {
+        // io.to(data.channel).emit('receive', {chat:data.msg});
+        socket.broadcast.to(data.channel).emit('receive', data.msg);
+    });
 });
 
 const server = http.listen(port, () => {

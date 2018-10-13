@@ -22,7 +22,7 @@
 .header .logo{
     width: 100px;
     height: 50px;
-    background:url("../resources/img/logo.png") no-repeat;
+    background:url("../resources/img/logo.png") no-repeat center;
     background-size:contain;
     margin-left:80px;
     float: left;
@@ -72,12 +72,6 @@
     font-size: 11px;
 }
 
-.header .toggleText{
-    display: inline-block;
-    cursor: pointer;
-    font-size: 11px;
-}
-
 .header div.offAir{
     width:80px;
     height:25px;
@@ -96,16 +90,8 @@
     box-shadow: 0.5px 0.5px 1px gray;
     float:right;
 }
-.header div .icon_exit{
-    width: 15px;
-    height: 15px;
-    margin: 5px -15px 0px 25px;
-    float:left;
-    background:url("../resources/img/room/icon_exit.png") no-repeat;
-    background-size:contain;
-}
 
-.header div.survey, .header div.ide{
+.header div.survey{
     width:100px;
     padding:3px 0 7px 0; 
     margin:0 auto;
@@ -137,7 +123,7 @@
 
 .roomWrapper{
     float: left;
-    width: 75%;
+    width: 80%;
     height: 100%;
 }
 
@@ -152,7 +138,7 @@
 .sideView{
     float: left;
     margin: 0; 
-    width: 25%;
+    width: 20%;
     height:100%;
     border-bottom: none;    
 }
@@ -161,14 +147,14 @@
     display: flex;
     flex-direction: column;
     width:100%;
-    height:70%;
+    height:75%;
     border: 1px solid #969496;
     background-color:#faf9fa;
 }
 
 .sideBottom{
     width:100%;
-    height:30%;
+    height:25%;
 }
 
 .progress, .problem{
@@ -178,6 +164,7 @@
     display: none;
     height: inherit;
     flex-direction: column;
+    height: 100%;
 }
 .problemTitle{
     font-size: 20px;
@@ -204,22 +191,42 @@
     color:#454545;
 }
 
-.sideButton1, .sideButton2{
+.sideButton1{
     float: left;
     width:50%;
-    height:40px;
+    height:80px;
     cursor: pointer;
-    transition-duration: 1s;
     margin:0;
     text-align: center;
     line-height: 2.7;
-    border-bottom: 1px solid #eaeaea;
-    box-shadow: -0.5px -0.5px 5px  #888888 inset;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #ca3939c7;
+    font-weight: bold;
+    color:white;
+}
+.sideButton2{
+    float: left;
+    width:50%;
+    height:80px;
+    cursor: pointer;
+    margin:0;
+    text-align: center;
+    line-height: 2.7;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #e4871cc7;
+    font-weight: bold;
+    color:white;
+}
+.sideButton1 img, .sideButton2 img{
+    display: flex;
+    margin: 0 auto;
 }
 
 .isselected{
-    border-bottom: none;
-    box-shadow: 0px 0px 0px  #888888 inset;
     display: block;
 }
 
@@ -248,6 +255,12 @@
     width: 100%;
     height: 100%;
 }
+.viewContainer2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75%;
+}
 
 .camScreen{
     width:100%;
@@ -263,4 +276,59 @@
 .problemNext{
     float: right;
     cursor: pointer;
+}
+
+.none{
+    display: none;
+}
+
+.toggle{
+    width: 85px;
+    height: 30px;
+    background-color: #2ff39ee5;
+    border-radius: 50px;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+.toggleSelect{
+    padding: 9px;
+    background-color: #18a065f5;
+    border-radius: 50px;
+    vertical-align: text-top;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.toggleNotSelect{
+    padding: 5px;
+    background-color: #2ff39ee5;
+    border-radius: 50px;
+    vertical-align: text-top;
+    font-weight: bold;
+}
+
+.exit{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url("../resources/img/room/end.png");
+    background-size: contain;
+    margin: 5px auto;
+}
+
+.exitWrapper{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #888888;
+}
+
+.bottomMenu{
+    display: flex;
+    flex-direction: row;
 }
