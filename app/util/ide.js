@@ -84,13 +84,14 @@ import { render } from 'react-dom';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import style from './ide.css';
 require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/clike/clike');
 var io = require('socket.io-client');
 const socket = io.connect({ reconnect: true });
 
 export default class room extends Component {
 	constructor(props) {
 		super();
-		this.state = {hash:location.hash.replace('#', ''), code_i:"",code_y:"", mode_i:"javascript",mode_y:"javascript", mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
+		this.state = {hash:location.hash.replace('#', ''), code_i:"",code_y:"", mode_i:{name:"javascript"},mode_y:{name:"javascript"}, mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
 		var cursor=this;
 
 		socket.emit('channelJoin', this.state.hash);
@@ -102,7 +103,7 @@ export default class room extends Component {
 		this.instance = null;
 	}
 	componentDidMount() {
-		socket.emit('send', {channel:this.state.hash, msg:this.state.mode_intro["javascript"]});
+		socket.emit('send', {channel:this.state.hash, msg:this.state.mode_intro.javascript});
 	}
 	changeMode (e) {
 		let mode = e.target.value;
@@ -118,11 +119,10 @@ export default class room extends Component {
 			<div className={style.flexRow}>
 				<div className={style.flexColumn}>
 				<CodeMirror
-					className="auto-start"
 					value={this.state.code_i}
 					options={{
-						mode: {name: "javascript", json: true},
-						theme: 'material',
+						mode: this.state.mode_i,
+						theme: 'default',
 						lineNumbers: true,
 						autofocus: true
 					}}
@@ -145,14 +145,14 @@ export default class room extends Component {
 				<CodeMirror
 				value={this.state.code_y}
 				options={{
-					mode: `${this.state.mode_y}`,
-					theme: 'material',
+					mode: this.state.mode_y,
+					theme: 'default',
 					lineNumbers: true,
 					readOnly: true
 				}}
 				editorDidMount={editor => { this.instance = editor }}
 				autoCursor={true}
-			/>
+				/>
 				</div>
 			</div>
 		)

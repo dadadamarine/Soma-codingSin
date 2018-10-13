@@ -16,7 +16,7 @@ router.post('/contentWrite', function(req, res){
     const u_title = String(req.body.title);
     const u_content = String(req.body.content);
     const u_chapter = String(req.body.chapter);
-    const u_quiz = String(req.body.quiz);
+    const u_quiz = req.body.quiz;
     MongoClient.connect(dbHost, function(error, client) {
         if(error) console.log(error);
         else {
