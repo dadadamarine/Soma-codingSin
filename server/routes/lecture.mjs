@@ -130,7 +130,9 @@ router.post('/auth', function(req, res){
         console.log(req.body.id);
         const id=objectId(String(req.body.id));
         const user=req.session.user_id;
+        console.log(req.session.user_type);
         const flag = req.session.user_type=="강사";
+        console.log(flag);
         MongoClient.connect(dbHost, function(error, client) {
             if(error) console.log(error);
             else {
@@ -145,12 +147,12 @@ router.post('/auth', function(req, res){
                         if(doc[0].id!=user) {
                             console.log("해당 강의 강사가 아님.");
                             res.redirect('/error');
-                        }
+                        }else res.send("ok");
                     else if(doc[0].match!=user) {
                         console.log("해당 강의 학생이 아님.");
                         res.redirect('/error');
                     }
-                    res.send("ok");
+                    else res.send("ok");
                 });
                 client.close();
             }
