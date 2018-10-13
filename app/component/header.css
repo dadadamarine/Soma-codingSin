@@ -2,6 +2,10 @@
     --section-height:700px;
 
 }
+.wrapper{
+    width:1080px;
+    margin: 0 auto;
+}
 
 .headerWrapper{
     border-bottom: 1px solid rgb(187, 187, 187);
