@@ -39,7 +39,7 @@ class community extends Component{
                 }
             }
             if(charLength>16) charLength= 20;
-            else if(charLength > 13)  charLength+=3;
+            else if(charLength > 13) charLength+=3;
             else if(charLength > 10) charLength+=2;
             else{
                 charLength+=1;
@@ -262,7 +262,7 @@ class community extends Component{
                         </div>  {/* lecture List 끝 */}
                     </div>
                     <div className={style.plusButton}>
-                        <button onclick=""/>
+                        <button onClick=""/>
                     </div>
 
                 
@@ -331,10 +331,40 @@ class community extends Component{
 
 
                     <div className={style.searchBar}>
-                        <input id="searchBar" onInput={searchBarKeyPressed} type="text" size="0"/>
+                        <input id="searchBar" onInput={searchBarKeyPressed} type="text" size="1"/>
                         <div className={style.searchIcon}></div>
                     </div>
 
+                    <div className={style.searchResultBox}>
+                        <div className={style.title}>Search Result</div>
+                        <div className={style.underline}></div>
+                        <ul className={style.resultList}>
+                            <li>강의실</li>
+                            <li className={style.highlight}>강의실 접속 오류</li>
+                            <li>접속 오류</li>
+                        </ul>
+                    </div> 
+                    <div className={style.resultListBox}>
+                        <div className={style.resultItem}>
+                            <p>
+                                강의실 접속하는 버튼을 못 찾겠어요.
+                            </p>
+                        </div>
+                        <div className={style.resultItem}>
+                            <p>
+                                <span>
+                                    강의실을 접속하면 아무것도 안뜨는데
+                                    <br/>어떻게 해야하나요? 
+                                </span>
+                            </p>
+                        </div>
+                        <div className={style.resultItem}>
+                            <p>
+                                인터넷으로 버튼을 눌러도 강의실 접속이
+                                <br/>안되는 오류가 발생합니다.
+                            </p>
+                        </div>
+                    </div>
 
 
                 </div>{/* 3nd section Wrapper 끝 */}
