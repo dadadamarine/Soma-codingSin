@@ -357,7 +357,7 @@
 }
 
 .resultListBox .resultItem{
-    display:table;
+    display:table;  
 }
 
 .resultListBox .resultItem p{
@@ -370,4 +370,45 @@
     display: inline-block;/* text-align은 인라인 요소 안의 요소엔 적용이 안되나 보다. */
     text-align: start;
     /* span은 가운데 정렬, 그안의 글씨 요소들은 왼쪽정렬 */
+}
+
+
+
+
+/* 자유게시판 css */
+
+.sectionUnderline.wideUnderline{
+    width:110%;
+    margin:20px -50px;
+}
+
+.freeBoardList{
+    margin:0;
+
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.freeBoardList .boardItem{
+    margin:15px auto;
+    padding:10px;
+    width:300px;
+    height:350px;
+
+    background-color:#eeeeee;
+    border-bottom: 1px solid gray;
+}
+.freeBoardList img{
+    margin-bottom: 5px;
+    width:90%;
+}
+.freeBoardList .context{
+    font-size:1rem;
+}
+.freeBoardList .date{
+    font-size:0.8rem;
+    color:gray;
+}
+.underline.compactUnderline{
+    margin:10px 0 ;
 }

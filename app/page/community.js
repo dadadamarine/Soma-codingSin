@@ -376,8 +376,100 @@ class community extends Component{
                         <div className={style.underline}></div>
                     </div> 
 
+                    <div className={[style.sectionUnderline, style.wideUnderline].join(' ')}></div>
 
-
+                    <div className={style.freeBoardList}>
+                        <div className={style.boardItem}>
+                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
+                            <p className={style.context}>
+                                Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Laboriosam repudiandae 
+                                commodi dolorem corrupti, iure, nostrum 
+                                placeat sint doloribus modi tenetur libero 
+                                suscipit cumque vitae quia voluptate blanditiis, 
+                                explicabo deserunt ea!
+                            </p>
+                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                            <p className={style.date}>
+                                Oct 09
+                            </p>
+                        </div>
+                        <div className={style.boardItem}>
+                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
+                            <p className={style.context}>
+                                Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Laboriosam repudiandae 
+                                commodi dolorem corrupti, iure, nostrum 
+                                placeat sint doloribus modi tenetur libero 
+                                suscipit cumque vitae quia voluptate blanditiis, 
+                                explicabo deserunt ea!
+                            </p>
+                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                            <p className={style.date}>
+                                Oct 09
+                            </p>
+                        </div>
+                        <div className={style.boardItem}>
+                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
+                            <p className={style.context}>
+                                Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Laboriosam repudiandae 
+                                commodi dolorem corrupti, iure, nostrum 
+                                placeat sint doloribus modi tenetur libero 
+                                suscipit cumque vitae quia voluptate blanditiis, 
+                                explicabo deserunt ea!
+                            </p>
+                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                            <p className={style.date}>
+                                Oct 09
+                            </p>
+                        </div>
+                        <div className={style.boardItem}>
+                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
+                            <p className={style.context}>
+                                Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Laboriosam repudiandae 
+                                commodi dolorem corrupti, iure, nostrum 
+                                placeat sint doloribus modi tenetur libero 
+                                suscipit cumque vitae quia voluptate blanditiis, 
+                                explicabo deserunt ea!
+                            </p>
+                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                            <p className={style.date}>
+                                Oct 09
+                            </p>
+                        </div>
+                        <div className={style.boardItem}>
+                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
+                            <p className={style.context}>
+                                Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Laboriosam repudiandae 
+                                commodi dolorem corrupti, iure, nostrum 
+                                placeat sint doloribus modi tenetur libero 
+                                suscipit cumque vitae quia voluptate blanditiis, 
+                                explicabo deserunt ea!
+                            </p>
+                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                            <p className={style.date}>
+                                Oct 09
+                            </p>
+                        </div>
+                        <div className={style.boardItem}>
+                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
+                            <p className={style.context}>
+                                Lorem ipsum dolor sit amet consectetur 
+                                adipisicing elit. Laboriosam repudiandae 
+                                commodi dolorem corrupti, iure, nostrum 
+                                placeat sint doloribus modi tenetur libero 
+                                suscipit cumque vitae quia voluptate blanditiis, 
+                                explicabo deserunt ea!
+                            </p>
+                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                            <p className={style.date}>
+                                Oct 09
+                            </p>
+                        </div>
+                    </div>
 
                 </div>{/* 4nd section Wrapper 끝 */}
 
