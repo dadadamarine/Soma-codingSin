@@ -31,7 +31,9 @@ export default class room extends Component {
     const cursor =this;
     if(location.hash!=null) {
         this.setState({room:location.hash.replace('#', '')});
-        service.lectureAuth(this.state.room);
+        service.lectureAuth(this.state.room).then(function(res){
+            if(res.data!="ok") location.href='/error';
+        });
     }else location.href='/error';
     service.contentsList(0,0).then(function (res) {
         cursor.setState({list:res.data});
