@@ -44,8 +44,9 @@ export default class room extends Component {
     for(let a=0;a<list_tmp.length;a++){
         let answer_tmp2 = new Array();
         let text = list_tmp[a].content.split('\n');
-        for(let i=0;i<list_tmp[a].quiz.length;i++){
-            let tmp = String(list_tmp[a].quiz[i]).split(",");
+        let quiz_list = list_tmp[a].quiz.split(",");
+        for(let i=0;i<quiz_list.length;i++){
+            let tmp = String(quiz_list[i]).split(",");
             let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
             answer_tmp2.push(str);
             text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
