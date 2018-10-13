@@ -91,7 +91,7 @@ const socket = io.connect({ reconnect: true });
 export default class room extends Component {
 	constructor(props) {
 		super();
-		this.state = {hash:location.hash.replace('#', ''), code_i:"",code_y:"", mode_i:{name:"javascript"},mode_y:{name:"javascript"}, mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
+		this.state = {hash:location.hash.replace('#', ''), theme:"default", code_i:"",code_y:"", mode_i:{name:"javascript"},mode_y:{name:"javascript"}, mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
 		var cursor=this;
 
 		socket.emit('channelJoin', this.state.hash);
@@ -99,6 +99,7 @@ export default class room extends Component {
 			cursor.setState({code_y:data});
 		});
 		this.changeMode = this.changeMode.bind(this);
+		this.changeTheme = this.changeTheme.bind(this);
 		this.setState({code_i:this.state.mode_intro.javascript});
 		this.instance = null;
 	}
@@ -109,8 +110,13 @@ export default class room extends Component {
 		let mode = e.target.value;
 		let intro = this.state.mode_intro[mode];
 		this.setState({
-			mode_i: mode,
+			mode_i: {name:mode},
 			code_i: intro
+		});
+	}
+	changeTheme (e) {
+		this.setState({
+			theme: e.target.value
 		});
 	}
 	render() {
@@ -121,8 +127,8 @@ export default class room extends Component {
 				<CodeMirror
 					value={this.state.code_i}
 					options={{
-						mode: this.state.mode_i,
-						theme: 'default',
+						mode: {name:"javascript"},
+						theme: String(this.state.theme),
 						lineNumbers: true,
 						autofocus: true
 					}}
@@ -133,10 +139,20 @@ export default class room extends Component {
 					autoCursor={true}
 				/>
 				<div style={{ marginTop: 10 }}>
+					<span>언어 : </span>
 					<select onChange={this.changeMode}>
 						{/* <option value="markdown">Markdown</option> */}
 						<option value="javascript">JavaScript</option>
                         <option value="clike">C</option>
+					</select>&nbsp;&nbsp;&nbsp;&nbsp;
+					<span>테마 : </span>
+					<select onChange={this.changeTheme}>
+						<option value="default">default</option>
+                        <option value="cobalt">cobalt</option>
+						<option value="zenburn">zenburn</option>
+						<option value="pastel-on-dark">pastel-on-dark</option>
+						<option value="darcula">darcula</option>
+						<option value="eclipse">eclipse</option>
 					</select>
 				</div>
 				</div>
@@ -146,7 +162,7 @@ export default class room extends Component {
 				value={this.state.code_y}
 				options={{
 					mode: this.state.mode_y,
-					theme: 'default',
+					theme: String(this.state.theme),
 					lineNumbers: true,
 					readOnly: true
 				}}
