@@ -87,7 +87,7 @@
 }
 
 .bgSelectorList .dotList{
-    flex-grow: 0.7;
+    flex-grow: 3;
     margin-right:5px;
     display: flex;
     list-style: none;
@@ -114,6 +114,7 @@
 
 
 .bgSelectorList .imgList{
+    flex-grow: 0.2;
     padding:0;
     margin: 0 0 0 0;
     list-style:none;
@@ -201,20 +202,107 @@
     background-size:contain;
 }
 
-.bottomSection .levelSelectorList .listItem *{
+.bottomSection .levelSelectorList .listItem p{
     margin-left:40px;
     width:70%;
 }
 .bottomSection .levelSelectorList .listItem h3{
     margin-top: 70px;
+    margin-left:40px;
+    width:70%;
+}
+.bottomSection .levelSelectorList .listItem h3:last-child{
+    margin-top: 20px;
+    margin-left:40px;
+    width:70%;
+}
+.levelSelectorList .listItem .rightTag{
+    font-size:1.5rem;
+    margin-left:10px;
+    color:#dd6800;
+}
+
+.sectionTitle{
+    margin-top:70px; 
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sectionTitle .title{
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color:gray;
+}
+
+.underline{    
+    margin:10px auto 0;
+    width:55px;
+    height:1px;
+    border-bottom:2px solid #dddddd;
 }
 
 
+
+.newsSection{
+    margin:auto;
+    width:940px;
+}
+
+.newsSection .newsIcon img{
+    width:90px;
+}
+.newsSection .newsContext{
+    margin-top:20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color:#666666;
+}
+
+ .underline.newsUnderline{
+    margin:20px 5px 10px 0;
+    width:20px;
+}
+
+.newsSection .newsTitle{
+    font-size:0.9rem;
+    color:#a0a0a0;
+}
+
+.rollingButtonList{
+    display: flex;
+    justify-content: flex-end;
+}
+.rollingButtonList .button{
+    height:5px;
+    width:40px;
+    margin:50px 2px 20px;
+    background-color:#666666;
+}
+
+.rollingButtonList .clicked{
+    background-color:#dd6800;
+}
+
+.sectionUnderline{
+    margin:15px auto;
+    width:100%;
+    height:1px;
+    border-bottom:2px solid #dddddd;
+}
+
+
+
 .lectureWrapper{
-    width:1000px;
+    width:940px;
     height:400px;
     margin:0 auto;
     padding:0;
+}
+
+.lectureWrapper .recommandLectureTitle{
+    font-size:1.2rem;
+    color:#666666;
 }
 .lectureWrapper .titleSection{
     margin-top:100px;
@@ -227,6 +315,7 @@
     margin-left: 15px;
     float:left;
 }
+
 .lectureWrapper .titleSection div.title{
     font-size:1.8rem;
 }
@@ -244,29 +333,34 @@
 .lectureWrapper .lectureList .lectureBox{
     /* 강의 박스 한개 */
     position: relative;
-    margin: 25px;
-    width:200px;
-    height:200px;
+    margin: 24px 20px;
+    flex-grow:1;
+    height:230px;
     background-color:white;
-    border-bottom:1px solid black;
+    border-bottom:2px solid #efefef91;
+}
+.lectureWrapper .lectureList .lectureBox:first-child{
+    margin-left:0;
 }
 
+.lectureWrapper .lectureList .lectureBox:last-child{
+    margin-right:0;
+}
 .lectureWrapper .lectureList .lectureBox .lectureImage{
     /* 강의 박스 한개 */
     margin:0;
     padding:0;
-    width:198px;
-    height:120px;
-    /* background:url("../resources/img/main20/blankIcon.png") no-repeat;
-    background-size:contain; */
-    background-color:yellow;
+    width:100%;
+    background-color: #666666;
 }
 
 
 .lectureWrapper .lectureList .lectureBox .lectureName{
     margin:5px;
-    font-size: 1rem;
-    color: #353535;
+    font-size: 1.1rem;
+    font-weight:bold;
+    color: #808080;
+    line-height: 1.5rem;
 }
 
 .lectureWrapper .lectureList .lectureBox .lectureInfo{
@@ -275,14 +369,19 @@
     color : #bbbbbb;
 }
 
+.verticalBar{
+    width:3px;
+    height: 225px;
+    margin:25px 0;
+    background-color:#efefef91;
+}
+
 .plusButton{
     margin:70px auto;
     text-align: center;
-}
-.plusButton button{
-    width:30px;
-    height:30px;
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    width:35px;
+    height:35px;
+    background:url("../resources/img/lecture/plusIcon.png") no-repeat;
     background-size:contain;
 }
 
