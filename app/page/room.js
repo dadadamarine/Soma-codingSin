@@ -206,6 +206,8 @@ export default class room extends Component {
             }
         });
     });
+    $("."+style.sideView).height(window.innerHeight-50);
+    $(".cm-s-default").height(window.innerHeight-100);
   }
   componentWillUnmount() {
   }
