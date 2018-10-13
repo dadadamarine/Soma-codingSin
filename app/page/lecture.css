@@ -6,6 +6,7 @@
     margin: 0 auto;
     padding: 0;
     width:100%;
+    height:700px;
     background:url("../resources/img/lecture/banner/banner.jpg") no-repeat;
     background-size:cover;
     background-position: center;
@@ -33,26 +34,27 @@
 }
 
 .bannerWrapper .left .button{
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background:url("../resources/img/lecture/banner/left-arrow.png") no-repeat;
     background-size:contain;
     height:30px;
     width:30px;
+    cursor: pointer;
 }
 
 .bannerWrapper .right .button{
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background:url("../resources/img/lecture/banner/right-arrow.png") no-repeat;
     background-size:contain;
     height:30px;
     width:30px;
+    cursor: pointer;
 }
 
 
 .bannerWrapper .content{
     float: left;
-    width:1000px;
-    height:80%;
-    margin:90px auto 60px;
-    border:1px solid red;
+    width:940px;
+    height:700px;
+    margin:60px auto 60px;
 }
 
 .bannerWrapper .content .topSection{
@@ -70,7 +72,9 @@
     line-height: 7rem;
     overflow: hidden;
 
-    border:1px solid yellow;
+    background:url("../resources/img/lecture/banner/top/phrase.png") no-repeat;
+    background-size:contain;
+    background-position: center;
 }
 
 .bannerWrapper .topSection .bgSelectorList{
@@ -78,30 +82,40 @@
     display:flex;
     flex-direction: row;
     align-items: flex-end;
-    width:65%;
+    width:70%;
     height:100%;
-    border:1px solid green;
 }
 
 .bgSelectorList .dotList{
+    flex-grow: 0.7;
+    margin-right:5px;
+    display: flex;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .bgSelectorList .dotList li{
     float: left;
-    width:10px;
-    height:10px;
-    margin:10px;
-    background: url("../resources/img/main20/blankIcon.png") no-repeat;
+    width:6px;
+    height:6px;
+    margin: 10px auto;
+    background:url("../resources/img/lecture/banner/top/dot.png") no-repeat;
     background-size:contain;
 }
 
 .bgSelectorList .dotList li.selected{
-    box-shadow: 1px 1px 10px grey;
-    background-color: black;
+    width:17px;
+    height:17px;
+    background:url("../resources/img/lecture/banner/top/selectedDot.png") no-repeat;
+    background-size:contain;
 }
 
+
+
 .bgSelectorList .imgList{
+    padding:0;
+    margin: 0 0 0 0;
     list-style:none;
     overflow: hidden;
 }
@@ -112,21 +126,43 @@
 }
 
 .bgSelectorList .imgList .imgListItem .image{
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
-    background-size:contain;
-    background-position: center;
     background: black;
-    margin:10px 10px;
-    width:60px;
-    height:35px;
+    margin:10px 3px 3px;
+    width:80px;
+    height:48px;
+    vertical-align: middle;
 }
-.bgSelectorList .imgList .imgListItem p {
-    margin-bottom: 0 auto -10px auto;
+
+
+.bannerWrapper .rowLine{
+    width:103%;
+    margin: 20px -12px;
+    height:1px;
+}
+
+.imgListItem .image img{
+    width:80px;
+}
+.imgListItem .image.selected img{
+    width:80px;
+    border:2px solid #dd6800;
+    box-shadow: 0 0 5px 1px #dd6800;
+}
+
+.bgSelectorList .imgList .imgListItem p{
+    margin: 10px auto 15px;
+    font-size:0.65rem;
+    color:#eeeeee;
     text-align: center;
 }
 
 .bannerWrapper .content .bottomSection{
     height:200px;
+}
+
+.bottomSection .title{
+    color:white;
+    font-weight: bold;
 }
 
 .bottomSection .levelSelectorList{
@@ -136,17 +172,33 @@
     flex-direction:row;
 }
 .bottomSection .levelSelectorList .listItem{
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
-    background-size:contain;
     width:230px;
     height:230px;
-    margin:auto;
+    margin: 15px auto;
     padding:auto;
     color:white;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.bottomSection .levelSelectorList .listItem:nth-child(1){
+    background:url("../resources/img/lecture/banner/bottom/easy.png") no-repeat;
+    background-size:contain;
+}
+
+.bottomSection .levelSelectorList .listItem:nth-child(2){
+    background:url("../resources/img/lecture/banner/bottom/normal.png") no-repeat;
+    background-size:contain;
+}
+.bottomSection .levelSelectorList .listItem:nth-child(3){
+    background:url("../resources/img/lecture/banner/bottom/hard.png") no-repeat;
+    background-size:contain;
+}
+.bottomSection .levelSelectorList .listItem:nth-child(4){
+    background:url("../resources/img/lecture/banner/bottom/leveltest.png") no-repeat;
+    background-size:contain;
 }
 
 .bottomSection .levelSelectorList .listItem *{

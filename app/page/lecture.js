@@ -39,9 +39,7 @@ export default class lecture extends Component {
                     {/* 여기부터 배너의 중간 컨텐츠들 */}
                     <div className={style.content}>
                         <div className={style.topSection}>
-                            <div className={style.mainPhrase}>
-                               넌지금공부가땡긴다 
-                            </div>
+                            <div className={style.mainPhrase}></div>
                             <div className={style.bgSelectorList}>
                                 
                                 <ul className={style.dotList}>
@@ -54,23 +52,33 @@ export default class lecture extends Component {
                                 
                                 <ul className={style.imgList}>
                                     <li className={style.imgListItem}>
-                                        <div className={style.image}></div>
+                                        <div className={[style.image, style.selected].join(' ')}>
+                                            <img src={require('../resources/img/lecture/banner/top/1.png')} alt=""/>
+                                        </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
-                                        <div className={style.image}></div>
+                                        <div className={style.image}>
+                                            <img src={require('../resources/img/lecture/banner/top/2.png')} alt=""/>
+                                        </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
-                                        <div className={style.image}></div>
+                                        <div className={style.image}>
+                                            <img src={require('../resources/img/lecture/banner/top/3.png')} alt=""/>
+                                        </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
-                                        <div className={style.image}></div>
+                                        <div className={style.image}>
+                                            <img src={require('../resources/img/lecture/banner/top/4.png')} alt=""/>
+                                        </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
-                                        <div className={style.image}></div>
+                                        <div className={style.image}>
+                                            <img src={require('../resources/img/lecture/banner/top/5.png')} alt=""/>
+                                        </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                 </ul>
@@ -79,7 +87,7 @@ export default class lecture extends Component {
                         </div>
                         <div className={style.rowLine}></div>
                         <div className={style.bottomSection}>
-                            <div><p>레벨별 강좌선택</p></div>
+                            <div className={style.title}><p>레벨별 강좌선택</p></div>
                             <div className={style.levelSelectorList}>
                                 <div className={style.listItem}>
                                     <h3>초급</h3>
