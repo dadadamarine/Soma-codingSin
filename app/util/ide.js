@@ -102,6 +102,7 @@ export default class room extends Component {
 		this.instance = null;
 	}
 	componentDidMount() {
+		socket.emit('send', {channel:this.state.hash, msg:this.state.mode_intro["javascript"]});
 	}
 	changeMode (e) {
 		let mode = e.target.value;
@@ -120,9 +121,10 @@ export default class room extends Component {
 					className="auto-start"
 					value={this.state.code_i}
 					options={{
-						mode: `${this.state.mode_i}`,
+						mode: {name: "javascript", json: true},
 						theme: 'material',
-						lineNumbers: true
+						lineNumbers: true,
+						autofocus: true
 					}}
 					onChange={(editor, data, value) => {
 						socket.emit('send', {channel:cursor.state.hash, msg:value});
@@ -145,7 +147,8 @@ export default class room extends Component {
 				options={{
 					mode: `${this.state.mode_y}`,
 					theme: 'material',
-					lineNumbers: true
+					lineNumbers: true,
+					readOnly: true
 				}}
 				editorDidMount={editor => { this.instance = editor }}
 				autoCursor={true}

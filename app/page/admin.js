@@ -41,7 +41,7 @@ export default class admin extends Component {
                 }
                 start-=(offset+row);
                 end-=(offset+row+1);
-                if(event.keyCode==17) {
+                if(event.keyCode==18) {
                     let str = row+","+start+","+end;
                     quiz.push(str)
                     document.getElementById("view_code").innerText+="{"+str+"}"; 
