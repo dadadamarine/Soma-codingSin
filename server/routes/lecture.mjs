@@ -126,23 +126,25 @@ router.post('/register', function (req, res) {
 });
 
 router.post('/auth', function(req, res){
-    const id=String(req.body._id);
-    const user=req.session.user_id;
-    const flag = req.session.user_type=="강사";
-    MongoClient.connect(dbHost, function(error, client) {
-        if(error) console.log(error);
-        else {
-            const db = client.db(dbName);
-            db.collection(dbCollection).find({_id:objectId(id)}).toArray(function(err, doc){
-                if(err) console.log(err);
-                if(doc==null || doc==[]) res.redirect('/error');
-                if(flag)
-                    if(doc[0].id!=user) res.redirect('/error');
-                else if(doc[0].match!=user) res.redirect('/error');
-                res.send("ok");
-            });
-            client.close();
-        }
-    });
+    try{
+        const id=objectId(String(req.body._id));
+        const user=req.session.user_id;
+        const flag = req.session.user_type=="강사";
+        MongoClient.connect(dbHost, function(error, client) {
+            if(error) console.log(error);
+            else {
+                const db = client.db(dbName);
+                db.collection(dbCollection).find({_id:id}).toArray(function(err, doc){
+                    if(err) console.log(err);
+                    if(doc==null || doc==[]) res.redirect('/error');
+                    if(flag)
+                        if(doc[0].id!=user) res.redirect('/error');
+                    else if(doc[0].match!=user) res.redirect('/error');
+                    res.send("ok");
+                });
+                client.close();
+            }
+        });
+    }catch(e){res.redirect('/error');}
 });
 export default router;
