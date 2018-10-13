@@ -40,7 +40,6 @@ export default class room extends Component {
         for(let a=0;a<list_tmp.length;a++){
             let answer_tmp2 = new Array();
             let text = list_tmp[a].content.split('\n');
-            console.log(list_tmp[a].quiz);
             for(let i=0;i<list_tmp[a].quiz.length;i++){
                 let tmp = String(list_tmp[a].quiz[i]).split(",");
                 let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
@@ -55,7 +54,6 @@ export default class room extends Component {
             answer_tmp.push(answer_tmp2);
         }
         cursor.setState({list:list_tmp, answer:answer_tmp});
-        cursor.createQuiz();
     }).catch(function (error) {
         alert('error massage : '+error);
     });
@@ -198,7 +196,7 @@ export default class room extends Component {
     $("code").on("DOMSubtreeModified",function(){
         $(".quiz").on("input", function(){
             let str=cursor.state.answer[$(this).attr("cursor")];
-            if($(this).val()==str[$(this).attr("subcursor")]){
+            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
                 $(this).attr("readonly",true);
                 $(this).css("color","blue");
                 $(this).css("font-weight","bold");
