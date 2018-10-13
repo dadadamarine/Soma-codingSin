@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import socketIOClient from 'socket.io-client'
 import style from './room.css';
-import img from '../resources/img/main.png';
+import img from '../resources/img/logo.png';
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 import Highlight from 'react-highlight';
@@ -236,12 +236,14 @@ export default class room extends Component {
   screenChange(event){
     if(this.state.toggle){
       this.setState({toggle:false});
-      $("."+style.toggleText).text("WebIDE");
+      $("."+style.toggle+" span:first-child").removeClass(style.toggleSelect).addClass(style.toggleNotSelect);
+      $("."+style.toggle+" span:last-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
       $("."+style.roomMain).css("display","none");
       $("."+style.webIde).css("display","block");
     }else{
       this.setState({toggle:true});
-      $("."+style.toggleText).text("원격화면");
+      $("."+style.toggle+" span:first-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
+      $("."+style.toggle+" span:last-child").removeClass(style.toggleSelect).addClass(style.toggleNotSelect);
       $("."+style.roomMain).css("display","block");
       $("."+style.webIde).css("display","none");
     }
@@ -268,35 +270,22 @@ export default class room extends Component {
                 <span className={style.ico_grayDot}></span>
                 <p>On Air</p>
               </div>
-              <div className={style.exit}>
-                <span className={style.icon_exit}></span>
-                <p className={style.middleText}>나가기</p>
-              </div>
-              <div className={style.ide} onClick={this.screenChange}>
-                <span className={style.icon_survey}></span>
-                <p className={style.toggleText}>원격화면</p>
-              </div>
               <div className={style.survey}>
                 <span className={style.icon_survey}></span>
                 <p className={style.middleText} id="btn-screen-share">과외시작</p>
               </div>
-
-              
           </div>
         <div className={style.mainWrapper}>
-            <div className={style.roomWrapper} id="screen-wrap">
-                <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
-                <div className={style.webIde}><Code room={this.state.room}/></div>
-            </div>
-
-
-            <div className={style.sideView}>
-              <div className={style.sideTop}>
-                <div className={style.nav}> 
-                    <div className={style.sideButton1} onClick={this.view1Click}>수업 진도</div>
-                    <div className={style.sideButton2} onClick={this.view2Click}>문제 보기</div>
-                </div>
+        <div className={style.sideView}>
+            <div className={style.sideBottom}>
                 <div className={style.viewContainer}>
+                    <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam"></video>
+                    </div>
+                    <div className={style.settingView}>
+                    </div>
+            </div>
+              <div className={style.sideTop}>
+                <div className={style.viewContainer2}>
                       <div className={style.progress}>
                       </div>
                       <div className={style.problem}>
@@ -307,15 +296,25 @@ export default class room extends Component {
                       </div>
                       </div>
                 </div>
+                <div className={style.nav}> 
+                    <div className={style.sideButton1} onClick={this.view1Click}><img src={require("../resources/img/room/survey.png")} width="30" height="30"/><span>수업 진도</span></div>
+                    <div className={style.sideButton2} onClick={this.view2Click}><img src={require("../resources/img/room/question.png")} width="30" height="30"/><span>문제 보기</span></div>
+                </div>
+                <div className={style.bottomMenu}> 
+                <div className={style.exitWrapper}>
+                <div className={style.exit}>
+                </div>
+                </div>
+                <div className={style.toggle} onClick={this.screenChange}>
+                    <span className={style.toggleSelect}>screen</span>
+                    <span className={style.toggleNotSelect}>editor</span>
+                </div>
+                </div>
               </div>
-
-              <div className={style.sideBottom}>
-                <div className={style.viewContainer}>
-                     <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam"></video>
-                    </div>
-                    <div className={style.settingView}>
-                    </div>
-              </div>
+            </div>
+            <div className={style.roomWrapper} id="screen-wrap">
+                <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
+                <div className={style.webIde}><Code room={this.state.room}/></div>
             </div>
         </div>
       </div>
