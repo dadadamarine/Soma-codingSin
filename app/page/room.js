@@ -34,34 +34,29 @@ export default class room extends Component {
     }
     service.contentsList(0,0).then(function (res) {
         cursor.setState({list:res.data});
+        let answer_tmp = cursor.state.answer;
+        let list_tmp = cursor.state.list;
+        
+        for(let a=0;a<list_tmp.length;a++){
+            let answer_tmp2 = new Array();
+            let text = list_tmp[a].content.split('\n');
+            for(let i=0;i<list_tmp[a].quiz.length;i++){
+                let tmp = String(list_tmp[a].quiz[i]).split(",");
+                let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
+                answer_tmp2.push(str);
+                text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
+            }
+            let content="";
+            for(let i=0;i<text.length;i++){
+                content+=text[i]+'\n';
+            }
+            list_tmp[a].content=content;
+            answer_tmp.push(answer_tmp2);
+        }
+        cursor.setState({list:list_tmp, answer:answer_tmp});
     }).catch(function (error) {
         alert('error massage : '+error);
     });
-
-    let answer_tmp = cursor.state.answer;
-    let list_tmp = cursor.state.list;
-    
-    for(let a=0;a<list_tmp.length;a++){
-        let answer_tmp2 = new Array();
-        let text = list_tmp[a].content.split('\n');
-
-        console.log(list_tmp[a].quiz.length);
-        console.log(String(list_tmp[a].quiz));
-        let quiz_list = String(list_tmp[a].quiz).split(",");
-        for(let i=0;i<list_tmp[a].quiz.length;i++){
-            let tmp = String(list_tmp[a].quiz[i]).split(",");
-            let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
-            answer_tmp2.push(str);
-            text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
-        }
-        let content="";
-        for(let i=0;i<text.length;i++){
-            content+=text[i]+'\n';
-        }
-        list_tmp[a].content=content;
-        answer_tmp.push(answer_tmp2);
-    }
-    cursor.setState({list:list_tmp, answer:answer_tmp});
     try{
     chrome.runtime.sendMessage("jikodjmdnknlnjcfeconoiggckcoijji", { message: "isInstall" },
         function (reply) {
