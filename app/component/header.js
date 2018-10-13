@@ -31,10 +31,10 @@ export default class header extends Component {
                 <div className = {style.sizeWrapper}>
                     <div className={style.menuList}>
                         <a className={style.logo} onClick={this.goMain}></a>
-                        <div className={style.menuItem}>수강 안내</div>
-                        <div className={style.menuItem}><Link to="/lecture">수강 신청</Link></div>
-                        <div className={style.menuItem}><Link to="/tutor">강사 소개</Link></div>
-                        <div className={style.menuItem}>콘텐츠 창고</div>
+                        <div className={style.menuItem}><a href="">수강안내</a></div>
+                        <div className={style.menuItem}><Link to="/lecture">수강신청</Link></div>
+                        <div className={style.menuItem}><Link to="/tutor">강사소개</Link></div>
+                        <div className={style.menuItem}><a href="">콘텐츠</a></div>
                         <div className={style.menuItem}><Link to="/community">커뮤니티</Link></div>
                     </div>
 

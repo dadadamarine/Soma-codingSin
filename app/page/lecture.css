@@ -1,20 +1,15 @@
 .wrapper{
-    width:1080px;
-    margin: 0 auto;
-}
-.bannerWrapper{
     margin: 0;
-    padding: 0;
 }
 
 .bannerWrapper{
+    margin: 0 auto;
+    padding: 0;
     width:100%;
-    height:var(--section-height);
-/*   background:url("../resources/img/main20/main_20_banner.jpg") no-repeat;
- */    
-    background-color:#cccccc;
+    background:url("../resources/img/lecture/banner/banner.jpg") no-repeat;
     background-size:cover;
     background-position: center;
+    background-color:black;
     display: flex;
 }
 
