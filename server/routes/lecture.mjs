@@ -127,7 +127,7 @@ router.post('/register', function (req, res) {
 
 router.post('/auth', function(req, res){
     try{
-        const id=objectId(String(req.body._id));
+        const id=objectId(String(req.body.id));
         const user=req.session.user_id;
         const flag = req.session.user_type=="강사";
         MongoClient.connect(dbHost, function(error, client) {
