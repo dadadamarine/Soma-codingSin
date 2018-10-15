@@ -114,7 +114,7 @@ class community extends Component{
                                 <a href="">
                                     [뉴스] 코딩과 알고리즘, 무엇이 다를까?
                                     <br/>
-                                    한국에서의 알고리즘
+                                    한국에서의 알고리즘 교육
                     
                                 </a>
                             </li>
@@ -219,11 +219,9 @@ class community extends Component{
                         <div className={style.newsTitle}>Latest News</div>
                         <div className={style.lectureList}> 
                             <div className={style.lectureBox} key={"na"}>
-                                <div className="lectureImage">
-                                    <Link to={ "/lecture/1"}>
-                                    <img className={style.lectureImage} />
-                                    </Link> 
-                                </div>
+                                <Link to={ "/lecture/1"}>
+                                    <img src={require("../resources/img/community/content/news1.png")} className={style.lectureImage} />
+                                </Link> 
                                 <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
                                 <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
                                 <div className={style.underline}></div>
@@ -235,11 +233,9 @@ class community extends Component{
                             <div className={style.verticalBar}></div>
 
                             <div className={style.lectureBox} key={"na"}>
-                                <div className="lectureImage">
-                                    <Link to={ "/lecture/1"}>
-                                    <img className={style.lectureImage} />
-                                    </Link> 
-                                </div>
+                                <Link to={ "/lecture/1"}>
+                                    <img src={require("../resources/img/community/content/news2.png")} className={style.lectureImage} />
+                                </Link> 
                                 <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
                                 <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
                                 <div className={style.underline}></div>
@@ -251,11 +247,9 @@ class community extends Component{
                             <div className={style.verticalBar}></div>
 
                             <div className={style.lectureBox} key={"na"}>
-                                <div className="lectureImage">
-                                    <Link to={ "/lecture/1"}>
-                                    <img className={style.lectureImage} />
-                                    </Link> 
-                                </div>
+                                <Link to={ "/lecture/1"}>
+                                    <img src={require("../resources/img/community/content/news3.png")} className={style.lectureImage} />
+                                </Link> 
                                 <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
                                 <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
                                 <div className={style.underline}></div>
@@ -267,11 +261,9 @@ class community extends Component{
                             <div className={style.verticalBar}></div>
 
                             <div className={style.lectureBox} key={"na"}>
-                                <div className="lectureImage">
-                                    <Link to={ "/lecture/1"}>
-                                    <img className={style.lectureImage} />
-                                    </Link> 
-                                </div>
+                                <Link to={ "/lecture/1"}>
+                                    <img src={require("../resources/img/community/content/news4.png")} className={style.lectureImage} />
+                                </Link> 
                                 <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
                                 <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
                                 <div className={style.underline}></div>

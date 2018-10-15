@@ -254,28 +254,34 @@
     width:1px;
     height:230px;
     margin:25px 0;
-    background-color:gray;
+    background-color:#eeeeee;
 }
 
 .newsWrapper .lectureList .lectureBox{
     /* 강의 박스 한개 */
     position: relative;
-    margin: 25px;
-    width:200px;
-    height:230px;
+    margin: 25px auto;
+    width:210px;
+    height:240px;
     background-color:white;
-    border-bottom:1px solid gray;
+    border-bottom:1px solid #eeeeee;
+}
+
+.newsWrapper .lectureList .lectureBox:first-child{
+    /* 강의 박스 한개 */
+    margin-left:5px;
+}
+
+.newsWrapper .lectureList .lectureBox:last-child{
+    /* 강의 박스 한개 */
+    margin-right:5px;
 }
 
 .newsWrapper .lectureList .lectureBox .lectureImage{
     /* 강의 박스 한개 */
     margin:0;
     padding:0;
-    width:198px;
-    height:120px;
-    /* background:url("../resources/img/main20/blankIcon.png") no-repeat;
-    background-size:contain; */
-    background-color:yellow;
+    width:210px;
 }
 
 
