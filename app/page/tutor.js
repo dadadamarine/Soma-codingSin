@@ -24,7 +24,16 @@ class tutor extends Component{
                         </div>
                         <div className={style.introducePhrase}>
                             현직 개발자로 활발하게 활동하고 있는<br/>
-                            코딩의 신의 우수한 강사진을 소개합니다.
+                            <span>코딩의 신</span>의 우수한 강사진을 소개합니다.
+
+
+                        <div className={style.searchBarWrapper}>
+                            <div className ={style.inputArea}>
+                            <input type="text" value="강사의 이름을 입력하세요." className={style.searchBar}/>
+                            <div className={style.searchIcon}></div>
+                        </div>
+                        
+                    </div>
                         </div>
                     </div>{/* 배너 아래쪽 배치 끝 */}
                 </div>{/* 배너 끝 */}
@@ -39,30 +48,172 @@ class tutor extends Component{
                         </div>
 
                         <div className={style.tutorList}>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
-                            <div className={style.tutor}>1</div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(1).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (1).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(12).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (12).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(9).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (9).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(4).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (4).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(5).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (5).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(14).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (14).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(7).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (7).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(8).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (8).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(3).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (3).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(10).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (10).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(11).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (11).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(14).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (14).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(13).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (13).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(6).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (6).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(15).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (15).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(12).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (12).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(2).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (2).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
+                            <div className={style.tutorBox}>
+                                <div className={style.phraseSection}>
+                                    <img src={require('../resources/img/tutor/tutorPhrase/(18).png')} alt=""/>
+                                </div>
+                                <div className={style.nameSection}> 
+                                    <div><img src={require('../resources/img/tutor/tutor/  (18).png')} alt=""/></div>
+                                    <p>개발 정민석</p>
+                                </div>
+                            </div>
 
                         </div>
                     </div>{/* tutorListWrapper 끝 */}
-                    <div className={style.searchBarWrapper}>
-                        <input type="text" className={style.searchBar}/>
-                    </div>
+                   
 
                 </div>
                 

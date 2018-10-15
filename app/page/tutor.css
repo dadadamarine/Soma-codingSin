@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:700');
 
+
+/* font 회색 : #878787 */
+/* 배너 주황색 폰트 : #fdd059 */
+/* 청색 폰트 : #468a97 */
+/* 검색창 배겅 : #ㅅb1deb6 */
+/* 전체보기 배경 : df5842 */
+
 .wrapper{
     margin:0;
     padding:0;
@@ -7,7 +14,7 @@
 
 .bannerWrapper{
     width:100%;
-    height:700px;
+    height:750px;
 }
 .bannerWrapper .bannerTop{
     margin:0;
@@ -32,7 +39,7 @@
     font-size:5.5rem;
     letter-spacing: 4px;
     line-height: 9.5rem;
-    color:#c0c0c0;
+    color:#fdd059;
     font-weight: normal;
 }
 .bannerWrapper .bannerTop .bannerPhrase span{
@@ -51,23 +58,30 @@
 
 .bannerWrapper .bannerBottom .introducePhrase{
     position: absolute;
-    margin: 180px 0px 0 250px;
+    margin: 130px 0px 0 310px;
     font-family: 'Gothic A1', sans-serif;
     font-weight:bold;
-    letter-spacing: -2px;
-    word-spacing: 1px;
-    font-size:1.7rem;
-    line-height: 3.0rem;
-    color:#393b48;
+    letter-spacing: -3px;
+    word-spacing: 3px;
+    font-size:1.8rem;
+    line-height: 3.5rem;
+
+    color:#878787;
+}
+
+.introducePhrase span{
+    color:#468a97;
+    font-weight: bold;
+    font-size:2.5rem;
 }
 
 .bannerWrapper .bannerBottom .dotImage{
-    width: 340px;
-    height:340px;
+    width: 370px;
+    height:370px;
 
     position: absolute;
     bottom: 0;
-    margin: 0px 0px -67px 20px;
+    margin: 0px 0px -75px 20px;
 
     border-radius:300px;
     background:url("../resources/img/tutor/imageDot.png") no-repeat;
@@ -79,33 +93,90 @@
 
 
 
+.searchBarWrapper{
+    height:100px;
+    width:100%;
+    padding-top:50px;
+    margin-left:60px;
+    text-align: center;
+}
+
+.searchBarWrapper .inputArea{
+    display:flex;
+
+    width:250px;
+    height:35px;
+    margin: 0 auto;
+    background-color:#b1deb6;
+
+    justify-content: flex-start;
+    align-items: center;
+}
+.searchBarWrapper .inputArea .searchBar{
+    width: 210px;
+    height: 35px;
+
+    font-size:1.2rem;
+    letter-spacing: -4px;
+    word-spacing: 5px;
+    color:#468a97;
+    border:none;
+    padding-left:20px;
+    background-color: transparent;
+    /* box-shadow: 0 0 10px 1px rgba(1,1,1,0.2); */
+}
+.searchBarWrapper .inputArea .searchBar:focus{
+    outline:none;
+}
+.searchBarWrapper .inputArea .searchIcon{
+    width: 40px;
+    height:20px;
+    margin: auto 0;
+    padding-left:23px;
+    border-left:0.1px solid white;
+    background:url('../resources/img/tutor/searchIcon.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+
 .tutorListWrapper{
     margin:20px auto;
-    padding:0;
-    width:1000px;
+    padding: 0 0 100px 0 ; 
+    width:1140px;
     font-weight: bold;
-    font-size:1.5rem;
+    font-size:1.7rem;
 }
 
 .tutorListWrapper .titleSection{
     display: flex;
-    height:50px;
+    height:60px;
+    margin-left:10px;
+    margin-bottom: 18px;
 }
 
 .tutorListWrapper .titleSection div{
-    margin:0 0 0 20px;
-    height:30px;
+    margin:0 0 0 10px;
+    height:45px;
+    cursor: pointer;
 }
+
 
 .tutorListWrapper .titleSection div a{
     color:black;
-    padding:0 7px;
-    line-height:30px;
+    padding:5px 20px;
+    line-height:45px;
+}
+.tutorListWrapper .titleSection div a:hover{
+    color:red;
 }
 .tutorListWrapper .titleSection div.selected{
-    background-color:#333333;
-    border-radius: 5px;
+    background-color:#df5842;
+    border-radius: 10px;
 }
+
 .tutorListWrapper .titleSection div.selected a{
     color:white;
 }
@@ -116,26 +187,48 @@
     display:flex;
     flex-wrap:wrap;
 }
-.tutorListWrapper .tutorList .tutor{
-    width:150px;
-    height:170px;
+
+.tutorList .tutorBox {
+    width:180px;
     margin:5px auto;
-    border:1px solid red;
-}
-
-
-.searchBarWrapper{
-    height:200px;
-    width:100%;
-    background-color: #dddddd;
-    text-align: center;
 
 }
 
-.searchBarWrapper .searchBar{
-    width: 350px;
-    height: 30px;
-    margin: 20px auto;
-    border-radius: 5px;
+.tutorList .tutorBox .phraseSection{
+    margin:0;
+    padding:0;
+    height:190px;
+    background-color:#f0f0f0;
+    position: relative;
 }
+
+.tutorBox .phraseSection img{
+    margin:auto;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+
+    width:80%;
+}
+.tutorList .tutorBox .nameSection{
+    height:45px;
+    background-color:#393b48;
+    text-align:center;
+}
+
+.tutorBox .nameSection img{
+    position: relative;
+    width:55px;
+    margin:-50px auto 0px auto;
+
+}
+.tutorBox .nameSection p{
+    color:#a0a0a0;
+    font-size:1.1rem;
+}
+
+
+
 
