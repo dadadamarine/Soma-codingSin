@@ -38,8 +38,9 @@ class community extends Component{
                     charLength+=1;
                 }
             }
-            if(charLength>16) charLength= 20;
-            else if(charLength > 13) charLength+=3;
+            if(charLength>26) charLength= 31;
+            else if(charLength > 20) charLength+=4;
+            else if(charLength > 15) charLength+=3;
             else if(charLength > 10) charLength+=2;
             else{
                 charLength+=1;
@@ -345,18 +346,19 @@ class community extends Component{
                     </div>{/* 2nd section Wrapper 끝 */}
                 </div>
 
-                <div className={style.sectionWrapper}>
+                <div className={[style.sectionWrapper, style.questionWrapper].join(' ')}>
                     <div className={style.sectionTitle}>
                         <div className={style.title}>묻고 답하기</div>
                         <div className={[style.underline, style.search].join(' ')}></div>
                     </div> 
+                </div>
 
+                <div className={style.searchBar}>{/* 검색 창 */}
+                    <input id="searchBar" onInput={searchBarKeyPressed} type="text" size="1"/>
+                    <div className={style.searchIcon}></div>
+                </div>
 
-                    <div className={style.searchBar}>{/* 검색 창 */}
-                        <input id="searchBar" onInput={searchBarKeyPressed} type="text" size="1"/>
-                        <div className={style.searchIcon}></div>
-                    </div>
-
+                <div className={[style.sectionWrapper, style.answerWrapper].join(' ')}>
                     <div className={style.searchResultBox}>
                         <div className={style.title}>Search Result</div>
                         <div className={style.underline}></div>
@@ -393,110 +395,93 @@ class community extends Component{
 
                 </div>{/* 3nd section Wrapper 끝 */}
 
+                <div className={style.secBigWrapper}>
+                    <div className={[style.sectionWrapper, style.freeBoardWrapper].join(' ')}>
+                        <div className={style.sectionTitle}>
+                            <div className={style.title}>자유 게시판</div>
+                            <div className={style.underline}></div>
+                        </div> 
 
-                <div className={style.sectionWrapper}>
-                    <div className={style.sectionTitle}>
-                        <div className={style.title}>자유 게시판</div>
-                        <div className={style.underline}></div>
-                    </div> 
+                        <div className={[style.sectionUnderline, style.wideUnderline].join(' ')}></div>
 
-                    <div className={[style.sectionUnderline, style.wideUnderline].join(' ')}></div>
+                        <div className={style.freeBoardList}>
+                            <div className={[style.imageItem, style.noImageItem].join(' ')}>
+                                <p className={style.context}>
+                                코딩 입문자, 어떤 언어부터 배워야 할까? 프로그래밍을 처음 배우려는 사람들이 마주하는 첫 번째 ‘난관’이 있다. 공부할 프로그래밍 언어를 고르는 일이다. 외국어를 배울 때 영어, 중국어, 아랍어 등을 동시에 익히기 어려운 것처럼 일단 어떤 언어를 배울 지 생각해야 하기 때문이다. 개발자가 주로 사용하는 프로그래밍 언어는 C, C#, 
 
-                    <div className={style.freeBoardList}>
-                        <div className={style.boardItem}>
-                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
-                            <p className={style.context}>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Laboriosam repudiandae 
-                                commodi dolorem corrupti, iure, nostrum 
-                                placeat sint doloribus modi tenetur libero 
-                                suscipit cumque vitae quia voluptate blanditiis, 
-                                explicabo deserunt ea!
-                            </p>
-                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
-                            <p className={style.date}>
-                                Oct 09
-                            </p>
-                        </div>
-                        <div className={style.boardItem}>
-                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
-                            <p className={style.context}>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Laboriosam repudiandae 
-                                commodi dolorem corrupti, iure, nostrum 
-                                placeat sint doloribus modi tenetur libero 
-                                suscipit cumque vitae quia voluptate blanditiis, 
-                                explicabo deserunt ea!
-                            </p>
-                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
-                            <p className={style.date}>
-                                Oct 09
-                            </p>
-                        </div>
-                        <div className={style.boardItem}>
-                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
-                            <p className={style.context}>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Laboriosam repudiandae 
-                                commodi dolorem corrupti, iure, nostrum 
-                                placeat sint doloribus modi tenetur libero 
-                                suscipit cumque vitae quia voluptate blanditiis, 
-                                explicabo deserunt ea!
-                            </p>
-                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
-                            <p className={style.date}>
-                                Oct 09
-                            </p>
-                        </div>
-                        <div className={style.boardItem}>
-                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
-                            <p className={style.context}>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Laboriosam repudiandae 
-                                commodi dolorem corrupti, iure, nostrum 
-                                placeat sint doloribus modi tenetur libero 
-                                suscipit cumque vitae quia voluptate blanditiis, 
-                                explicabo deserunt ea!
-                            </p>
-                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
-                            <p className={style.date}>
-                                Oct 09
-                            </p>
-                        </div>
-                        <div className={style.boardItem}>
-                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
-                            <p className={style.context}>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Laboriosam repudiandae 
-                                commodi dolorem corrupti, iure, nostrum 
-                                placeat sint doloribus modi tenetur libero 
-                                suscipit cumque vitae quia voluptate blanditiis, 
-                                explicabo deserunt ea!
-                            </p>
-                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
-                            <p className={style.date}>
-                                Oct 09
-                            </p>
-                        </div>
-                        <div className={style.boardItem}>
-                            <img src={require("../resources/img/main20/defaultLectureImage.png")} alt="사진"/>
-                            <p className={style.context}>
-                                Lorem ipsum dolor sit amet consectetur 
-                                adipisicing elit. Laboriosam repudiandae 
-                                commodi dolorem corrupti, iure, nostrum 
-                                placeat sint doloribus modi tenetur libero 
-                                suscipit cumque vitae quia voluptate blanditiis, 
-                                explicabo deserunt ea!
-                            </p>
-                            <div className={[style.underline, style.compactUnderline].join(' ')}></div>
-                            <p className={style.date}>
-                                Oct 09
-                            </p>
-                        </div>
-                    </div>
+                                
+                                </p>
+                                <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                                <p className={style.date}>
+                                    Oct 09
+                                </p>
+                            </div>
 
-                </div>{/* 4nd section Wrapper 끝 */}
+                            <div className={style.verticalBar}></div>
 
+                            <div className={style.imageItem}>
+                                <img src={require("../resources/img/community/content/free1.png")} alt="사진"/>
+                                <p className={style.context}>
+                                ‘생활코딩’이라는 프로그래밍 교육 프로그램을 운영하는 개발자 이고잉은 “자신이 하고자 하는 일이 무엇인가에 달렸다”라고 말한다. 기본기가 쌓고 싶은 건지, 당장 유용한 결과물을 만들어 내고 싶은지, 결과물을 만들고 싶다면 어떤 종류의 결과물을 원하는지에 따라 배워야 할 언어가 다 다르기 때문이다.
+                                </p>
+                                <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                                <p className={style.date}>
+                                    Oct 09
+                                </p>
+                            </div>
+
+                            <div className={style.verticalBar}></div>
+
+                            <div className={style.imageItem}>
+                                <img src={require("../resources/img/community/content/free2.png")} alt="사진"/>
+                                <p className={style.context}>
+                                예전에 “IT 개발자, 직업으로 괜찮은가?”라는 제목의 글을 적으며, 프로그래밍이 즐거운 이유 세 가지를 꼽은 적이 있습니다. 제 얘기보다는 훨씬 더 믿음
+                                </p>
+                                <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                                <p className={style.date}>
+                                    Oct 09
+                                </p>
+                            </div>
+                            <div className={style.imageItem}>
+                                <img src={require("../resources/img/community/content/free1.png")} alt="사진"/>
+                                <p className={style.context}>
+                                예전에 “IT 개발자, 직업으로 괜찮은가?”라는 제목의 글을 적으며, 프로그래밍이 즐거운 이유 세 가지를 꼽은 적이 있습니다. 제 얘기보다는 훨씬 더 믿음
+                                </p>
+                                <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                                <p className={style.date}>
+                                    Oct 09
+                                </p>
+                            </div>
+
+                            <div className={style.verticalBar}></div>
+
+                            <div className={[style.imageItem,style.noImageItem].join(' ')}>
+                                <p className={style.context}>
+                                코딩 입문자, 어떤 언어부터 배워야 할까? 프로그래밍을 처음 배우려는 사람들이 마주하는 첫 번째 ‘난관’이 있다. 공부할 프로그래밍 언어를 고르는 일이다. 외국어를 배울 때 영어, 중국어, 아랍어 등을 동시에 익히기 어려운 것처럼 일단 어떤 언어를 배울 지 생각해야 하기 때문이다. 개발자가 주로 사용하는 프로그래밍 언어는 C, C#, 
+
+                                </p>
+                                <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                                <p className={style.date}>
+                                    Oct 09
+                                </p>
+                            </div>
+
+                            <div className={style.verticalBar}></div>
+
+                            <div className={style.imageItem}>
+                                <img src={require("../resources/img/community/content/free2.png")} alt="사진"/>
+                                <p className={style.context}>
+                                ‘생활코딩’이라는 프로그래밍 교육 프로그램을 운영하는 개발자 이고잉은 “자신이 하고자 하는 일이 무엇인가에 달렸다”라고 말한다. 기본기가 쌓고 싶은 건지, 당장 유용한 결과물을 만들어 내고 싶은지, 결과물을 만들고 싶다면 어떤 종류의 결과물을 원하는지에 따라 배워야 할 언어가 다 다르기 때문이다.
+                                </p>
+                                <div className={[style.underline, style.compactUnderline].join(' ')}></div>
+                                <p className={style.date}>
+                                    Oct 09
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>{/* 4nd section Wrapper 끝 */}
+                </div>
 
 
 

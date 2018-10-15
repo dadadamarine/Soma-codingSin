@@ -373,9 +373,17 @@
     color:#aaaaaa;
 }
 
+.questionWrapper{
+    height:90px;
+}
+
+.answerWrapper{
+    height:500px;;
+}
+
 .searchBar{
     width:100%;
-    height:70px;
+    height:90px;
     background-color:#f15a21;
     box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.15);
     text-align: center;
@@ -408,7 +416,7 @@
 }
 .searchBar .searchIcon{
     float:left;
-    margin:17px 0 0 10px; 
+    margin:28px 0 0 10px; 
     width: 40px;
     height:40px;
     background:url("../resources/img/tutor/searchIcon.png") no-repeat;
@@ -505,6 +513,12 @@
 
 /* 자유게시판 css */
 
+.secBigWrapper{
+    margin-top:120px;
+    height:900px;
+    background:linear-gradient(to bottom, white 0%, white 23%, #f1f0ee 23%, #f1f0ee 100%);
+}
+
 .sectionUnderline.wideUnderline{
     width:110%;
     margin:20px -50px;
@@ -512,31 +526,57 @@
 
 .freeBoardList{
     margin:0;
-
     display:flex;
     flex-wrap: wrap;
+
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
 }
 
-.freeBoardList .boardItem{
+.freeBoardList .imageItem{
     margin:15px auto;
-    padding:10px;
-    width:300px;
+    padding: 0 15px;
+    width:290px;
     height:350px;
 
-    background-color:#eeeeee;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #dcdcdc;
 }
-.freeBoardList img{
+
+
+.freeBoardList .imageItem img{
     margin-bottom: 5px;
-    width:90%;
+    width:100%;
+    height:40%;
+    object-fit: cover;
 }
+
 .freeBoardList .context{
-    font-size:1rem;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: normal; 
+    max-height: 9.2rem;
+
+    text-align: justify;
+    font-size:1.2rem;
+    line-height: 2.3rem;
+    font-weight: bold;
 }
+
+.freeBoardList .noImageItem .context{
+    max-height: 20rem;
+}
+
 .freeBoardList .date{
-    font-size:0.8rem;
+    font-size:0.9rem;
     color:gray;
+}
+.freeBoardList .verticalBar{
+    width:1px;
+    height:320px;
+    margin:10px 0;
+    background-color:#dcdcdc;
 }
 .underline.compactUnderline{
     margin:10px 0 ;
 }
+
