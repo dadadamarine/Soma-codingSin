@@ -70,7 +70,7 @@ class community extends Component{
                     <div className={[style.tableItem, style.board].join(' ')}>
                         <a href="community/board">
                             <div className={style.title}>
-                                <p>강좌 소개</p>
+                                <p>컨텐츠 리뷰</p>
                             </div>
                             <ul className={style.postList}>
                                 <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
@@ -86,18 +86,20 @@ class community extends Component{
 
                     {/* 2번째 라인 */}
                     <div className={[style.tableItem, style.board].join(' ')}>
-                        <div className={style.title}>
-                            <p>강좌 소개</p>
-                        </div>
-                        <ul className={style.postList}>
-                            <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
-                            <li><a href="">소프트웨어, 코딩 교육은</a></li>
-                            <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
-                        </ul>
+                        <a href="community/board">
+                            <div className={style.title}>
+                                <p>공지사항</p>
+                            </div>
+                            <ul className={style.postList}>
+                                <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
+                                <li><a href="">소프트웨어, 코딩 교육은</a></li>
+                                <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
+                            </ul>
+                        </a>
                     </div>                    
                     <div className={[style.tableItem, style.board].join(' ')}>
                         <div className={style.title}>
-                            <p>강좌 소개</p>
+                            <p>묻고 답하기</p>
                         </div>
                         <ul className={style.postList}>
                             <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
@@ -119,24 +121,29 @@ class community extends Component{
                         </ul>
                     </div>    
                     <div className={[style.tableItem, style.board].join(' ')}>
-                        <div className={style.title}>
-                            <p>강좌 소개</p>
-                        </div>
-                        <ul className={style.postList}>
-                            <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
-                            <li><a href="">소프트웨어, 코딩 교육은</a></li>
-                            <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
-                        </ul>
+                        <a href="">
+                            <div className={style.title}>
+                                <p>자유게시판</p>
+                            </div>
+                            <ul className={style.postList}>
+                                <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
+                                <li><a href="">소프트웨어, 코딩 교육은</a></li>
+                                <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
+                            </ul>
+                        </a>
                     </div>                    
                     <div className={[style.tableItem, style.board].join(' ')}>
-                        <div className={style.title}>
-                            <p>강좌 소개</p>
-                        </div>
-                        <ul className={style.postList}>
-                            <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
-                            <li><a href="">소프트웨어, 코딩 교육은</a></li>
-                            <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
-                        </ul>
+                        <a href="">
+                            <div className={style.title}>
+                                <p>마이페이지</p>
+                            </div>
+                            <ul className={style.postList}>
+                                <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
+                                <li><a href="">소프트웨어, 코딩 교육은</a></li>
+                                <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
+                            </ul>
+                        </a>
+
                     </div>
 
 
@@ -145,7 +152,7 @@ class community extends Component{
                     <div className={[style.tableItem, style.orange].join(' ')}></div>
                     <div className={[style.tableItem, style.board].join(' ')}>
                         <div className={style.title}>
-                            <p>강좌 소개</p>
+                            <p>제안게시판</p>
                         </div>
                         <ul className={style.postList}>
                             <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
@@ -155,7 +162,7 @@ class community extends Component{
                     </div>
                     <div className={[style.tableItem, style.board].join(' ')}>
                         <div className={style.title}>
-                            <p>강좌 소개</p>
+                            <p>강의 리뷰</p>
                         </div>
                         <ul className={style.postList}>
                             <li><a href="">[칼럼] 세계의 코딩 교육</a></li>
@@ -163,8 +170,10 @@ class community extends Component{
                             <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
                         </ul>
                     </div>                    
-                    <div className={[style.tableItem, style.image].join(' ')}></div>
-                    
+                    <div className={[style.tableItem, style.image].join(' ')}>
+                        <h3>테스트하러가기<span className={style.rightTag}>></span></h3>
+                    </div>
+                        
                    </div>
                 </div> {/* 배너 래퍼가 끝나는 지점 */}
 
@@ -189,7 +198,18 @@ class community extends Component{
                             <p>2018년 10월 8일, 한국 교육 협의회에서 주관하는 우수 교육기업에 코딩의 신이 선정되었습니다. 여러분의 뜨....   </p>
                             <div className={style.underline}></div>
                             <p className={style.date}>MON / 08 Oct 2018</p>
-                            <span className={style.more}>자세히</span>
+                            <div>
+                                <span className={style.more}>자세히</span>
+                            </div>
+                            <div className={style.rollingButtonList}>
+                                <div className={[style.button,style.clicked].join(' ')}></div>
+                                <div className={style.button}></div>
+                                <div className={style.button}></div>
+                                <div className={style.button}></div>
+                                <div className={style.button}></div>
+                                <div className={style.button}></div>
+                            </div>
+
                             <div className={style.sectionUnderline}></div>
                         </div>
                     </div>

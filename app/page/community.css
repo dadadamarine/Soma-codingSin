@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:700');
 
+
+/* 내용 폰트 색 : #929191 */
 .wrapper{
     margin:0;
     padding:0;
@@ -6,19 +9,20 @@
 
 .bannerWrapper{
     width:100%;
-    height:var(--section-height);
-    /* background:url("../resources/img/main20/main_20_banner.jpg") no-repeat;
+    height:900px;
+    background:url("../resources/img/community/communityBanner.jpg") no-repeat;
     background-size:cover;
     background-position: center;
-     */
-     background-color:#cccccc;
+     
+    background-color:black;
      
      display: flex;
      justify-content: center;
      align-items: center;
 }
+
 .boardTableWrapper{
-    width:900px;
+    width:1000px;
     margin:auto;
     
     display:flex;
@@ -28,21 +32,25 @@
 }
 
 .boardTableWrapper .tableItem{
-    width:170px;
-    height:170px;
-    margin:2px;
+    width:190px;
+    height:190px;
+    margin:3px;
     border-radius: 4px;
 }
 .boardTableWrapper .board{
+    color:#929191;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+
     background-color:white;
-    transition: z-index 0.3s, box-shadow 0.2s, transform 0.3s cubic-bezier(0.25, -0.06, 0.47, 1.1);
+    transition: z-index 0.1s, box-shadow 0.2s, transform 0.2s cubic-bezier(0.25, -0.06, 0.47, 1.1);
     z-index: 1;
 }
 
 .boardTableWrapper .board:hover{
-    transform: scale(1.2);
-    box-shadow: 1px 1px 70px 10px gray;
-    transition:  box-shadow 0.3s, transform 0.3s cubic-bezier(0.25, -0.06, 0.47, 1.1);
+    transform: scale(1.3);
+    box-shadow: 1px 1px 300px 10px rgba(1,1,1,0.7);
+    transition:  box-shadow 0.2s, transform 0.2s cubic-bezier(0.25, -0.06, 0.47, 1.1);
     z-index: 2;
 }
 
@@ -51,11 +59,12 @@
 }
 
 .boardTableWrapper .board.black{
-    padding:30px 0px 0px 5px;
+    padding:30px 0px 0px 0px;
     background-color:rgba(0,0,0,0.4);    
     z-index: 0;
 }
 .boardTableWrapper .board.black:hover{
+    
     box-shadow: 1px 1px 10px 3px gray;
     transform: none;
     transition: box-shadow 0.3s;
@@ -63,16 +72,34 @@
 
 .boardTableWrapper .board.black .postList a {
     text-decoration: none;
+    font-weight: normal;
     color:white;
-    font-size:0.8rem;
+    font-size:0.9rem;
+    font-weight: 500;
 }
 .boardTableWrapper .orange{
-    background-color:rgba(255, 123, 0, 0.352);
+    background-color:rgba(233, 114, 30, 0.32);
 }
 .boardTableWrapper .image{
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background:url("../resources/img/lecture/banner/bottom/leveltest.png") no-repeat;
     background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.boardTableWrapper .image h3{
+    margin:0 0 0 20px;
+    width:90%;
+    color:white;
+}
+.boardTableWrapper .image .rightTag{
+    font-size:1.5rem;
+    margin-left:10px;
+    color:#dd6800;
+    
+}
+
 
 .boardTableWrapper .tableItem.board .title{
     height:40%;
@@ -85,35 +112,45 @@
 } 
 
 .boardTableWrapper .tableItem.board .title p{
-    font-size:1.3rem;
-    font-weight:bold;
     margin: 0px 0px 5px 10px;
+    
+    font-size:1.5rem;
+    font-weight:bold;
+    color:black;
+    font-family: 'Gothic A1', sans-serif;
+    letter-spacing: -3px;
 }
 
 .boardTableWrapper .tableItem.board .postList{
-    font-size:0.7rem;
-    margin:0 18px 20px 18px;
+    color:#929191;
+    font-size:0.8rem;
+    font-weight: bold;
+    margin:0 18px 20px 22px;
     padding: 5px;
     list-style: none;
 }
 
 
 .sectionWrapper{
+
     width:1000px;
     height:800px;
     margin:0 auto;
     padding:0;
-    border:1px solid red;
+    color:#555555;
 }
 
 
 .sectionTitle{
+    color:#595959;
     margin-top:70px; 
     text-align: center;
     margin-bottom: 50px;
 }
 
 .sectionTitle .title{
+    font-size: 1.35rem;
+    font-weight: bold;
     display: inline-block;
     letter-spacing: -3px;
     font-weight: bold;
@@ -124,7 +161,7 @@
     margin:25px 0 0;
     width:15px;
     height:1px;
-    border-bottom:1px solid #aaaaaa;
+    border-bottom:1px solid #dcdcdc;
 }
 
 .noticeWrapper{   
@@ -132,8 +169,9 @@
 }
 
 .sectionTitle .underline{
-    margin: 3px auto;
-    width:30px;
+    
+    margin: 5px auto;
+    width:40px;
 }
 
 .noticeWrapper .contentSection{
@@ -141,11 +179,21 @@
 }
 
 .noticeWrapper .contentSection .newsIcon{
-    width:50px;
-    height:20px;
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
-    background-size:cover;
+    width:80px;
+    height:40px;
+    background:url("../resources/img/community/newsIcon.png") no-repeat;
+    background-size:contain;
     background-position: center;
+}
+.noticeWrapper .contentSection h2{
+    font-size:2.2rem;
+    margin:10px 0 20px;
+}
+
+.noticeWrapper .contentSection p{
+    font-size:1.1rem;
+    color:#808080;
+    font-weight: 600;
 }
 
 .noticeWrapper .contentSection .underline{
@@ -154,16 +202,36 @@
 }
 
 .noticeWrapper .contentSection .date{
-    color:#aaaaaa;
+    margin-top:5px;
+    color:#bbbbbb;
 }
 
 
 .noticeWrapper .contentSection .more{
-    color:#aaaaaa;
+    float: left;
+    color:#dddddd;
+    font-size:1.1rem;
 }
 
+
+.rollingButtonList{
+    display: flex;
+    justify-content: flex-end;
+}
+.rollingButtonList .button{
+    height:5px;
+    width:40px;
+    margin:0px 2px 20px;
+    background-color:#666666;
+}
+
+.rollingButtonList .clicked{
+    background-color:#dd6800;
+}
+
+
 .sectionUnderline{
-    margin:20px auto;
+    margin:10px auto;
     width:100%;
     height:1px;
     border-bottom:1px solid #aaaaaa;
