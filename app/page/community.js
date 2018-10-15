@@ -169,10 +169,12 @@ class community extends Component{
                             <li><a href="">소프트웨어, 코딩 교육은</a></li>
                             <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
                         </ul>
-                    </div>                    
-                    <div className={[style.tableItem, style.image].join(' ')}>
-                        <h3>테스트하러가기<span className={style.rightTag}>></span></h3>
-                    </div>
+                    </div>  
+                    <a id="test" href="http://codmos.io/study/temp_stage/LCS01_1_1_2?clear=LCS01_1_1_1">                 
+                        <div className={[style.tableItem, style.image].join(' ')}>
+                                <h3>테스트하러가기<span className={style.rightTag}>></span></h3>
+                        </div>
+                    </a>
                         
                    </div>
                 </div> {/* 배너 래퍼가 끝나는 지점 */}
@@ -183,166 +185,174 @@ class community extends Component{
 
 
 
+                <div className={style.fstBigWrapper}>
+                    <div className={style.sectionWrapper}>
 
-                <div className={style.sectionWrapper}>
-
-                    <div className={style.sectionTitle}>
-                        <div className={style.title}>공지사항</div>
-                        <div className={style.underline}></div>
-                    </div>
-
-                    <div className={style.noticeWrapper}> {/* 공지사항 섹션 시작 */}        
-                        <div className={style.contentSection}>
-                            <div className={style.newsIcon}></div>
-                            <h2>[공지사항] 10월 8일 코딩의 신 우수 교육기업 TOP50 선정</h2>
-                            <p>2018년 10월 8일, 한국 교육 협의회에서 주관하는 우수 교육기업에 코딩의 신이 선정되었습니다. 여러분의 뜨....   </p>
+                        <div className={style.sectionTitle}>
+                            <div className={style.title}>공지사항</div>
                             <div className={style.underline}></div>
-                            <p className={style.date}>MON / 08 Oct 2018</p>
-                            <div>
-                                <span className={style.more}>자세히</span>
-                            </div>
-                            <div className={style.rollingButtonList}>
-                                <div className={[style.button,style.clicked].join(' ')}></div>
-                                <div className={style.button}></div>
-                                <div className={style.button}></div>
-                                <div className={style.button}></div>
-                                <div className={style.button}></div>
-                                <div className={style.button}></div>
-                            </div>
-
-                            <div className={style.sectionUnderline}></div>
                         </div>
-                    </div>
-                    
-                    {/* 뉴스 섹션 시작 */}
-                    <div className={style.newsWrapper}>
-                        <div className={style.newsTitle}>Latest News</div>
-                        <div className={style.lectureList}> 
-                            <div className={style.lectureBox} key={"na"}>
-                                <Link to={ "/lecture/1"}>
-                                    <img src={require("../resources/img/community/content/news1.png")} className={style.lectureImage} />
-                                </Link> 
-                                <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
-                                <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
+
+                        <div className={style.noticeWrapper}> {/* 공지사항 섹션 시작 */}        
+                            <div className={style.contentSection}>
+                                <div className={style.newsIcon}></div>
+                                <h2>[공지사항] 10월 8일 코딩의 신 우수 교육기업 TOP50 선정</h2>
+                                <p>2018년 10월 8일, 한국 교육 협의회에서 주관하는 우수 교육기업에 코딩의 신이 선정되었습니다. 여러분의 뜨....   </p>
                                 <div className={style.underline}></div>
-                                <div className={style.lectureInfo}>
-                                    <span>8 October, 2018</span>
+                                <p className={style.date}>MON / 08 Oct 2018</p>
+                                <div>
+                                    <span className={style.more}>자세히</span>
+                                </div>
+                                <div className={style.rollingButtonList}>
+                                    <div className={[style.button,style.clicked].join(' ')}></div>
+                                    <div className={style.button}></div>
+                                    <div className={style.button}></div>
+                                    <div className={style.button}></div>
+                                    <div className={style.button}></div>
+                                    <div className={style.button}></div>
+                                </div>
+
+                                <div className={style.sectionUnderline}></div>
+                            </div>
+                        </div>
+
+                        {/* 뉴스 섹션 시작 */}
+                        <div className={style.newsWrapper}>
+                            <div className={style.newsTitle}>
+                                <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%94%A9%EA%B5%90%EC%9C%A1">
+                                Latest News
+                                </a>
+                            </div>
+                            <div className={style.lectureList}> 
+                                <div className={style.lectureBox} key={"na"}>
+                                    <Link to={ "/lecture/1"}>
+                                        <img src={require("../resources/img/community/content/news1.png")} className={style.lectureImage} />
+                                    </Link> 
+                                    <div className={style.lectureTitle}>[칼럼] 세계의 코딩교육</div>
+                                    <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
+                                    <div className={style.underline}></div>
+                                    <div className={style.lectureInfo}>
+                                        <span>8 October, 2018</span>
+                                    </div>
+                                </div>
+
+                                <div className={style.verticalBar}></div>
+
+                                <div className={style.lectureBox} key={"na"}>
+                                    <Link to={ "/lecture/1"}>
+                                        <img src={require("../resources/img/community/content/news2.png")} className={style.lectureImage} />
+                                    </Link> 
+                                    <div className={style.lectureTitle}>[칼럼] 세계의 코딩교육</div>
+                                    <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
+                                    <div className={style.underline}></div>
+                                    <div className={style.lectureInfo}>
+                                        <span>8 October, 2018</span>
+                                    </div>
+                                </div>
+
+                                <div className={style.verticalBar}></div>
+
+                                <div className={style.lectureBox} key={"na"}>
+                                    <Link to={ "/lecture/1"}>
+                                        <img src={require("../resources/img/community/content/news3.png")} className={style.lectureImage} />
+                                    </Link> 
+                                    <div className={style.lectureTitle}>[칼럼] 세계의 코딩교육</div>
+                                    <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
+                                    <div className={style.underline}></div>
+                                    <div className={style.lectureInfo}>
+                                        <span>8 October, 2018</span>
+                                    </div>
+                                </div>
+
+                                <div className={style.verticalBar}></div>
+
+                                <div className={style.lectureBox} key={"na"}>
+                                    <Link to={ "/lecture/1"}>
+                                        <img src={require("../resources/img/community/content/news4.png")} className={style.lectureImage} />
+                                    </Link> 
+                                    <div className={style.lectureTitle}>[칼럼] 세계의 코딩교육</div>
+                                    <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
+                                    <div className={style.underline}></div>
+                                    <div className={style.lectureInfo}>
+                                        <span>8 October, 2018</span>
+                                    </div>
+                                </div>
+                            </div>  {/* lecture List 끝 */}
+                        </div>
+                        <div className={style.plusButton}>
+                            <button onClick=""/>
+                        </div>
+
+
+                    </div>{/* 1st section Wrapper 끝 */}
+
+                </div>
+ 
+
+                <div className={style.secBigWrapper}>
+                    <div className={style.sectionWrapper}>
+                        <div className={style.sectionTitle}>
+                            <div className={style.title}>콘텐츠 리뷰</div>
+                            <div className={style.underline}></div>
+                        </div> 
+                        <div className={style.reviewPhrase}>
+                            여러강의들을 경험해본 선배들이 스스로 제작한 컨텐츠와
+                            <br/>
+                            1:1실시간 과외를 받아본 솔직한 리뷰까지!
+                        </div>
+                        <div className={style.reviewBoxList}>
+                            <div className={style.boxItem}>
+                                <div className={style.boxItemTop}>
+                                    <img src={require("../resources/img/community/content/content1.png")} alt=""/>
+                                </div>
+                                <div className={style.boxItemBottom}>
+                                    <p>정보올림피아드 대비</p>
+                                    <p>273 문제</p>
                                 </div>
                             </div>
-
-                            <div className={style.verticalBar}></div>
-
-                            <div className={style.lectureBox} key={"na"}>
-                                <Link to={ "/lecture/1"}>
-                                    <img src={require("../resources/img/community/content/news2.png")} className={style.lectureImage} />
-                                </Link> 
-                                <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
-                                <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
-                                <div className={style.underline}></div>
-                                <div className={style.lectureInfo}>
-                                    <span>8 October, 2018</span>
+                            <div className={style.boxItem}>
+                                <div className={style.boxItemTop}>
+                                    <img src={require("../resources/img/community/content/content2.png")} alt=""/>
+                                </div>
+                                <div className={style.boxItemBottom}>
+                                    <p>정보올림피아드 대비</p>
+                                    <p>273 문제</p>
                                 </div>
                             </div>
-
-                            <div className={style.verticalBar}></div>
-
-                            <div className={style.lectureBox} key={"na"}>
-                                <Link to={ "/lecture/1"}>
-                                    <img src={require("../resources/img/community/content/news3.png")} className={style.lectureImage} />
-                                </Link> 
-                                <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
-                                <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
-                                <div className={style.underline}></div>
-                                <div className={style.lectureInfo}>
-                                    <span>8 October, 2018</span>
+                            <div className={style.boxItem}>
+                                <div className={style.boxItemTop}>
+                                    <img src={require("../resources/img/community/content/content3.png")} alt=""/>
+                                </div>
+                                <div className={style.boxItemBottom}>
+                                    <p>정보올림피아드 대비</p>
+                                    <p>273 문제</p>
                                 </div>
                             </div>
-
-                            <div className={style.verticalBar}></div>
-
-                            <div className={style.lectureBox} key={"na"}>
-                                <Link to={ "/lecture/1"}>
-                                    <img src={require("../resources/img/community/content/news4.png")} className={style.lectureImage} />
-                                </Link> 
-                                <div className={style.lectureTitle}>[칼럼]세계의 코딩교육</div>
-                                <div className={style.lectureSubTitle}>자바스크립트로 웹 테트리스 만들기</div>
-                                <div className={style.underline}></div>
-                                <div className={style.lectureInfo}>
-                                    <span>8 October, 2018</span>
+                            <div className={style.boxItem}>
+                                <div className={style.boxItemTop}>
+                                    <img src={require("../resources/img/community/content/content4.png")} alt=""/>
+                                </div>
+                                <div className={style.boxItemBottom}>
+                                    <p>정보올림피아드 대비</p>
+                                    <p>273 문제</p>
                                 </div>
                             </div>
-                        </div>  {/* lecture List 끝 */}
-                    </div>
-                    <div className={style.plusButton}>
-                        <button onClick=""/>
-                    </div>
+                        </div> {/* 리뷰 박스 리스트 끝 */}
 
-                
-                </div>{/* 1st section Wrapper 끝 */}
-
-
-                <div className={style.sectionWrapper}>
-                    <div className={style.sectionTitle}>
-                        <div className={style.title}>콘텐츠 리뷰</div>
-                        <div className={style.underline}></div>
-                    </div> 
-                    <div className={style.reviewPhrase}>
-                        여러강의들을 경험해본 선배들이 스스로 제작한 컨텐츠와
-                        <br/>
-                        1:1실시간 과외를 받아본 솔직한 리뷰까지!
-                    </div>
-                    <div className={style.reviewBoxList}>
-                        <div className={style.boxItem}>
-                            <div className={style.boxItemTop}>
-                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
-                            </div>
-                            <div className={style.boxItemBottom}>
-                                <p>정보올림피아드 대비</p>
-                                <p>273 문제</p>
-                            </div>
+                        <div className={style.plusButton}>
+                            <button onclick=""/>
                         </div>
-                        <div className={style.boxItem}>
-                            <div className={style.boxItemTop}>
-                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
-                            </div>
-                            <div className={style.boxItemBottom}>
-                                <p>정보올림피아드 대비</p>
-                                <p>273 문제</p>
-                            </div>
-                        </div>
-                        <div className={style.boxItem}>
-                            <div className={style.boxItemTop}>
-                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
-                            </div>
-                            <div className={style.boxItemBottom}>
-                                <p>정보올림피아드 대비</p>
-                                <p>273 문제</p>
-                            </div>
-                        </div>
-                        <div className={style.boxItem}>
-                            <div className={style.boxItemTop}>
-                                <img src="https://i.ytimg.com/vi/W5M-SpbrvBk/maxresdefault.jpg" alt=""/>
-                            </div>
-                            <div className={style.boxItemBottom}>
-                                <p>정보올림피아드 대비</p>
-                                <p>273 문제</p>
-                            </div>
-                        </div>
-                    </div> {/* 리뷰 박스 리스트 끝 */}
-
-                    <div className={style.plusButton}>
-                        <button onclick=""/>
-                    </div>
-                </div>{/* 2nd section Wrapper 끝 */}
+                    </div>{/* 2nd section Wrapper 끝 */}
+                </div>
 
                 <div className={style.sectionWrapper}>
                     <div className={style.sectionTitle}>
                         <div className={style.title}>묻고 답하기</div>
-                        <div className={style.underline}></div>
+                        <div className={[style.underline, style.search].join(' ')}></div>
                     </div> 
 
 
-                    <div className={style.searchBar}>
+                    <div className={style.searchBar}>{/* 검색 창 */}
                         <input id="searchBar" onInput={searchBarKeyPressed} type="text" size="1"/>
                         <div className={style.searchIcon}></div>
                     </div>
