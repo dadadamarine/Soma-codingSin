@@ -427,6 +427,7 @@
 
 .searchResultBox .title{
     display: inline-block;
+    font-size:1.2rem;
 }
 
 .searchResultBox .underline{    
@@ -440,8 +441,14 @@
     margin:20px auto;
     padding:0;
     list-style: none;
-    font-size:0.8rem;
-    font-weight: bold;
+    letter-spacing: -2px;
+    word-spacing: 2px;
+    font-size:1.3rem;
+    line-height: 2.0rem;
+
+}
+.searchResultBox .resultList li{
+    text-shadow:0px 0px 2px rgba(0,0,0,0.2);
 }
 
 .searchResultBox .resultList .highlight{
@@ -454,16 +461,27 @@
     font-size:1.2rem;
 }
 
+
+
 .resultListBox .resultItem{
-    float:left;
-    margin:20px 49px;
+    font-size:1.4rem;
     padding:10px;
-    width: 400px;
-    height:70px;
+    width: 450px;
+    height:80px;
 
     line-height:1.7rem;
-    color:gray;
-    background-color:#cccccc;
+    color:#555555;
+    background-color:#f1f0ee;
+}
+
+.resultListBox .resultItem:nth-child(odd){
+    float:left;
+    margin:20px 40px 20px 10px;
+}
+
+.resultListBox .resultItem:nth-child(2n){
+    float:right;
+    margin:20px 10px 20px 40px;
 }
 
 .resultListBox .resultItem{

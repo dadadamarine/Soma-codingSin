@@ -382,8 +382,10 @@ class community extends Component{
                         </div>
                         <div className={style.resultItem}>
                             <p>
-                                인터넷으로 버튼을 눌러도 강의실 접속이
-                                <br/>안되는 오류가 발생합니다.
+                                <span>
+                                    인터넷으로 버튼을 눌러도 강의실 접속이
+                                    <br/>안되는 오류가 발생합니다.
+                                </span>
                             </p>
                         </div>
                     </div>
