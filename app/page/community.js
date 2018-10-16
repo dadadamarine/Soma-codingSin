@@ -171,7 +171,7 @@ class community extends Component{
                             <li><a href="">바뀌지 않는 세계의 흐름...</a></li>
                         </ul>
                     </div>  
-                    <a id="test" href="http://codmos.io/study/temp_stage/LCS01_1_1_2?clear=LCS01_1_1_1">                 
+                    <a id="test" target="_blank" href="http://codmos.io/study/course">                 
                         <div className={[style.tableItem, style.image].join(' ')}>
                                 <h3>테스트하러가기<span className={style.rightTag}>></span></h3>
                         </div>

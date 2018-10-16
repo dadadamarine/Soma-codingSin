@@ -13,6 +13,7 @@ import SingUp from './page/signup';
 import Active from './page/active';
 import Lecture from './page/lecture';
 import Tutor from './page/tutor';
+import TutorDetail from './page/tutorDetail';
 import Community from './page/community';
 import LectureReg from './page/lectureReg';
 import LectureDetail from './page/lectureDetail';
@@ -34,6 +35,7 @@ render(<Router>
             <Route exact path="/community" component={Community}/>
             <Route path="/lectureReg" component={LectureReg} />
             <Route path="/lecture/:id" component={LectureDetail} />
+            <Route path="/tutor/:id" component={TutorDetail}/>
             <Route path="/room" component={Room} />
             <Route path="/myLecture" component={MyLecture} />
             <Route path="/admin" component={Admin} />
