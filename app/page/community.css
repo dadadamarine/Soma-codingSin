@@ -145,7 +145,7 @@
 .secBigWrapper{
     width:100%;
     height:800px;
-    background: linear-gradient(to bottom, white 0%, white 54.8%,#f1f0ee 55.2%, #f1f0ee 100%);
+    background: linear-gradient(to bottom, white 0%, white 53.8%,#f1f0ee 54.2%, #f1f0ee 100%);
     z-index: 1;
 }
 
@@ -513,10 +513,10 @@
 
 /* 자유게시판 css */
 
-.secBigWrapper{
+.thirdBigWrapper{
     margin-top:120px;
     height:900px;
-    background:linear-gradient(to bottom, white 0%, white 23%, #f1f0ee 23%, #f1f0ee 100%);
+    background:linear-gradient(to bottom, white 0%, white 22.9%, #f1f0ee 23.6%, #f1f0ee 100%);
 }
 
 .sectionUnderline.wideUnderline{

@@ -395,7 +395,7 @@ class community extends Component{
 
                 </div>{/* 3nd section Wrapper 끝 */}
 
-                <div className={style.secBigWrapper}>
+                <div className={style.thirdBigWrapper}>
                     <div className={[style.sectionWrapper, style.freeBoardWrapper].join(' ')}>
                         <div className={style.sectionTitle}>
                             <div className={style.title}>자유 게시판</div>
