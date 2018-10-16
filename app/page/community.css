@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:700');
+
+
+/* 내용 폰트 색 : #929191 */
+.wrapper{
+    margin:0;
+    padding:0;
+}
+
+.bannerWrapper{
+    width:100%;
+    height:900px;
+    background:url("../resources/img/community/communityBanner.jpg") no-repeat;
+    background-size:cover;
+    background-position: center;
+     
+    background-color:black;
+     
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.boardTableWrapper{
+    width:1000px;
+    margin:auto;
+    
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardTableWrapper .tableItem{
+    width:190px;
+    height:190px;
+    margin:3px;
+    border-radius: 4px;
+}
+.boardTableWrapper .board{
+    color:#929191;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+
+    background-color:white;
+    transition: z-index 0.1s, box-shadow 0.2s, transform 0.2s cubic-bezier(0.25, -0.06, 0.47, 1.1);
+    z-index: 1;
+}
+
+.boardTableWrapper .board:hover{
+    transform: scale(1.3);
+    box-shadow: 1px 1px 300px 10px rgba(1,1,1,0.7);
+    transition:  box-shadow 0.2s, transform 0.2s cubic-bezier(0.25, -0.06, 0.47, 1.1);
+    z-index: 2;
+}
+
+.boardTableWrapper .empty{
+    background-color:rgba(0,0,0,0);
+}
+
+.boardTableWrapper .board.black{
+    padding:30px 0px 0px 0px;
+    background-color:rgba(0,0,0,0.4);    
+    z-index: 0;
+}
+.boardTableWrapper .board.black:hover{
+    
+    box-shadow: 1px 1px 10px 3px gray;
+    transform: none;
+    transition: box-shadow 0.3s;
+}
+
+.boardTableWrapper .board.black .postList a {
+    text-decoration: none;
+    font-weight: normal;
+    color:white;
+    font-size:0.9rem;
+    font-weight: 500;
+}
+.boardTableWrapper .orange{
+    background-color:rgba(233, 114, 30, 0.32);
+}
+.boardTableWrapper .image{
+    background:url("../resources/img/lecture/banner/bottom/leveltest.png") no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardTableWrapper .image h3{
+    margin:0 0 0 20px;
+    width:90%;
+    color:white;
+}
+.boardTableWrapper .image .rightTag{
+    font-size:1.5rem;
+    margin-left:10px;
+    color:#dd6800;
+    
+}
+
+
+.boardTableWrapper .tableItem.board .title{
+    height:40%;
+    margin:20px 20px 0 20px;
+    
+    display:flex;
+    align-items: flex-end;
+
+    border-bottom:1.5px solid gray;
+} 
+
+.boardTableWrapper .tableItem.board .title p{
+    margin: 0px 0px 5px 10px;
+    
+    font-size:1.5rem;
+    font-weight:bold;
+    color:black;
+    font-family: 'Gothic A1', sans-serif;
+    letter-spacing: -3px;
+}
+
+.boardTableWrapper .tableItem.board .postList{
+    color:#929191;
+    font-size:0.8rem;
+    font-weight: bold;
+    margin:0 18px 20px 22px;
+    padding: 5px;
+    list-style: none;
+}
+
+
+.sectionWrapper{
+
+    width:1000px;
+    height:800px;
+    margin:0 auto;
+    padding:0;
+    color:#555555;
+}
+
+
+.sectionTitle{
+    color:#595959;
+    margin-top:70px; 
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sectionTitle .title{
+    font-size: 1.35rem;
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: -3px;
+    font-weight: bold;
+    color:gray;
+}
+
+.underline{    
+    margin:25px 0 0;
+    width:15px;
+    height:1px;
+    border-bottom:1px solid #dcdcdc;
+}
+
+.noticeWrapper{   
+    width:100%;
+}
+
+.sectionTitle .underline{
+    
+    margin: 5px auto;
+    width:40px;
+}
+
+.noticeWrapper .contentSection{
+    width:100%;
+}
+
+.noticeWrapper .contentSection .newsIcon{
+    width:80px;
+    height:40px;
+    background:url("../resources/img/community/newsIcon.png") no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+.noticeWrapper .contentSection h2{
+    font-size:2.2rem;
+    margin:10px 0 20px;
+}
+
+.noticeWrapper .contentSection p{
+    font-size:1.1rem;
+    color:#808080;
+    font-weight: 600;
+}
+
+.noticeWrapper .contentSection .underline{
+    margin:25px 0 0;
+    width:15px;
+}
+
+.noticeWrapper .contentSection .date{
+    margin-top:5px;
+    color:#bbbbbb;
+}
+
+
+.noticeWrapper .contentSection .more{
+    float: left;
+    color:#dddddd;
+    font-size:1.1rem;
+}
+
+
+.rollingButtonList{
+    display: flex;
+    justify-content: flex-end;
+}
+.rollingButtonList .button{
+    height:5px;
+    width:40px;
+    margin:0px 2px 20px;
+    background-color:#666666;
+}
+
+.rollingButtonList .clicked{
+    background-color:#dd6800;
+}
+
+
+.sectionUnderline{
+    margin:10px auto;
+    width:100%;
+    height:1px;
+    border-bottom:1px solid #aaaaaa;
+}
+
+
+
+.newsWrapper .newsTitle{
+    padding-left:5px;
+    font-size:0.9rem;
+    color:#777777;
+}
+
+.newsWrapper .lectureList{
+    width:100%;
+    display: flex;
+}
+
+.newsWrapper .lectureList .verticalBar{
+    width:1px;
+    height:230px;
+    margin:25px 0;
+    background-color:#eeeeee;
+}
+
+.newsWrapper .lectureList .lectureBox{
+    /* 강의 박스 한개 */
+    position: relative;
+    margin: 25px auto;
+    width:210px;
+    height:240px;
+    background-color:white;
+    border-bottom:1px solid #eeeeee;
+}
+
+.newsWrapper .lectureList .lectureBox:first-child{
+    /* 강의 박스 한개 */
+    margin-left:5px;
+}
+
+.newsWrapper .lectureList .lectureBox:last-child{
+    /* 강의 박스 한개 */
+    margin-right:5px;
+}
+
+.newsWrapper .lectureList .lectureBox .lectureImage{
+    /* 강의 박스 한개 */
+    margin:0;
+    padding:0;
+    width:210px;
+}
+
+
+.newsWrapper .lectureList .lectureBox .lectureTitle{
+    margin-top:5px;
+    font-size: 1rem;
+    color: #353535;
+}
+
+.newsWrapper .lectureList .lectureBox .lectureSubTitle{
+    margin-top:5px;
+    font-size: 0.8rem;
+    color: #353535;
+}
+
+.newsWrapper .lectureList .lectureBox .lectureInfo{
+    margin-top:5px;
+    font-size:0.7rem;
+    color : #bbbbbb;
+}
+
+.plusButton{
+    margin:30px auto;
+    text-align: center;
+}
+.plusButton button{
+    width:30px;
+    height:30px;
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+}
+
+.reviewPhrase{
+    text-align: center;
+    font-size:2rem;
+    line-height: 3.5rem;  
+}
+
+.reviewBoxList{
+    margin:100px auto;
+    display:flex;
+}
+
+.reviewBoxList .boxItem{
+
+    height:300px;
+    flex-grow: 1;
+    margin:2px;
+    background-color: #cccccc;
+}
+
+.reviewBoxList .boxItem .boxItemTop{
+    height:200px;
+    background-color:black;
+    vertical-align: middle;
+}
+.reviewBoxList .boxItem .boxItemTop img{
+    width:100%;
+}
+.reviewBoxList .boxItem .boxItemBottom{
+    margin:20px;
+}
+
+.searchBar{
+    width:100%;
+    height:70px;
+    background-color:#f15a21;
+    box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.15);
+    text-align: center;
+
+    display:flex;
+    justify-content:center;
+}
+
+.searchBar input{
+    display: inline-block;
+    margin:0 -10px 0 80px;
+    padding:0;
+    height:100%;
+
+    font-size:4rem;
+    color:white;
+    background-color:#f15a21;
+    border:none; /* 테두리 제거 */
+}
+.searchBar input:focus{
+    outline: none; /* 파란색 테두리 제거 */
+}
+.searchBar .searchIcon{
+    float:left;
+    margin:10px 0 0 10px; 
+    width: 50px;
+    height:50px;
+    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+
+.searchResultBox{
+    margin-top:70px; 
+    text-align: center;
+    margin-bottom: 50px;
+
+    color:gray;
+    letter-spacing: -1px;
+}
+
+.searchResultBox .title{
+    display: inline-block;
+}
+
+.searchResultBox .underline{    
+    margin:5px auto;
+    width:40px;
+    height:1px;
+    border-bottom:1px solid #aaaaaa;
+}
+
+.searchResultBox .resultList{
+    margin:20px auto;
+    padding:0;
+    list-style: none;
+    font-size:0.8rem;
+    font-weight: bold;
+}
+
+.searchResultBox .resultList .highlight{
+    color: #f15a21;
+}
+
+
+.resultListBox{
+    margin:0;
+    font-size:1.2rem;
+}
+
+.resultListBox .resultItem{
+    float:left;
+    margin:20px 49px;
+    padding:10px;
+    width: 400px;
+    height:70px;
+
+    line-height:1.7rem;
+    color:gray;
+    background-color:#cccccc;
+}
+
+.resultListBox .resultItem{
+    display:table;  
+}
+
+.resultListBox .resultItem p{
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+    /* 높이 모르는 요소를 가운데 정렬하기 위한 설정 */
+}
+.resultListBox .resultItem p span{
+    display: inline-block;/* text-align은 인라인 요소 안의 요소엔 적용이 안되나 보다. */
+    text-align: start;
+    /* span은 가운데 정렬, 그안의 글씨 요소들은 왼쪽정렬 */
+}
+
+
+
+
+/* 자유게시판 css */
+
+.sectionUnderline.wideUnderline{
+    width:110%;
+    margin:20px -50px;
+}
+
+.freeBoardList{
+    margin:0;
+
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.freeBoardList .boardItem{
+    margin:15px auto;
+    padding:10px;
+    width:300px;
+    height:350px;
+
+    background-color:#eeeeee;
+    border-bottom: 1px solid gray;
+}
+.freeBoardList img{
+    margin-bottom: 5px;
+    width:90%;
+}
+.freeBoardList .context{
+    font-size:1rem;
+}
+.freeBoardList .date{
+    font-size:0.8rem;
+    color:gray;
+}
+.underline.compactUnderline{
+    margin:10px 0 ;
+}

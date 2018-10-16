@@ -96,17 +96,21 @@ export default class room extends Component {
         }
     };
 
-    var connection = new RTCMultiConnection();
-    connection.iceServers = [];
-    connection.iceServers.push({
+    //영상 합성 : 구글에 아스키 카메라 검색.
+
+    var connection = new RTCMultiConnection(); // server 에 있는 스크립트의 객체 받아옴
+    connection.iceServers = []; // 배열에 스턴서버와 턴서버 url 넣기
+    connection.iceServers.push({ // 같은 라우터 끼리 가능
         urls: 'stun:stun1.l.google.com:19302'
+        // 같은 라우터 안에 있을땐 서버부하가 없는걸로 사용
     });
-    connection.iceServers.push({
+    connection.iceServers.push({ // 턴서버가 다른 라우터끼리일때 서로를 찾아좀.
         urls: 'turn:13.125.113.70:3478',
-        credential: 'soma123!',
+        credential: 'soma123!', // 아이디와 비번입력
         username: 'codingsin'
     });
 
+    //자기 스크린을 받아옴.
     connection.getScreenConstraints = function(callback) {
         getScreenConstraints(function(error, screen_constraints) {
             if (!error) {
@@ -119,17 +123,26 @@ export default class room extends Component {
     };
 
     connection.socketURL ='https://www.codingsin.com:9001/';
+    // 주석은 추가가 안되나!?
+    // 영상 교환을 위한 데이터 타입등 정하기
+    // 코딩신 9001 포트에 소켓 서버에서  서로 알방법이 없는 두사람을 연결시켜줌
+    // 소켓서버의 역할: 시그널링 서버 ( 서로를 연결 시켜줌 )
 
-    connection.session = {
+    connection.session = { // 자기가 열고싶은 세션을 넣으면 됨.
+        //클라이언트 페이지 단
+        // 클라이언트가 자기가 오디오랑 비디오를 염.
         audio: true,
         video: true
     };
+
     connection.sdpConstraints.mandatory = {
+        // oneway twoway랑 관련해서, 서로볼거냐 한사람만 볼거냐
         OfferToReceiveAudio: true,
         OfferToReceiveVideo: true
     };
-    connection.bandwidth = {
-        audio: 100,  // 50 kbps
+    connection.bandwidth = { 
+        //어떤 밴드위스로 보낼건지
+        audio: 100,  // 50 kbps = default
         video: 1000, // 256 kbps
         screen: 3000 // 300 kbps
     };
@@ -145,27 +158,30 @@ export default class room extends Component {
         }
     };
 
-    connection.onstream = function(event) {
-        console.log(event, URL.createObjectURL(event.stream))
+    connection.onstream = function(event) { // 스트림 연결이 됬을때 , 소켓을 통해 결론적으로 연결됬을때 한번 실행
+        console.log(event, URL.createObjectURL(event.stream)) // 이벤트에 대한거 찍고
         if(document.getElementById(event.streamid)) {
             var existing = document.getElementById(event.streamid);
             existing.parentNode.removeChild(existing);
         }
         
         var width = parseInt(connection.videosContainer.clientWidth / 2) - 20;
+        // 스크린 값 받아서, 영상의 폭 설정
         
         if(event.stream.isScreen === true) {
             width = connection.videosContainer.clientWidth - 20;
         }
         
         var mediaElement = getMediaElement(event.mediaElement, {
+            // 미디어 엘리먼트 , 오버 했을때 뜨는 것들 설정해주는 곳
             title: event.userid,
             buttons: ['full-screen'],
             width: width,
             showOnMouseEnter: false
         });
-        if(event.type == 'remote'&& event.stream.isVideo==true && v_count==0 )
-        {
+        if(event.type == 'remote'&& event.stream.isVideo==true && v_count==0 )  
+        {   // 캠, 스크린 소리가 3개 같이 들어오는 상황  , 분류해야댐
+            // 받고있는 스트림이 remote 이고(상대한테 받은거고), 캠이면 캠 태그에 영상 전달
             var video= document.getElementById('cam');
             video.setAttribute('src',URL.createObjectURL(event.stream));
             video.load();
@@ -173,7 +189,7 @@ export default class room extends Component {
         }
         if(event.type == 'remote' && event.stream.isScreen==true && s_count ==0 )
         {
-
+            // 스크린일땐 스크린에 쏴줌
             var video= document.getElementById('remote-screen');
             video.setAttribute('src',URL.createObjectURL(event.stream));
             video.load();
@@ -185,6 +201,7 @@ export default class room extends Component {
         }, 5000);
         mediaElement.id = event.streamid;
     };
+
     connection.onstreamended = function(event) {
         var mediaElement = document.getElementById(event.streamid);
         if(mediaElement) {
