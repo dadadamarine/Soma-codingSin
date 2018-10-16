@@ -53,31 +53,31 @@ export default class lecture extends Component {
                                 <ul className={style.imgList}>
                                     <li className={style.imgListItem}>
                                         <div className={[style.image, style.selected].join(' ')}>
-                                            <img src={require('../resources/img/lecture/banner/top/1.png')} alt=""/>
+                                            <img src={require('../resources/img/lecture/banner/top/top1.png')} alt=""/>
                                         </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/2.png')} alt=""/>
+                                            <img src={require('../resources/img/lecture/banner/top/top2.png')} alt=""/>
                                         </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/3.png')} alt=""/>
+                                            <img src={require('../resources/img/lecture/banner/top/top3.png')} alt=""/>
                                         </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/4.png')} alt=""/>
+                                            <img src={require('../resources/img/lecture/banner/top/top4.png')} alt=""/>
                                         </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
                                     <li className={style.imgListItem}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/5.png')} alt=""/>
+                                            <img src={require('../resources/img/lecture/banner/top/top5.png')} alt=""/>
                                         </div>
                                         <p>공부가 땡긴다</p>
                                     </li>
@@ -89,7 +89,7 @@ export default class lecture extends Component {
                         <div className={style.bottomSection}>
                             <div className={style.title}><p>레벨별 강좌선택</p></div>
                             <div className={style.levelSelectorList}>
-                                <div className={style.listItem}>
+                                <div className={[style.listItem, style.selected].join(' ')}>
                                     <h3>초급</h3>
                                     <p>초급강의에 대한 내용을 적는 칸입니다. 두줄 예상</p>
                                 </div>
@@ -151,10 +151,11 @@ export default class lecture extends Component {
                     {/* 강의 컨텐츠 시작 */}
                         
                     <div className={style.lectureList}> 
-                        <div className={style.lectureBox} key={"na"}>
+
+                                            <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/1.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section1/section1_1.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -168,7 +169,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/2.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section1/section1_2.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -182,7 +183,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/3.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section1/section1_3.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -196,7 +197,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/4.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section1/section1_4.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -217,13 +218,9 @@ export default class lecture extends Component {
                 <div className={style.lectureWrapper}>
                     <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
                         <div className={style.title}>
-                            <a>추천강의</a>
-                            <img src="../resources/img/main20/blank.jpg" />
+                            <div className={style.verticalBar}></div>
+                            <a>FUN FUN STUDY</a>
                         </div>
-                        <div><a>최신순</a></div>
-                        <div><a>리뷰순</a></div>
-                        <div><a>별점순</a></div>
-                        <div className={style.gridButton}><img src="../resources/img/main20/blank.jpg" /></div>
                     </div>
                     {/* 강의 컨텐츠 시작 */}
                         
@@ -231,7 +228,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/1.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section2/section2_1.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -245,7 +242,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/2.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section2/section2_2.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -259,7 +256,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/3.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section2/section2_3.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -273,7 +270,64 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/4.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section2/section2_4.png')} className={style.lectureImage} />
+                                </Link> 
+                            </div>
+                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
+                            <div className={style.lectureInfo}>
+                                <span>velopert</span>/ <span>월~ 금 3시</span>/ <span>300,000원</span>
+                            </div>
+                        </div>
+                        
+                    </div>  {/* lecture List 끝 */}
+                    <div className={style.lectureList}>
+                
+                        <div className={style.lectureBox} key={"na"}>
+                            <div className="lectureImage">
+                                <Link to={ "/lecture/1"}>
+                                   <img src={require('../resources/img/lecture/section2/section2_5.png')} className={style.lectureImage} />
+                                </Link> 
+                            </div>
+                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
+                            <div className={style.lectureInfo}>
+                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                            </div>
+                        </div>
+                        
+                        <div className={style.verticalBar}></div>
+
+                        <div className={style.lectureBox} key={"na"}>
+                            <div className="lectureImage">
+                                <Link to={ "/lecture/1"}>
+                                   <img src={require('../resources/img/lecture/section2/section2_6.png')} className={style.lectureImage} />
+                                </Link> 
+                            </div>
+                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
+                            <div className={style.lectureInfo}>
+                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                            </div>
+                        </div>
+
+                        <div className={style.verticalBar}></div>
+                        
+                        <div className={style.lectureBox} key={"na"}>
+                            <div className="lectureImage">
+                                <Link to={ "/lecture/1"}>
+                                   <img src={require('../resources/img/lecture/section2/section2_7.png')} className={style.lectureImage} />
+                                </Link> 
+                            </div>
+                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
+                            <div className={style.lectureInfo}>
+                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                            </div>
+                        </div>
+
+                        <div className={style.verticalBar}></div>
+                        
+                        <div className={style.lectureBox} key={"na"}>
+                            <div className="lectureImage">
+                                <Link to={ "/lecture/1"}>
+                                   <img src={require('../resources/img/lecture/section2/section2_8.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -282,25 +336,25 @@ export default class lecture extends Component {
                             </div>
                         </div>
 
-                        
-                    </div>  {/* lecture List 끝 */}
+                    </div>
+
                     <div className={style.plusButton}></div>
 
                 
                 </div>{/* lecture Wrapper 끝 */}
 
+               
 
 
-                                <div className={style.lectureWrapper}>
+
+
+
+                <div className={style.lectureWrapper}>
                     <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
                         <div className={style.title}>
-                            <a>추천강의</a>
-                            <img src="../resources/img/main20/blank.jpg" />
+                            <div className={style.verticalBar}></div>
+                            <a>BEST STUDY</a>
                         </div>
-                        <div><a>최신순</a></div>
-                        <div><a>리뷰순</a></div>
-                        <div><a>별점순</a></div>
-                        <div className={style.gridButton}><img src="../resources/img/main20/blank.jpg" /></div>
                     </div>
                     {/* 강의 컨텐츠 시작 */}
                         
@@ -308,7 +362,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/1.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section3/section3_1.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -322,7 +376,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/2.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section3/section3_2.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -336,7 +390,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/3.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section3/section3_3.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
@@ -350,7 +404,7 @@ export default class lecture extends Component {
                         <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/4.png')} className={style.lectureImage} />
+                                   <img src={require('../resources/img/lecture/section3/section3_4.png')} className={style.lectureImage} />
                                 </Link> 
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
