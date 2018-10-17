@@ -368,6 +368,7 @@
     height:220px;
     background-color:white;
     border-bottom:2px solid #efefef91;
+    cursor: pointer;
 }
 .lectureWrapper .lectureList .lectureBox:first-child{
     margin-left:0;

@@ -160,7 +160,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
                         
@@ -174,7 +174,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -188,7 +188,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -202,7 +202,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span>/ <span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -233,7 +233,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
                         
@@ -247,7 +247,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -261,7 +261,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -275,7 +275,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span>/ <span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
                         
@@ -290,7 +290,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
                         
@@ -304,7 +304,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -318,7 +318,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -332,7 +332,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span>/ <span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -367,7 +367,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
                         
@@ -381,7 +381,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -395,7 +395,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span><span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 
@@ -409,7 +409,7 @@ export default class lecture extends Component {
                             </div>
                             <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
                             <div className={style.lectureInfo}>
-                                <span>velopert</span>/ <span>월~ 금 3시</span>/ <span>300,000원</span>
+                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
 

@@ -33,7 +33,7 @@ export default class myLecture extends Component {
                                 </div>
                                 <div className={style.lectureName}>{lecture.title}</div>
                                 <div className={style.lectureInfo}>
-                                    <span>{lecture.name}</span>/ <span>{lecture.schedule}</span><span>{lecture.price}</span>
+                                    <span>{lecture.name}</span> / <span>{lecture.schedule}</span> / <span>{lecture.price}</span>
                                 </div>
                                 </div>
                             {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}
