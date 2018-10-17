@@ -22,6 +22,7 @@ export default class myLecture extends Component {
         return (
             <div className={style.wrapper}>
                 <div className={style.lectureWrapper}>
+                    <div className={style.mylecture}></div>
                     <div className={style.lectureList}> 
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
                         let url = "/room#"+lecture._id;
