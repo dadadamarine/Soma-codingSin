@@ -26,7 +26,7 @@ export default class myLecture extends Component {
                     <div className={style.lectureList}> 
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
                         let url = "/room#"+lecture._id;
-                        return (<div className={style.lectureList}>
+                        return (<div style={{display:'flex'}}>
                             <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
                                 <div className="lectureImage">
                                     <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
