@@ -61,9 +61,8 @@ export default class room extends Component {
         alert('error massage : '+error);
     });
     try{
-    chrome.runtime.sendMessage("effkacpfpfbejgoccmoepolehjnifcnl", { message: "isInstall" },
+    chrome.runtime.sendMessage("jikodjmdnknlnjcfeconoiggckcoijji", { message: "isInstall" },
         function (reply) {
-            console.log(reply);
             if (reply) {
                 if (reply.install) {
                     if (reply.install == "OK") {
@@ -72,12 +71,10 @@ export default class room extends Component {
                 }
             }
             else {
-                console.log(chrome.runtime.lastError);
                 window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
             }
         });
     }catch(e) {
-        console.log(chrome.runtime.lastError);
         window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
     }
   }
