@@ -43,7 +43,7 @@ export default class header extends Component {
                             { this.state.isLogin ? <Link to="#" onClick={this.handleLogout}>로그아웃</Link> : <Link to="/login">로그인</Link> }
                         </div>
                         { this.state.isLogin ? null : <div className={style.menuItem}><Link to="/signup">회원가입</Link></div>}
-                        <div className={style.menuItem}>마이페이지</div>
+                        <div className={style.menuItem}><Link to="/myLecture">내 강의실</Link></div>
                     </div>
                 </div>
             </div>

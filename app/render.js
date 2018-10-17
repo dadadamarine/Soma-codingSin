@@ -3,7 +3,6 @@ import {render} from 'react-dom';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './render.css';
 
-import Main from './page/main';
 import NoMatch from './error/nomatch';
 import Header from './component/header';
 import Footer from './component/footer';
@@ -26,7 +25,7 @@ render(<Router>
     <div>    
         {location.pathname.startsWith("/room")?null:<Header/>}
         <Switch>
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={Lecture} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SingUp} />
             <Route path="/active/:code" component={Active} />
