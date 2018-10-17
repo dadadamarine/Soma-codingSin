@@ -209,7 +209,7 @@ export default class room extends Component {
         }
     };
 
-    this.view1Click();
+    this.view2Click();
     $("."+style.none).on("DOMSubtreeModified",function(){
         cursor.createQuiz();
     });
