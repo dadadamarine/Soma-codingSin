@@ -379,6 +379,8 @@
 }
 .lectureWrapper .lectureList .lectureBox .lectureImage{
     /* 강의 박스 한개 */
+    width: 203px;
+    height: 114px;
     margin:0;
     padding:0;
     width:100%;
