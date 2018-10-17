@@ -14,6 +14,10 @@
     display: flex;
 }
 
+/* .bannerWrapper:hover{
+    background:url("../resources/img/lecture/section1/3.png") no-repeat;
+} */
+
 .bannerWrapper .left{
     float:left;
     width:50px;
@@ -182,21 +186,43 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
+.bottomSection .levelSelectorList .listItem:hover{
+    color:orangered;
+}
+
 
 .bottomSection .levelSelectorList .listItem:nth-child(1){
     background:url("../resources/img/lecture/banner/bottom/easy.png") no-repeat;
     background-size:contain;
 }
+.bottomSection .levelSelectorList .listItem:nth-child(1).selected{
+    background:url("../resources/img/lecture/banner/bottom/easy_hover.png") no-repeat;
+    background-size:contain;
+}
+
 
 .bottomSection .levelSelectorList .listItem:nth-child(2){
     background:url("../resources/img/lecture/banner/bottom/normal.png") no-repeat;
     background-size:contain;
 }
+.bottomSection .levelSelectorList .listItem:nth-child(2).selected{
+    background:url("../resources/img/lecture/banner/bottom/normal_hover.png") no-repeat;
+    background-size:contain;
+}
+
+
 .bottomSection .levelSelectorList .listItem:nth-child(3){
     background:url("../resources/img/lecture/banner/bottom/hard.png") no-repeat;
     background-size:contain;
 }
+.bottomSection .levelSelectorList .listItem:nth-child(3).selected{
+    background:url("../resources/img/lecture/banner/bottom/hard_hover.png") no-repeat;
+    background-size:contain;
+}
+
+
 .bottomSection .levelSelectorList .listItem:nth-child(4){
     background:url("../resources/img/lecture/banner/bottom/leveltest.png") no-repeat;
     background-size:contain;
@@ -295,29 +321,32 @@
 
 .lectureWrapper{
     width:940px;
-    height:400px;
-    margin:0 auto;
+    margin:0 auto 150px auto;
     padding:0;
 }
 
 .lectureWrapper .recommandLectureTitle{
     font-size:1.2rem;
     color:#666666;
+    font-weight: 500;
 }
 .lectureWrapper .titleSection{
     margin-top:100px;
-    padding: 10px;
-    height:50px;
-    border-bottom: 1px solid black;
-    overflow: hidden;
-}
-.lectureWrapper .titleSection div{
-    margin-left: 15px;
-    float:left;
 }
 
 .lectureWrapper .titleSection div.title{
-    font-size:1.8rem;
+    font-size:1.5rem;
+
+}
+.titleSection div.title .verticalBar{
+    margin:0 10px 0 5px;
+    float:left;
+    width:5px;
+    height:20px;
+    background-color: #f15a21;
+}
+.titleSection .title a{
+    color:#f15a21;
 }
 
 .lectureWrapper .titleSection div.gridButton{
@@ -327,15 +356,17 @@
 .lectureWrapper .lectureList{
     width:100%;
     display: flex;
-    
+
+    overflow: hidden;
 }
 
 .lectureWrapper .lectureList .lectureBox{
     /* 강의 박스 한개 */
     position: relative;
-    margin: 24px 20px;
+    margin: 24px 20px 5px;
     flex-grow:1;
-    height:230px;
+    min-width: 180px;
+    height:220px;
     background-color:white;
     border-bottom:2px solid #efefef91;
 }
@@ -372,7 +403,7 @@
 .verticalBar{
     width:3px;
     height: 225px;
-    margin:25px 0;
+    margin:15px 0;
     background-color:#efefef91;
 }
 

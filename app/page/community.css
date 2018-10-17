@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:700');
-
-
+/* line 색 : e3e2e0 */
 /* 내용 폰트 색 : #929191 */
 .wrapper{
     margin:0;
@@ -62,18 +61,19 @@
     padding:30px 0px 0px 0px;
     background-color:rgba(0,0,0,0.4);    
     z-index: 0;
+    color:white;
 }
 .boardTableWrapper .board.black:hover{
     
     box-shadow: 1px 1px 10px 3px gray;
     transform: none;
     transition: box-shadow 0.3s;
+    color:orange;
 }
 
 .boardTableWrapper .board.black .postList a {
     text-decoration: none;
     font-weight: normal;
-    color:white;
     font-size:0.9rem;
     font-weight: 500;
 }
@@ -87,11 +87,16 @@
     justify-content: center;
     align-items: center;
 }
+.boardTableWrapper .tableItem.image:hover{
+    color:orange;
+}
+.boardTableWrapper .tableItem.image{
+    color:white;
+}
 
 .boardTableWrapper .image h3{
     margin:0 0 0 20px;
-    width:90%;
-    color:white;
+    width:100%;
 }
 .boardTableWrapper .image .rightTag{
     font-size:1.5rem;
@@ -130,6 +135,19 @@
     list-style: none;
 }
 
+.fstBigWrapper{
+    width:100%;
+    height:800px;
+    background: linear-gradient(to bottom, white 0%, white 54.8%,#f1f0ee 55.2%, #f1f0ee 100%);
+    z-index: 1;
+}
+
+.secBigWrapper{
+    width:100%;
+    height:800px;
+    background: linear-gradient(to bottom, white 0%, white 53.8%,#f1f0ee 54.2%, #f1f0ee 100%);
+    z-index: 1;
+}
 
 .sectionWrapper{
 
@@ -153,12 +171,13 @@
     font-weight: bold;
     display: inline-block;
     letter-spacing: -3px;
+    word-spacing: 3px;
     font-weight: bold;
     color:gray;
 }
 
 .underline{    
-    margin:25px 0 0;
+    margin:10px 0 0;
     width:15px;
     height:1px;
     border-bottom:1px solid #dcdcdc;
@@ -241,7 +260,7 @@
 
 .newsWrapper .newsTitle{
     padding-left:5px;
-    font-size:0.9rem;
+    font-size:1.1rem;
     color:#777777;
 }
 
@@ -254,7 +273,7 @@
     width:1px;
     height:230px;
     margin:25px 0;
-    background-color:#eeeeee;
+    background-color:#e3e2e0;
 }
 
 .newsWrapper .lectureList .lectureBox{
@@ -263,8 +282,7 @@
     margin: 25px auto;
     width:210px;
     height:240px;
-    background-color:white;
-    border-bottom:1px solid #eeeeee;
+    border-bottom:1px solid #e3e2e0;
 }
 
 .newsWrapper .lectureList .lectureBox:first-child{
@@ -287,19 +305,20 @@
 
 .newsWrapper .lectureList .lectureBox .lectureTitle{
     margin-top:5px;
-    font-size: 1rem;
-    color: #353535;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555555;
 }
 
 .newsWrapper .lectureList .lectureBox .lectureSubTitle{
     margin-top:5px;
-    font-size: 0.8rem;
-    color: #353535;
+    font-size: 0.9rem;
+    color: #555555;
 }
 
 .newsWrapper .lectureList .lectureBox .lectureInfo{
-    margin-top:5px;
-    font-size:0.7rem;
+    margin-top:8px;
+    font-size:0.9rem;
     color : #bbbbbb;
 }
 
@@ -308,10 +327,11 @@
     text-align: center;
 }
 .plusButton button{
-    width:30px;
-    height:30px;
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
-    background-size:contain;
+    width:35px;
+    height:35px;
+    background:url("../resources/img/lecture/plusIcon.png") no-repeat;
+    background-size:cover;
+    border:none;
 }
 
 .reviewPhrase{
@@ -326,28 +346,44 @@
 }
 
 .reviewBoxList .boxItem{
-
-    height:300px;
     flex-grow: 1;
     margin:2px;
-    background-color: #cccccc;
+    background-color: white;
 }
 
 .reviewBoxList .boxItem .boxItemTop{
-    height:200px;
-    background-color:black;
-    vertical-align: middle;
+    background-color:white;
 }
 .reviewBoxList .boxItem .boxItemTop img{
     width:100%;
+    padding:0;
+    margin:0;
 }
 .reviewBoxList .boxItem .boxItemBottom{
-    margin:20px;
+    height:60px;
+    margin:10px 0 0 10px;
+}
+.reviewBoxList .boxItem .boxItemBottom p:first-child{
+    font-size:1.2rem;
+    font-weight: bold;
+    margin:0;
+}
+.reviewBoxList .boxItem .boxItemBottom p:last-child{
+    margin:3px 1px;
+    color:#aaaaaa;
+}
+
+.questionWrapper{
+    height:90px;
+}
+
+.answerWrapper{
+    height:500px;;
 }
 
 .searchBar{
     width:100%;
-    height:70px;
+    height:90px;
     background-color:#f15a21;
     box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.15);
     text-align: center;
@@ -356,13 +392,21 @@
     justify-content:center;
 }
 
+.underline.search{    
+    margin:7px auto 0;
+    width:50px;
+    border-bottom:1px solid #aaaaaa;
+}
+
+
 .searchBar input{
     display: inline-block;
     margin:0 -10px 0 80px;
     padding:0;
     height:100%;
 
-    font-size:4rem;
+    font-size:3rem;
+    font-weight: 100;
     color:white;
     background-color:#f15a21;
     border:none; /* 테두리 제거 */
@@ -372,10 +416,10 @@
 }
 .searchBar .searchIcon{
     float:left;
-    margin:10px 0 0 10px; 
-    width: 50px;
-    height:50px;
-    background:url("../resources/img/main20/blankIcon.png") no-repeat;
+    margin:28px 0 0 10px; 
+    width: 40px;
+    height:40px;
+    background:url("../resources/img/tutor/searchIcon.png") no-repeat;
     background-size:contain;
     background-position: center;
 }
@@ -391,6 +435,7 @@
 
 .searchResultBox .title{
     display: inline-block;
+    font-size:1.2rem;
 }
 
 .searchResultBox .underline{    
@@ -404,8 +449,14 @@
     margin:20px auto;
     padding:0;
     list-style: none;
-    font-size:0.8rem;
-    font-weight: bold;
+    letter-spacing: -2px;
+    word-spacing: 2px;
+    font-size:1.3rem;
+    line-height: 2.0rem;
+
+}
+.searchResultBox .resultList li{
+    text-shadow:0px 0px 2px rgba(0,0,0,0.2);
 }
 
 .searchResultBox .resultList .highlight{
@@ -418,16 +469,27 @@
     font-size:1.2rem;
 }
 
+
+
 .resultListBox .resultItem{
-    float:left;
-    margin:20px 49px;
+    font-size:1.4rem;
     padding:10px;
-    width: 400px;
-    height:70px;
+    width: 450px;
+    height:80px;
 
     line-height:1.7rem;
-    color:gray;
-    background-color:#cccccc;
+    color:#555555;
+    background-color:#f1f0ee;
+}
+
+.resultListBox .resultItem:nth-child(odd){
+    float:left;
+    margin:20px 40px 20px 10px;
+}
+
+.resultListBox .resultItem:nth-child(2n){
+    float:right;
+    margin:20px 10px 20px 40px;
 }
 
 .resultListBox .resultItem{
@@ -451,6 +513,12 @@
 
 /* 자유게시판 css */
 
+.thirdBigWrapper{
+    margin-top:120px;
+    height:900px;
+    background:linear-gradient(to bottom, white 0%, white 22.9%, #f1f0ee 23.6%, #f1f0ee 100%);
+}
+
 .sectionUnderline.wideUnderline{
     width:110%;
     margin:20px -50px;
@@ -458,31 +526,57 @@
 
 .freeBoardList{
     margin:0;
-
     display:flex;
     flex-wrap: wrap;
+
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
 }
 
-.freeBoardList .boardItem{
+.freeBoardList .imageItem{
     margin:15px auto;
-    padding:10px;
-    width:300px;
+    padding: 0 15px;
+    width:290px;
     height:350px;
 
-    background-color:#eeeeee;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #dcdcdc;
 }
-.freeBoardList img{
+
+
+.freeBoardList .imageItem img{
     margin-bottom: 5px;
-    width:90%;
+    width:100%;
+    height:40%;
+    object-fit: cover;
 }
+
 .freeBoardList .context{
-    font-size:1rem;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: normal; 
+    max-height: 9.2rem;
+
+    text-align: justify;
+    font-size:1.2rem;
+    line-height: 2.3rem;
+    font-weight: bold;
 }
+
+.freeBoardList .noImageItem .context{
+    max-height: 20rem;
+}
+
 .freeBoardList .date{
-    font-size:0.8rem;
+    font-size:0.9rem;
     color:gray;
+}
+.freeBoardList .verticalBar{
+    width:1px;
+    height:320px;
+    margin:10px 0;
+    background-color:#dcdcdc;
 }
 .underline.compactUnderline{
     margin:10px 0 ;
 }
+
