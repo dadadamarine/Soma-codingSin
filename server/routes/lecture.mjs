@@ -124,4 +124,45 @@ router.post('/register', function (req, res) {
         });
     }
 });
+
+router.post('/auth', function(req, res){
+    if(req.body.id=="test_room") res.send("ok");
+    else{
+        try{
+            console.log(req.body.id);
+            const id=objectId(String(req.body.id));
+            const user=req.session.user_id;
+            console.log(req.session.user_type);
+            const flag = req.session.user_type=="강사";
+            console.log(flag);
+            MongoClient.connect(dbHost, function(error, client) {
+                if(error) console.log(error);
+                else {
+                    const db = client.db(dbName);
+                    db.collection(dbCollection).find({_id:id}).toArray(function(err, doc){
+                        if(err) console.log(err);
+                        if(doc==null || doc==[]) {
+                            console.log("null 해당 강의 존재하지않음.");
+                            res.redirect('/error');
+                        }
+                        if(flag)
+                            if(doc[0].id!=user) {
+                                console.log("해당 강의 강사가 아님.");
+                                res.redirect('/error');
+                            }else res.send("ok");
+                        else if(doc[0].match!=user) {
+                            console.log("해당 강의 학생이 아님.");
+                            res.redirect('/error');
+                        }
+                        else res.send("ok");
+                    });
+                    client.close();
+                }
+            });
+        }catch(e){
+            console.log("error 해당 강의 존재하지않음.");
+            res.redirect('/error');
+        }
+    }
+});
 export default router;

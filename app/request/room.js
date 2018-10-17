@@ -6,3 +6,9 @@ export function contentsList(u_type, u_chapter) {
         chapter:u_chapter
     });
 }
+
+export function lectureAuth(u_id) {
+    return axios.post('/reqLecture/auth', {
+        id:u_id
+    });
+}

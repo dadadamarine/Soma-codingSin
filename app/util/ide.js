@@ -93,7 +93,7 @@ export default class room extends Component {
 		super();
 		this.state = {hash:location.hash.replace('#', ''), theme:"default", code_i:"",code_y:"", mode_i:{name:"javascript"},mode_y:{name:"javascript"}, mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
 		var cursor=this;
-
+		// 강의 id 별로 채널 생성 및 입장
 		socket.emit('channelJoin', this.state.hash);
 		socket.on('receive', function (data) {
 			cursor.setState({code_y:data});
@@ -104,9 +104,11 @@ export default class room extends Component {
 		this.instance = null;
 	}
 	componentDidMount() {
+		//컴포넌트 생성후 최초 메시지 전송
 		socket.emit('send', {channel:this.state.hash, msg:this.state.mode_intro.javascript});
 	}
 	changeMode (e) {
+		//에디터 언어 변경
 		let mode = e.target.value;
 		let intro = this.state.mode_intro[mode];
 		this.setState({
@@ -115,6 +117,7 @@ export default class room extends Component {
 		});
 	}
 	changeTheme (e) {
+		//에디터 테마 변경 css는 외부 파일 사용
 		this.setState({
 			theme: e.target.value
 		});
@@ -124,6 +127,7 @@ export default class room extends Component {
 		return (
 			<div className={style.flexRow}>
 				<div className={style.flexColumn}>
+				{/* 에디터 생성 */}
 				<CodeMirror
 					value={this.state.code_i}
 					options={{
@@ -133,6 +137,7 @@ export default class room extends Component {
 						autofocus: true
 					}}
 					onChange={(editor, data, value) => {
+						// 코드 전송
 						socket.emit('send', {channel:cursor.state.hash, msg:value});
 					}}
 					editorDidMount={editor => { editor.setValue(this.state.mode_intro.javascript);}}
@@ -141,12 +146,13 @@ export default class room extends Component {
 				<div style={{ marginTop: 10 }}>
 					<span>언어 : </span>
 					<select onChange={this.changeMode}>
-						{/* <option value="markdown">Markdown</option> */}
+					{/* 언어리스트 */}
 						<option value="javascript">JavaScript</option>
                         <option value="clike">C</option>
 					</select>&nbsp;&nbsp;&nbsp;&nbsp;
 					<span>테마 : </span>
 					<select onChange={this.changeTheme}>
+					{/* 테마 리스트 */}
 						<option value="default">default</option>
                         <option value="cobalt">cobalt</option>
 						<option value="zenburn">zenburn</option>
