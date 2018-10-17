@@ -76,6 +76,7 @@ export default class room extends Component {
             }
         });
     }catch(e) {
+        console.log(chrome.runtime.lastError);
         window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
     }
   }
