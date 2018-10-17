@@ -22,6 +22,7 @@ export default class myLecture extends Component {
         return (
             <div className={style.wrapper}>
                 <div className={style.lectureWrapper}>
+                    <div className={style.lectureList}> 
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
                         let url = "/room#"+lecture._id;
                         return (<div className={style.lectureList}>
@@ -37,6 +38,7 @@ export default class myLecture extends Component {
                             {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}
                         </div>);
                     }):null}
+                    </div>
                 </div>
             </div>
         );
