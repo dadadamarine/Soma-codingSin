@@ -243,7 +243,7 @@ export default class room extends Component {
     let tmp= this.state.answer[this.state.cursor];
     for(var i=0;i<tmp.length;i++)
         str=str.replace("{quiz}","<input class='quiz' type='text' cursor='"+this.state.cursor+"' subcursor='"+i+"' data='"+tmp[i]+"'size='"+tmp[i].length+"'/>");
-    $("code").html(str);
+    $("code").html(str.trimLeft());
     }catch(e) {
     }
   }
