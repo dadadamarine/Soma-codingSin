@@ -88,7 +88,7 @@ export default class room extends Component {
         $("video").css("object-fit","fill");
         $("."+style.onAir+" span").removeClass(style.ico_grayDot);
         $("."+style.onAir+" span").addClass(style.ico_redDot);
-        connection.openOrJoin(cursor.state.room);
+        connection.openOrJoin(location.hash.replace('#', ''));
             connection.addStream({
             screen: true,
             oneway: true
