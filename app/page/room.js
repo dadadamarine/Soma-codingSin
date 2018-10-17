@@ -61,8 +61,9 @@ export default class room extends Component {
         alert('error massage : '+error);
     });
     try{
-    chrome.runtime.sendMessage("jikodjmdnknlnjcfeconoiggckcoijji", { message: "isInstall" },
+    chrome.runtime.sendMessage("effkacpfpfbejgoccmoepolehjnifcnl", { message: "isInstall" },
         function (reply) {
+            console.log(reply);
             if (reply) {
                 if (reply.install) {
                     if (reply.install == "OK") {
