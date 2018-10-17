@@ -25,16 +25,16 @@ export default class myLecture extends Component {
                     <div className={style.lectureList}>      
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
                         let url = "/room#"+lecture._id;
-                        return (<div><div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
-                        <div className="lectureImage">
-                               <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
-                        </div>
-                        <div className={style.lectureName}>{lecture.title}</div>
+                        return (<div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
+                            <div className="lectureImage">
+                                <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
+                            </div>
+                            <div className={style.lectureName}>{lecture.title}</div>
                             <div className={style.lectureInfo}>
                                 <span>{lecture.name}</span>/ <span>{lecture.schedule}</span><span>{lecture.price}</span>
                             </div>
-                        </div>
-                        {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}</div>);
+                            {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}
+                        </div>);
                     }):null}
                     </div>
                 </div>
