@@ -364,8 +364,7 @@
     /* 강의 박스 한개 */
     position: relative;
     margin: 24px 20px 5px;
-    flex-grow:1;
-    min-width: 180px;
+    width: 203px;
     height:220px;
     background-color:white;
     border-bottom:2px solid #efefef91;
