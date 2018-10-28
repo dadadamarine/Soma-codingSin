@@ -58,6 +58,8 @@ export default class room extends Component {
                         }
                         list_tmp[a].content=content;
                         answer_tmp.push(answer_tmp2);
+                        console.log(list_tmp);
+                        console.log(answer_tmp);
                     }
                     cursor.setState({list:list_tmp, answer:answer_tmp});
                 }).catch(function (error) {
