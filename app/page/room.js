@@ -37,8 +37,8 @@ export default class room extends Component {
             else{
                 let type = res.data.type=="0"?"javascript":"python";
                 cursor.setState({language:type})
-                service.contentsList(res.data.type, res.data.chapter).then(function (res) {
-                    cursor.setState({list:res.data});
+                service.contentsList(res.data.type, res.data.chapter).then(function (res2) {
+                    cursor.setState({list:res2.data});
                     let answer_tmp = cursor.state.answer;
                     let list_tmp = cursor.state.list;
                     
@@ -46,6 +46,7 @@ export default class room extends Component {
                         let answer_tmp2 = new Array();
                         let text = list_tmp[a].content.split('\n');
                         for(let i=0;i<list_tmp[a].quiz.length;i++){
+                            console.log(list_tmp[a].quiz[i]);
                             let tmp = String(list_tmp[a].quiz[i]).split(",");
                             let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
                             answer_tmp2.push(str);
@@ -59,20 +60,6 @@ export default class room extends Component {
                         answer_tmp.push(answer_tmp2);
                     }
                     cursor.setState({list:list_tmp, answer:answer_tmp});
-
-                    $("code").on("DOMSubtreeModified",function(){
-                        $(".quiz").on("input", function(){
-                            let str=cursor.state.answer[$(this).attr("cursor")];
-                            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
-                                $(this).attr("readonly",true);
-                                $(this).css("color","blue");
-                                $(this).css("font-weight","bold");
-                                $(this).css("font-size","15px");
-                                $(this).css("text-align","center");
-                                $(this).css("border","0px");
-                            }
-                        });
-                    });
                 }).catch(function (error) {
                     alert('error massage : '+error);
                 });
@@ -233,6 +220,19 @@ export default class room extends Component {
         cursor.createQuiz();
     });
 
+    $("code").on("DOMSubtreeModified",function(){
+        $(".quiz").on("input", function(){
+            let str=cursor.state.answer[$(this).attr("cursor")];
+            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
+                $(this).attr("readonly",true);
+                $(this).css("color","blue");
+                $(this).css("font-weight","bold");
+                $(this).css("font-size","15px");
+                $(this).css("text-align","center");
+                $(this).css("border","0px");
+            }
+        });
+    });
     $("."+style.sideView).height(window.innerHeight-50);
     $(".cm-s-default").height(window.innerHeight-100);
     $( window ).resize(function() {
