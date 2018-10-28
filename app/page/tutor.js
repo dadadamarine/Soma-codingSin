@@ -4,6 +4,24 @@ import style from './tutor.css';
 import * as cookie from '../util/cookie';
 
 class tutor extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            searchValue : "" ,
+            selectedTutor : null, 
+            buttonClicked : [ style.selected , "","","","","",""]
+        };
+    }
+
+    setList(e, num){
+        //document.querySelector('.titleSection').children.className("");
+        let arr = ["", "","","","","",""];
+        arr[num] = style.selected;
+        this.setState({
+                buttonClicked :  arr,
+            });
+        console.log(this.state.buttonClicked[num]);
+    }
 
     render(){
         return(
@@ -25,11 +43,11 @@ class tutor extends Component{
                         <div className={style.introducePhrase}>
                             현직 개발자로 활발하게 활동하고 있는<br/>
                             <span>코딩의 신</span>의 우수한 강사진을 소개합니다.
-
+    
 
                         <div className={style.searchBarWrapper}>
                             <div className ={style.inputArea}>
-                            <input type="text" value="강사의 이름을 입력하세요." className={style.searchBar}/>
+                            <input type="text" placeholder="강사의 이름을 입력하세요." className={style.searchBar}/>
                             <div className={style.searchIcon}></div>
                         </div>
                         
@@ -39,12 +57,12 @@ class tutor extends Component{
                 </div>{/* 배너 끝 */}
                     <div className={style.tutorListWrapper}>
                         <div className={style.titleSection}>
-                            <div className={style.selected}><a>전체보기</a></div>
-                            <div><a>JavaScript</a></div>
-                            <div><a>Python</a></div>
-                            <div><a>Java</a></div>
-                            <div><a>Scratch</a></div>
-                            <div><a>C</a></div>
+                            <div className={this.state.buttonClicked[0]} onClick={(e)=>this.setList(e, 0)}><a >전체보기</a></div>
+                            <div className={this.state.buttonClicked[1]} onClick={(e)=>this.setList(e, 1)}><a >JavaScript</a></div>
+                            <div className={this.state.buttonClicked[2]} onClick={(e)=>this.setList(e, 2)}><a >Python</a></div>
+                            <div className={this.state.buttonClicked[3]} onClick={(e)=>this.setList(e, 3)}><a>Java</a></div>
+                            <div className={this.state.buttonClicked[4]} onClick={(e)=>this.setList(e, 4)}><a>Scratch</a></div>
+                            <div className={this.state.buttonClicked[5]} onClick={(e)=>this.setList(e, 5)}><a>C</a></div>
                         </div>
 
                         <div className={style.tutorList}>
