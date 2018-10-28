@@ -18,7 +18,7 @@ export default class room extends Component {
         cursor:0,
         list:[{title:"테스트 하하하",content:"id = 'school7'\n\nif len(id) == 6:\n    print('ID : {0} 입니다'.format(id))\nelse:\n    print('ID는 영문 6 입력하세요.')", quiz:["2,3,5", "3,25,30"]},
         {title:"테스트 투",content:"asdqweqweqwe", quiz:["0,0,2"]}],
-        answer:["len,format"],
+        answer:[],
         language:"python"
     }
 
@@ -46,7 +46,6 @@ export default class room extends Component {
                         let answer_tmp2 = new Array();
                         let text = list_tmp[a].content.split('\n');
                         for(let i=0;i<list_tmp[a].quiz.length;i++){
-                            console.log(list_tmp[a].quiz[i]);
                             let tmp = String(list_tmp[a].quiz[i]).split(",");
                             let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
                             answer_tmp2.push(str);
@@ -58,8 +57,6 @@ export default class room extends Component {
                         }
                         list_tmp[a].content=content;
                         answer_tmp.push(answer_tmp2);
-                        console.log(list_tmp);
-                        console.log(answer_tmp);
                     }
                     cursor.setState({list:list_tmp, answer:answer_tmp});
                 }).catch(function (error) {
