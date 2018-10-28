@@ -84,14 +84,18 @@ import { render } from 'react-dom';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import style from './ide.css';
 require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/clike/clike');
+require('codemirror/mode/python/python');
 var io = require('socket.io-client');
 const socket = io.connect({ reconnect: true });
 
 export default class room extends Component {
 	constructor(props) {
 		super();
-		this.state = {hash:location.hash.replace('#', ''), theme:"default", code_i:"",code_y:"", mode_i:{name:"javascript"},mode_y:{name:"javascript"}, mode_intro:{javascript: '# 코딩의 신에 오신걸 환영합니다. \n',clike: '// 코딩의 신에 오신걸 환영합니다. \n'}};
+		let lang;
+		try{
+		lang=this.props.language;
+		}catch(e){}
+		this.state = {hash:location.hash.replace('#', ''), theme:"default", code_i:"",code_y:"", mode_i:lang==undefined?"javascript":lang, mode_y:{name:"javascript"}, mode_intro:{javascript: '// 코딩의 신에 오신걸 환영합니다. \n',python: '# 코딩의 신에 오신걸 환영합니다. \n'}};
 		var cursor=this;
 		// 강의 id 별로 채널 생성 및 입장
 		socket.emit('channelJoin', this.state.hash);
@@ -102,6 +106,7 @@ export default class room extends Component {
 		this.changeTheme = this.changeTheme.bind(this);
 		this.setState({code_i:this.state.mode_intro.javascript});
 		this.instance = null;
+		this.instance_my= null;
 	}
 	componentDidMount() {
 		//컴포넌트 생성후 최초 메시지 전송
@@ -111,8 +116,13 @@ export default class room extends Component {
 		//에디터 언어 변경
 		let mode = e.target.value;
 		let intro = this.state.mode_intro[mode];
+		console.log(this.instance_my.getMode());
+		this.instance_my.setOption("mode", {name:mode});
+		this.instance_my.markClean();
+		this.instance_my.refresh();
+		console.log(this.instance_my.getMode());
 		this.setState({
-			mode_i: {name:mode},
+			mode_i: mode,
 			code_i: intro
 		});
 	}
@@ -131,16 +141,18 @@ export default class room extends Component {
 				<CodeMirror
 					value={this.state.code_i}
 					options={{
-						mode: {name:"javascript"},
+						mode: this.state.mode_i,
 						theme: String(this.state.theme),
 						lineNumbers: true,
+						matchBrackets: true,
+    					styleActiveLine: true,
 						autofocus: true
 					}}
 					onChange={(editor, data, value) => {
 						// 코드 전송
 						socket.emit('send', {channel:cursor.state.hash, msg:value});
 					}}
-					editorDidMount={editor => { editor.setValue(this.state.mode_intro.javascript);}}
+					editorDidMount={editor => { this.instance_my = editor; editor.setValue(this.state.mode_intro.javascript);}}
 					autoCursor={true}
 				/>
 				<div style={{ marginTop: 10 }}>
@@ -148,7 +160,7 @@ export default class room extends Component {
 					<select onChange={this.changeMode}>
 					{/* 언어리스트 */}
 						<option value="javascript">JavaScript</option>
-                        <option value="clike">C</option>
+                        <option value="python">python</option>
 					</select>&nbsp;&nbsp;&nbsp;&nbsp;
 					<span>테마 : </span>
 					<select onChange={this.changeTheme}>

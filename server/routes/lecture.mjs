@@ -145,16 +145,21 @@ router.post('/auth', function(req, res){
                             console.log("null 해당 강의 존재하지않음.");
                             res.redirect('/error');
                         }
+                        let json = JSON.stringify({ 
+                            success: "ok", 
+                            type: doc[0].type, 
+                            chapter: doc[0].chapter
+                          });
                         if(flag)
                             if(doc[0].id!=user) {
                                 console.log("해당 강의 강사가 아님.");
                                 res.redirect('/error');
-                            }else res.send("ok");
+                            }else res.send(json);
                         else if(doc[0].match!=user) {
                             console.log("해당 강의 학생이 아님.");
                             res.redirect('/error');
                         }
-                        else res.send("ok");
+                        else res.send(json);
                     });
                     client.close();
                 }
