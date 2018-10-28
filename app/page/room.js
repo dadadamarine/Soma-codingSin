@@ -59,6 +59,20 @@ export default class room extends Component {
                         answer_tmp.push(answer_tmp2);
                     }
                     cursor.setState({list:list_tmp, answer:answer_tmp});
+
+                    $("code").on("DOMSubtreeModified",function(){
+                        $(".quiz").on("input", function(){
+                            let str=cursor.state.answer[$(this).attr("cursor")];
+                            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
+                                $(this).attr("readonly",true);
+                                $(this).css("color","blue");
+                                $(this).css("font-weight","bold");
+                                $(this).css("font-size","15px");
+                                $(this).css("text-align","center");
+                                $(this).css("border","0px");
+                            }
+                        });
+                    });
                 }).catch(function (error) {
                     alert('error massage : '+error);
                 });
@@ -219,19 +233,6 @@ export default class room extends Component {
         cursor.createQuiz();
     });
 
-    $("code").on("DOMSubtreeModified",function(){
-        $(".quiz").on("input", function(){
-            let str=cursor.state.answer[$(this).attr("cursor")];
-            if($(this).val().trim()==String(str[$(this).attr("subcursor")]).trim()){
-                $(this).attr("readonly",true);
-                $(this).css("color","blue");
-                $(this).css("font-weight","bold");
-                $(this).css("font-size","15px");
-                $(this).css("text-align","center");
-                $(this).css("border","0px");
-            }
-        });
-    });
     $("."+style.sideView).height(window.innerHeight-50);
     $(".cm-s-default").height(window.innerHeight-100);
     $( window ).resize(function() {
