@@ -45,11 +45,10 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.5",
-    "react-swipe": "^5.1.1",
+    "react-slideshow-image": "^1.0.6",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.1",
     "socket.io": "^2.1.1",
-    "swipe-js-iso": "^2.0.4",
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {

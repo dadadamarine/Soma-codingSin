@@ -26,13 +26,16 @@ export default class lecture extends Component {
             alert('error massage : '+error);
         });
     } */
-    
+
     render() {
+
+
         return (
+            
             <div className={style.wrapper}>
                 <div className={style.bannerWrapper}>
 
-                    <div className={style.left}>
+                    <div className={style.left} >
                         <div className={style.button}></div>
                     </div>
                     
@@ -111,7 +114,7 @@ export default class lecture extends Component {
 
                     {/* 배너의 오른쪽 버튼 */}
                     <div className={style.right}>
-                        <div className={style.button}></div>
+                        <div className={style.button} onClick={this.rightClick}></div>
                     </div>
                 
                 </div>{/* 배너 래퍼가 끝나는 지점. */}

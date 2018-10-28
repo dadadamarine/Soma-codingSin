@@ -59,15 +59,7 @@ class tutor extends Component{
                                     </div>
                                 </div>
                             </a>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(12).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (12).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
+                            
                             <div className={style.tutorBox}>
                                 <div className={style.phraseSection}>
                                     <img src={require('../resources/img/tutor/tutorPhrase/(9).png')} alt=""/>
