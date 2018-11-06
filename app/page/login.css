@@ -1,15 +1,15 @@
-
+/* 
+배너 회색 : #d7d9d8
+폰트 블랙 : 
+*/
 .wrapper{
-    justify-content: center;
-    display: flex;
     height: 100%;
     position:relative;
     z-index: 1;
 }
 .wrapper:after{
     z-index: -1;
-    background-repeat:no-repeat;
-    background-image: url("../resources/img/main.png");
+    background:#eeefea;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
@@ -24,13 +24,51 @@
     filter:alpha(opacity=30);
 }
 
-.loginBox{
+.banner{
+    height:180px;
+    background:url("../resources/img/community/communityBanner.jpg") no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.banner__description{
+    height:85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.banner__description p{
+    color:white;
+    font-size:1.4rem;
+    line-height:2.5rem;
+}
+.banner__category{
+    height:15%;
+    background-color:#d7d9d8;
+}
+.banner__category div{
+    margin:auto;
+    width:1000px;
+    line-height:30px;
+}
+.banner__category a::after{
+    content:" > ";
+}
+.banner__category a:last-child::after{
+    content:"";
+}
+
+
+.login{
+    width:1000px;
+}
+.login__Box{
     max-width:500px;
     text-align: center;
     align-self: center !important;
 }
 
-.loginBox input{
+.login__Box input{
     width:450px;
     margin-top: 15px !important;
 }

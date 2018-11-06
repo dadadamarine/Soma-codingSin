@@ -55,17 +55,32 @@ export default class login extends Component {
                 {
                     this.state.isLogin && <Redirect to="/"/>
                 }
-                <div className={style.loginBox}>
-                    <Segment padded>
-                        <Input type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
-                        <br />
-                        <Input type="password" placeholder='비밀번호' value={this.state.pw} onChange={this.inputPW} />
-                        <br /><br />
-                        <Button primary fluid content='로그인' onClick={this.handleSubmit} />
-                        <Divider horizontal>Or</Divider>
-                        <Button secondary fluid content='회원가입' onClick={this.Signup}/>
-                    </Segment>
+                <div className={style.banner}>
+                    <div className={style.banner__description}>
+                        <p>
+                        코딩의 신은 온라인 코딩 과외 플랫폼입니다.<br/>
+                            코딩의 신은 온라인 코딩 과외 플랫폼입니다.
+                        </p>
+                    </div>
+                    <div className={style.banner__category}>
+                        <div>
+                            <a href="/">Home</a>
+                            <a href="/login">로그인</a>
+                        </div>
+                    </div>
                 </div>
+                <div className={style.loginform}>
+                    <div className={style.loginBox}>
+                        <input type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
+                        <br />
+                        <input type="password" placeholder='비밀번호' value={this.state.pw} onChange={this.inputPW} />
+                        <br /><br />
+                        <button primary fluid content='로그인' onClick={this.handleSubmit} />
+                        <Divider horizontal>Or</Divider>
+                        <button secondary fluid content='회원가입' onClick={this.Signup}/>
+                    </div>
+                </div>
+                
             </div>
         );
     }
