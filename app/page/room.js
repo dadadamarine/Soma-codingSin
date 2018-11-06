@@ -16,9 +16,10 @@ export default class room extends Component {
         room:"",
         toggle:true,
         cursor:0,
-        list:[{title:"테스트 하하하",content:"<script>\nfor(var i = 0; i < 10; i++) {\n    var total = (total || 0) + i;\n    var last = i;\n    if (total > 16) {\n        break;\n    }\n}\nconsole.log(typeof total !== \"undefined\");\nconsole.log(typeof last !== \"undefined\");\nconsole.log(typeof i !== \"undefined\");\nconsole.log(\"total === \" + total + \" , last === \" + last);\n</script>", quiz:["1,0,2","3,4,16","5,8,12"]},
+        list:[{title:"테스트 하하하",content:"id = 'school7'\n\nif len(id) == 6:\n    print('ID : {0} 입니다'.format(id))\nelse:\n    print('ID는 영문 6 입력하세요.')", quiz:["2,3,5", "3,25,30"]},
         {title:"테스트 투",content:"asdqweqweqwe", quiz:["0,0,2"]}],
-        answer:[]
+        answer:[],
+        language:"python"
     }
 
     this.view1Click = this.view1Click.bind(this);
@@ -32,34 +33,38 @@ export default class room extends Component {
     if(location.hash!=null) {
         this.setState({room:location.hash.replace('#', '')});
         service.lectureAuth(location.hash.replace('#', '')).then(function(res){
-            if(res.data!="ok") location.href='/error';
+            if(res.data.success!="ok") location.href='/error';
+            else{
+                let type = res.data.type=="0"?"javascript":"python";
+                cursor.setState({language:type})
+                service.contentsList(res.data.type, res.data.chapter).then(function (res2) {
+                    cursor.setState({list:res2.data});
+                    let answer_tmp = cursor.state.answer;
+                    let list_tmp = cursor.state.list;
+                    
+                    for(let a=0;a<list_tmp.length;a++){
+                        let answer_tmp2 = new Array();
+                        let text = list_tmp[a].content.split('\n');
+                        for(let i=0;i<list_tmp[a].quiz.length;i++){
+                            let tmp = String(list_tmp[a].quiz[i]).split(",");
+                            let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
+                            answer_tmp2.push(str);
+                            text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
+                        }
+                        let content="";
+                        for(let i=0;i<text.length;i++){
+                            content+=text[i]+'\n';
+                        }
+                        list_tmp[a].content=content;
+                        answer_tmp.push(answer_tmp2);
+                    }
+                    cursor.setState({list:list_tmp, answer:answer_tmp});
+                }).catch(function (error) {
+                    alert('error massage : '+error);
+                });
+            }
         });
     }else location.href='/error';
-    service.contentsList(0,0).then(function (res) {
-        cursor.setState({list:res.data});
-        let answer_tmp = cursor.state.answer;
-        let list_tmp = cursor.state.list;
-        
-        for(let a=0;a<list_tmp.length;a++){
-            let answer_tmp2 = new Array();
-            let text = list_tmp[a].content.split('\n');
-            for(let i=0;i<list_tmp[a].quiz.length;i++){
-                let tmp = String(list_tmp[a].quiz[i]).split(",");
-                let str = String(text[tmp[0]]).substring(tmp[1], Number(tmp[2])+1);
-                answer_tmp2.push(str);
-                text[tmp[0]]=String(text[tmp[0]]).replace(str,"{quiz}");
-            }
-            let content="";
-            for(let i=0;i<text.length;i++){
-                content+=text[i]+'\n';
-            }
-            list_tmp[a].content=content;
-            answer_tmp.push(answer_tmp2);
-        }
-        cursor.setState({list:list_tmp, answer:answer_tmp});
-    }).catch(function (error) {
-        alert('error massage : '+error);
-    });
     try{
     chrome.runtime.sendMessage("jikodjmdnknlnjcfeconoiggckcoijji", { message: "isInstall" },
         function (reply) {
@@ -88,7 +93,7 @@ export default class room extends Component {
         $("video").css("object-fit","fill");
         $("."+style.onAir+" span").removeClass(style.ico_grayDot);
         $("."+style.onAir+" span").addClass(style.ico_redDot);
-        connection.openOrJoin(cursor.state.room);
+        connection.openOrJoin(location.hash.replace('#', ''));
             connection.addStream({
             screen: true,
             oneway: true
@@ -209,7 +214,7 @@ export default class room extends Component {
         }
     };
 
-    this.view1Click();
+    this.view2Click();
     $("."+style.none).on("DOMSubtreeModified",function(){
         cursor.createQuiz();
     });
@@ -243,7 +248,7 @@ export default class room extends Component {
     let tmp= this.state.answer[this.state.cursor];
     for(var i=0;i<tmp.length;i++)
         str=str.replace("{quiz}","<input class='quiz' type='text' cursor='"+this.state.cursor+"' subcursor='"+i+"' data='"+tmp[i]+"'size='"+tmp[i].length+"'/>");
-    $("code").html(str);
+    $("code").html(str.trimLeft());
     }catch(e) {
     }
   }
@@ -318,7 +323,7 @@ export default class room extends Component {
                       <div className={style.problem}>
                       <div className={style.problemTitle}><div className={style.problemPrev} onClick={this.prev}>←</div>{this.state.list[this.state.cursor].title}<div className={style.problemNext} onClick={this.next}>→</div></div>
                       <div className={style.problemContent}>
-                      <Highlight className="html"></Highlight>
+                      <Highlight className={this.state.language}></Highlight>
                       <div className={style.none}> {`${this.state.list[this.state.cursor].content}`}</div>
                       </div>
                       </div>
@@ -341,7 +346,7 @@ export default class room extends Component {
             </div>
             <div className={style.roomWrapper} id="screen-wrap">
                 <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
-                <div className={style.webIde}><Code room={this.state.room}/></div>
+                <div className={style.webIde}><Code type={this.state.language}/></div>
             </div>
         </div>
       </div>

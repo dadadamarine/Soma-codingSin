@@ -366,12 +366,12 @@
 .lectureWrapper .lectureList .lectureBox{
     /* 강의 박스 한개 */
     position: relative;
-    margin: 24px 20px 5px;
-    flex-grow:1;
-    min-width: 180px;
+    margin: 24px 0px 5px;
+    width: 203px;
     height:220px;
     background-color:white;
     border-bottom:2px solid #efefef91;
+    cursor: pointer;
 }
 .lectureWrapper .lectureList .lectureBox:first-child{
     margin-left:0;
@@ -382,10 +382,11 @@
 }
 .lectureWrapper .lectureList .lectureBox .lectureImage{
     /* 강의 박스 한개 */
+    width: 203px;
+    height: 114px;
     margin:0;
     padding:0;
     width:100%;
-    background-color: #666666;
 }
 
 
@@ -408,6 +409,8 @@
     height: 225px;
     margin:15px 0;
     background-color:#efefef91;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .plusButton{
@@ -436,4 +439,12 @@
     overflow: hidden;
     margin:0 -5px 0 -5px;
     background-color:white;
+}
+
+.mylecture{
+    width: 100%;
+    height: 130px;
+    background-size: cover;
+    background: url(../resources/img/mylecture/mylecture.jpg);
+    margin-bottom: 10px;
 }
