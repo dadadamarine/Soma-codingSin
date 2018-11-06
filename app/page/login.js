@@ -69,15 +69,30 @@ export default class login extends Component {
                         </div>
                     </div>
                 </div>
-                <div className={style.loginform}>
-                    <div className={style.loginBox}>
-                        <input type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
-                        <br />
-                        <input type="password" placeholder='비밀번호' value={this.state.pw} onChange={this.inputPW} />
-                        <br /><br />
-                        <button primary fluid content='로그인' onClick={this.handleSubmit} />
-                        <Divider horizontal>Or</Divider>
-                        <button secondary fluid content='회원가입' onClick={this.Signup}/>
+                <div className={style.login}>
+                    <div className={style.login__wrapper}>
+                        <div className={style.login__wrapper__section}>
+                            <div className={style.logo}></div>
+                            <div className={style["login-box"]}>
+                                <div className={style["input-section"]}>
+                                    <div className={[style["input-section__column"], style["input-section__column--left"]].join(' ')}>
+                                        <input className={style["input-text"]} type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
+                                        <br />
+                                        <input className={style["input-text"]} type="password" placeholder='비밀번호' value={this.state.pw} onChange={this.inputPW} />
+                                    </div>
+                                    <div className={[style["input-section__column"], style["input-section__column--right"]].join(' ')}>
+                                        <button className={style["btn--login"]} onClick={this.handleSubmit} > 로그인 </button>
+                                    </div>
+                                </div>    
+                                <p>※ID를 분실한 경우 이메일(회사 이메일) 혹은 전화(회사전화) 로 문의해 주시기 바랍니다.</p>
+                                <div className={style["button-section"]}>   
+                                    <button className={style.btn} onClick={this.Signup}> 회원가입</button>
+                                    <button className={style.btn} onClick={this.Signup}> 비밀번호 찾기</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+            
                     </div>
                 </div>
                 
