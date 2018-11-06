@@ -51,6 +51,34 @@ export default class signup extends Component {
     render() {
         return (
             <div className={style.wrapper}>
+                <div className={style.banner}>
+                    <div className={style.banner__description}>
+                        <p>
+                        코딩의 신은 온라인 코딩 과외 플랫폼입니다.<br/>
+                            코딩의 신은 온라인 코딩 과외 플랫폼입니다.
+                        </p>
+                    </div>
+                    <div className={style.banner__category}>
+                        <div>
+                            <a href="/">Home</a>
+                            <a href="/login">로그인</a>
+                        </div>
+                    </div>
+                </div>
+                <div className={style["title-wrapper"]}>
+                    <p className={style["title-wrapper__title"]}>회원가입</p>
+                    <div className={style["title-wrapper__level-section"]}>
+                        <div className={style["level"]}>
+                            <p>약관동의</p>
+                        </div>
+                        <div className={style["level"]}>
+                            <p>정보입력</p>
+                        </div>
+                        <div className={style["level"]}>
+                            <p>가입완료</p>
+                        </div>
+                    </div>
+                </div>
                 <div className={style.singupBox}>
                     <Segment padded>
                         <Input type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
