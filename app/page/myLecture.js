@@ -64,6 +64,7 @@ export default class myLecture extends Component {
                             현재 총 <span>5</span>개의 수강중인 강의가 있습니다.
                         </div>
                         <div className={style["lecture-list"]}>
+
                             <div className={style['study-box']}>
                                 <div className={style['study-box__fav--active']}></div>
                                 <div className={style['study-box__counter']}>12</div>
@@ -73,6 +74,57 @@ export default class myLecture extends Component {
                                     <p>2018.10.20 ~ 2018.12.30</p>
                                 </div>
                             </div>
+
+                            <div className={style['study-box']}>
+                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__counter']}>12</div>
+                                <button className={style['study-box__study-button']}>학습하기</button>
+                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                <div className={style['study-box__date']}>
+                                    <p>2018.10.20 ~ 2018.12.30</p>
+                                </div>
+                            </div>
+
+                            <div className={style['study-box']}>
+                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__counter']}>12</div>
+                                <button className={style['study-box__study-button']}>학습하기</button>
+                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                <div className={style['study-box__date']}>
+                                    <p>2018.10.20 ~ 2018.12.30</p>
+                                </div>
+                            </div>
+
+                            <div className={style['study-box']}>
+                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__counter']}>12</div>
+                                <button className={style['study-box__study-button']}>학습하기</button>
+                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                <div className={style['study-box__date']}>
+                                    <p>2018.10.20 ~ 2018.12.30</p>
+                                </div>
+                            </div>
+
+                            <div className={style['study-box']}>
+                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__counter']}>12</div>
+                                <button className={style['study-box__study-button']}>학습하기</button>
+                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                <div className={style['study-box__date']}>
+                                    <p>2018.10.20 ~ 2018.12.30</p>
+                                </div>
+                            </div>
+
+                            <div className={style['study-box']}>
+                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__counter']}>12</div>
+                                <button className={style['study-box__study-button']}>학습하기</button>
+                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                <div className={style['study-box__date']}>
+                                    <p>2018.10.20 ~ 2018.12.30</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
