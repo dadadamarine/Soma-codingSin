@@ -76,7 +76,7 @@ export default class myLecture extends Component {
                             </div>
 
                             <div className={style['study-box']}>
-                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__fav']}></div>
                                 <div className={style['study-box__counter']}>12</div>
                                 <button className={style['study-box__study-button']}>학습하기</button>
                                 <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
@@ -86,7 +86,7 @@ export default class myLecture extends Component {
                             </div>
 
                             <div className={style['study-box']}>
-                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__fav']}></div>
                                 <div className={style['study-box__counter']}>12</div>
                                 <button className={style['study-box__study-button']}>학습하기</button>
                                 <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
@@ -96,7 +96,7 @@ export default class myLecture extends Component {
                             </div>
 
                             <div className={style['study-box']}>
-                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__fav']}></div>
                                 <div className={style['study-box__counter']}>12</div>
                                 <button className={style['study-box__study-button']}>학습하기</button>
                                 <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
@@ -106,7 +106,7 @@ export default class myLecture extends Component {
                             </div>
 
                             <div className={style['study-box']}>
-                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__fav']}></div>
                                 <div className={style['study-box__counter']}>12</div>
                                 <button className={style['study-box__study-button']}>학습하기</button>
                                 <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
@@ -116,7 +116,7 @@ export default class myLecture extends Component {
                             </div>
 
                             <div className={style['study-box']}>
-                                <div className={style['study-box__fav--active']}></div>
+                                <div className={style['study-box__fav']}></div>
                                 <div className={style['study-box__counter']}>12</div>
                                 <button className={style['study-box__study-button']}>학습하기</button>
                                 <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
