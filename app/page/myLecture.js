@@ -65,12 +65,13 @@ export default class myLecture extends Component {
                         </div>
                         <div className={style["lecture-list"]}>
                             <div className={style['study-box']}>
-                                <div className={style['study-box__fav']}>+</div>
+                                <div className={style['study-box__fav--active']}></div>
                                 <div className={style['study-box__counter']}>12</div>
-                                <div className={style['study-box__study-button']}></div>
-                                <div className={style['study-box__title']}>학습하기</div>
-                                <div className={style['study-box__line']}></div>
-                                <div className={style['study-box__date']}></div>
+                                <button className={style['study-box__study-button']}>학습하기</button>
+                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                <div className={style['study-box__date']}>
+                                    <p>2018.10.20 ~ 2018.12.30</p>
+                                </div>
                             </div>
                         </div>
                     </div>
