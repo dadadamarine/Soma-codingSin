@@ -64,66 +64,88 @@ export default class myLecture extends Component {
                             현재 총 <span>5</span>개의 수강중인 강의가 있습니다.
                         </div>
                         <div className={style["lecture-list"]}>
-
-                            <div className={style['study-box']}>
-                                <div className={style['study-box__fav--active']}></div>
-                                <div className={style['study-box__counter']}>12</div>
-                                <button className={style['study-box__study-button']}>학습하기</button>
-                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                <div className={style['study-box__date']}>
-                                    <p>2018.10.20 ~ 2018.12.30</p>
+                            <a href="">
+                                <div className={style['study-box']}>
+                                    <a href="1222">
+                                        <div className={style['study-box__fav--active']}></div>
+                                    </a>
+                                    <div className={style['study-box__counter']}>12</div>
+                                    <button className={style['study-box__study-button']}>학습하기</button>
+                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                    <div className={style['study-box__date']}>
+                                        <p>2018.10.20 ~ 2018.12.30</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className={style['study-box']}>
-                                <div className={style['study-box__fav']}></div>
-                                <div className={style['study-box__counter']}>12</div>
-                                <button className={style['study-box__study-button']}>학습하기</button>
-                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                <div className={style['study-box__date']}>
-                                    <p>2018.10.20 ~ 2018.12.30</p>
+                            <a href="">
+                                <div className={style['study-box']}>
+                                    <a href="">
+                                        <div className={style['study-box__fav']}></div>
+                                    </a>
+                                    <div className={style['study-box__counter']}>12</div>
+                                    <button className={style['study-box__study-button']}>학습하기</button>
+                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                    <div className={style['study-box__date']}>
+                                        <p>2018.10.20 ~ 2018.12.30</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className={style['study-box']}>
-                                <div className={style['study-box__fav']}></div>
-                                <div className={style['study-box__counter']}>12</div>
-                                <button className={style['study-box__study-button']}>학습하기</button>
-                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                <div className={style['study-box__date']}>
-                                    <p>2018.10.20 ~ 2018.12.30</p>
+                        
+                            <a href="">
+                                <div className={style['study-box']}>
+                                    <a href="">
+                                        <div className={style['study-box__fav']}></div>
+                                    </a>
+                                    <div className={style['study-box__counter']}>12</div>
+                                    <button className={style['study-box__study-button']}>학습하기</button>
+                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                    <div className={style['study-box__date']}>
+                                        <p>2018.10.20 ~ 2018.12.30</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className={style['study-box']}>
-                                <div className={style['study-box__fav']}></div>
-                                <div className={style['study-box__counter']}>12</div>
-                                <button className={style['study-box__study-button']}>학습하기</button>
-                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                <div className={style['study-box__date']}>
-                                    <p>2018.10.20 ~ 2018.12.30</p>
+                            
+                            
+                            <a href="">
+                                <div className={style['study-box']}>
+                                    <a href="">
+                                        <div className={style['study-box__fav']}></div>
+                                    </a>
+                                    <div className={style['study-box__counter']}>12</div>
+                                    <button className={style['study-box__study-button']}>학습하기</button>
+                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                    <div className={style['study-box__date']}>
+                                        <p>2018.10.20 ~ 2018.12.30</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
+                            <a href="">
+                                <div className={style['study-box']}>
+                                    <a href="">
+                                        <div className={style['study-box__fav']}></div>
+                                    </a>
+                                    <div className={style['study-box__counter']}>12</div>
+                                    <button className={style['study-box__study-button']}>학습하기</button>
+                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                    <div className={style['study-box__date']}>
+                                        <p>2018.10.20 ~ 2018.12.30</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div className={style['study-box--recommand']}>
+                                    <img className={style['study-box--recommand__img']} src={require("../resources/img/mylecture/recommand.jpg")} alt=""/>
+                                    <div className={style['study-box--recommand__text']}>
+                                        <h2>맞춤형 강의</h2>
+                                        <p>소통중심, 이해중심</p>
+                                        <p>블록코딩으로 배우는 파이썬</p>
+                                    </div>
 
-                            <div className={style['study-box']}>
-                                <div className={style['study-box__fav']}></div>
-                                <div className={style['study-box__counter']}>12</div>
-                                <button className={style['study-box__study-button']}>학습하기</button>
-                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                <div className={style['study-box__date']}>
-                                    <p>2018.10.20 ~ 2018.12.30</p>
                                 </div>
-                            </div>
-
-                            <div className={style['study-box']}>
-                                <div className={style['study-box__fav']}></div>
-                                <div className={style['study-box__counter']}>12</div>
-                                <button className={style['study-box__study-button']}>학습하기</button>
-                                <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                <div className={style['study-box__date']}>
-                                    <p>2018.10.20 ~ 2018.12.30</p>
-                                </div>
-                            </div>
+                            </a>
 
                         </div>
                     </div>

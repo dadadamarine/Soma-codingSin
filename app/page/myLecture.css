@@ -137,12 +137,11 @@
     width:245px;
     height:245px; 
     margin:4px 2px;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 0px 2px 2px 0px rgba(200, 200, 200, 0.5);
     background:white;
     padding:0 20px;
     border-top: 1px solid transparent;/* 마진 병합 해소 */
-    
 }
 .study-box__fav--active{ 
     width: 0px;
@@ -253,4 +252,53 @@
     display: inline;
     font-size:1rem;
     color:#999999; 
+}
+
+.study-box--recommand{
+    position: relative;
+    float:left;
+    width:245px;
+    height:245px; 
+    margin:4px 2px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(200, 200, 200, 0.5);
+    overflow: hidden;
+    border-top: 1px solid transparent;/* 마진 병합 해소 */
+}
+.study-box--recommand__img{
+    width:245px;
+    height:245px;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.8;
+}
+.study-box--recommand::after{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    width:245px;
+    height:245px;
+    background-color: rgba(123, 174, 172, 0.8)
+}
+
+.study-box--recommand__text{
+    position: absolute;
+    bottom:0;
+
+    z-index: 1;
+    padding: 15px;
+    color: white;
+}
+
+.study-box--recommand:hover::after{
+    content:"";
+    background-color: rgba(123, 174, 172, 0.95);
+}
+.study-box--recommand__text:hover{
+    color:black;
+}
+
+.study-box--recommand__text>p{
+    margin:3px 0;
 }
