@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import style from './content';
-//import video from '../resources/video/content/game.mp4';
+import style from './content.css';
 
 export default class content extends Component{
     constructor(props){
@@ -9,7 +8,7 @@ export default class content extends Component{
     render(){
         return(
             <div className={style.wrapper}>
-                <video autoplay muted loop id="myVideo" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogv"></video>
+                <video autoPlay loop id="myVideo" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv"></video>
                 <div className={style['banner-wrapper']}>
                     
                     <div className={style['banner-wrapper__section']}></div>
