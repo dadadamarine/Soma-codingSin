@@ -10,7 +10,7 @@ export default class content extends Component{
             <div className={style.wrap}>
                 <div className={[style['wrapper'],style['bg-black']].join(" ")}>
                         {/* <video autoPlay loop id="myVideo" className={style["banner"]} src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv"></video> */}
-                        <img className={style["banner"]} src={require("../resources/img/content/banner.jpg")} alt=""/>
+                        <img className={style["banner"]} src={require("../resources/img/content/content_banner.jpg")} alt=""/>
                 </div>
                 <div className={[style['wrapper'],style['bg-trans']].join(" ")}>
                     <div className={style["wrapper__section"]}>

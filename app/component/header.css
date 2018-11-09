@@ -5,8 +5,6 @@
 
 
 .headerWrapper{
-    position: fixed;
-    z-index: 100;
     border-bottom: 1px solid rgb(187, 187, 187);
     width:100%;
     background-color: #fbfbfb;
