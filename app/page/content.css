@@ -1,12 +1,116 @@
-.wrapper{
-    margin:0;
+.wrap{
+    margin:58px 0 0;
     padding:0;
 }
-.wrapper>video{
-    margin:0;
+.wrapper{
+    margin:0 ;
     padding:0;
     width:100%;
     height:100%;
+}
+.bg-black{
+    background-color:black;
+}
+.bg-trans{
+    background-color:transparent;
+}
+.bg-blue{
+    background-color:#468a97;
+}
+.banner{
+    display: block;
+    margin:0 auto;
+    padding:0;
+    max-width: 1250px;
+    height:720px;
+    background-color: black;
     object-fit: cover;
     object-position: center;
+}
+.wrapper__section{
+    width:1000px;
+    height:100%;
+    margin:0 auto;
+    padding:0;
+}
+.selector-list{
+    margin:-175px 0 0;
+    padding:0;
+    display: flex;
+    justify-content: space-between;
+    background-color:transparent;
+}
+.selector-box{
+    z-index: 1;
+    width:310px;
+    height:310px; 
+    padding:0 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+.selector-box--easy{
+    background:#bfe1c0;
+}
+.selector-box--normal{
+    background:#fdd059;
+}
+.selector-box--hard{
+    background: #a1d7d7;
+} 
+
+.selector-box__icon{
+    height:150px;
+    width:150px;
+    background:#edeee9;
+    border-radius: 50%;
+    margin: -75px auto 0;
+    text-align: center;
+    padding:23px;
+}
+.selector-box__icon>img{
+    height:100px;
+} 
+
+.selector-box__title{
+    color:#e0553e;
+    font-size: 33px; 
+    margin:23px 0 20px;
+}
+.selector-box__text{
+    color:#000000;
+    font-size:18px;
+    font-weight: 700;
+    margin:0;
+}
+.selector-box__button{
+    background: #468a97;
+    height:50px;
+    width:150px; 
+    margin-top:25px;
+    border:none;
+    border-radius: 5px;
+
+    color:white;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.recommand-title{
+    margin-top:-135px;
+    padding:155px 0;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+}
+.title{
+    font-size:4.0rem;
+}
+.title--highlight{
+    margin-top: 60px;
+    font-size:4.0rem;
+    color:#dd5e3d;
+    text-shadow: 0 2px #fecf59;
+}
+.recommand-title__text{
+    color:white;
+    font-size:1.45rem;
 }
