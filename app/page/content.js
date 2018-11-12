@@ -54,6 +54,91 @@ export default class content extends Component{
                         </div>
                     </div>
                 </div>
+                <div className={style["wrapper"]}>
+                    <div className={style["wrapper__section"]}>
+                
+                        <div className={[style["flex"],style["recommand-content-margin"]].join(" ")}>
+                            <div className={style['content-box']}>
+                                <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
+                                    <img src="" alt=""/>
+                                </div>
+                                <div className={style["flex"]}>
+                                    <div className={style["content-box__profile"]}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["content-box__info"]}>
+                                        <div className={style["title--middle"]}>컨텐츠명</div>
+                                        <div className={style["stars"]}>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={style['content-box']}>
+                                <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
+                                    <img src="" alt=""/>
+                                </div>
+                                <div className={style["flex"]}>
+                                    <div className={style["content-box__profile"]}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["content-box__info"]}>
+                                        <div className={style["title--middle"]}>컨텐츠명</div>
+                                        <div className={style["stars"]}>별별별</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={style['content-box']}>
+                                <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
+                                    <img src="" alt=""/>
+                                </div>
+                                <div className={style["flex"]}>
+                                    <div className={style["content-box__profile"]}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["content-box__info"]}>
+                                        <div className={style["title--middle"]}>컨텐츠명</div>
+                                        <div className={style["stars"]}>별별별</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* 컨텐츠 메인 페이지 */}
+                <div className={style["wrapper"]}>
+                    <div className={style["wrapper__section"]}>
+
+                        <div className={style["title-section"]}>
+                            <div className={style["logo"]}></div>
+                            <p className={style["description"]}>원하는 컨텐츠를 쉽고 빠르게 찾아보세요.</p>
+                            <div className={style.searchBarWrapper}>
+                                <div className ={style.inputArea}>
+                                    <input type="text" placeholder="강사의 이름을 입력하세요." className={style.searchBar}/>
+                                    <div className={style.searchIcon}></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* 본문 섹션 */}
+                    
+                        <div className={style["context-section"]}>
+                            <div className={style["navigation"]}>
+                                <div className={[style["navigation__item"], style["navigation__item--selected"]].join(" ")}>컨텐츠 분류</div>
+                                <div className={style["navigation__item"]}>컨텐츠 분류</div>
+                                <div className={style["navigation__item"]}>컨텐츠 분류</div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
                         
                     
                 
