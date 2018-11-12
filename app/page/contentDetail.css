@@ -204,8 +204,10 @@
 
 .content-info{
     height:185px; 
+    margin-bottom: 90px;
     background:white;
     border:2px solid #dddddd;
+    
 }
 .content-info__profile{ 
     display: inline-block;
@@ -222,6 +224,13 @@
 .content-info__subject{
     color:gray;
 }
+.content-info__subject::before{
+    content:" ";
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background:black;
+}
 .content-info__title{
     color:black;
 }
@@ -234,11 +243,23 @@
 .inline-block{
     display: inline-block;
     height:100%;
-    width:900px;
+    width:890px;
 }
 .float-left{
     float:left;
 }
 .float-right{
     float:right;
+}
+.content-info__source-button{
+        position: relative;
+        height:43px;
+        width:95px;
+        margin:23px 0 50px;
+        background:#df5845;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color:white;
+    
 }

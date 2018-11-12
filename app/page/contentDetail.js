@@ -61,7 +61,7 @@ export default class content extends Component{
                                     </div>
                                     
                                     <div className={style["float-right"]}>
-                                        <div> 소스보기</div>
+                                        <div className={style["content-info__source-button"]}> 소스보기</div>
                                         <p className={style["content-info__etc"]}>눈 별 댓글</p>
                                     </div>
                                     
