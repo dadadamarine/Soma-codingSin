@@ -69,7 +69,7 @@ export default class content extends Component{
                                     <div className={style["content-box__info"]}>
                                         <div className={style["title--middle"]}>컨텐츠명</div>
                                         <div className={style["stars"]}>
-                                            <span></span>
+                                            별별별
                                         </div>
                                     </div>
                                 </div>
@@ -131,6 +131,105 @@ export default class content extends Component{
                                 <div className={[style["navigation__item"], style["navigation__item--selected"]].join(" ")}>컨텐츠 분류</div>
                                 <div className={style["navigation__item"]}>컨텐츠 분류</div>
                                 <div className={style["navigation__item"]}>컨텐츠 분류</div>
+                            </div>
+                            <div className={style["box-list--beige"]}>
+                            
+
+                                <div className={style['content-box']}>
+                                    <div className={[style["content-box__img"], style["content-box__img"]].join(" ")}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["flex"]}>
+                                        <div className={style["content-box__profile"]}>
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className={style["content-box__info"]}>
+                                            <div className={style["title--middle"]}>컨텐츠명</div>
+                                            <div className={style["stars"]}>별별별</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={style['content-box']}>
+                                    <div className={[style["content-box__img"], style["content-box__img"]].join(" ")}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["flex"]}>
+                                        <div className={style["content-box__profile"]}>
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className={style["content-box__info"]}>
+                                            <div className={style["title--middle"]}>컨텐츠명</div>
+                                            <div className={style["stars"]}>별별별</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={style['content-box']}>
+                                    <div className={[style["content-box__img"], style["content-box__img"]].join(" ")}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["flex"]}>
+                                        <div className={style["content-box__profile"]}>
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className={style["content-box__info"]}>
+                                            <div className={style["title--middle"]}>컨텐츠명</div>
+                                            <div className={style["stars"]}>별별별</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={style['content-box']}>
+                                    <div className={[style["content-box__img"], style["content-box__img"]].join(" ")}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["flex"]}>
+                                        <div className={style["content-box__profile"]}>
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className={style["content-box__info"]}>
+                                            <div className={style["title--middle"]}>컨텐츠명</div>
+                                            <div className={style["stars"]}>별별별</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={style['content-box']}>
+                                    <div className={[style["content-box__img"], style["content-box__img"]].join(" ")}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["flex"]}>
+                                        <div className={style["content-box__profile"]}>
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className={style["content-box__info"]}>
+                                            <div className={style["title--middle"]}>컨텐츠명</div>
+                                            <div className={style["stars"]}>별별별</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={style['content-box']}>
+                                    <div className={[style["content-box__img"], style["content-box__img"]].join(" ")}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["flex"]}>
+                                        <div className={style["content-box__profile"]}>
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className={style["content-box__info"]}>
+                                            <div className={style["title--middle"]}>컨텐츠명</div>
+                                            <div className={style["stars"]}>별별별</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
                             </div>
                         </div>
 
