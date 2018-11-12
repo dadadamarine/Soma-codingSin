@@ -39,7 +39,7 @@ render(<Router>
             <Route exact path="/community" component={Community}/>
             <Route path="/lectureReg" component={LectureReg} />
             <Route path="/lecture/:id" component={LectureDetail} />
-            <Route exact path="/tutor/:id" render={()=>(<Redirect to="/tutor/:id/detail"/>)} />
+            <Redirect exact from="/tutor/:id" to="/tutor/:id/detail"/>
             <Route path="/tutor/:id/detail" component={TutorDetail}/>
             <Route path="/tutor/:id/review" component={TutorReview}/>
             <Route path="/tutor/:id/activity" component={TutorActivity}/>
