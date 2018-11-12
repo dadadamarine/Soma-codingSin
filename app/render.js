@@ -13,6 +13,7 @@ import Active from './page/active';
 import Lecture from './page/lecture';
 import Tutor from './page/tutor';
 import Content from './page/content';
+import ContentDetail from './page/contentDetail';
 import Community from './page/community';
 import LectureReg from './page/lectureReg';
 import LectureDetail from './page/lectureDetail';
@@ -36,6 +37,7 @@ render(<Router>
             <Route exact path="/lecture" component={Lecture} />
             <Route exact path="/tutor" component={Tutor}/>
             <Route exact path="/content" component={Content}/>
+            <Route exact path="/content/:id" component={ContentDetail}/>
             <Route exact path="/community" component={Community}/>
             <Route path="/lectureReg" component={LectureReg} />
             <Route path="/lecture/:id" component={LectureDetail} />
