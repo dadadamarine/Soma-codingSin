@@ -18,7 +18,9 @@
     padding:0;
 }
 
-
+.half-beige{
+    background:beige;
+}
 .title{
     font-size:4.0rem;
 }
@@ -147,37 +149,96 @@
 
 
 
+/* 컨텐츠 상세 내비게이션 바 */
 
-
-.context-section{
-    margin:0;
+.content-detail-section{
+    margin:120px 0 0 0;
 }
-.navigation{
-    height:40px;
+.navigation--overlap{
     display: flex;
 
 }
-.navigation__item{
-    flex-grow: 1;
-    font-size: 1.5rem;
-    padding-top:10px;
+.navigation--overlap__item{
+    width:265px;
+    height:65px;
+    padding-top:25px;
+    
+    cursor: pointer;
+    margin-right: -25px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.6rem;
     text-align: center;
     font-weight: bold;
-    background:#a0d7da;
-    color:#6f878b; 
+    background:#717171;
+    color:#cdcdcd; 
 }
-.navigation__item--selected{
-    background:#468a97;
-    color: #b8d7d9;
+.navigation--overlap__item--selected{
+    background:#df5842;
+    color: white ;
+    z-index: 1;
 }
-.box-list--beige{
-    overflow: hidden;
-    background:#edeee9;
-    float:left; 
-    margin-bottom: 90px; 
+.navigation--overlap__item:hover{
+    color: white ;
 }
-.box-list--beige>.content-box{
+
+.navigation--overlap__bottom{
+    margin:0;
+    padding:0;
+    height:10px;
+    background:#df5842;
+}
+
+
+
+/* 영상부 */
+
+.content-play{
+    width:100%;
+    height:600px;
+    background:black;
+
+    margin:0;
+    padding: 0;
+}
+
+
+.content-info{
+    height:185px; 
+    background:white;
+    border:2px solid #dddddd;
+}
+.content-info__profile{ 
+    display: inline-block;
+    height:100%;
+    width:100px;
+}
+.content-info__profile div{
+    height:70px;
+    width:70px;
+    background:red;
+    border-radius: 50%; 
+    margin:50px 15px;
+}
+.content-info__subject{
+    color:gray;
+}
+.content-info__title{
+    color:black;
+}
+.content-info__maker{
+    margin-bottom: 30px;
+}
+.content-info__maker::before{
+    content:"from ";
+}
+.inline-block{
+    display: inline-block;
+    height:100%;
+    width:900px;
+}
+.float-left{
     float:left;
-    padding-top: 60px;
-    margin:0 45px 60px  40px;
+}
+.float-right{
+    float:right;
 }
