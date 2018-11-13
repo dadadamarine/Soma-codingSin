@@ -1,0 +1,131 @@
+/* 내용 폰트 색 : #929191 */
+/* 제목 폰트 색 : #595959 */
+/* line 색 : e3e2e0 */
+/* 버튼 빨간색 : df5842 */
+/* 버튼 주황색 : f8cf59 */
+/* 글씨 파란색 : 97d3d4 */
+
+.wrapper{
+    margin:0;
+    padding:0;
+    width: 100%;
+
+    background-color:#edeee9;
+    font-size:1rem;
+    color:#595959;
+}
+
+.sizeWrapper{
+    margin:0 auto;
+    width:820px;
+}
+
+.wrapper .phraseWrapper{
+    height:120px;
+    margin:0 auto;
+
+}
+
+.wrapper .phraseWrapper h2{
+    display:block;
+    margin:0 auto;
+    padding-top:50px;
+
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.bannerWrapper{
+    height:275px;
+    display: flex;
+
+    background-color:white;
+    box-shadow: 0 0 10px 1px rgba(1,1,1,0.2);
+}
+
+.bannerWrapper .banner{
+    width: 545px;
+    height:275px;
+}
+
+.bannerWrapper .buttonList{
+    width: 275px;
+    height:275px;
+    display:flex;
+    flex-wrap: wrap;
+
+    font-size:1.3rem;
+    font-weight: bold;
+}
+.bannerWrapper .buttonList div{
+    width:137.5px;
+    height:137.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:#f8cf59;
+    box-shadow: 0 0 0.8px 0.8px rgba(0.2,0.2,0.2,0.1);
+    /*     
+    border:0.1px solid #e3e2e0; */
+}
+
+.bannerWrapper .buttonList div.selected{
+    background-color:#df5842;
+    color:white;
+}
+
+.bannerWrapper .buttonList div:hover{
+    background-color:#df5842;
+    color:white;
+    transition: all 0.2s;
+}
+
+
+/* 하단부의 래퍼의 내용 */
+
+
+.review-box{
+    margin:30px 20px;
+    width:230px;
+    height:330px;
+    padding:40px 25px 20px;
+
+    text-align: justify;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px rgba(1,1,1,0.1);
+}
+.flex{
+    display: flex;
+}
+
+.review-box__title{
+    font-size:1.3rem;
+    font-weight: bold;
+}
+
+.review-box__img{
+    width:100%;
+    margin:10px 0;
+}
+
+.arrow--right{
+    margin:30px 0 0 10px;
+    width: 20px;
+    height:330px;
+    background:url("../resources/img/tutorDetail/review/rightArrow.png") no-repeat;
+    background-position: center;
+    background-size:contain;
+
+}
+.arrow--left{
+    margin:30px 10px 0 0 ;
+    width: 20px;
+    height:330px;
+    background:url("../resources/img/tutorDetail/review/leftArrow.png") no-repeat;
+    background-position: center;
+    background-size:contain;
+
+}
