@@ -5,11 +5,15 @@
 /* 버튼 주황색 : f8cf59 */
 /* 글씨 파란색 : 97d3d4 */
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+
 .wrapper{
     margin:0;
     padding:0;
     width: 100%;
-
+    font-family:'noto_sans', 'Noto Sans', 'Noto Sans KR', sans-serif, "나눔고딕", 'Nanum Gothic', dotum,'돋움',gulim,'굴림', Tahoma;
     background-color:#edeee9;
     font-size:1rem;
     color:#595959;
@@ -90,25 +94,61 @@
     margin:30px 20px;
     width:230px;
     height:330px;
-    padding:40px 25px 20px;
+    padding:10px 25px 20px;
 
     text-align: justify;
     background-color: white;
     overflow: hidden;
+    border:1px solid #aaaaaa;
     box-shadow: 0 0 10px 1px rgba(1,1,1,0.1);
 }
 .flex{
     display: flex;
 }
 
-.review-box__title{
+.review-box__name{
+    color:#ffc500;
     font-size:1.3rem;
     font-weight: bold;
+    text-align: center;
+    letter-spacing: -2px;
+    word-spacing: 4px;
+    padding:20px 0 10px;
+    border-bottom: 1px solid #ffc500;
 }
 
 .review-box__img{
     width:100%;
-    margin:10px 0;
+    padding-top:60px;
+    background:url("../resources/img/tutorDetail/review/review_icon1.png") no-repeat ;
+    background-position: top;
+    background-size:70px;
+}
+.review-box__img--1{
+    background:url("../resources/img/tutorDetail/review/review_icon1.png") no-repeat ;
+    background-position: top;
+    background-size:70px;
+}
+.review-box__img--2{
+    background:url("../resources/img/tutorDetail/review/review_icon2.png") no-repeat ;
+    background-position: top;
+    background-size:70px;
+}
+.review-box__img--3{
+    background:url("../resources/img/tutorDetail/review/review_icon3.png") no-repeat ;
+    background-position: top;
+    background-size:70px;
+}
+
+.review-box__text{
+    padding-top:10px;
+    font-weight: bold;
+    font-size:1.05rem;
+    text-overflow:ellipsis;
+    line-height: 1.45rem;
+}
+.review-box__text::after{
+    content:" ···";
 }
 
 .arrow--right{
