@@ -34,7 +34,7 @@ export default class header extends Component {
                         <div className={style.menuItem}><a href="">수강안내</a></div>
                         <div className={style.menuItem}><Link to="/lecture">수강신청</Link></div>
                         <div className={style.menuItem}><Link to="/tutor">강사소개</Link></div>
-                        <div className={style.menuItem}><a href="">콘텐츠</a></div>
+                        <div className={style.menuItem}><Link to="/content">콘텐츠</Link></div>
                         <div className={style.menuItem}><Link to="/community">커뮤니티</Link></div>
                     </div>
 

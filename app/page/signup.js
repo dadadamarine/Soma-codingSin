@@ -51,22 +51,84 @@ export default class signup extends Component {
     render() {
         return (
             <div className={style.wrapper}>
-                <div className={style.singupBox}>
-                    <Segment padded>
-                        <Input type="text" placeholder='아이디' value={this.state.id} onChange={this.inputID} />
-                        <br /><br />
-                        <Input type="password" placeholder='비밀번호' value={this.state.pw} onChange={this.inputPW} />
-                        <br /><br />
-                        <Input type="text" placeholder='이름' value={this.state.name} onChange={this.inputName} />
-                        <br /><br />
-                        <Input type="text" placeholder='이메일' value={this.state.email} onChange={this.inputEmail} />
-                        <br /><br />
-                        <Input type="text" placeholder='전화번호' value={this.state.phone} onChange={this.inputPhone} />
-                        <br /><br />
-                        <Dropdown placeholder='타입' search selection options={this.state.typeOptions} onChange={this.inputType} />
-                        <br /><br />
-                        <Button primary fluid content='회원가입' onClick={this.handleSubmit} primary />
-                    </Segment>
+                <div className={style.banner}>
+                    <div className={style.banner__description}>
+                        <p>
+                        코딩의 신은 온라인 코딩 과외 플랫폼입니다.<br/>
+                            코딩의 신은 온라인 코딩 과외 플랫폼입니다.
+                        </p>
+                    </div>
+                    <div className={style.banner__category}>
+                        <div>
+                            <a href="/">Home</a>
+                            <a href="/login">로그인</a>
+                        </div>
+                    </div>
+                </div>
+                <div className={style["title-section"]}>
+                    <div className={style["title-wrapper"]}>
+                        <p className={style["title-wrapper__title"]}>회원가입</p>
+                        <div className={style["title-wrapper__level-section"]}>
+                            
+                            <div className={style["level__icon"]}>
+                                <p className={[style["level__text"],style["level__text--fst"],style["level__text"]].join(" ")}>약관동의</p>
+                            </div>
+                            <div className={style["level__line"]}></div>
+                            <div className={style["level__icon"]}>
+                                <p className={[style["level__text"],style["level__text--sec"],style["level__text--selected"]].join(" ")}>정보입력</p>
+                            </div>
+                            <div className={style["level__line"]}></div>
+                            <div className={style["level__icon"]}>
+                                <p className={[style["level__text"],style["level__text--thi"]].join(" ")}>가입완료</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={style["signup-context-section"]}>
+                    
+                    <div className={style["signup-context-section__wrapper"]}>
+                        <div className={style["text-right"]}>필수입력항목</div>
+                        <div className={style["signup-context-section__wrapper__section"]}>
+                            <div className={style["input-box"]}>
+                                <p className={style["input-box__title"]}>아이디</p>
+                                <input className={style["input-box__input"]} type="text" placeholder='영문,숫자 조합 /6자 이상,12자 이하' value={this.state.id} onChange={this.inputID} />
+                            </div>
+
+                            <div className={style["input-box"]}>
+                                <p className={style["input-box__title"]}>비밀번호</p>
+                                <input className={style["input-box__input"]} type="password" placeholder='영문,숫자,특수문자 조합/6자이상,12자 이하' value={this.state.pw} onChange={this.inputPW} />
+                            </div>
+
+                            <div className={style["input-box"]}>
+                                <p className={style["input-box__title"]}>비밀번호 확인</p>
+                                <input className={style["input-box__input"]} type="password" placeholder='비밀번호확인' value={this.state.pw} />
+                            </div>
+
+                        </div>
+
+
+
+                        <div className={style["signup-context-section__wrapper__section"]}>
+                             
+                            <div className={style["input-box"]}>
+                                <p className={style["input-box__title"]}>이름</p>
+                                <input type="text" className={style["input-box__input"]} value={this.state.name} onChange={this.inputName} />
+                                <Dropdown placeholder='타입' search selection options={this.state.typeOptions} onChange={this.inputType} />
+                            </div>
+
+                            <div className={style["input-box"]}>
+                                <p className={style["input-box__title"]}>이메일</p>
+                                <input type="text" className={style["input-box__input"]}  placeholder='이메일' value={this.state.email} onChange={this.inputEmail} />
+                            </div>
+                            <div className={style["input-box"]}>
+                                <p className={style["input-box__title"]}>전화번호</p>
+                                <input type="text" className={style["input-box__input"]}  placeholder='전화번호' value={this.state.phone} onChange={this.inputPhone} />
+                            </div>
+                        </div>
+                        <div className={style["signup-context-section__wrapper__section"]}>
+                                <button className={style["btn--gray--cover"]} onClick={this.handleSubmit}> 가입완료 </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

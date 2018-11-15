@@ -1,0 +1,265 @@
+.wrap{
+    margin:0;
+    padding:0;
+    letter-spacing: -2px;
+    word-spacing: 4px;
+}
+.wrapper{
+    margin:0 ;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+.wrapper__section{
+    width:1000px;
+    height:100%;
+    margin:0 auto;
+    padding:0;
+}
+
+.half-beige{
+    background:beige;
+}
+.title{
+    font-size:4.0rem;
+}
+.title--highlight{
+    margin-top: 60px;
+    font-size:4.0rem;
+    color:#dd5e3d;
+    text-shadow: 0 2px #fecf59;
+}
+.recommand-title__text{
+    color:white;
+    font-size:1.45rem;
+}
+
+
+
+.flex{
+    display: flex;
+    justify-content: space-around;   
+}
+
+.flex--content-detail-title{
+    margin:80px 0 0 ;
+}
+
+
+.content-box__img{
+    width:245px;
+    height:310px; 
+    margin-bottom: 15px;
+
+    background: #edaa25;
+    border-radius: 10px;
+}
+.content-box__img--blue{
+    background-color:#8aced9;
+}
+.context{ 
+    width:715px;
+    padding-top:15px;
+    padding-left:35px;
+}
+.title--big{
+    font-size:4rem;
+    color:#313131;
+    font-weight: bold;
+    margin:0;
+    letter-spacing: -5px;
+}
+
+.title--middle{
+    margin: 20px 1px;
+    height:72px;
+    color:#939391;
+    line-height: 2.6rem;
+    font-weight: bold;
+    font-size:1.4rem;
+}
+
+.tag-list{
+    margin-top: 20px;
+    display: flex; 
+    justify-content: flex-start;
+}
+.tag-button{ 
+    height:35px;
+    margin:0 20px 0 0;
+
+    background:#edeee9;
+    border:2px solid #dfdfdf;
+    border-radius: 12px; 
+    color:#a2b5bb;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 5px 16px 0;
+    letter-spacing: -1px;
+
+}
+.recommand-button{
+    position: relative;
+    height:43px;
+    width:95px;
+    margin-top:23px;
+    padding: 12px 0 0 42px;
+    background:#fdd059;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:white;
+}
+.recommand-button::after{
+    content:"★";
+    position: absolute;
+    top:8px;
+    left:10px;
+
+    font-size: 2.1rem;
+}
+
+.content-box__profile{
+    display: inline-block;
+    height:55px;
+    width:50px;
+    background:black;
+}
+
+
+
+.title-section{
+    overflow: hidden;
+    margin-bottom: 55px; 
+}
+
+.description{
+    padding-left:15px;
+    padding-top:12px;
+    float:left;
+    color:#a8bbc9;
+    font-size:1.1rem;
+    vertical-align: center;
+
+    letter-spacing: -1px;
+    word-spacing: 3px;
+}
+
+
+
+
+/* 컨텐츠 상세 내비게이션 바 */
+
+.content-detail-section{
+    margin:120px 0 0 0;
+}
+.navigation--overlap{
+    display: flex;
+
+}
+.navigation--overlap__item{
+    width:265px;
+    height:65px;
+    padding-top:25px;
+    
+    cursor: pointer;
+    margin-right: -25px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+    background:#717171;
+    color:#cdcdcd; 
+}
+.navigation--overlap__item--selected{
+    background:#df5842;
+    color: white ;
+    z-index: 1;
+}
+.navigation--overlap__item:hover{
+    color: white ;
+}
+
+.navigation--overlap__bottom{
+    margin:0;
+    padding:0;
+    height:10px;
+    background:#df5842;
+}
+
+
+
+/* 영상부 */
+
+.content-play{
+    width:100%;
+    height:600px;
+    background:black;
+
+    margin:0;
+    padding: 0;
+}
+
+
+.content-info{
+    height:185px; 
+    margin-bottom: 90px;
+    background:white;
+    border:2px solid #dddddd;
+    
+}
+.content-info__profile{ 
+    display: inline-block;
+    height:100%;
+    width:100px;
+}
+.content-info__profile div{
+    height:70px;
+    width:70px;
+    background:red;
+    border-radius: 50%; 
+    margin:50px 15px;
+}
+.content-info__subject{
+    color:gray;
+}
+.content-info__subject::before{
+    content:" ";
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background:black;
+}
+.content-info__title{
+    color:black;
+}
+.content-info__maker{
+    margin-bottom: 30px;
+}
+.content-info__maker::before{
+    content:"from ";
+}
+.inline-block{
+    display: inline-block;
+    height:100%;
+    width:890px;
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+.content-info__source-button{
+        position: relative;
+        height:43px;
+        width:95px;
+        margin:23px 0 50px;
+        background:#df5845;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color:white;
+    
+}

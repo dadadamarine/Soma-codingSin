@@ -1,0 +1,304 @@
+.wrapper {
+    margin:0;
+    padding:0;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+}
+ 
+.banner-wrapper{
+    color:white;
+    height:160px;
+    background:url("../resources/img/community/communityBanner.jpg") no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.banner-wrapper__section{
+    width:1000px;
+    margin:auto;
+}
+.banner{
+    padding:30px 0 0 ;
+}
+.banner__title{
+    font-size:3.5rem;
+}
+.banner__description{
+    font-size:1.4rem;
+}
+
+.nav{
+    margin:auto;
+    width:1000px;
+    height:60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#666666;
+    border-bottom:1.5px solid #dddddd;
+}
+
+.nav__menu{
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+
+.nav__menu::after{
+    content:"·";
+    margin:0 12px;
+}
+.nav__menu:last-child::after{
+    content:"";
+    margin: 0;
+}
+.nav__menu>a{
+    height:100%;
+    line-height: 60px;
+    font-weight: bold;
+}
+.nav__menu>a:hover{
+    color:#f96e29;
+    border-bottom: 1px solid #f96e29;
+}
+.nav__menu--selected>a{
+    color:#f96e29;
+    border-bottom: 1px solid #f96e29;
+}
+
+.content-wrapper__section{
+    width:1000px;
+    margin:0 auto;
+}
+.lecture-list{
+    width:100%;
+    overflow: hidden;
+}
+.lecture-list__title-section{
+    display: flex;
+    align-items: center;
+    margin-top:30px;
+    padding: 10px 0;
+
+}
+.title{
+    color:#666666; 
+    margin-left:15px;
+    font-size:1.3rem;
+    font-weight: bold;
+}
+.more{
+    color:#aaaaaa;
+    margin-left:15px;
+    font-size:1.1rem;
+}
+
+.more::after{
+    margin-left:5px;
+    content:"＋";
+    font-size:1.4rem;
+    color:#f96e29;
+    font-weight: bold;
+}
+.lecture-list__list-section{
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+.lecture-list__list-section>img{
+    float:left;
+    margin:0 5px;
+    width:190px; 
+}
+
+
+
+
+
+
+/* 수강중인 강의 리스트 */
+
+
+.content-wrapper--gray{
+    background:#f5f5f5;
+    padding-bottom: 100px;
+}
+.phrase{
+    color:#666666;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding:45px 0 20px 0;
+}
+.phrase>span{
+    color:#f96e29;
+}
+.study-box{
+    position: relative;
+    float:left;
+    width:245px;
+    height:245px; 
+    margin:4px 2px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(200, 200, 200, 0.5);
+    background:white;
+    padding:0 20px;
+    border-top: 1px solid transparent;/* 마진 병합 해소 */
+}
+.study-box__fav--active{ 
+    width: 0px;
+    height:0px;
+    margin-top:-3px;
+    box-shadow: 
+    0px 5px 0px 0px rgb(255,255,255),
+    -1px 0px 1px -1px rgba(0, 0, 0, 0.5),
+    1px 0px 1px -1px rgba(0, 0, 0, 0.5);
+
+    border-width: 45px 15px 5px;
+    border-style: solid;
+    border-color : #f47224 #f47224 transparent;
+}
+.study-box__fav--active::before{
+    content:"★";
+    position: absolute;
+    top:20px;
+    left:35px;
+    transform: translate(-50%, -50%);
+    font-size:1.7rem;
+    color:white;
+}
+
+.study-box__fav{ 
+    width: 30px;
+    height:50px;
+    padding:0;
+    margin-top:-3px;
+    background:url("../resources/img/mylecture/fav1.png") no-repeat;
+}
+.study-box__fav::after{
+    content:"+";
+    position: absolute;
+    top:22px;
+    left:35px;
+    transform: translate(-50%, -50%);
+    font-size:2.2rem;
+    color:#cccccc;
+}
+
+.study-box__counter{
+    position: absolute;
+    top:20px;
+    right:20px;
+    background-image: linear-gradient(to bottom, #f6f6f6 50%, #dddddd 5%, white 50%);
+    height: 50px;
+    width: 50px;  
+    border:2px solid #eeeeee;
+    color:#888888;
+    font-size:30px;
+    text-align: center;
+    padding-right:2px;
+    padding-top:12px;
+}
+/* .study-box__counter::before{
+    display: block;
+    width:100%;
+    height:1px;
+    background: #dddddd;
+    content:"";
+    position: absolute;
+    top:50%;
+    left:0;
+} */
+
+.study-box__study-button{
+    margin-top:50px;
+    height:23px;
+    width:65px;
+    font-size:0.7rem;
+    color:#808080;
+    background:white;
+    font-weight:bold;
+    border:1px solid #eeeeee;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 1px rgba(200,200,200, 0.3);
+}
+
+.study-box__title{
+    border-bottom:1px solid #dddddd;
+    margin-top: 20px;
+
+    height:55px; 
+    padding: 0 3px;
+    color:#808080;
+    font-size:1.2rem;
+    font-weight: bold;
+}
+
+
+
+.study-box__date::before{
+    display: inline-block;
+    content: "";
+    width:13px;
+    height:13px;
+    background: url('../resources/img/mylecture/calendar.png') no-repeat;
+    background-size:contain;
+    background-position: center;
+    margin: 0 8px 0 5px;
+}
+.study-box__date{
+    display: block;
+    margin:14px 0px;
+}
+.study-box__date>p{
+    display: inline;
+    font-size:1rem;
+    color:#999999; 
+}
+
+.study-box--recommand{
+    position: relative;
+    float:left;
+    width:245px;
+    height:245px; 
+    margin:4px 2px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(200, 200, 200, 0.5);
+    overflow: hidden;
+    border-top: 1px solid transparent;/* 마진 병합 해소 */
+}
+.study-box--recommand__img{
+    width:245px;
+    height:245px;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.8;
+}
+.study-box--recommand::after{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    width:245px;
+    height:245px;
+    background-color: rgba(123, 174, 172, 0.8)
+}
+
+.study-box--recommand__text{
+    position: absolute;
+    bottom:0;
+
+    z-index: 1;
+    padding: 15px;
+    color: white;
+}
+
+.study-box--recommand:hover::after{
+    content:"";
+    background-color: rgba(123, 174, 172, 0.95);
+}
+.study-box--recommand__text:hover{
+    color:black;
+}
+
+.study-box--recommand__text>p{
+    margin:3px 0;
+}
