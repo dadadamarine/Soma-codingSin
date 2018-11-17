@@ -108,19 +108,19 @@
     height:30px;
     margin:1px;
     border:1px solid #dddddd;
-    color:#eeeeee;
+    padding-left: 10px;
 }
 .input-text::placeholder{
-    padding-left:10px;
     color:#dddddd;
 }
 
 .btn--login{
-    background-color: #468a97;
+    background-color: #96a0a2;
     border:1px solid #dddddd;
     width:100%;
     height:100%;
     color:white;
+    cursor: pointer;
 }
 
 .login-box>p{
@@ -144,6 +144,32 @@
     height:30px;
     color:#aaaaaa;
     background:white;
+    cursor: pointer;
     border: 1px solid #dddddd;
 }
 
+.facebook{
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 5px;
+    width: 407px;
+    background: #3b5998;
+    color: white;
+    font-weight: bold;
+    font-family: Roboto;
+}
+.facebook i{
+margin-right: 5px;
+}
+
+.google{
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 5px;
+    width: 407px;
+    background: rgb(209, 72, 54);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: Roboto;
+    border-radius: 2px;
+}

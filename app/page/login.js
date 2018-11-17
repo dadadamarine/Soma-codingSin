@@ -4,6 +4,8 @@ import * as service from '../request/login';
 import { Segment, Input, Button, Divider } from 'semantic-ui-react';
 import style from './login.css';
 import * as cookie from '../util/cookie';
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
 
 export default class login extends Component {
     constructor(props) {
@@ -32,6 +34,12 @@ export default class login extends Component {
     inputPW(event) {
         this.setState({ pw: event.target.value });
     }
+    responseFacebook = (response) => {
+        console.log(response);
+    }
+    responseGoogle = (response) => {
+        console.log(response) // eslint-disable-line
+    }
 
     handleSubmit(event) {
         const cursor =this;
@@ -58,15 +66,8 @@ export default class login extends Component {
                 <div className={style.banner}>
                     <div className={style.banner__description}>
                         <p>
-                        코딩의 신은 온라인 코딩 과외 플랫폼입니다.<br/>
-                            코딩의 신은 온라인 코딩 과외 플랫폼입니다.
+                        코딩의 신은 온라인 코딩 과외 플랫폼입니다.
                         </p>
-                    </div>
-                    <div className={style.banner__category}>
-                        <div>
-                            <a href="/">Home</a>
-                            <a href="/login">로그인</a>
-                        </div>
                     </div>
                 </div>
                 <div className={style.login}>
@@ -83,13 +84,25 @@ export default class login extends Component {
                                     <div className={[style["input-section__column"], style["input-section__column--right"]].join(' ')}>
                                         <button className={style["btn--login"]} onClick={this.handleSubmit} > 로그인 </button>
                                     </div>
-                                </div>    
-                                <p>※ID를 분실한 경우 이메일(회사 이메일) 혹은 전화(회사전화) 로 문의해 주시기 바랍니다.</p>
+                                </div>
                                 <div className={style["button-section"]}>   
                                     <button className={style.btn} onClick={this.Signup}> 회원가입</button>
                                     <button className={style.btn} onClick={this.Signup}> 비밀번호 찾기</button>
                                 </div>
-                                
+                                    <FacebookLogin
+                                        appId="721592368196574"
+                                        autoLoad={false}
+                                        fields="name,email,picture"
+                                        callback={this.responseFacebook}
+                                        textButton="페이스북 로그인"
+                                        cssClass={style.facebook}
+                                        icon="fa-facebook"/>
+                                    <GoogleLogin
+                                        clientId="408201158856-r93sh9kple35csir035n470ut71ujcjp.apps.googleusercontent.com"
+                                        buttonText="구글 로그인"
+                                        onSuccess={this.responseGoogle}
+                                        onFailure={this.responseGoogle}
+                                        className={style.google}/>
                             </div>
                         </div>
             
