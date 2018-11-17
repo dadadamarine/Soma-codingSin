@@ -274,7 +274,6 @@ export default class room extends Component {
       $("."+style.toggle+" span:last-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
       $("."+style.roomMain).css("display","none");
       $("."+style.webIde).css("display","block");
-      $("."+style.camFullBtn).css("display","none");
       $("."+style.screenFullBtn).css("display","none");
     }else{
       this.setState({toggle:true});
@@ -282,7 +281,6 @@ export default class room extends Component {
       $("."+style.toggle+" span:last-child").removeClass(style.toggleSelect).addClass(style.toggleNotSelect);
       $("."+style.roomMain).css("display","block");
       $("."+style.webIde).css("display","none");
-      $("."+style.camFullBtn).css("display","block");
       $("."+style.screenFullBtn).css("display","block");
     }
   }
@@ -377,7 +375,7 @@ export default class room extends Component {
             </div>
             <div className={style.roomWrapper} id="screen-wrap">
                 <div className={style.screenFullBtn} onClick={this.screenFull}>전체화면</div>
-                <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
+                <video className={style.roomMain} autoPlay poster={img} src="" id="remote-screen"></video>
                 <div className={style.webIde}><Code type={this.state.language}/></div>
             </div>
         </div>
