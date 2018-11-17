@@ -92,8 +92,11 @@ export default class notice extends Component{
                                 </div>
                                 
                                 <div className={style["flex--center"]}>
-                                    <div className={style["search"]}>
-                                        12
+                                    <div className={style.searchBarWrapper}>
+                                        <div className ={style.inputArea}>
+                                            <input type="text" placeholder="검색" className={style.searchBar}/>
+                                            <div className={style.searchIcon}></div>
+                                        </div>
                                     </div>
                                 </div>
                                 
