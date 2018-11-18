@@ -16,6 +16,9 @@
 }
 .bg-blue{
     background-color:#468a97;
+    background:url("../resources/img/content/bg_content.png") no-repeat;
+    background-size:100% 100%;
+    background-position: center;
 }
 .banner{
     display: block;
@@ -136,19 +139,24 @@
     width:245px;
     height:310px; 
     margin-bottom: 15px;
-
-    background: #edaa25;
+    background: url("../resources/img/content/content_orange.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #edaa25;
     border-radius: 10px;
 }
 .content-box__img--blue{
-    background-color:#8aced9;
-}
+    background: url("../resources/img/content/content_blue.png") no-repeat;
 
+}
 .content-box__profile{
     display: inline-block;
     height:55px;
     width:50px;
-    background:black;
+    background:url("../resources/img/content/profile_blue.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 2px;
 }
 
 .content-box__info{
@@ -158,7 +166,7 @@
 }
 
 .title--middle{
-    margin: 10px 1px;
+    margin: 5px 1px 10px;
     color:#939391;
     font-weight: bold;
     font-size:1.4rem;
