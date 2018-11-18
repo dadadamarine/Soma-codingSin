@@ -1,6 +1,7 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import dotenv from 'dotenv';
+import AWS from 'aws-sdk';
 
 dotenv.config();
 const router = express.Router();
@@ -10,7 +11,6 @@ const dbName = process.env.DB_USER;
 const dbCollection = process.env.DB_COLLECTION_LECTURE;
 const objectId = mongodb.ObjectID;
 
-let AWS = require("aws-sdk");
 AWS.config.loadFromPath(__dirname + "/config/awsconfig.json");
 let s3 = new AWS.S3();
 
