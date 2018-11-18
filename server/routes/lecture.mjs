@@ -10,6 +10,24 @@ const dbName = process.env.DB_USER;
 const dbCollection = process.env.DB_COLLECTION_LECTURE;
 const objectId = mongodb.ObjectID;
 
+let AWS = require("aws-sdk");
+AWS.config.loadFromPath(__dirname + "/config/awsconfig.json");
+let s3 = new AWS.S3();
+
+let multer = require("multer");
+let multerS3 = require('multer-s3');
+let upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: "data.codingsin.com",
+        key: function (req, file, cb) {
+             let extension = path.extname(file.originalname);
+             cb(null, Date.now().toString() + extension)
+        },
+        acl: 'public-read-write',
+    })
+})
+
 router.post('/type', function(req, res){
     res.send(req.session.user_type);
 });
@@ -96,7 +114,7 @@ router.post('/lectureRequest', function(req, res){
     });
 });
 
-router.post('/register', function (req, res) {
+router.post('/register', upload.single("imgFile"), function (req, res, next) {
     if(req.session.user_type!="강사") res.send("fail");
     else{
         const id=req.session.user_id;
@@ -107,12 +125,13 @@ router.post('/register', function (req, res) {
         const description = String(req.body.description);
         const schedule = String(req.body.schedule);
         const price = String(req.body.price);
+        const img=req.files[0].location;
 
         MongoClient.connect(dbHost, function (error, client) {
             if (error) console.log(error);
             else {
                 const db = client.db(dbName);
-                db.collection(dbCollection).insert({ date: Date.now(), id:id, name: name, email: email, title: title, description: description, schedule:schedule, price:price, match:null}, function (err, doc) {
+                db.collection(dbCollection).insert({ date: Date.now(), id:id, name: name, email: email, title: title, description: description, schedule:schedule, price:price, match:null, img:img}, function (err, doc) {
                     if (err) {
                         console.log(err);
                         res.send("fail");

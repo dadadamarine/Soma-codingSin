@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-export function lectureRegister(u_title, u_description, u_schedule, u_price) {
-    return axios.post('/reqLecture/register', {
-        title:u_title,
-        description:u_description,
-        schedule:u_schedule,
-        price:u_price
-    });
+export function lectureRegister(u_img, u_title, u_description, u_schedule, u_price) {
+    const formData = new FormData()
+    formData.append('imgFile', u_img, u_img.name)
+    formData.append('title', u_title)
+    formData.append('description', u_description)
+    formData.append('schedule', u_schedule)
+    formData.append('price', u_price)
+    return axios.post('/reqLecture/register', formData);
 }
 
 export function lectureList() {

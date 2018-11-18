@@ -430,6 +430,10 @@
     top: 80%;
     z-index: 100;
     cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    background: rgba(111, 111, 111, 0.7);
 }
 
 
@@ -447,4 +451,8 @@
     background-size: cover;
     background: url(../resources/img/mylecture/mylecture.jpg);
     margin-bottom: 10px;
+}
+
+.register:hover{
+    color: #f15a21;
 }

@@ -8,16 +8,15 @@ import * as cookie from '../util/cookie';
 export default class lecture extends Component {
     constructor(props) {
         super(props);
-        /* this.state = {isLogin:cookie.getCookie('user'), type:'', list:[]}; */
-        this.state = {isLogin:"teacher", type:'강사',list:[]};
+        this.state = {isLogin:cookie.getCookie('user'), type:'', list:[]};
         const curosr = this;
-/*         service.getType().then(function (res) {
+        service.getType().then(function (res) {
             curosr.setState({ type: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
-        }); */
+        });
     }
-   /*  componentDidMount(){
+   componentDidMount(){
         const curosr =this;
         service.lectureList().then(function (res) {
             curosr.setState({list:res.data});
@@ -25,7 +24,7 @@ export default class lecture extends Component {
         }).catch(function (error) {
             alert('error massage : '+error);
         });
-    } */
+    }
 
     render() {
 
@@ -148,7 +147,12 @@ export default class lecture extends Component {
                 
                 
                 <div className={style.lectureWrapper}>
-                    <a className={style.recommandLectureTitle} href={""}>추천강의</a>
+                <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
+                        <div className={style.title}>
+                            <div className={style.verticalBar}></div>
+                            <a>신규과외</a>
+                        </div>
+                    </div>
 
 
                     {/* 강의 컨텐츠 시작 */}
@@ -215,215 +219,7 @@ export default class lecture extends Component {
 
                 
                 </div>{/* lecture Wrapper 끝 */}
-
-
-
-                <div className={style.lectureWrapper}>
-                    <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                        <div className={style.title}>
-                            <div className={style.verticalBar}></div>
-                            <a>FUN FUN STUDY</a>
-                        </div>
-                    </div>
-                    {/* 강의 컨텐츠 시작 */}
-                        
-                    <div className={style.lectureList}> 
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_1.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-                        
-                        <div className={style.verticalBar}></div>
-
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_2.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_3.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_4.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-                        
-                    </div>  {/* lecture List 끝 */}
-                    <div className={style.lectureList}>
-                
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_5.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-                        
-                        <div className={style.verticalBar}></div>
-
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_6.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_7.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section2/section2_8.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div className={style.plusButton}></div>
-
-                
-                </div>{/* lecture Wrapper 끝 */}
-
-               
-
-
-
-
-
-                <div className={style.lectureWrapper}>
-                    <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                        <div className={style.title}>
-                            <div className={style.verticalBar}></div>
-                            <a>BEST STUDY</a>
-                        </div>
-                    </div>
-                    {/* 강의 컨텐츠 시작 */}
-                        
-                    <div className={style.lectureList}> 
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section3/section3_1.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-                        
-                        <div className={style.verticalBar}></div>
-
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section3/section3_2.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section3/section3_3.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section3/section3_4.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        
-                    </div>  {/* lecture List 끝 */}
-                    <div className={style.plusButton}></div>
-
-                
-                </div>{/* lecture Wrapper 끝 */}
-{/*             { this.state.type=="강사" ?<div className={style.register}><div className={style.textWrapper}><Link to="/lectureReg">과외등록</Link></div></div>:null}
-*/}         </div>
+                { this.state.type=="강사" ?<Link to="/lectureReg"><div className={style.register}><div className={style.textWrapper}>과외등록</div></div></Link>:null}</div>
         );
     }
 }
