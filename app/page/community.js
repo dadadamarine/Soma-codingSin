@@ -87,7 +87,7 @@ class community extends Component{
 
                     {/* 2번째 라인 */}
                     <div className={[style.tableItem, style.board].join(' ')}>
-                        <a href="community/board">
+                        <a href="./community/notice">
                             <div className={style.title}>
                                 <p>공지사항</p>
                             </div>

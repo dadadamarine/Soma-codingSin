@@ -29,7 +29,6 @@ export default class nomatch extends Component {
       <div className={style.notFoundWrapper}>
         <div className={style.notFound}>
           <span className={style.textBefore}>404 NOT FOUND!</span>
-          찾으시는 페이지가 없습니다! 주소가 맞나 다시 한 번 확인해주세요!
         </div>
       </div>
     );

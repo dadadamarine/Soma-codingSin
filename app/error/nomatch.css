@@ -5,41 +5,40 @@
     position:relative;
     z-index: 1;
 }
-.notFoundWrapper:after{
-    z-index: -1;
+.notFoundWrapper{
+    width:100%;
+    height:100%;
+    background-color:#f6f6f6;
     background-repeat:no-repeat;
-    background-image: url("../resources/img/main.png");
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    position: absolute;
+    background-image: url("../resources/img/no_match.jpg");
+    -webkit-background-size:  50%;
+    -moz-background-size:  50%;
+    -o-background-size: 50%;
+    background-size:  50%;
+    background-position: top;
     content:"";
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    opacity: 0.7;
     filter:alpha(opacity=30);
 }
 
 .notFound{
     text-align: center;
-    align-self: center !important;
+    align-self: flex-end !important;
+    margin-bottom: 50px;
 }
 
 .textBefore{
     display: block;
     font-size: 50px;
-    margin: 40px;
+    margin: 70px;
     color:black;
     transition-duration: 2s;
 }
 
 .textAfter{
     display: block;
-    font-size: 80px;
-    margin: 40px;
+    font-size: 60px;
+    margin: 70px;
     color:red;
     transition-duration: 2s;
 }

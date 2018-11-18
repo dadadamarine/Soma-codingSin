@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import style from './tutorDetail.css';
-import Link from 'react-router-dom';
 
 class tutorDetail extends Component{
     constructor(props){
@@ -22,10 +21,21 @@ class tutorDetail extends Component{
                         </div>
 
                         <div className={style.buttonList}>
-                            <div className={style.selected}>소개</div>
-                            <div>리뷰 페이지</div>
-                            <div>개설 강의</div>
-                            <div>활동 내역</div>
+                            <a href="./detail">
+                                <div className={style.selected}>소개</div>
+                            </a>
+                            <a href="./review">
+                                <div>리뷰 페이지</div>
+                            </a>
+                            <a href="./lecture">
+                                <div>개설 강의</div>
+                            </a>
+                            <a href="./activity">
+                                <div>활동 내역</div>
+                            </a>
+                            
+                            
+                            
                         </div>
 
                     </div>

@@ -1,0 +1,250 @@
+/* 
+배너 회색 : #d7d9d8
+폰트 블랙 : 
+*/
+.wrap{
+    margin:0;
+    padding:0;
+    letter-spacing: -2px;
+    word-spacing: 4px;
+    font-family:'noto_sans', 'Noto Sans', 'Noto Sans KR', sans-serif, "나눔고딕", 'Nanum Gothic', dotum,'돋움',gulim,'굴림', Tahoma;
+}
+.wrapper{
+    margin:0 ;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+h2{
+    font-size:1.8rem;
+    font-weight: bold;
+}
+
+.wrapper__section{
+    width:1000px;
+    height:100%;
+    margin:0 auto;
+    padding:0;
+}
+.banner{
+    height:180px;
+    background:url("../resources/img/community/communityBanner.jpg") no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.banner__description{
+    height:85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.banner__description p{
+    color:white;
+    font-size:1.4rem;
+    line-height:2.5rem;
+}
+.banner__category{
+    height:15%;
+    background-color:#d7d9d8;
+}
+.banner__category div{
+    margin:auto;
+    width:1000px;
+    line-height:30px;
+}
+.banner__category a::after{
+    content:" > ";
+}
+.banner__category a:last-child::after{
+    content:"";
+}
+
+.flex{
+    width:100%;
+    display: flex;
+}
+.flex--center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    width:250px;
+    height:100%;
+    margin-top:220px;
+}
+
+.sub-title{
+    font-size:1.2rem;
+    font-weight: bold;
+}
+.community-banner{
+    width:750px; 
+    margin:98px 0 0;
+    padding-left: 69px;
+    padding-bottom: 90px;
+    border-bottom:3px solid #323232;
+
+}
+.community-banner__item{
+    
+    height:40px;
+    width:138px;
+    padding:10px;
+    margin-left:-1.5px;
+    text-align: center; 
+
+    border:1.5px solid #dddddd;
+    font-size:0.8rem;
+    font-weight:bold;
+    color:#999999;
+    
+}
+.community-banner__item--selected{
+    background:#1e1e1e;
+    color:white;
+}
+/* 40px, 1px #e5e5e5 */
+
+.community-list{
+    width:100%;
+    list-style: none;
+    margin:0;
+    padding:0;
+    letter-spacing: -1px;
+}
+
+.community-list li{
+    display: flex;
+    height:55px;
+    border-bottom:1.5px solid #e5e5e5;
+    padding:18px 0 0;
+    font-size:0.9rem;
+    color:#565656;
+}
+
+.community-list li p{
+    height:100%;
+    width:100%;
+    margin:0;
+
+}
+.community-list li :first-child{
+    width:620px;
+    height:100%;
+    font-weight: bold;
+    padding-left: 16px;
+}
+
+.community-list li :last-child{
+    width:130px;
+    height:100%;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+li.community-list__head{
+    height:40px;
+    padding-top:10px;
+    text-align: center;
+    font-weight: bold;
+    font-size:0.9rem;
+}
+
+li.community-list__item{
+    height:55px;
+}
+.page-selector{
+    margin-top:10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+.height--eight{
+    height:80px;
+}
+
+.page-selector__num{
+    margin:0 20px;
+}
+.page-selector__num>a{
+    display: inline-block;
+    width:27px;
+    color:#999999;
+    text-align: center;
+    font-size:0.8rem;
+    font-weight: bold;
+}
+.page-selector__num>a.selected{
+    color: #333333;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    font-size:0.9rem;
+}
+.page-selector__arrow{
+    margin:2.5px;
+
+    height:25px;
+    width:25px;
+    border:1px solid #ebebeb;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-right:3px;
+    color:#999999;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+.searchBarWrapper{
+    width:430px;
+    border-bottom: 1.5px solid #777777;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.searchBarWrapper .inputArea{
+    display:flex;
+    width:100%;
+    height:35px;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+}
+.searchBarWrapper .inputArea .searchBar{
+    width: 425px;
+    height: 35px;
+
+    font-size:0.9rem;
+    letter-spacing: -1px;
+    word-spacing: 4px;
+    font-weight: 400;
+    color:#565656;
+    border:none;
+    background-color: transparent;
+    /* box-shadow: 0 0 10px 1px rgba(1,1,1,0.2); */
+}
+.searchBarWrapper .inputArea .searchBar:focus{
+    outline:none;
+}
+.searchBarWrapper .inputArea .searchBar::placeholder{
+    color:#cccccc;
+}
+.searchBarWrapper .inputArea .searchIcon{
+    width: 40px;
+    height:20px;
+    cursor: pointer;
+    margin: auto 0;
+    padding-left:23px;
+    border-left:0.1px solid white;
+    background:url('../resources/img/board/search.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
