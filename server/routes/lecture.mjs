@@ -1,6 +1,7 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import dotenv from 'dotenv';
+import path from 'path';
 import AWS from 'aws-sdk';
 
 dotenv.config();
