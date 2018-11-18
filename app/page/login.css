@@ -26,7 +26,7 @@
 
 .banner{
     height:180px;
-    background:url("../resources/img/community/communityBanner.jpg") no-repeat;
+    background:url("../resources/img/community/banner_thin.jpg") no-repeat;
     background-position: center;
     background-size:cover;
 }
