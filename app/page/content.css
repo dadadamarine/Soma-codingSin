@@ -162,16 +162,37 @@
 .content-box__info{
     flex-grow: 1;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .title--middle{
-    margin: 5px 1px 10px;
+    margin: 5px 1px 0;
+    padding-left:8px;
     color:#939391;
     font-weight: bold;
     font-size:1.4rem;
 }
-
+.star{
+    height:30px;
+    width:185px;
+    background-size: contain;
+    background-position: left;
+}
+.star1{
+    background:url("../resources/img/content/star/star1.png") no-repeat;
+}
+.star2{
+    background:url("../resources/img/content/star/star2.png") no-repeat;
+}
+.star3{
+    background:url("../resources/img/content/star/star3.png") no-repeat;
+}
+.star4{
+    background:url("../resources/img/content/star/star4.png") no-repeat;
+}
+.star5{
+    background:url("../resources/img/content/star/star5.png") no-repeat;
+}
 .title-section{
     overflow: hidden;
     margin-bottom: 55px; 

@@ -71,8 +71,8 @@ export default class content extends Component{
                                     </div>
                                     <div className={style["content-box__info"]}>
                                         <div className={style["title--middle"]}>컨텐츠명</div>
-                                        <div className={style["stars"]}>
-                                            별별별
+                                        <div className={[style["star"], style["star5"]].join(" ")}>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ export default class content extends Component{
                                     </div>
                                     <div className={style["content-box__info"]}>
                                         <div className={style["title--middle"]}>컨텐츠명</div>
-                                        <div className={style["stars"]}>별별별</div>
+                                        <div className={[style["star"], style["star4"]].join(" ")}></div>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ export default class content extends Component{
                                     </div>
                                     <div className={style["content-box__info"]}>
                                         <div className={style["title--middle"]}>컨텐츠명</div>
-                                        <div className={style["stars"]}>별별별</div>
+                                        <div className={[style["star"], style["star4"]].join(" ")}></div>
                                     </div>
                                 </div>
                             </div>
