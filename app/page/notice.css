@@ -165,6 +165,7 @@ li.community-list__item{
 
 .height--eight{
     height:80px;
+    clear: both;
 }
 
 .page-selector__num{
@@ -247,4 +248,19 @@ li.community-list__item{
     background:url('../resources/img/board/search.png') no-repeat;
     background-position: center;
     background-size: contain;
+}
+
+.button--write{
+    float: right;
+    display: inline-block;
+    margin:15px 5px -40px;
+    width:60px;
+    height:30px;
+    background-color:#fdd059;
+    color:white;
+    border-radius: 1px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    letter-spacing: -1px;
 }
