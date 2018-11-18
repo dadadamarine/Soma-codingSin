@@ -32,6 +32,7 @@
     "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "mongodb": "^3.0.1",
+    "node-scripts": "^1.0.6",
     "nodemailer": "^4.6.8",
     "prop-types": "^15.6.0",
     "rc-calendar": "^9.7.6",
