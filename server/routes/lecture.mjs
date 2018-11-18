@@ -127,7 +127,7 @@ router.post('/register', upload.single("imgFile"), function (req, res, next) {
         const schedule = String(req.body.schedule);
         const price = String(req.body.price);
         console.log(req.files);
-        const img=req.files[0].location;
+        const img=req.files.location;
 
         MongoClient.connect(dbHost, function (error, client) {
             if (error) console.log(error);
