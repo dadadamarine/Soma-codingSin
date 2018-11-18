@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as service from '../request/lecture';
-import { Segment, Input, Button, Divider } from 'semantic-ui-react';
+import { Dropdown, Input, Button, Divider } from 'semantic-ui-react';
 import style from './lectureReg.css';
 import DatePicker from "react-datepicker";
 
@@ -12,7 +12,9 @@ export default class lectureReg extends Component {
         startDate:null,
         endDate:null,
         schedule:'', 
-        price:'',    
+        price:'',   
+        type:'',
+        typeOptions:[{ key: '0', value: '0', text: 'Javascript' },{ key: '1', value: '1', text: 'Python' }], 
         selectedFile:null,
         startValue: null,
         endValue: null,
@@ -26,6 +28,7 @@ export default class lectureReg extends Component {
         this.handleChangeEnd = this.handleChangeEnd.bind(this);
         this.inputSCHEDULE = this.inputSCHEDULE.bind(this);
         this.readURL = this.readURL.bind(this);
+        this.inputType = this.inputType.bind(this);
     }
     inputTITLE(event) {
         this.setState({ title: event.target.value });
@@ -55,7 +58,7 @@ export default class lectureReg extends Component {
     }
     handleSubmit(event) {
         const curosr =this;
-        service.lectureRegister(this.state.selectedFile, this.state.title, this.state.description, this.formatDate(this.state.startDate)+"~"+this.formatDate(this.state.endDate)+" "+this.state.schedule, this.state.price).then(function (res) {
+        service.lectureRegister(this.state.selectedFile, this.state.title, this.state.description, this.formatDate(this.state.startDate)+"~"+this.formatDate(this.state.endDate)+" "+this.state.schedule, this.state.price, this.state.type).then(function (res) {
             if(String(res.data)=="ok"){
                 alert("과외등록에 성공하였습니다!");
                 location.href="/lecture"
@@ -93,6 +96,9 @@ export default class lectureReg extends Component {
     }
     numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    inputType(event, { value }){
+        this.setState({ type: value });
     }
     render() {
 
@@ -144,9 +150,11 @@ export default class lectureReg extends Component {
                             <p className={style["input-box__title_date"]}>시간</p>
                             <input className={style["input-box__input"]} type="text" placeholder='ex) 매주 토요일 14시~16시' value={this.state.schedule} onChange={this.inputSCHEDULE} />
                         </div>
-                        <div className={style["input-box"]}>
-                            <p className={style["input-box__title"]}>과외비</p>
+                        <div className={style["input-box_date"]}>
+                            <p className={style["input-box__title_date"]}>과외비</p>
                             <input className={style["input-box__input"]} type="text" pattern="^-?[0-9]\d*\.?\d*$" placeholder='과외비를 입력해주세요.' value={this.state.price} onChange={this.inputPRICE} />
+                            <p className={style["input-box__title_date"]}>언어</p>
+                            <Dropdown placeholder='타입' search selection options={this.state.typeOptions} onChange={this.inputType} className={style.type}/>
                         </div>
                     </div>
                     <div className={style.submit}>

@@ -126,14 +126,14 @@ router.post('/register', upload.single("imgFile"), function (req, res, next) {
         const description = String(req.body.description);
         const schedule = String(req.body.schedule);
         const price = String(req.body.price);
-        console.log(req.files);
+        const type = String(req.body.type);
         const img=req.file.location;
 
         MongoClient.connect(dbHost, function (error, client) {
             if (error) console.log(error);
             else {
                 const db = client.db(dbName);
-                db.collection(dbCollection).insert({ date: Date.now(), id:id, name: name, email: email, title: title, description: description, schedule:schedule, price:price, match:null, img:img}, function (err, doc) {
+                db.collection(dbCollection).insert({ date: Date.now(), id:id, name: name, email: email, title: title, description: description, schedule:schedule, price:price, match:null, img:img, chapter:0, type:type}, function (err, doc) {
                     if (err) {
                         console.log(err);
                         res.send("fail");

@@ -1,6 +1,5 @@
 .wrapper{
-    margin: auto;
-    display: flex;
+    margin: 0 auto;
     height: 100%;
     width: 1080px;
     position:relative;
@@ -9,6 +8,7 @@
 
 .lectureBox{
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .despBox::placeholder {
@@ -26,8 +26,8 @@
 }
 
 .lectureReginfoImgWrapper{
-    width: 200px;
-    height: 110px;
+    width: 270px;
+    height: 150px;
     border: solid 1px gray;
 }
 
@@ -45,7 +45,7 @@
 .lectureReginfoImgSelect{
     cursor: pointer;
     margin-top: 10px;
-    width: 200px !important;
+    width: 270px !important;
 }
 
 .input-box{
@@ -138,6 +138,6 @@
 }
 
 .lectureReginfoImg{
-    width: 200px;
-    height: 110px;
+    width: 270px;
+    height: 150px;
 }
