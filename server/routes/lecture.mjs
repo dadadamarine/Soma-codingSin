@@ -3,6 +3,8 @@ import mongodb from 'mongodb';
 import dotenv from 'dotenv';
 import path from 'path';
 import AWS from 'aws-sdk';
+import multer from 'multer';
+import multerS3 from 'multer-s3';
 
 dotenv.config();
 const router = express.Router();
@@ -15,9 +17,6 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 AWS.config.loadFromPath(__dirname + "/awsconfig.json");
 let s3 = new AWS.S3();
-
-let multer = require("multer");
-let multerS3 = require('multer-s3');
 let upload = multer({
     storage: multerS3({
         s3: s3,
