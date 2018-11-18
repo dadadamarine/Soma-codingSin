@@ -212,10 +212,10 @@ export default class lecture extends Component {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className={style.lectureList}> 
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
-                        let url = "/room#"+lecture._id;
+                        let url = "/lecture/"+lecture._id;
                         return (<div style={{display:'flex'}}>
                             <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
                                 <div className="lectureImage">
