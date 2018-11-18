@@ -9,9 +9,9 @@ export default class lecture extends Component {
     constructor(props) {
         super(props);
         this.state = {isLogin:cookie.getCookie('user'), type:'', list:[], cursor:0};
-        const curosr = this;
+        const cursor = this;
         service.getType().then(function (res) {
-            curosr.setState({ type: res.data });
+            cursor.setState({ type: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
         });
@@ -22,6 +22,10 @@ export default class lecture extends Component {
         this.changeBanner5 = this.changeBanner5.bind(this);
         this.leftClick = this.leftClick.bind(this);
         this.rightClick = this.rightClick.bind(this);
+
+        window.setInterval(function(){
+            cursor.rightClick.call();
+        }, 3000);
     }
    componentDidMount(){
         const cursor =this;
