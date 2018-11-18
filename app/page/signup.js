@@ -7,10 +7,11 @@ import style from './signup.css';
 export default class signup extends Component {
     constructor(props) {
         super(props);
-        this.state = {id:'', pw:'', name:'', email:'', phone:'', type:'',typeOptions:[{ key: 'S', value: '학생', text: '학생' },{ key: 'T', value: '강사', text: '강사' }]};
+        this.state = {id:'', pw:'', pw2:'', name:'', email:'', phone:'', type:'',typeOptions:[{ key: 'S', value: '학생', text: '학생' },{ key: 'T', value: '강사', text: '강사' }]};
      
         this.inputID = this.inputID.bind(this);
         this.inputPW = this.inputPW.bind(this);
+        this.inputPW2 = this.inputPW2.bind(this);
         this.inputName = this.inputName.bind(this);
         this.inputEmail = this.inputEmail.bind(this);
         this.inputPhone = this.inputPhone.bind(this);
@@ -22,6 +23,9 @@ export default class signup extends Component {
     }
     inputPW(event) {
         this.setState({ pw: event.target.value });
+    }
+    inputPW2(event) {
+        this.setState({ pw2: event.target.value });
     }
     inputName(event) {
         this.setState({ name: event.target.value });
@@ -37,32 +41,25 @@ export default class signup extends Component {
     }
     handleSubmit(event) {
         const curosr =this;
-        service.signup(this.state.id, this.state.pw, this.state.name, this.state.email, this.state.phone, this.state.type).then(function (res) {
-            if(String(res.data)=="ok"){
-                alert("회원가입에 성공했습니다!");
-                curosr.props.history.push('/');
-            }
-            else alert("회원가입에 실패했습니다!");
-        }).catch(function (error) {
-            alert('error massage : '+error);
-        });
-        event.preventDefault();
+        if(this.state.pw==this.state.pw2){
+            service.signup(this.state.id, this.state.pw, this.state.name, this.state.email, this.state.phone, this.state.type).then(function (res) {
+                if(String(res.data)=="ok"){
+                    alert("회원가입에 성공했습니다!");
+                    curosr.props.history.push('/');
+                }
+                else alert("회원가입에 실패했습니다!");
+            }).catch(function (error) {
+                alert('error massage : '+error);
+            });
+            event.preventDefault();
+        }else alert("비밀번호가 틀립니다!");
     }
     render() {
         return (
             <div className={style.wrapper}>
                 <div className={style.banner}>
                     <div className={style.banner__description}>
-                        <p>
-                        코딩의 신은 온라인 코딩 과외 플랫폼입니다.<br/>
-                            코딩의 신은 온라인 코딩 과외 플랫폼입니다.
-                        </p>
-                    </div>
-                    <div className={style.banner__category}>
-                        <div>
-                            <a href="/">Home</a>
-                            <a href="/login">로그인</a>
-                        </div>
+                        <p> 코딩의 신은 온라인 코딩 과외 플랫폼입니다.</p>
                     </div>
                 </div>
                 <div className={style["title-section"]}>
@@ -101,7 +98,7 @@ export default class signup extends Component {
 
                             <div className={style["input-box"]}>
                                 <p className={style["input-box__title"]}>비밀번호 확인</p>
-                                <input className={style["input-box__input"]} type="password" placeholder='비밀번호확인' value={this.state.pw} />
+                                <input className={style["input-box__input"]} type="password" placeholder='비밀번호확인' value={this.state.pw2} onChange={this.inputPW2} />
                             </div>
 
                         </div>
@@ -113,7 +110,7 @@ export default class signup extends Component {
                             <div className={style["input-box"]}>
                                 <p className={style["input-box__title"]}>이름</p>
                                 <input type="text" className={style["input-box__input"]} value={this.state.name} onChange={this.inputName} />
-                                <Dropdown placeholder='타입' search selection options={this.state.typeOptions} onChange={this.inputType} />
+                                <Dropdown placeholder='타입' search selection options={this.state.typeOptions} onChange={this.inputType} className={style.type}/>
                             </div>
 
                             <div className={style["input-box"]}>

@@ -28,6 +28,8 @@ export default class room extends Component {
     this.prev = this.prev.bind(this);
     this.next = this.next.bind(this);
     this.createQuiz = this.createQuiz.bind(this);
+    this.camFull = this.camFull.bind(this);
+    this.screenFull = this.screenFull.bind(this);
 
     const cursor =this;
     if(location.hash!=null) {
@@ -272,12 +274,14 @@ export default class room extends Component {
       $("."+style.toggle+" span:last-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
       $("."+style.roomMain).css("display","none");
       $("."+style.webIde).css("display","block");
+      $("."+style.screenFullBtn).css("display","none");
     }else{
       this.setState({toggle:true});
       $("."+style.toggle+" span:first-child").removeClass(style.toggleNotSelect).addClass(style.toggleSelect);
       $("."+style.toggle+" span:last-child").removeClass(style.toggleSelect).addClass(style.toggleNotSelect);
       $("."+style.roomMain).css("display","block");
       $("."+style.webIde).css("display","none");
+      $("."+style.screenFullBtn).css("display","block");
     }
   }
 
@@ -291,6 +295,28 @@ export default class room extends Component {
     $("."+style.problemPrev).css("display","block");
     this.setState({flag:true, cursor:this.state.cursor+1});
     if(this.state.cursor==this.state.list.length-2) $("."+style.problemNext).css("display","none");
+  }
+
+  camFull(){
+    var elem = document.getElementById("cam");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    }
+  }
+
+  screenFull(){
+    var elem = document.getElementById("remote-screen");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    }
   }
   
   render() {
@@ -311,7 +337,10 @@ export default class room extends Component {
         <div className={style.sideView}>
             <div className={style.sideBottom}>
                 <div className={style.viewContainer}>
-                    <video className={style.camScreen} autoPlay controls poster={img} src="" id="cam"></video>
+                    <div className={style.camWrapper}>
+                        <div className={style.camFullBtn} onClick={this.camFull}>전체화면</div>
+                        <video className={style.camScreen} autoPlay poster={img} src="" id="cam"></video>
+                    </div>
                     </div>
                     <div className={style.settingView}>
                     </div>
@@ -345,7 +374,8 @@ export default class room extends Component {
               </div>
             </div>
             <div className={style.roomWrapper} id="screen-wrap">
-                <video className={style.roomMain} autoPlay controls poster={img} src="" id="remote-screen"></video>
+                <div className={style.screenFullBtn} onClick={this.screenFull}>전체화면</div>
+                <video className={style.roomMain} autoPlay poster={img} src="" id="remote-screen"></video>
                 <div className={style.webIde}><Code type={this.state.language}/></div>
             </div>
         </div>

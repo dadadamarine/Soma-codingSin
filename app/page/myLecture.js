@@ -32,10 +32,10 @@ export default class myLecture extends Component {
                 <div className={style["content-wrapper"]}>
                     <div className={style["content-wrapper__section"]}>
                         <div className={style.nav}>
-                            <div className={[style.nav__menu, style['nav__menu--selected']].join(' ')}><a href="">내 강의실</a></div>
-                            <div className={style.nav__menu}><a href="">결재 정보</a></div>
-                            <div className={style.nav__menu}><a href="">내가 쓴 글</a></div>
-                            <div className={style.nav__menu}><a href="">이용 문의</a></div>
+                            <div className={[style.nav__menu, style['nav__menu--selected']].join(' ')}><a href="myLecture">내 강의실</a></div>
+                            <div className={style.nav__menu}><a href="#">결재 정보</a></div>
+                            <div className={style.nav__menu}><a href="#">내가 쓴 글</a></div>
+                            <div className={style.nav__menu}><a href="#">이용 문의</a></div>
                         </div>
                     </div>
                 </div>
@@ -61,112 +61,40 @@ export default class myLecture extends Component {
                 <div className={style["content-wrapper--gray"]}>
                     <div className={style["content-wrapper__section"]}>
                         <div className={style.phrase}>
-                            현재 총 <span>5</span>개의 수강중인 강의가 있습니다.
+                            현재 총 <span>{this.state.list.length}</span>개의 수강중인 강의가 있습니다.
                         </div>
                         <div className={style["lecture-list"]}>
+                        {this.state.list!=[]?this.state.list.map((lecture, i) => {
+                            let url = "/room#"+lecture._id;
+                            return (
                             <a href="">
                                 <div className={style['study-box']}>
                                     <a href="1222">
                                         <div className={style['study-box__fav--active']}></div>
                                     </a>
-                                    <div className={style['study-box__counter']}>12</div>
-                                    <button className={style['study-box__study-button']}>학습하기</button>
-                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
+                                    <div className={style['study-box__counter']}>{lecture.chapter}</div>
+                                    <button className={style['study-box__study-button']}><a href={url}>과외방 입장</a></button>
+                                    <div className={style['study-box__title']}>{lecture.type==0?"[Javascript] ":"[Python] "}{lecture.title}</div>
                                     <div className={style['study-box__date']}>
-                                        <p>2018.10.20 ~ 2018.12.30</p>
+                                        <p>{lecture.schedule}</p>
                                     </div>
                                 </div>
-                            </a>
-
-                            <a href="">
-                                <div className={style['study-box']}>
-                                    <a href="">
-                                        <div className={style['study-box__fav']}></div>
-                                    </a>
-                                    <div className={style['study-box__counter']}>12</div>
-                                    <button className={style['study-box__study-button']}>학습하기</button>
-                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                    <div className={style['study-box__date']}>
-                                        <p>2018.10.20 ~ 2018.12.30</p>
-                                    </div>
-                                </div>
-                            </a>
-
-                        
-                            <a href="">
-                                <div className={style['study-box']}>
-                                    <a href="">
-                                        <div className={style['study-box__fav']}></div>
-                                    </a>
-                                    <div className={style['study-box__counter']}>12</div>
-                                    <button className={style['study-box__study-button']}>학습하기</button>
-                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                    <div className={style['study-box__date']}>
-                                        <p>2018.10.20 ~ 2018.12.30</p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            
-                            
-                            <a href="">
-                                <div className={style['study-box']}>
-                                    <a href="">
-                                        <div className={style['study-box__fav']}></div>
-                                    </a>
-                                    <div className={style['study-box__counter']}>12</div>
-                                    <button className={style['study-box__study-button']}>학습하기</button>
-                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                    <div className={style['study-box__date']}>
-                                        <p>2018.10.20 ~ 2018.12.30</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div className={style['study-box']}>
-                                    <a href="">
-                                        <div className={style['study-box__fav']}></div>
-                                    </a>
-                                    <div className={style['study-box__counter']}>12</div>
-                                    <button className={style['study-box__study-button']}>학습하기</button>
-                                    <div className={style['study-box__title']}>[JAVA] 코딩이 재미있는 이유</div>
-                                    <div className={style['study-box__date']}>
-                                        <p>2018.10.20 ~ 2018.12.30</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#">
+                            </a>);
+                            }):null}
+                            <a href="lecture">
                                 <div className={style['study-box--recommand']}>
                                     <img className={style['study-box--recommand__img']} src={require("../resources/img/mylecture/recommand.jpg")} alt=""/>
                                     <div className={style['study-box--recommand__text']}>
                                         <h2>맞춤형 강의</h2>
                                         <p>소통중심, 이해중심</p>
-                                        <p>블록코딩으로 배우는 파이썬</p>
+                                        <p>더보기</p>
                                     </div>
 
                                 </div>
                             </a>
-
                         </div>
                     </div>
                 </div>
-                    <div className={style.lectureList}>
-                    {this.state.list!=[]?this.state.list.map((lecture, i) => {
-                        let url = "/room#"+lecture._id;
-                        return (<div style={{display:'flex'}}>
-                            <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
-                                <div className="lectureImage">
-                                    <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
-                                </div>
-                                <div className={style.lectureName}>{lecture.title}</div>
-                                <div className={style.lectureInfo}>
-                                    <span>{lecture.name}</span> / <span>{lecture.schedule}</span> / <span>{lecture.price}</span>
-                                </div>
-                                </div>
-                            {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}
-                        </div>);
-                    }):null}
-                    </div>
             </div>
         );
     }
