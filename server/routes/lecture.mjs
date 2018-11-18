@@ -13,7 +13,7 @@ const dbCollection = process.env.DB_COLLECTION_LECTURE;
 const objectId = mongodb.ObjectID;
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-AWS.config.loadFromPath(__dirname + "/../config/awsconfig.json");
+AWS.config.loadFromPath(__dirname + "/../awsconfig.json");
 let s3 = new AWS.S3();
 
 let multer = require("multer");
