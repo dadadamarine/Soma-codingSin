@@ -148,18 +148,17 @@ export default class lecture extends Component {
                 
                 <div className={style.lectureWrapper}>
                 <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                        <div className={style.title}>
-                            <div className={style.verticalBar}></div>
-                            <a>신규과외</a>
-                        </div>
+                    <div className={style.title}>
+                        <div className={style.verticalBar}></div>
+                        <a>신규과외</a>
                     </div>
+                </div>
 
 
                     {/* 강의 컨텐츠 시작 */}
                         
                     <div className={style.lectureList}> 
-
-                                            <div className={style.lectureBox} key={"na"}>
+                        <div className={style.lectureBox} key={"na"}>
                             <div className="lectureImage">
                                 <Link to={ "/lecture/1"}>
                                    <img src={require('../resources/img/lecture/section1/section1_1.png')} className={style.lectureImage} />
@@ -212,9 +211,29 @@ export default class lecture extends Component {
                                 <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div className={style.lectureList}> 
+                    {this.state.list!=[]?this.state.list.map((lecture, i) => {
+                        let url = "/room#"+lecture._id;
+                        return (<div style={{display:'flex'}}>
+                            <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
+                                <div className="lectureImage">
+                                    <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
+                                </div>
+                                <div className={style.lectureName}>{lecture.title}</div>
+                                <div className={style.lectureInfo}>
+                                    <span>{lecture.name}</span> / <span>{lecture.price}</span>
+                                </div>
+                                <div className={style.lectureInfo}>
+                                    <span>{lecture.schedule}</span>
+                                </div>
+                                </div>
+                            {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}
+                        </div>);
+                    }):null}
+                    </div>
 
-                        
-                    </div>  {/* lecture List 끝 */}
                     <div className={style.plusButton}></div>
 
                 
