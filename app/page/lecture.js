@@ -27,7 +27,7 @@ export default class lecture extends Component {
         const cursor =this;
         service.lectureList().then(function (res) {
             cursor.setState({list:res.data});
-            document.querySelector("."+style.bannerWrapper).style.background="url('"+cursor.state.list[0].img+"')";
+            document.querySelector("."+style.bannerWrapper).style.background="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('"+cursor.state.list[0].img+"')";
             document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
             document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
             document.querySelectorAll("."+style.image+" img").forEach(function(e,i){
@@ -57,7 +57,7 @@ export default class lecture extends Component {
     }
     changeBanner1(e){
         this.setState({cursor:0});
-        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[0].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.background="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('"+this.state.list[0].img+"')";
         document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
         document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
         document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
@@ -74,7 +74,7 @@ export default class lecture extends Component {
     }
     changeBanner2(e){
         this.setState({cursor:1});
-        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[1].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.background="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('"+this.state.list[1].img+"')";
         document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
         document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
         document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
@@ -94,7 +94,7 @@ export default class lecture extends Component {
     }
     changeBanner3(e){
         this.setState({cursor:2});
-        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[2].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.background="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('"+this.state.list[2].img+"')";
         document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
         document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
         document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
@@ -111,7 +111,7 @@ export default class lecture extends Component {
     }
     changeBanner4(e){
         this.setState({cursor:3});
-        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[3].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.background="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('"+this.state.list[3].img+"')";
         document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
         document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
         document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
@@ -128,7 +128,7 @@ export default class lecture extends Component {
     }
     changeBanner5(e){
         this.setState({cursor:4});
-        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[4].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.background="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('"+this.state.list[4].img+"')";
         document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
         document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
         document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
