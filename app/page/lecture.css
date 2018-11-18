@@ -359,7 +359,7 @@
 .lectureWrapper .lectureList{
     width:100%;
     display: flex;
-
+    flex-wrap : wrap;
     overflow: hidden;
 }
 
@@ -367,7 +367,7 @@
     /* 강의 박스 한개 */
     position: relative;
     margin: 24px 0px 5px;
-    width: 203px;
+    width: 200px;
     height:220px;
     background-color:white;
     border-bottom:2px solid #efefef91;

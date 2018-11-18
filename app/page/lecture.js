@@ -156,67 +156,12 @@ export default class lecture extends Component {
 
 
                     {/* 강의 컨텐츠 시작 */}
-                        
-                    <div className={style.lectureList}> 
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/section1_1.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-                        
-                        <div className={style.verticalBar}></div>
-
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/section1_2.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/section1_3.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-
-                        <div className={style.verticalBar}></div>
-                        
-                        <div className={style.lectureBox} key={"na"}>
-                            <div className="lectureImage">
-                                <Link to={ "/lecture/1"}>
-                                   <img src={require('../resources/img/lecture/section1/section1_4.png')} className={style.lectureImage} />
-                                </Link> 
-                            </div>
-                            <div className={style.lectureName}>자바스크립트로 웹 테트리스 만들기</div>
-                            <div className={style.lectureInfo}>
-                                <span>velopert</span> / <span>월~ 금 3시</span> / <span>300,000원</span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div className={style.lectureList}> 
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
                         let url = "/lecture/"+lecture._id;
-                        return (<div style={{display:'flex'}}>
+                        return (
+                        <div style={{display:'flex'}}>
                             <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
                                 <div className="lectureImage">
                                     <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
@@ -229,7 +174,7 @@ export default class lecture extends Component {
                                     <span>{lecture.schedule}</span>
                                 </div>
                                 </div>
-                            {i==this.state.list.length-1?null:<div className={style.verticalBar}></div>}
+                            {i%4==3?null:<div className={style.verticalBar}></div>}
                         </div>);
                     }):null}
                     </div>
