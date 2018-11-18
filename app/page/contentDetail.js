@@ -9,7 +9,7 @@ export default class content extends Component{
         return(
             <div className={style.wrap}>
 
-                <div className={style["wrapper"]}>
+                <div className={[style["wrapper"],style["bg-banner--opacity"]].join(" ")}>
                     <div className={style["wrapper__section"]}>
                 
                         <div className={[style["flex"], style["flex--content-detail-title"]].join(" ")} >
