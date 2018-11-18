@@ -170,36 +170,36 @@ export default class lecture extends Component {
                                 <ul className={style.imgList}>
                                     <li className={style.imgListItem} onClick={this.changeBanner1}>
                                         <div className={[style.image, style.selected].join(' ')}>
-                                            {/* <img src={this.state.list[0].img} alt=""/> */}
-                                            <img src={require('../resources/img/lecture/banner/top/top1.png')} />
+                                            <img src={this.state.list[0].img} alt=""/>
+                                            {/* <img src={require('../resources/img/lecture/banner/top/top1.png')} /> */}
                                         </div>
                                         <p>추천 과외 No.1</p>
                                     </li>
                                     <li className={style.imgListItem} onClick={this.changeBanner2}>
                                         <div className={style.image}>
-                                            {/* <img src={this.state.list[1].img} alt=""/> */}
-                                            <img src={require('../resources/img/lecture/banner/top/top2.png')} />
+                                            <img src={this.state.list[1].img} alt=""/>
+                                            {/* <img src={require('../resources/img/lecture/banner/top/top2.png')} /> */}
                                         </div>
                                         <p>추천 과외 No.2</p>
                                     </li>
                                     <li className={style.imgListItem} onClick={this.changeBanner3}>
                                         <div className={style.image}>
-                                            {/* <img src={this.state.list[2].img} alt=""/> */}
-                                            <img src={require('../resources/img/lecture/banner/top/top3.png')} />
+                                            <img src={this.state.list[2].img} alt=""/>
+                                            {/* <img src={require('../resources/img/lecture/banner/top/top3.png')} /> */}
                                         </div>
                                         <p>추천 과외 No.3</p>
                                     </li>
                                     <li className={style.imgListItem} onClick={this.changeBanner4}>
                                         <div className={style.image}>
-                                            {/* <img src={this.state.list[3].img} alt=""/> */}
-                                            <img src={require('../resources/img/lecture/banner/top/top4.png')} />
+                                            <img src={this.state.list[3].img} alt=""/>
+                                            {/* <img src={require('../resources/img/lecture/banner/top/top4.png')} /> */}
                                         </div>
                                         <p>추천 과외 No.4</p>
                                     </li>
                                     <li className={style.imgListItem} onClick={this.changeBanner5}>
                                         <div className={style.image}>
-                                            {/* <img src={this.state.list[4].img} alt=""/> */}
-                                            <img src={require('../resources/img/lecture/banner/top/top5.png')} />
+                                            <img src={this.state.list[4].img} alt=""/>
+                                            {/* <img src={require('../resources/img/lecture/banner/top/top5.png')} /> */}
                                         </div>
                                         <p>추천 과외 No.5</p>
                                     </li>
