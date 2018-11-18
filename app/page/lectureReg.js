@@ -88,7 +88,7 @@ export default class lectureReg extends Component {
                 $('#image_section').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.target.files[0]);
-            this.setState({selectedFile: event.target.files[0]})
+            this.setState({selectedFile: input.target.files[0]})
         }
     }
     numberWithCommas(x) {
