@@ -8,21 +8,136 @@ import * as cookie from '../util/cookie';
 export default class lecture extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLogin:cookie.getCookie('user'), type:'', list:[]};
+        this.state = {isLogin:cookie.getCookie('user'), type:'', list:[], cursor:0};
         const curosr = this;
         service.getType().then(function (res) {
             curosr.setState({ type: res.data });
         }).catch(function (error) {
             alert('error massage : '+error);
         });
+        this.changeBanner1 = this.changeBanner1.bind(this);
+        this.changeBanner2 = this.changeBanner2.bind(this);
+        this.changeBanner3 = this.changeBanner3.bind(this);
+        this.changeBanner4 = this.changeBanner4.bind(this);
+        this.changeBanner5 = this.changeBanner5.bind(this);
+        this.leftClick = this.leftClick.bind(this);
+        this.rightClick = this.rightClick.bind(this);
     }
    componentDidMount(){
-        const curosr =this;
+        const cursor =this;
         service.lectureList().then(function (res) {
-            curosr.setState({list:res.data});
-            console.log(res.data);
+            cursor.setState({list:res.data});
+            document.querySelector("."+style.bannerWrapper).style.background="url('"+cursor.state.list[0].img+"')";
+            document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
+            document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
         }).catch(function (error) {
             alert('error massage : '+error);
+        });
+    }
+    leftClick(e){
+        let cur=this.state.cursor;
+        let tmp=cur-1<0?4:cur-1;
+        if(tmp==0) this.changeBanner1.call();
+        else if(tmp==1) this.changeBanner2.call();
+        else if(tmp==2) this.changeBanner3.call();
+        else if(tmp==3) this.changeBanner4.call();
+        else if(tmp==4) this.changeBanner5.call();
+    }
+    rightClick(e){
+        let cur=this.state.cursor;
+        let tmp=cur+1>4?0:cur+1;
+        if(tmp==0) this.changeBanner1.call();
+        else if(tmp==1) this.changeBanner2.call();
+        else if(tmp==2) this.changeBanner3.call();
+        else if(tmp==3) this.changeBanner4.call();
+        else if(tmp==4) this.changeBanner5.call();
+    }
+    changeBanner1(e){
+        this.setState({cursor:0});
+        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[0].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
+        document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
+        document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
+            if(i==0) e.setAttribute("class",style.selected);
+            else e.removeAttribute('class');
+        });
+        document.querySelectorAll("."+style.imgListItem+" div").forEach(function(e, i){
+            if(i==0) e.setAttribute("class", [style.image, style.selected].join(' '));
+            else {
+                e.removeAttribute('class');
+                e.setAttribute("class", style.image);
+            }
+        });
+    }
+    changeBanner2(e){
+        this.setState({cursor:1});
+        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[1].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
+        document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
+        document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
+            if(i==1) e.setAttribute("class",style.selected);
+            else e.removeAttribute('class');
+        });
+        document.querySelectorAll("."+style.imgListItem+" div").forEach(function(e, i){
+            if(i==1) {
+                e.removeAttribute('class');
+                e.setAttribute("class", [style.image, style.selected].join(' '));
+            }
+            else {
+                e.removeAttribute('class');
+                e.setAttribute("class", style.image);
+            }
+        });
+    }
+    changeBanner3(e){
+        this.setState({cursor:2});
+        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[2].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
+        document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
+        document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
+            if(i==2) e.setAttribute("class",style.selected);
+            else e.removeAttribute('class');
+        });
+        document.querySelectorAll("."+style.imgListItem+" div").forEach(function(e, i){
+            if(i==2) e.setAttribute("class", [style.image, style.selected].join(' '));
+            else {
+                e.removeAttribute('class');
+                e.setAttribute("class", style.image);
+            }
+        });
+    }
+    changeBanner4(e){
+        this.setState({cursor:3});
+        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[3].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
+        document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
+        document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
+            if(i==3) e.setAttribute("class",style.selected);
+            else e.removeAttribute('class');
+        });
+        document.querySelectorAll("."+style.imgListItem+" div").forEach(function(e, i){
+            if(i==3) e.setAttribute("class", [style.image, style.selected].join(' '));
+            else {
+                e.removeAttribute('class');
+                e.setAttribute("class", style.image);
+            }
+        });
+    }
+    changeBanner5(e){
+        this.setState({cursor:4});
+        document.querySelector("."+style.bannerWrapper).style.background="url('"+this.state.list[4].img+"')";
+        document.querySelector("."+style.bannerWrapper).style.backgroundSize="cover";
+        document.querySelector("."+style.bannerWrapper).style.backgroundPosition="center";
+        document.querySelectorAll("."+style.dotList+" li").forEach(function(e, i){
+            if(i==4) e.setAttribute("class",style.selected);
+            else e.removeAttribute('class');
+        });
+        document.querySelectorAll("."+style.imgListItem+" div").forEach(function(e, i){
+            if(i==4) e.setAttribute("class", [style.image, style.selected].join(' '));
+            else {
+                e.removeAttribute('class');
+                e.setAttribute("class", style.image);
+            }
         });
     }
 
@@ -35,7 +150,7 @@ export default class lecture extends Component {
                 <div className={style.bannerWrapper}>
 
                     <div className={style.left} >
-                        <div className={style.button}></div>
+                        <div className={style.button} onClick={this.leftClick}></div>
                     </div>
                     
                     {/* 여기부터 배너의 중간 컨텐츠들 */}
@@ -53,35 +168,40 @@ export default class lecture extends Component {
                                 </ul>
                                 
                                 <ul className={style.imgList}>
-                                    <li className={style.imgListItem}>
+                                    <li className={style.imgListItem} onClick={this.changeBanner1}>
                                         <div className={[style.image, style.selected].join(' ')}>
-                                            <img src={require('../resources/img/lecture/banner/top/top1.png')} alt=""/>
+                                            {/* <img src={this.state.list[0].img} alt=""/> */}
+                                            <img src={require('../resources/img/lecture/banner/top/top1.png')} />
                                         </div>
-                                        <p>공부가 땡긴다</p>
+                                        <p>추천 과외 No.1</p>
                                     </li>
-                                    <li className={style.imgListItem}>
+                                    <li className={style.imgListItem} onClick={this.changeBanner2}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/top2.png')} alt=""/>
+                                            {/* <img src={this.state.list[1].img} alt=""/> */}
+                                            <img src={require('../resources/img/lecture/banner/top/top2.png')} />
                                         </div>
-                                        <p>공부가 땡긴다</p>
+                                        <p>추천 과외 No.2</p>
                                     </li>
-                                    <li className={style.imgListItem}>
+                                    <li className={style.imgListItem} onClick={this.changeBanner3}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/top3.png')} alt=""/>
+                                            {/* <img src={this.state.list[2].img} alt=""/> */}
+                                            <img src={require('../resources/img/lecture/banner/top/top3.png')} />
                                         </div>
-                                        <p>공부가 땡긴다</p>
+                                        <p>추천 과외 No.3</p>
                                     </li>
-                                    <li className={style.imgListItem}>
+                                    <li className={style.imgListItem} onClick={this.changeBanner4}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/top4.png')} alt=""/>
+                                            {/* <img src={this.state.list[3].img} alt=""/> */}
+                                            <img src={require('../resources/img/lecture/banner/top/top4.png')} />
                                         </div>
-                                        <p>공부가 땡긴다</p>
+                                        <p>추천 과외 No.4</p>
                                     </li>
-                                    <li className={style.imgListItem}>
+                                    <li className={style.imgListItem} onClick={this.changeBanner5}>
                                         <div className={style.image}>
-                                            <img src={require('../resources/img/lecture/banner/top/top5.png')} alt=""/>
+                                            {/* <img src={this.state.list[4].img} alt=""/> */}
+                                            <img src={require('../resources/img/lecture/banner/top/top5.png')} />
                                         </div>
-                                        <p>공부가 땡긴다</p>
+                                        <p>추천 과외 No.5</p>
                                     </li>
                                 </ul>
 
