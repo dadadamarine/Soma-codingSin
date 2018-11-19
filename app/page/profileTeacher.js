@@ -7,7 +7,7 @@ import style from './profileTeacher.css';
 export default class profileTeacher extends Component {
     constructor(props) {
         super(props);
-        this.state = {oneline:'', project:'', history:'', stack:'', banner:'', selectedFile:null};
+        this.state = {oneline:'', project:'', history:'', stack:'', selectedFile:null};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.readURL = this.readURL.bind(this);
         this.inputONELINE = this.inputONELINE.bind(this);
@@ -16,7 +16,8 @@ export default class profileTeacher extends Component {
         this.inputHISTORY = this.inputHISTORY.bind(this);
         let cursor =this;
         service.getUser().then(function (res) {
-            cursor.setState({oneline:res.data.oneline, project:res.data.project, history:res.data.history, stack:res.data.stack, banner:res.data.banner});
+            cursor.setState({oneline:res.data.oneline, project:res.data.project, history:res.data.history, stack:res.data.stack});
+            if(res.data.banner!=null) document.querySelector("."+lectureReginfoImg).setAttribute("src", res.data.banner);
         });
     }
     handleSubmit(event) {
@@ -62,7 +63,7 @@ export default class profileTeacher extends Component {
                 <div className={style.lectureBox}>
                 <div className={style.lectureLeft}>
                     <div className={style.lectureRegTitle}><Link to="/profile">○ 나의정보</Link></div>
-                    { this.state.type=="강사" ?<div className={style.lectureRegTitle}><Link to="/profileTeacher">○ 강사소개</Link></div>:null}
+                    <div className={style.lectureRegTitle}><Link to="/profileTeacher">○ 강사소개</Link></div>
                 </div>
                 <div className={style.lectureRight}>
                 <div className={style["signup-context-section"]}>

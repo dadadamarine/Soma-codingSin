@@ -7,7 +7,7 @@ import style from './profile.css';
 export default class profile extends Component {
     constructor(props) {
         super(props);
-        this.state = {id:'', pw:'', pw2:'', name:'', email:'', phone:'', type:'', img:require("../resources/img/profile.png"), selectedFile:null};
+        this.state = {id:'', pw:'', pw2:'', name:'', email:'', phone:'', type:'', selectedFile:null};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.readURL = this.readURL.bind(this);
         this.inputPW = this.inputPW.bind(this);
@@ -15,7 +15,8 @@ export default class profile extends Component {
         this.inputPhone = this.inputPhone.bind(this);
         let cursor =this;
         service.getUser().then(function (res) {
-            cursor.setState({id:res.data.id, name:res.data.name, email:res.data.email, phone:res.data.phone, type:res.data.type, img:res.data.img});
+            cursor.setState({id:res.data.id, name:res.data.name, email:res.data.email, phone:res.data.phone, type:res.data.type});
+            if(res.data.img!=null) document.querySelector("."+lectureReginfoImg).setAttribute("src", res.data.img);
         });
     }
     handleSubmit(event) {
@@ -65,9 +66,9 @@ export default class profile extends Component {
                 <div className={style.lectureRight}>
                 <div className={style["signup-context-section"]}>
                 <div className={style.lectureReginfoImgWrapper}>
-                    <img className={style.lectureReginfoImg} id="image_section" />
+                    <img className={style.lectureReginfoImg} id="image_section" src={require("../resources/img/profile.png")} />
                     </div>
-                    <form className={style.lectureReginfoImgSelect}><input type="file" name="imgFile" id="myFile" onChange={this.readURL} src={this.state.img}/></form>
+                    <form className={style.lectureReginfoImgSelect}><input type="file" name="imgFile" id="myFile" onChange={this.readURL}/></form>
                     <div className={style["signup-context-section__wrapper"]}>
                         <div className={style["signup-context-section__wrapper__section"]}>
                             <div className={style["input-box"]}>
