@@ -18,6 +18,7 @@
 .lectureRegTitle{
     font-size: 30px;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .lectureReginfo{
@@ -26,9 +27,11 @@
 }
 
 .lectureReginfoImgWrapper{
-    width: 270px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
     border: solid 1px gray;
+    margin: 0 auto;
 }
 
 .lectureLeft{
@@ -38,20 +41,22 @@
 
 .lectureRight{
     float: right;
-    width: 750px;
-    margin-left:30px;
+    width: 800px;
+    padding-left:80px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    border-left: 3px #fdd059 solid;
 }
 
 .lectureReginfoImgSelect{
     cursor: pointer;
-    margin-top: 10px;
-    width: 270px !important;
+    width: 200px;
+    margin: 20px auto;
 }
 
 .input-box{
     height:65px;
     display: flex;
-    margin-top: 10px;
 }
 .input-box__title{
     flex-basis: 113px;
@@ -88,6 +93,7 @@
     height: 200px;
     border: 1px solid rgba(34,36,38,.15);
     padding: .67857143em 1em;
+    border-radius: .28571429rem;
     color:rgba(0,0,0,.87);
     resize: none;
 }
@@ -134,9 +140,12 @@
 }
 .submit{
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .lectureReginfoImg{
-    width: 270px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin: 0 auto;
 }

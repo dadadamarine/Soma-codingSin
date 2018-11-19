@@ -25,7 +25,8 @@ import TutorActivity from './page/tutorActivity';
 import TutorLecture from './page/tutorLecture';
 import Notice from './page/notice';
 import NoticeWrite from './page/noticeWrite';        
-
+import Profile from './page/profile';
+import ProfileTeacher from './page/profileTeacher';
 
 render(<Router>
     <div>    
@@ -52,6 +53,8 @@ render(<Router>
             <Route path="/room" component={Room} />
             <Route path="/myLecture" component={MyLecture} />
             <Route path="/admin" component={Admin} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/profileTeacher" component={ProfileTeacher} />
             <Route missing component={NoMatch} />
         </Switch>
         {location.pathname.startsWith("/room")?null:<Footer/>} 

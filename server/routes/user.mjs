@@ -3,6 +3,10 @@ import mongodb from 'mongodb';
 import CryptoJS from 'crypto-js';
 import dotenv from 'dotenv'
 import nodemailer from 'nodemailer';
+import path from 'path';
+import AWS from 'aws-sdk';
+import multer from 'multer';
+import multerS3 from 'multer-s3';
 
 dotenv.config();
 const router = express.Router();
@@ -19,7 +23,82 @@ const smtpTransport = nodemailer.createTransport({
         pass: mailPW
     }
 });
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
+AWS.config.loadFromPath(__dirname + "/awsconfig.json");
+let s3 = new AWS.S3();
+let upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: "data.codingsin.com",
+        key: function (req, file, cb) {
+             let extension = path.extname(file.originalname);
+             cb(null, Date.now().toString() + extension)
+        },
+        acl: 'public-read-write',
+    })
+})
+
+router.post('/editProfileTeacher', upload.single("imgFile"), function (req, res, next) {
+    const id=req.session.user_id;
+    const oneline=String(req.body.oneline);
+    const project=String(req.body.project);
+    const history=String(req.body.history);
+    const stack=String(req.body.stack);
+    const banner=req.file.location;
+
+    MongoClient.connect(dbHost, function (error, client) {
+        if (error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).update({id:id}, {$set:{oneline:oneline,project:project,history:history,stack:stack,banner:banner}}, function (err, doc) {
+                if (err) {
+                    console.log(err);
+                    res.send("fail");
+                }
+                res.send("ok");
+            });
+            client.close();
+        }
+    });
+});
+
+router.post('/editProfile', upload.single("imgFile"), function (req, res, next) {
+    const id=req.session.user_id;
+    const pw=String(req.body.pw);
+    const phone=String(req.body.phone);
+    const img=req.file.location;
+
+    MongoClient.connect(dbHost, function (error, client) {
+        if (error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).update({id:id}, {$set:{pw:pw,phone:phone,img:img}}, function (err, doc) {
+                if (err) {
+                    console.log(err);
+                    res.send("fail");
+                }
+                res.send("ok");
+            });
+            client.close();
+        }
+    });
+});
+
+router.post('/getUser', function(req, res){
+    const id=req.session.user_id;
+    MongoClient.connect(dbHost, function(error, client) {
+        if(error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).find({id:id}).toArray(function(err, doc){
+                if(err) console.log(err);
+                if(doc!=null) res.send(doc[0]);
+            });
+            client.close();
+        }
+    });
+});
 
 router.post('/login', function(req, res){
     const u_id = String(req.body.id);
