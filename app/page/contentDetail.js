@@ -9,7 +9,7 @@ export default class content extends Component{
         return(
             <div className={style.wrap}>
 
-                <div className={style["wrapper"]}>
+                <div className={[style["wrapper"],style["bg-banner--opacity"]].join(" ")}>
                     <div className={style["wrapper__section"]}>
                 
                         <div className={[style["flex"], style["flex--content-detail-title"]].join(" ")} >
@@ -18,7 +18,7 @@ export default class content extends Component{
                             </div>
 
                             <div className={style['context']}>
-                                <p className={style["title--big"]}> 제목 입력 부분입니다. </p>
+                                <h2 className={style["title--big"]}> 제목 입력 부분입니다. </h2>
                                 <p className={style["title--middle"]}>컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명 컨텐츠명컨텐츠명 컨텐츠명</p>
                                 <div className={style["tag-list"]}>
                                     <div className={style["tag-button"]}>WEB</div>
@@ -51,7 +51,9 @@ export default class content extends Component{
                             <div className={style["content-play"]}></div>
                             <div className={style["content-info"]}>
                                 <div className={style["content-info__profile"]}>
-                                    <div></div>
+                                    <div>
+                                        <img src="" alt=""/>
+                                    </div>
                                 </div>
                                 <div className={style["inline-block"]}>
                                     <div className={style["float-left"]}>
@@ -62,7 +64,11 @@ export default class content extends Component{
                                     
                                     <div className={style["float-right"]}>
                                         <div className={style["content-info__source-button"]}> 소스보기</div>
-                                        <p className={style["content-info__etc"]}>눈 별 댓글</p>
+                                        <p className={style["content-info__etc"]}>
+                                            <span className={[style["icon"],style["icon--eye"]].join(" ")}>123123</span>
+                                            <span className={[style["icon"],style["icon--star"]].join(" ")}>232</span>
+                                            <span className={[style["icon"],style["icon--message"]].join(" ")}>23</span>
+                                        </p>
                                     </div>
                                     
                                 </div>

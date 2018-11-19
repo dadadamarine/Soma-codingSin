@@ -58,29 +58,12 @@ export default class content extends Component{
                     <div className={style["wrapper__section"]}>
                 
                         <div className={[style["flex"],style["recommand-content-margin"]].join(" ")}>
-                            <a href="/content/1">
-                                <div className={style['content-box']}>
-                                    <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
-                                        <img src="" alt=""/>
-                                    </div>
-                                    <div className={style["flex"]}>
-                                        <div className={style["content-box__profile"]}>
-                                            <img src="" alt=""/>
-                                        </div>
-                                        <div className={style["content-box__info"]}>
-                                            <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>
-                                                별별별
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-
+                            
                             <div className={style['content-box']}>
                                 <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
-                                    <img src="" alt=""/>
+                                    <a href="/content/1">
+                                        <img src={require("../resources/img/content/content_blue.png")} alt=""/>
+                                    </a>
                                 </div>
                                 <div className={style["flex"]}>
                                     <div className={style["content-box__profile"]}>
@@ -88,14 +71,33 @@ export default class content extends Component{
                                     </div>
                                     <div className={style["content-box__info"]}>
                                         <div className={style["title--middle"]}>컨텐츠명</div>
-                                        <div className={style["stars"]}>별별별</div>
+                                        <div className={[style["star"], style["star5"]].join(" ")}>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+
+                            <div className={style['content-box']}>
+                                <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
+                                    <img src={require("../resources/img/content/content_blue.png")} alt=""/>
+                                </div>
+                                <div className={style["flex"]}>
+                                    <div className={style["content-box__profile"]}>
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className={style["content-box__info"]}>
+                                        <div className={style["title--middle"]}>컨텐츠명</div>
+                                        <div className={[style["star"], style["star4"]].join(" ")}></div>
                                     </div>
                                 </div>
                             </div>
 
                             <div className={style['content-box']}>
                                 <div className={[style["content-box__img"], style["content-box__img--blue"]].join(" ")}>
-                                    <img src="" alt=""/>
+                                    <img src={require("../resources/img/content/content_blue.png")} alt=""/>
                                 </div>
                                 <div className={style["flex"]}>
                                     <div className={style["content-box__profile"]}>
@@ -103,7 +105,7 @@ export default class content extends Component{
                                     </div>
                                     <div className={style["content-box__info"]}>
                                         <div className={style["title--middle"]}>컨텐츠명</div>
-                                        <div className={style["stars"]}>별별별</div>
+                                        <div className={[style["star"], style["star4"]].join(" ")}></div>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +150,7 @@ export default class content extends Component{
                                         </div>
                                         <div className={style["content-box__info"]}>
                                             <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>별별별</div>
+                                            <div className={[style["star"], style["star4"]].join(" ")}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +165,7 @@ export default class content extends Component{
                                         </div>
                                         <div className={style["content-box__info"]}>
                                             <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>별별별</div>
+                                            <div className={[style["star"], style["star4"]].join(" ")}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +180,7 @@ export default class content extends Component{
                                         </div>
                                         <div className={style["content-box__info"]}>
                                             <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>별별별</div>
+                                            <div className={[style["star"], style["star5"]].join(" ")}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +195,7 @@ export default class content extends Component{
                                         </div>
                                         <div className={style["content-box__info"]}>
                                             <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>별별별</div>
+                                            <div className={[style["star"], style["star3"]].join(" ")}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -208,7 +210,7 @@ export default class content extends Component{
                                         </div>
                                         <div className={style["content-box__info"]}>
                                             <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>별별별</div>
+                                            <div className={[style["star"], style["star4"]].join(" ")}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -223,7 +225,7 @@ export default class content extends Component{
                                         </div>
                                         <div className={style["content-box__info"]}>
                                             <div className={style["title--middle"]}>컨텐츠명</div>
-                                            <div className={style["stars"]}>별별별</div>
+                                            <div className={[style["star"], style["star5"]].join(" ")}></div>
                                         </div>
                                     </div>
                                 </div>

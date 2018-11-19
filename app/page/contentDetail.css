@@ -3,12 +3,18 @@
     padding:0;
     letter-spacing: -2px;
     word-spacing: 4px;
+    font-family:'noto_sans', 'Noto Sans', 'Noto Sans KR', sans-serif, "나눔고딕", 'Nanum Gothic', dotum,'돋움',gulim,'굴림', Tahoma;
 }
 .wrapper{
     margin:0 ;
     padding:0;
     width:100%;
     height:100%;
+}
+.bg-banner--opacity{
+    background:url("../resources/img/content/banner_opacity.png") no-repeat;
+    background-position: top;
+    background-size:contain;
 }
 
 .wrapper__section{
@@ -19,7 +25,7 @@
 }
 
 .half-beige{
-    background:beige;
+    background:linear-gradient(white 38%, #edeee9 38.3%);
 }
 .title{
     font-size:4.0rem;
@@ -43,7 +49,7 @@
 }
 
 .flex--content-detail-title{
-    margin:80px 0 0 ;
+    padding:140px 0 0 ;
 }
 
 
@@ -51,13 +57,18 @@
     width:245px;
     height:310px; 
     margin-bottom: 15px;
-
+    background: url("../resources/img/content/content_orange.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #edaa25;
     background: #edaa25;
     border-radius: 10px;
 }
+
 .content-box__img--blue{
-    background-color:#8aced9;
+    background: url("../resources/img/content/content_blue.png") no-repeat;
 }
+
 .context{ 
     width:715px;
     padding-top:15px;
@@ -195,8 +206,12 @@
 .content-play{
     width:100%;
     height:600px;
-    background:black;
-
+     
+    background: url("../resources/img/content/play-button.png") no-repeat;
+    background-color:black;  
+    background-position: center;
+    background-size: 100px;
+    cursor: pointer;
     margin:0;
     padding: 0;
 }
@@ -207,6 +222,7 @@
     margin-bottom: 90px;
     background:white;
     border:2px solid #dddddd;
+    display: flex;
     
 }
 .content-info__profile{ 
@@ -217,28 +233,46 @@
 .content-info__profile div{
     height:70px;
     width:70px;
-    background:red;
-    border-radius: 50%; 
+    background:url("../resources/img/content/profile_blue.png") no-repeat;
+    background-size: 70px 70px;
+    background-position: center;
+    border-radius:70%; 
     margin:50px 15px;
 }
 .content-info__subject{
-    color:gray;
+    color:#91918f;
+    
+    font-size:1.45rem;
+    
+    padding-top:25px;
+    margin-bottom: 7px;
 }
 .content-info__subject::before{
     content:" ";
     display: inline-block;
-    width:20px;
-    height:20px;
-    background:black;
+    padding-right:30px;
+    width:35px;
+    height: 16px;
+    background:url("../resources/img/content/arrow_hash.png") no-repeat;
+    background-position: left;
+    background-size: contain;
 }
 .content-info__title{
-    color:black;
+    color:#313131;
+    font-size:2.5rem;
+    font-family:"나눔고딕", 'Nanum Gothic', dotum,'돋움',gulim,'굴림', Tahoma;
+    font-weight: 600;
+    margin:7px 0;
 }
 .content-info__maker{
     margin-bottom: 30px;
+    font-size:1.4rem;
+    color:#62b1d8;
+    letter-spacing: -1;
 }
 .content-info__maker::before{
     content:"from ";
+    color:#717171;
 }
 .inline-block{
     display: inline-block;
@@ -250,16 +284,66 @@
 }
 .float-right{
     float:right;
+    position: relative;
+    overflow: hidden;
+    width:400px;
+    height:180px;
 }
 .content-info__source-button{
-        position: relative;
+        position: absolute;
+        right:0;
         height:43px;
         width:95px;
-        margin:23px 0 50px;
+        margin:30px 50px 50px;
         background:#df5845;
         border-radius: 8px;
         font-size: 1.5rem;
         font-weight: bold;
         color:white;
+        
+        text-align: center;
+        padding-top:12px;
     
+}
+.content-info__etc{
+    position: absolute;
+    top:120px;
+    right:0;
+    margin:0 50px 0 0;
+
+    
+}
+.icon{
+    font-size:1.2rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding-left:10px;
+    color: #919191;
+}
+.icon--eye::before{
+    content: " ";
+    display: inline-block;
+    width:30px;
+    height:14px;
+    background:url("../resources/img/content/eye.png") no-repeat;
+    background-size: contain;
+    background-position:center;
+}
+.icon--star::before{
+    content: " ";
+    display: inline-block;
+    width:30px;
+    height:17px;
+    background:url("../resources/img/content/star.png") no-repeat;
+    background-size: contain;
+    background-position:center;
+}
+.icon--message::before{
+    content: " ";
+    display: inline-block;
+    width:30px;
+    height:16px;
+    background:url("../resources/img/content/message.png") no-repeat;
+    background-size: contain;
+    background-position:center;
 }

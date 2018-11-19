@@ -16,6 +16,9 @@
 }
 .bg-blue{
     background-color:#468a97;
+    background:url("../resources/img/content/bg_content.png") no-repeat;
+    background-size:100% 100%;
+    background-position: center;
 }
 .banner{
     display: block;
@@ -136,34 +139,60 @@
     width:245px;
     height:310px; 
     margin-bottom: 15px;
-
-    background: #edaa25;
+    background: url("../resources/img/content/content_orange.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #edaa25;
     border-radius: 10px;
 }
 .content-box__img--blue{
-    background-color:#8aced9;
-}
+    background: url("../resources/img/content/content_blue.png") no-repeat;
 
+}
 .content-box__profile{
     display: inline-block;
     height:55px;
     width:50px;
-    background:black;
+    background:url("../resources/img/content/profile_blue.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 2px;
 }
 
 .content-box__info{
     flex-grow: 1;
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .title--middle{
-    margin: 10px 1px;
+    margin: 5px 1px 0;
+    padding-left:8px;
     color:#939391;
     font-weight: bold;
     font-size:1.4rem;
 }
-
+.star{
+    height:30px;
+    width:185px;
+    background-size: contain;
+    background-position: left;
+}
+.star1{
+    background:url("../resources/img/content/star/star1.png") no-repeat;
+}
+.star2{
+    background:url("../resources/img/content/star/star2.png") no-repeat;
+}
+.star3{
+    background:url("../resources/img/content/star/star3.png") no-repeat;
+}
+.star4{
+    background:url("../resources/img/content/star/star4.png") no-repeat;
+}
+.star5{
+    background:url("../resources/img/content/star/star5.png") no-repeat;
+}
 .title-section{
     overflow: hidden;
     margin-bottom: 55px; 

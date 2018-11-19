@@ -24,7 +24,7 @@ import TutorReview from './page/tutorReview';
 import TutorActivity from './page/tutorActivity';
 import TutorLecture from './page/tutorLecture';
 import Notice from './page/notice';
-        
+import NoticeWrite from './page/noticeWrite';        
 
 
 render(<Router>
@@ -41,6 +41,7 @@ render(<Router>
             <Route exact path="/content/:id" component={ContentDetail}/>
             <Route exact path="/community" component={Community}/>
             <Route exact path="/community/notice" component={Notice}/>
+            <Route exact path="/community/notice/new" component={NoticeWrite}/>
             <Route path="/lectureReg" component={LectureReg} />
             <Route path="/lecture/:id" component={LectureDetail} />
             <Redirect exact from="/tutor/:id" to="/tutor/:id/detail"/>

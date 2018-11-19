@@ -64,6 +64,7 @@ export default class notice extends Component{
                                         <p>2018-11-01</p>
                                     </li>
                                 </ul> 
+                                <a href="./notice/new"><div className={style["button--write"]}>글쓰기</div></a>
                                 <div className={[style["flex--center"], style["height--eight"]].join(" ")}>
                                     <div className={style["page-selector"]}>
                                         <div className={style["page-selector__arrow"]}>≪</div>
