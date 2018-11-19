@@ -7,7 +7,7 @@ export function editProfile(u_img, u_pw, u_phone) {
     formData.append('imgFile', u_img, u_img.name);
     formData.append('pw', hash);
     formData.append('phone', u_phone);
-    return axios.post('/user/editProfile', formData);
+    return axios.post('/reqUser/editProfile', formData);
 }
 export function editProfileTeacher(u_img, u_oneline, u_project, u_history, u_stack) {
     const formData = new FormData();
@@ -16,9 +16,9 @@ export function editProfileTeacher(u_img, u_oneline, u_project, u_history, u_sta
     formData.append('project', u_project);
     formData.append('history', u_history);
     formData.append('stack', u_stack);
-    return axios.post('/user/editProfileTeacher', formData);
+    return axios.post('/reqUser/editProfileTeacher', formData);
 }
 
 export function getUser() {
-    return axios.post('/user/getUser');
+    return axios.post('/reqUser/getUser');
 }
