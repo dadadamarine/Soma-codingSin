@@ -39,6 +39,7 @@ export default class header extends Component {
                     </div>
 
                     <div className={style.subMenuList}>
+                        { this.state.isLogin ? <img className={style.profile} src={require("../resources/img/profile.png")} /> : null}
                         <div className={style.menuItem}>
                             { this.state.isLogin ? <Link to="#" onClick={this.handleLogout}>로그아웃</Link> : <Link to="/login">로그인</Link> }
                         </div>
