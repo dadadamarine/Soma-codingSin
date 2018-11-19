@@ -7,7 +7,7 @@ import style from './profile.css';
 export default class profile extends Component {
     constructor(props) {
         super(props);
-        this.state = {id:'', pw:'', pw2:'', name:'', email:'', phone:'', type:'', img:'', selectedFile:null};
+        this.state = {id:'', pw:'', pw2:'', name:'', email:'', phone:'', type:'', img:require("../resources/img/profile.png"), selectedFile:null};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.readURL = this.readURL.bind(this);
         this.inputPW = this.inputPW.bind(this);
@@ -67,7 +67,7 @@ export default class profile extends Component {
                 <div className={style.lectureReginfoImgWrapper}>
                     <img className={style.lectureReginfoImg} id="image_section" />
                     </div>
-                    <form className={style.lectureReginfoImgSelect}><input type="file" name="imgFile" id="myFile" onChange={this.readURL} src={this.state.img==null?require("../resources/img/profile.png"):this.state.img}/></form>
+                    <form className={style.lectureReginfoImgSelect}><input type="file" name="imgFile" id="myFile" onChange={this.readURL} src={this.state.img}/></form>
                     <div className={style["signup-context-section__wrapper"]}>
                         <div className={style["signup-context-section__wrapper__section"]}>
                             <div className={style["input-box"]}>

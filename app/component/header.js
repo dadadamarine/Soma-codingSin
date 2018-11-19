@@ -8,7 +8,7 @@ import * as cookie from '../util/cookie';
 export default class header extends Component {
     constructor(props) {
         super(props);
-        this.state = {isLogin:cookie.getCookie('user'), img:null};
+        this.state = {isLogin:cookie.getCookie('user'), img:require("../resources/img/profile.png")};
         this.handleLogout = this.handleLogout.bind(this);
         this.goMain = this.goMain.bind(this);
         userService.getUser().then(function (res) {
@@ -43,7 +43,7 @@ export default class header extends Component {
                     </div>
 
                     <div className={style.subMenuList}>
-                        { this.state.isLogin ? <img className={style.profile} src={this.state.img==null?require("../resources/img/profile.png"):this.state.img} /> : null}
+                        { this.state.isLogin ? <Link to="/profile"><img className={style.profile} src={this.state.img} /></Link> : null}
                         <div className={style.menuItem}>
                             { this.state.isLogin ? <Link to="#" onClick={this.handleLogout}>로그아웃</Link> : <Link to="/login">로그인</Link> }
                         </div>
