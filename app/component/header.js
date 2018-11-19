@@ -12,7 +12,7 @@ export default class header extends Component {
         this.handleLogout = this.handleLogout.bind(this);
         this.goMain = this.goMain.bind(this);
         userService.getUser().then(function (res) {
-            if(res.data.img!=null) document.querySelector("."+profile).setAttribute("src", res.data.img);
+            if(res.data.img!=null) document.querySelector("."+style.profile).setAttribute("src", res.data.img);
         });
     }
     handleLogout(event) {

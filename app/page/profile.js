@@ -16,7 +16,7 @@ export default class profile extends Component {
         let cursor =this;
         service.getUser().then(function (res) {
             cursor.setState({id:res.data.id, name:res.data.name, email:res.data.email, phone:res.data.phone, type:res.data.type});
-            if(res.data.img!=null) document.querySelector("."+lectureReginfoImg).setAttribute("src", res.data.img);
+            if(res.data.img!=null) document.querySelector("."+style.lectureReginfoImg).setAttribute("src", res.data.img);
         });
     }
     handleSubmit(event) {

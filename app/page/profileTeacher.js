@@ -17,7 +17,7 @@ export default class profileTeacher extends Component {
         let cursor =this;
         service.getUser().then(function (res) {
             cursor.setState({oneline:res.data.oneline, project:res.data.project, history:res.data.history, stack:res.data.stack});
-            if(res.data.banner!=null) document.querySelector("."+lectureReginfoImg).setAttribute("src", res.data.banner);
+            if(res.data.banner!=null) document.querySelector("."+style.lectureReginfoImg).setAttribute("src", res.data.banner);
         });
     }
     handleSubmit(event) {
