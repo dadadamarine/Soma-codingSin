@@ -23,11 +23,14 @@ export default class lecture extends Component {
         this.leftClick = this.leftClick.bind(this);
         this.rightClick = this.rightClick.bind(this);
 
-        window.setInterval(function(){
+        this.instance = window.setInterval(function(){
             cursor.rightClick.call();
         }, 3000);
     }
-   componentDidMount(){
+    componentWillUnmount(){
+        window.clearInterval(this.instance);
+    }
+    componentDidMount(){
         const cursor =this;
         service.lectureList().then(function (res) {
             cursor.setState({list:res.data});
