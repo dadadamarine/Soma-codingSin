@@ -69,14 +69,14 @@ export default class myLecture extends Component {
                             return (
                             <a href="">
                                 <div className={style['study-box']} key={i}>
-                                    <a href="1222">
+                                    <a href="#">
                                         <div className={style['study-box__fav--active']}></div>
                                     </a>
                                     <div className={style['study-box__counter']}>{lecture.chapter}</div>
                                     <button className={style['study-box__study-button']}><a href={url}>과외방 입장</a></button>
                                     <div className={style['study-box__title']}>{lecture.type==0?"[Javascript] ":"[Python] "}{lecture.title}</div>
                                     <div className={style['study-box__date']}>
-                                        <p>{lecture.schedule}</p>
+                                        <p>{String(lecture.schedule).split(" ")[0]}</p>
                                     </div>
                                 </div>
                             </a>);

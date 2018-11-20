@@ -33,8 +33,18 @@
     display:flex;
     flex-direction: column;
 }
+.profileOneline{
+    font-size:35px;
+    padding: 15px;
+    font-weight: bold;
+    font-style: italic;
+}
 .profileText{
     font-size:20px;
+    padding: 10px;
+}
+.profileDesp{
+    font-size:13px;
     padding: 10px;
 }
 .lectureText{

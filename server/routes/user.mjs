@@ -99,8 +99,21 @@ router.post('/getUser', function(req, res){
         }
     });
 });
-
 router.post('/getTeacher', function(req, res){
+    const id=String(req.body.id);
+    MongoClient.connect(dbHost, function(error, client) {
+        if(error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).find({id:id}).toArray(function(err, doc){
+                if(err) console.log(err);
+                if(doc!=null) res.send(doc[0]);
+            });
+            client.close();
+        }
+    });
+});
+router.post('/getTeachers', function(req, res){
     const id=req.session.user_id;
     MongoClient.connect(dbHost, function(error, client) {
         if(error) console.log(error);
