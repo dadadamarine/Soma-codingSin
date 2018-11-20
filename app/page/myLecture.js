@@ -68,7 +68,7 @@ export default class myLecture extends Component {
                             let url = "/room#"+lecture._id;
                             return (
                             <a href="">
-                                <div className={style['study-box']}>
+                                <div className={style['study-box']} key={i}>
                                     <a href="1222">
                                         <div className={style['study-box__fav--active']}></div>
                                     </a>
