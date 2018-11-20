@@ -158,10 +158,10 @@ export default class lecture extends Component {
         window.scroll(0, this.getOffsetTop(document.getElementById("level1")));
     }
     moveLevel2(e){
-        window.scroll(0, this.getOffsetTop(document.getElementById("level1")));
+        window.scroll(0, this.getOffsetTop(document.getElementById("level2")));
     }
     moveLevel3(e){
-        window.scroll(0, this.getOffsetTop(document.getElementById("level1")));
+        window.scroll(0, this.getOffsetTop(document.getElementById("level3")));
     }
 
     render() {
