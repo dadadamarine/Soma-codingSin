@@ -34,7 +34,7 @@ export default class room extends Component {
 
     const cursor =this;
 
-    userService.getUser.then(function(res){
+    userService.getUser().then(function(res){
         if(res.data.img!=null) document.getElementById("myimg").setAttribute("src",res.data.img);
     }).catch(function (error) {
         alert('error massage : '+error);
