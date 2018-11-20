@@ -25,7 +25,7 @@ export default class lecture extends Component {
 
         this.instance = window.setInterval(function(){
             cursor.rightClick.call();
-        }, 3000);
+        }, 5000);
     }
     componentWillUnmount(){
         window.clearInterval(this.instance);
@@ -216,22 +216,20 @@ export default class lecture extends Component {
                         <div className={style.bottomSection}>
                             <div className={style.title}><p>레벨별 강좌선택</p></div>
                             <div className={style.levelSelectorList}>
-                                <div className={[style.listItem, style.selected].join(' ')}>
+                                <div className={style.listItem}>
+                                </div>
+                                <div className={style.listItem}>
                                     <h3>초급</h3>
-                                    <p>초급강의에 대한 내용을 적는 칸입니다. 두줄 예상</p>
+                                    <p>첫걸음이 반이다! 누구나 시작할 수 있는 초보자 과외</p>
                                 </div>
                                 <div className={style.listItem}>
                                     <h3>중급</h3>
-                                    <p>초급강의에 대한 내용을 적는 칸입니다. 두줄 예상</p>
+                                    <p>이제 조금 더 어려운걸 해볼까? 적당히 어려운 중급 과외</p>
                                 </div>
                                 <div className={style.listItem}>
                                     <h3>고급</h3>
-                                    <p>초급강의에 대한 내용을 적는 칸입니다. 두줄 예상</p>
+                                    <p>당신도 이제 프로그래머! 사고를 바꿔주는 고급 과외</p>
                                 </div>
-                                <div className={style.listItem}>
-                                    <h3>테스트 하러가기<span className={style.rightTag}>></span></h3>
-                                </div>
-                            
                             </div>
                         </div>
                     </div>
@@ -272,16 +270,13 @@ export default class lecture extends Component {
                 
                 
                 <div className={style.lectureWrapper}>
-                <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                    <div className={style.title}>
-                        <div className={style.verticalBar}></div>
-                        <a>신규과외</a>
+                    <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
+                        <div className={style.title}>
+                            <div className={style.verticalBar}></div>
+                            <a>신규과외</a>
+                        </div>
                     </div>
-                </div>
-
-
                     {/* 강의 컨텐츠 시작 */}
-
                     <div className={style.lectureList}> 
                     {this.state.list!=[]?this.state.list.map((lecture, i) => {
                         let url = "/lecture/"+lecture._id;
@@ -296,7 +291,7 @@ export default class lecture extends Component {
                                     <span>{lecture.name}</span> / <span>{lecture.price}</span>
                                 </div>
                                 <div className={style.lectureInfo}>
-                                    <span>{lecture.schedule}</span>
+                                    <span>{String(lecture.schedule).split(" ")[0]}</span>
                                 </div>
                                 </div>
                             {i%4==3?null:<div className={style.verticalBar}></div>}
@@ -304,8 +299,95 @@ export default class lecture extends Component {
                     }):null}
                     </div>
 
-                    <div className={style.plusButton}></div>
+                    {/* <div className={style.plusButton}></div> */}
 
+                    <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
+                        <div className={style.title}>
+                            <div className={style.verticalBar}></div>
+                            <a>초급과외</a>
+                        </div>
+                    </div>
+                    <div className={style.lectureList}> 
+                    {this.state.list!=[]?this.state.list.map((lecture, i) => {
+                        if(lecture.level!=1) return (null);
+                        let url = "/lecture/"+lecture._id;
+                        return (
+                        <div style={{display:'flex'}}>
+                            <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
+                                <div className="lectureImage">
+                                    <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
+                                </div>
+                                <div className={style.lectureName}>{lecture.title}</div>
+                                <div className={style.lectureInfo}>
+                                    <span>{lecture.name}</span> / <span>{lecture.price}</span>
+                                </div>
+                                <div className={style.lectureInfo}>
+                                    <span>{String(lecture.schedule).split(" ")[0]}</span>
+                                </div>
+                                </div>
+                            {i%4==3?null:<div className={style.verticalBar}></div>}
+                        </div>);
+                    }):null}
+                    </div>
+
+                    <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
+                        <div className={style.title}>
+                            <div className={style.verticalBar}></div>
+                            <a>중급과외</a>
+                        </div>
+                    </div>
+                    <div className={style.lectureList}> 
+                    {this.state.list!=[]?this.state.list.map((lecture, i) => {
+                        if(lecture.level!=2) return (null);
+                        let url = "/lecture/"+lecture._id;
+                        return (
+                        <div style={{display:'flex'}}>
+                            <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
+                                <div className="lectureImage">
+                                    <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
+                                </div>
+                                <div className={style.lectureName}>{lecture.title}</div>
+                                <div className={style.lectureInfo}>
+                                    <span>{lecture.name}</span> / <span>{lecture.price}</span>
+                                </div>
+                                <div className={style.lectureInfo}>
+                                    <span>{String(lecture.schedule).split(" ")[0]}</span>
+                                </div>
+                                </div>
+                            {i%4==3?null:<div className={style.verticalBar}></div>}
+                        </div>);
+                    }):null}
+                    </div>
+
+
+                    <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
+                        <div className={style.title}>
+                            <div className={style.verticalBar}></div>
+                            <a>고급과외</a>
+                        </div>
+                    </div>
+                    <div className={style.lectureList}> 
+                    {this.state.list!=[]?this.state.list.map((lecture, i) => {
+                        if(lecture.level!=3) return (null);
+                        let url = "/lecture/"+lecture._id;
+                        return (
+                        <div style={{display:'flex'}}>
+                            <div className={style.lectureBox} key={i} onClick={function(e){location.href=url}}>
+                                <div className="lectureImage">
+                                    <img src={lecture.img==null?require('../resources/img/logo.png'):lecture.img} className={style.lectureImage} />
+                                </div>
+                                <div className={style.lectureName}>{lecture.title}</div>
+                                <div className={style.lectureInfo}>
+                                    <span>{lecture.name}</span> / <span>{lecture.price}</span>
+                                </div>
+                                <div className={style.lectureInfo}>
+                                    <span>{String(lecture.schedule).split(" ")[0]}</span>
+                                </div>
+                                </div>
+                            {i%4==3?null:<div className={style.verticalBar}></div>}
+                        </div>);
+                    }):null}
+                    </div>
                 
                 </div>{/* lecture Wrapper 끝 */}
                 { this.state.type=="강사" ?<Link to="/lectureReg"><div className={style.register}><div className={style.textWrapper}>과외등록</div></div></Link>:null}</div>

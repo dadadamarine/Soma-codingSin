@@ -172,6 +172,8 @@
 .bottomSection .title{
     color:white;
     font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
 }
 
 .bottomSection .levelSelectorList{
@@ -193,42 +195,42 @@
     cursor: pointer;
 }
 .bottomSection .levelSelectorList .listItem:hover{
-    color:orangered;
+    color:white;
 }
 
 
-.bottomSection .levelSelectorList .listItem:nth-child(1){
+.bottomSection .levelSelectorList .listItem:nth-child(2){
+    transition-duration: 1s;
     background:url("../resources/img/lecture/banner/bottom/easy.png") no-repeat;
     background-size:contain;
 }
-.bottomSection .levelSelectorList .listItem:nth-child(1).selected{
+.bottomSection .levelSelectorList .listItem:nth-child(2):hover{
+    transition-duration: 1s;
     background:url("../resources/img/lecture/banner/bottom/easy_hover.png") no-repeat;
     background-size:contain;
 }
 
 
-.bottomSection .levelSelectorList .listItem:nth-child(2){
+.bottomSection .levelSelectorList .listItem:nth-child(3){
+    transition-duration: 1s;
     background:url("../resources/img/lecture/banner/bottom/normal.png") no-repeat;
     background-size:contain;
 }
-.bottomSection .levelSelectorList .listItem:nth-child(2).selected{
+.bottomSection .levelSelectorList .listItem:nth-child(3):hover{
+    transition-duration: 1s;
     background:url("../resources/img/lecture/banner/bottom/normal_hover.png") no-repeat;
     background-size:contain;
 }
 
 
-.bottomSection .levelSelectorList .listItem:nth-child(3){
+.bottomSection .levelSelectorList .listItem:nth-child(4){
+    transition-duration: 1s;
     background:url("../resources/img/lecture/banner/bottom/hard.png") no-repeat;
     background-size:contain;
 }
-.bottomSection .levelSelectorList .listItem:nth-child(3).selected{
+.bottomSection .levelSelectorList .listItem:nth-child(4):hover{
+    transition-duration: 1s;
     background:url("../resources/img/lecture/banner/bottom/hard_hover.png") no-repeat;
-    background-size:contain;
-}
-
-
-.bottomSection .levelSelectorList .listItem:nth-child(4){
-    background:url("../resources/img/lecture/banner/bottom/leveltest.png") no-repeat;
     background-size:contain;
 }
 
