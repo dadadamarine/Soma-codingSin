@@ -22,11 +22,15 @@ export default class lecture extends Component {
         this.changeBanner5 = this.changeBanner5.bind(this);
         this.leftClick = this.leftClick.bind(this);
         this.rightClick = this.rightClick.bind(this);
+        this.moveLevel1 = this.moveLevel1.bind(this);
+        this.moveLevel2 = this.moveLevel2.bind(this);
+        this.moveLevel3 = this.moveLevel3.bind(this);
 
         this.instance = window.setInterval(function(){
             cursor.rightClick.call();
         }, 5000);
     }
+    getOffsetTop(el) { var top = 0; if (el.offsetParent) { do { top += el.offsetTop; } while (el = el.offsetParent); return [top]; } }
     componentWillUnmount(){
         window.clearInterval(this.instance);
     }
@@ -150,6 +154,15 @@ export default class lecture extends Component {
             }
         });
     }
+    moveLevel1(e){
+        window.scroll(0, getOffsetTop(document.getElementById("level1")));
+    }
+    moveLevel2(e){
+        window.scroll(0, getOffsetTop(document.getElementById("level1")));
+    }
+    moveLevel3(e){
+        window.scroll(0, getOffsetTop(document.getElementById("level1")));
+    }
 
     render() {
 
@@ -218,15 +231,15 @@ export default class lecture extends Component {
                             <div className={style.levelSelectorList}>
                                 <div className={style.listItem}>
                                 </div>
-                                <div className={style.listItem}>
+                                <div className={style.listItem} onClick={this.moveLevel1}>
                                     <h3>초급</h3>
                                     <p>첫걸음이 반이다! 누구나 시작할 수 있는 초보자 과외</p>
                                 </div>
-                                <div className={style.listItem}>
+                                <div className={style.listItem} onClick={this.moveLevel2}>
                                     <h3>중급</h3>
                                     <p>이제 조금 더 어려운걸 해볼까? 적당히 어려운 중급 과외</p>
                                 </div>
-                                <div className={style.listItem}>
+                                <div className={style.listItem} onClick={this.moveLevel3}>
                                     <h3>고급</h3>
                                     <p>당신도 이제 프로그래머! 사고를 바꿔주는 고급 과외</p>
                                 </div>
@@ -302,7 +315,7 @@ export default class lecture extends Component {
                     {/* <div className={style.plusButton}></div> */}
 
                     <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                        <div className={style.title}>
+                        <div className={style.title} id="level1">
                             <div className={style.verticalBar}></div>
                             <a>초급과외</a>
                         </div>
@@ -331,7 +344,7 @@ export default class lecture extends Component {
                     </div>
 
                     <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                        <div className={style.title}>
+                        <div className={style.title} id="level2">
                             <div className={style.verticalBar}></div>
                             <a>중급과외</a>
                         </div>
@@ -361,7 +374,7 @@ export default class lecture extends Component {
 
 
                     <div className={style.titleSection}> {/* 강의 타이틀 시작 */}
-                        <div className={style.title}>
+                        <div className={style.title} id="level3">
                             <div className={style.verticalBar}></div>
                             <a>고급과외</a>
                         </div>
