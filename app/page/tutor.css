@@ -7,7 +7,7 @@
 
 .wrapper{
     margin:0;
-    padding:0;
+    padding-bottom: 50px !important;
 }
 
 .bannerWrapper{
@@ -135,6 +135,7 @@
     background:url('../resources/img/tutor/searchIcon.png') no-repeat;
     background-position: center;
     background-size: contain;
+    cursor: pointer;
 }
 
 

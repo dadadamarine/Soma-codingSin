@@ -19,6 +19,7 @@ class tutor extends Component{
         service.getTeachers().then(function (res) {
             cursor.setState({list:res.data, list_view:res.data});
         });
+        this.search = this.search.bind(this);
     }
 
     setList(e, num){
@@ -47,6 +48,19 @@ class tutor extends Component{
         console.log(this.state.buttonClicked[num]);
         }
     }
+    search(){
+        let tmp = new Array();
+        if(this.state.list.length!=null){
+            for(let i=0; i<this.state.list.length;i++){
+                if(String(this.state.list[i].name).includes(document.querySelector("."+style.searchBar).value)){
+                    tmp.push(this.state.list[i]);
+                }
+            }
+            this.setState({
+                list_view :  tmp
+            });
+        }
+    }
 
     render(){
         return(
@@ -73,7 +87,7 @@ class tutor extends Component{
                         <div className={style.searchBarWrapper}>
                             <div className ={style.inputArea}>
                             <input type="text" placeholder="강사의 이름을 입력하세요." className={style.searchBar}/>
-                            <div className={style.searchIcon}></div>
+                            <div className={style.searchIcon} onClick={this.search}></div>
                         </div>
                         
                     </div>
