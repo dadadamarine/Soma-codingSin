@@ -7,6 +7,7 @@ window.$ = window.jQuery = jQuery;
 import Highlight from 'react-highlight';
 import Code from '../util/ide';
 import * as service from '../request/room';
+import * as userService from '../request/profile';
 
 export default class room extends Component {
   constructor(props) {
@@ -32,6 +33,12 @@ export default class room extends Component {
     this.screenFull = this.screenFull.bind(this);
 
     const cursor =this;
+
+    userService.getUser.then(function(res){
+        if(res.data.img!=null) document.getElementById("myimg").setAttribute("src",res.data.img);
+    }).catch(function (error) {
+        alert('error massage : '+error);
+    });
     if(location.hash!=null) {
         this.setState({room:location.hash.replace('#', '')});
         service.lectureAuth(location.hash.replace('#', '')).then(function(res){
@@ -73,15 +80,17 @@ export default class room extends Component {
             if (reply) {
                 if (reply.install) {
                     if (reply.install == "OK") {
-                        console.log("isInstall");
+                        console.log("코딩의 신 플러그인이 설치되어 있습니다.");
                     }
                 }
             }
             else {
+                alert("코딩의 신 플러그인이 설치되어 있지않습니다. 설치 페이지로 이동합니다.");
                 window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
             }
         });
     }catch(e) {
+        alert("코딩의 신 플러그인이 설치되어 있지않습니다. 설치 페이지로 이동합니다.");
         window.open("https://chrome.google.com/webstore/detail/jikodjmdnknlnjcfeconoiggckcoijji","install",null);
     }
   }
@@ -332,6 +341,7 @@ export default class room extends Component {
                 <span className={style.icon_survey}></span>
                 <p className={style.middleText} id="btn-screen-share">과외시작</p>
               </div>
+              <img id="myimg" className={style.profile} src={require("../resources/img/profile.png")} />
           </div>
         <div className={style.mainWrapper}>
         <div className={style.sideView}>

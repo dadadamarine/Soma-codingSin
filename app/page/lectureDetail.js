@@ -50,7 +50,7 @@ export default class lectureDtail extends Component {
                 <div className={style.lectureWrapper}>
                     <div className={style.title}>강사소개</div>
                     <div className={style.profile}>
-                        <img id="img" src={require('../resources/img/profile.png')} />
+                        <img id="img" className={style.img} src={require('../resources/img/profile.png')} />
                         <div className={style.profileTextWrapper}>
                             <div className={style.profileOneline}>“{this.state.teacher.oneline}”</div>
                             <div className={style.profileText}>{this.state.teacher.name}</div>
