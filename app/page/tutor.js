@@ -15,7 +15,7 @@ class tutor extends Component{
             list:null,
             list_view:null
         };
-
+        let cursor =this;
         service.getTeachers().then(function (res) {
             cursor.setState({list:res.data, list_view:res.data});
         });
