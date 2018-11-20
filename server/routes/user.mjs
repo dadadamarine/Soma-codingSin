@@ -100,6 +100,21 @@ router.post('/getUser', function(req, res){
     });
 });
 
+router.post('/getTeacher', function(req, res){
+    const id=req.session.user_id;
+    MongoClient.connect(dbHost, function(error, client) {
+        if(error) console.log(error);
+        else {
+            const db = client.db(dbName);
+            db.collection(dbCollection).find({type:"강사"}).toArray(function(err, doc){
+                if(err) console.log(err);
+                if(doc!=null) res.send(doc);
+            });
+            client.close();
+        }
+    });
+});
+
 router.post('/login', function(req, res){
     const u_id = String(req.body.id);
     const u_pw = String(req.body.pw);

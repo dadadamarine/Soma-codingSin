@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom';
 import style from './tutor.css';
 import * as cookie from '../util/cookie';
+import * as service from '../request/tutor';
 
 class tutor extends Component{
     constructor(props){
@@ -9,18 +10,39 @@ class tutor extends Component{
         this.state={
             searchValue : "" ,
             selectedTutor : null, 
-            buttonClicked : [ style.selected , "","","","","",""]
+            buttonClicked : [ style.selected , "","","","","",""],
+            cur:0,
+            list:null,
+            list_view:null
         };
+
+        service.getTeachers().then(function (res) {
+            cursor.setState({list:res.data, list_view:res.data});
+        });
     }
 
     setList(e, num){
         //document.querySelector('.titleSection').children.className("");
-        let arr = ["", "","","","","",""];
+        if(this.state.cur!=num){
+        let arr = ["","javascript", "python"];
         arr[num] = style.selected;
         this.setState({
                 buttonClicked :  arr,
+                cur:num
             });
+        let tmp = new Array();
+        if(this.state.list.length!=null){
+            for(let i=0; i<this.state.list.length;i++){
+                if(String(this.state.list[i].stack).toLowerCase().indexOf(this.state.buttonClicked[num])>0){
+                    tmp.push(this.state.list[i]);
+                }
+            }
+            this.setState({
+                list_view :  tmp
+            });
+        }
         console.log(this.state.buttonClicked[num]);
+        }
     }
 
     render(){
@@ -60,170 +82,25 @@ class tutor extends Component{
                             <div className={this.state.buttonClicked[0]} onClick={(e)=>this.setList(e, 0)}><a >전체보기</a></div>
                             <div className={this.state.buttonClicked[1]} onClick={(e)=>this.setList(e, 1)}><a >JavaScript</a></div>
                             <div className={this.state.buttonClicked[2]} onClick={(e)=>this.setList(e, 2)}><a >Python</a></div>
-                            <div className={this.state.buttonClicked[3]} onClick={(e)=>this.setList(e, 3)}><a>Java</a></div>
-                            <div className={this.state.buttonClicked[4]} onClick={(e)=>this.setList(e, 4)}><a>Scratch</a></div>
-                            <div className={this.state.buttonClicked[5]} onClick={(e)=>this.setList(e, 5)}><a>C</a></div>
                         </div>
 
-                        <div className={style.tutorList}>
-                            <a href="tutor/1" onClick="window.open(this.href, '_blank', 'width=400px, height=430px, toolbars=no'); return false;">
-                                <div className={style.tutorBox}>
-                                    <div className={style.phraseSection}>
-                                        <img src={require('../resources/img/tutor/tutorPhrase/(1).png')} alt=""/>
+                        {this.state.list_view!=null?this.state.list_view.map((item, i) => {
+                            return (
+                            <div className={style.tutorList} key={i}>
+                                <a href={"tutor/"+item._id}>
+                                    <div className={style.tutorBox}>
+                                        <div className={style.phraseSection}>
+                                            <img src={item.banner==null?require('../resources/img/tutor/tutorPhrase/(1).png'):item.banner} alt=""/>
+                                        </div>
+                                        <div className={style.nameSection}> 
+                                            <div><img src={item.img} alt=""/></div>
+                                            <p>{item.name==null?require("../resources/img/profile.png"):item.name}</p>
+                                        </div>
                                     </div>
-                                    <div className={style.nameSection}> 
-                                        <div><img src={require('../resources/img/tutor/tutor/  (1).png')} alt=""/></div>
-                                        <p>개발 정민석</p>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(9).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (9).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(4).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (4).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(5).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (5).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(14).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (14).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(7).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (7).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(8).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (8).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(3).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (3).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(10).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (10).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(11).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (11).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(14).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (14).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(13).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (13).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(6).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (6).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(15).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (15).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(12).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (12).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(2).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (2).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
-                            <div className={style.tutorBox}>
-                                <div className={style.phraseSection}>
-                                    <img src={require('../resources/img/tutor/tutorPhrase/(18).png')} alt=""/>
-                                </div>
-                                <div className={style.nameSection}> 
-                                    <div><img src={require('../resources/img/tutor/tutor/  (18).png')} alt=""/></div>
-                                    <p>개발 정민석</p>
-                                </div>
-                            </div>
+                                </a>
+                            </div>);
+                        }):null}
 
-                        </div>
                     </div>{/* tutorListWrapper 끝 */}
                    
 
