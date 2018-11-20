@@ -179,12 +179,6 @@
     color:white;
 }
 
-.tutorListWrapper .tutorList{
-    width:100%;
-    height: 100%;
-    overflow:hidden;
-}
-
 .tutorList .tutorBox {
     width:180px;
     margin:5px 5px;
@@ -206,7 +200,7 @@
     bottom: 0;
     left:0;
     right:0;
-
+    border-radius: 10px;
     width:80%;
 }
 .tutorList .tutorBox .nameSection{
@@ -217,7 +211,9 @@
 
 .tutorBox .nameSection img{
     position: relative;
-    width:55px;
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
     margin:-50px auto 0px auto;
 
 }

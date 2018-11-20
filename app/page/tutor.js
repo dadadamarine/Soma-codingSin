@@ -31,9 +31,12 @@ class tutor extends Component{
                 cur:num
             });
         let tmp = new Array();
-        if(this.state.list.length!=null){
+        if(num==0) this.setState({
+            list_view :  list
+        });
+        else if(this.state.list.length!=null){
             for(let i=0; i<this.state.list.length;i++){
-                if(String(this.state.list[i].stack).toLowerCase().indexOf(this.state.buttonClicked[num])>0){
+                if(String(this.state.list[i].stack).toLowerCase().search(this.state.buttonClicked[num])>0){
                     tmp.push(this.state.list[i]);
                 }
             }
