@@ -155,13 +155,13 @@ export default class lecture extends Component {
         });
     }
     moveLevel1(e){
-        window.scroll(0, getOffsetTop(document.getElementById("level1")));
+        window.scroll(0, this.getOffsetTop(document.getElementById("level1")));
     }
     moveLevel2(e){
-        window.scroll(0, getOffsetTop(document.getElementById("level1")));
+        window.scroll(0, this.getOffsetTop(document.getElementById("level1")));
     }
     moveLevel3(e){
-        window.scroll(0, getOffsetTop(document.getElementById("level1")));
+        window.scroll(0, this.getOffsetTop(document.getElementById("level1")));
     }
 
     render() {
